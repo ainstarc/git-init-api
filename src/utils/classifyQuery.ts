@@ -1,23 +1,52 @@
-export type QueryType = "command" | "flag" | "natural" | "unknown";
+import { classification, GitQueryType } from "../types";
 
-export function classifyQuery(query: string): QueryType {
-  const q = query.trim().toLowerCase();
+export function classifyQuery(query: string): {
+  classification: classification;
+} {
+  const q = query.toLowerCase().trim();
 
-  if (/^git\s+\w+/.test(q)) {
-    console.log(`[TYPE] Detected as 'command': ${query}`);
-    return "command";
+  let command = "";
+
+  const isCommand = /^git\s+[a-z-]+$/.test(q);
+  const hasFlags = /--?[a-z]/.test(q);
+  const isError = /(fatal|error|not a git repository|conflict)/.test(q);
+  const isTooling = /(vscode|github|gitlab|editor|ide)/.test(q);
+  const isVersion = /git.*(version|2\.\d+)/.test(q);
+  const isConcept = /(remote|index|staging|commit message)/.test(q);
+  const isWorkflow = /(how|step|undo|redo|revert|rollback)/.test(q);
+
+  if (isError) {
+    return { classification: { type: "errorMessage" } };
   }
 
-  if (/^--?\w/.test(q)) {
-    console.log(`[TYPE] Detected as 'flag': ${query}`);
-    return "flag";
+  if (isTooling) {
+    return { classification: { type: "tooling" } };
   }
 
-  if (q.split(" ").length >= 3) {
-    console.log(`[TYPE] Detected as 'natural': ${query}`);
-    return "natural";
+  if (isVersion) {
+    return { classification: { type: "versioning" } };
   }
 
-  console.log(`[TYPE] Could not classify, marked as 'unknown': ${query}`);
-  return "unknown";
+  if (isCommand && hasFlags) {
+    return { classification: { type: "commandOption", command: q } };
+  }
+
+  if (isCommand) {
+    return { classification: { type: "commandHelp", command: q } };
+  }
+
+  if (isWorkflow) {
+    return { classification: { type: "workflow" } };
+  }
+
+  if (isConcept) {
+    return { classification: { type: "concept" } };
+  }
+
+  const words = q.split(/\s+/);
+  if (words.length === 1 && ["clone", "merge", "init", "status"].includes(q)) {
+    return { classification: { type: "ambiguous" } };
+  }
+
+  return { classification: { type: "nonGit" } };
 }
