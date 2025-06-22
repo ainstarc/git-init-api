@@ -1,0 +1,3208 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-branch Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-branch</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-branch"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-branch/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-branch/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-branch/ru"><span class="version">Русский</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-branch/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-branch last updated in 2.50.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-branch</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.50.0"><span class="version">2.50.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-06-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.44.1 &rarr; 2.49.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.44.0"><span class="version">2.44.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-23</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.1 &rarr; 2.43.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.41.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.41.0"><span class="version">2.41.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-06-01</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.40.1 &rarr; 2.40.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.40.0"><span class="version">2.40.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-03-12</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.39.4 &rarr; 2.39.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.39.3"><span class="version">2.39.3</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-04-17</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.39.2 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.37.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.37.0"><span class="version">2.37.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-06-27</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.36.1 &rarr; 2.36.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.36.0"><span class="version">2.36.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-04-18</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.35.1 &rarr; 2.35.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.35.0"><span class="version">2.35.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-01-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.34.1 &rarr; 2.34.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.34.0"><span class="version">2.34.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-11-15</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.33.2 &rarr; 2.33.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.33.1"><span class="version">2.33.1</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-10-12</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.31.1 &rarr; 2.33.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.31.0"><span class="version">2.31.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-03-15</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.30.1 &rarr; 2.30.9 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.30.0"><span class="version">2.30.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-12-27</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.29.1 &rarr; 2.29.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.29.0"><span class="version">2.29.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-10-19</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.28.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.28.0"><span class="version">2.28.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-07-27</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.23.1 &rarr; 2.27.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.23.0"><span class="version">2.23.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-08-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.22.2 &rarr; 2.22.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.22.1"><span class="version">2.22.1</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-08-11</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.22.0"><span class="version">2.22.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-06-07</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.21.1 &rarr; 2.21.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.21.0"><span class="version">2.21.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-02-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.20.1 &rarr; 2.20.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.20.0"><span class="version">2.20.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-12-09</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.1 &rarr; 2.19.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.19.0"><span class="version">2.19.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-09-10</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.18.1 &rarr; 2.18.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.18.0"><span class="version">2.18.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-06-21</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.17.0 &rarr; 2.17.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.16.6"><span class="version">2.16.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.15.4"><span class="version">2.15.4</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.14.6"><span class="version">2.14.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.13.7"><span class="version">2.13.7</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-05-22</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.12.5"><span class="version">2.12.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-09-22</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.10.5 &rarr; 2.11.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.9.5"><span class="version">2.9.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.8.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.7.6"><span class="version">2.7.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.6.7"><span class="version">2.6.7</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-05-05</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.5.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.4.12"><span class="version">2.4.12</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-05-05</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.1.4 &rarr; 2.3.10 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-branch/2.0.5"><span class="version">2.0.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-branch - List, create, or delete branches</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git branch [--color[=&lt;when&gt;] | --no-color] [--show-current]
+	   [-v [--abbrev=&lt;n&gt; | --no-abbrev]]
+	   [--column[=&lt;options&gt;] | --no-column] [--sort=&lt;key&gt;]
+	   [--merged [&lt;commit&gt;]] [--no-merged [&lt;commit&gt;]]
+	   [--contains [&lt;commit&gt;]] [--no-contains [&lt;commit&gt;]]
+	   [--points-at &lt;object&gt;] [--format=&lt;format&gt;]
+	   [(-r|--remotes) | (-a|--all)]
+	   [--list] [&lt;pattern&gt;&#8230;&#8203;]
+git branch [--track[=(direct|inherit)] | --no-track] [-f]
+	   [--recurse-submodules] &lt;branch-name&gt; [&lt;start-point&gt;]
+git branch (--set-upstream-to=&lt;upstream&gt;|-u &lt;upstream&gt;) [&lt;branch-name&gt;]
+git branch --unset-upstream [&lt;branch-name&gt;]
+git branch (-m|-M) [&lt;old-branch&gt;] &lt;new-branch&gt;
+git branch (-c|-C) [&lt;old-branch&gt;] &lt;new-branch&gt;
+git branch (-d|-D) [-r] &lt;branch-name&gt;&#8230;&#8203;
+git branch --edit-description [&lt;branch-name&gt;]</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If <code>--list</code> is given, or if there are no non-option arguments, existing
+branches are listed; the current branch will be highlighted in green and
+marked with an asterisk.  Any branches checked out in linked worktrees will
+be highlighted in cyan and marked with a plus sign. Option <code>-r</code> causes the
+remote-tracking branches to be listed,
+and option <code>-a</code> shows both local and remote branches.</p>
+</div>
+<div class="paragraph">
+<p>If a <code>&lt;pattern&gt;</code>
+is given, it is used as a shell wildcard to restrict the output to
+matching branches. If multiple patterns are given, a branch is shown if
+it matches any of the patterns.</p>
+</div>
+<div class="paragraph">
+<p>Note that when providing a
+<code>&lt;pattern&gt;</code>, you must use <code>--list</code>; otherwise the command may be interpreted
+as branch creation.</p>
+</div>
+<div class="paragraph">
+<p>With <code>--contains</code>, shows only the branches that contain the named commit
+(in other words, the branches whose tip commits are descendants of the
+named commit), <code>--no-contains</code> inverts it. With <code>--merged</code>, only branches
+merged into the named commit (i.e. the branches whose tip commits are
+reachable from the named commit) will be listed.  With <code>--no-merged</code> only
+branches not merged into the named commit will be listed.  If the <em>&lt;commit&gt;</em>
+argument is missing it defaults to <code>HEAD</code> (i.e. the tip of the current
+branch).</p>
+</div>
+<div class="paragraph">
+<p>The command&#8217;s second form creates a new branch head named <em>&lt;branch-name&gt;</em>
+which points to the current <code>HEAD</code>, or <em>&lt;start-point&gt;</em> if given. As a
+special case, for <em>&lt;start-point&gt;</em>, you may use <code>&lt;rev-A&gt;...&lt;rev-B&gt;</code> as a
+shortcut for the merge base of <em>&lt;rev-A&gt;</em> and <em>&lt;rev-B&gt;</em> if there is exactly
+one merge base. You can leave out at most one of <em>&lt;rev-A&gt;</em> and <em>&lt;rev-B&gt;</em>,
+in which case it defaults to <code>HEAD</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note that this will create the new branch, but it will not switch the
+working tree to it; use <code>git switch &lt;new-branch&gt;</code> to switch to the
+new branch.</p>
+</div>
+<div class="paragraph">
+<p>When a local branch is started off a remote-tracking branch, Git sets up the
+branch (specifically the <code>branch.&lt;name&gt;.remote</code> and <code>branch.&lt;name&gt;.merge</code>
+configuration entries) so that <code>git pull</code> will appropriately merge from
+the remote-tracking branch. This behavior may be changed via the global
+<code>branch.autoSetupMerge</code> configuration flag. That setting can be
+overridden by using the <code>--track</code> and <code>--no-track</code> options, and
+changed later using <code>git branch --set-upstream-to</code>.</p>
+</div>
+<div class="paragraph">
+<p>With a <code>-m</code> or <code>-M</code> option, <em>&lt;old-branch&gt;</em> will be renamed to <em>&lt;new-branch&gt;</em>.
+If <em>&lt;old-branch&gt;</em> had a corresponding reflog, it is renamed to match
+<em>&lt;new-branch&gt;</em>, and a reflog entry is created to remember the branch
+renaming. If <em>&lt;new-branch&gt;</em> exists, <code>-M</code> must be used to force the rename
+to happen.</p>
+</div>
+<div class="paragraph">
+<p>The <code>-c</code> and <code>-C</code> options have the exact same semantics as <code>-m</code> and
+<code>-M</code>, except instead of the branch being renamed, it will be copied to a
+new name, along with its config and reflog.</p>
+</div>
+<div class="paragraph">
+<p>With a <code>-d</code> or <code>-D</code> option, <em>&lt;branch-name&gt;</em> will be deleted.  You may
+specify more than one branch for deletion.  If the branch currently
+has a reflog then the reflog will also be deleted.</p>
+</div>
+<div class="paragraph">
+<p>Use <code>-r</code> together with <code>-d</code> to delete remote-tracking branches. Note, that it
+only makes sense to delete remote-tracking branches if they no longer exist
+in the remote repository or if <code>git fetch</code> was configured not to fetch
+them again. See also the <code>prune</code> subcommand of <a href='/docs/git-remote'>git-remote[1]</a> for a
+way to clean up all obsolete remote-tracking branches.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-dcode"><a id="Documentation/git-branch.txt--d" class="anchor" href="#Documentation/git-branch.txt--d"></a><code>-d</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--deletecode"><a id="Documentation/git-branch.txt---delete" class="anchor" href="#Documentation/git-branch.txt---delete"></a><code>--delete</code> </dt>
+<dd>
+<p>Delete a branch. The branch must be fully merged in its
+upstream branch, or in <code>HEAD</code> if no upstream was set with
+<code>--track</code> or <code>--set-upstream-to</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-Dcode"><a id="Documentation/git-branch.txt--D" class="anchor" href="#Documentation/git-branch.txt--D"></a><code>-D</code> </dt>
+<dd>
+<p>Shortcut for <code>--delete --force</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--create-reflogcode"><a id="Documentation/git-branch.txt---create-reflog" class="anchor" href="#Documentation/git-branch.txt---create-reflog"></a><code>--create-reflog</code> </dt>
+<dd>
+<p>Create the branch&#8217;s reflog.  This activates recording of
+all changes made to the branch ref, enabling use of date
+based sha1 expressions such as <code>&lt;branch-name&gt;@{yesterday}</code>.
+Note that in non-bare repositories, reflogs are usually
+enabled by default by the <code>core.logAllRefUpdates</code> config option.
+The negated form <code>--no-create-reflog</code> only overrides an earlier
+<code>--create-reflog</code>, but currently does not negate the setting of
+<code>core.logAllRefUpdates</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-fcode"><a id="Documentation/git-branch.txt--f" class="anchor" href="#Documentation/git-branch.txt--f"></a><code>-f</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--forcecode"><a id="Documentation/git-branch.txt---force" class="anchor" href="#Documentation/git-branch.txt---force"></a><code>--force</code> </dt>
+<dd>
+<p>Reset <em>&lt;branch-name&gt;</em> to <em>&lt;start-point&gt;</em>, even if <em>&lt;branch-name&gt;</em> exists
+already. Without <code>-f</code>, <code>git branch</code> refuses to change an existing branch.
+In combination with <code>-d</code> (or <code>--delete</code>), allow deleting the
+branch irrespective of its merged status, or whether it even
+points to a valid commit. In combination with
+<code>-m</code> (or <code>--move</code>), allow renaming the branch even if the new
+branch name already exists, the same applies for <code>-c</code> (or <code>--copy</code>).</p>
+<div class="paragraph">
+<p>Note that <code>git branch -f &lt;branch-name&gt; [&lt;start-point&gt;]</code>, even with <code>-f</code>,
+refuses to change an existing branch <em>&lt;branch-name&gt;</em> that is checked out
+in another worktree linked to the same repository.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-mcode"><a id="Documentation/git-branch.txt--m" class="anchor" href="#Documentation/git-branch.txt--m"></a><code>-m</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--movecode"><a id="Documentation/git-branch.txt---move" class="anchor" href="#Documentation/git-branch.txt---move"></a><code>--move</code> </dt>
+<dd>
+<p>Move/rename a branch, together with its config and reflog.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-Mcode"><a id="Documentation/git-branch.txt--M" class="anchor" href="#Documentation/git-branch.txt--M"></a><code>-M</code> </dt>
+<dd>
+<p>Shortcut for <code>--move --force</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-ccode"><a id="Documentation/git-branch.txt--c" class="anchor" href="#Documentation/git-branch.txt--c"></a><code>-c</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--copycode"><a id="Documentation/git-branch.txt---copy" class="anchor" href="#Documentation/git-branch.txt---copy"></a><code>--copy</code> </dt>
+<dd>
+<p>Copy a branch, together with its config and reflog.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-Ccode"><a id="Documentation/git-branch.txt--C" class="anchor" href="#Documentation/git-branch.txt--C"></a><code>-C</code> </dt>
+<dd>
+<p>Shortcut for <code>--copy --force</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--colorltwhengtcode"><a id="Documentation/git-branch.txt---colorwhen" class="anchor" href="#Documentation/git-branch.txt---colorwhen"></a><code>--color[=&lt;when&gt;]</code> </dt>
+<dd>
+<p>Color branches to highlight current, local, and
+remote-tracking branches.
+The value must be <code>always</code> (the default), <code>never</code>, or <code>auto</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-colorcode"><a id="Documentation/git-branch.txt---no-color" class="anchor" href="#Documentation/git-branch.txt---no-color"></a><code>--no-color</code> </dt>
+<dd>
+<p>Turn off branch colors, even when the configuration file gives the
+default to color output.
+Same as <code>--color=never</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-icode"><a id="Documentation/git-branch.txt--i" class="anchor" href="#Documentation/git-branch.txt--i"></a><code>-i</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--ignore-casecode"><a id="Documentation/git-branch.txt---ignore-case" class="anchor" href="#Documentation/git-branch.txt---ignore-case"></a><code>--ignore-case</code> </dt>
+<dd>
+<p>Sorting and filtering branches are case insensitive.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--omit-emptycode"><a id="Documentation/git-branch.txt---omit-empty" class="anchor" href="#Documentation/git-branch.txt---omit-empty"></a><code>--omit-empty</code> </dt>
+<dd>
+<p>Do not print a newline after formatted refs where the format expands
+to the empty string.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--columnltoptionsgtcode"><a id="Documentation/git-branch.txt---columnoptions" class="anchor" href="#Documentation/git-branch.txt---columnoptions"></a><code>--column[=&lt;options&gt;]</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-columncode"><a id="Documentation/git-branch.txt---no-column" class="anchor" href="#Documentation/git-branch.txt---no-column"></a><code>--no-column</code> </dt>
+<dd>
+<p>Display branch listing in columns. See configuration variable
+<code>column.branch</code> for option syntax. <code>--column</code> and <code>--no-column</code>
+without options are equivalent to <code>always</code> and <code>never</code> respectively.</p>
+<div class="paragraph">
+<p>This option is only applicable in non-verbose mode.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--sortltkeygtcode"><a id="Documentation/git-branch.txt---sortkey" class="anchor" href="#Documentation/git-branch.txt---sortkey"></a><code>--sort=&lt;key&gt;</code> </dt>
+<dd>
+<p>Sort based on <em>&lt;key&gt;</em>. Prefix <code>-</code> to sort in descending
+order of the value. You may use the <code>--sort=&lt;key&gt;</code> option
+multiple times, in which case the last key becomes the primary
+key. The keys supported are the same as those in <a href='/docs/git-for-each-ref'>git-for-each-ref[1]</a>.
+Sort order defaults to the value configured for the
+<code>branch.sort</code> variable if it exists, or to sorting based on the
+full refname (including <code>refs/...</code> prefix). This lists
+detached <code>HEAD</code> (if present) first, then local branches and
+finally remote-tracking branches. See <a href='/docs/git-config'>git-config[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-rcode"><a id="Documentation/git-branch.txt--r" class="anchor" href="#Documentation/git-branch.txt--r"></a><code>-r</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--remotescode"><a id="Documentation/git-branch.txt---remotes" class="anchor" href="#Documentation/git-branch.txt---remotes"></a><code>--remotes</code> </dt>
+<dd>
+<p>List or delete (if used with <code>-d</code>) the remote-tracking branches.
+Combine with <code>--list</code> to match the optional pattern(s).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-acode"><a id="Documentation/git-branch.txt--a" class="anchor" href="#Documentation/git-branch.txt--a"></a><code>-a</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--allcode"><a id="Documentation/git-branch.txt---all" class="anchor" href="#Documentation/git-branch.txt---all"></a><code>--all</code> </dt>
+<dd>
+<p>List both remote-tracking branches and local branches.
+Combine with <code>--list</code> to match optional pattern(s).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-lcode"><a id="Documentation/git-branch.txt--l" class="anchor" href="#Documentation/git-branch.txt--l"></a><code>-l</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--listcode"><a id="Documentation/git-branch.txt---list" class="anchor" href="#Documentation/git-branch.txt---list"></a><code>--list</code> </dt>
+<dd>
+<p>List branches.  With optional <code>&lt;pattern&gt;...</code>, e.g. <code>git
+branch --list 'maint-*'</code>, list only the branches that match
+the pattern(s).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--show-currentcode"><a id="Documentation/git-branch.txt---show-current" class="anchor" href="#Documentation/git-branch.txt---show-current"></a><code>--show-current</code> </dt>
+<dd>
+<p>Print the name of the current branch. In detached <code>HEAD</code> state,
+nothing is printed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-vcode"><a id="Documentation/git-branch.txt--v" class="anchor" href="#Documentation/git-branch.txt--v"></a><code>-v</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-vvcode"><a id="Documentation/git-branch.txt--vv" class="anchor" href="#Documentation/git-branch.txt--vv"></a><code>-vv</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--verbosecode"><a id="Documentation/git-branch.txt---verbose" class="anchor" href="#Documentation/git-branch.txt---verbose"></a><code>--verbose</code> </dt>
+<dd>
+<p>When in list mode,
+show sha1 and commit subject line for each head, along with
+relationship to upstream branch (if any). If given twice, print
+the path of the linked worktree (if any) and the name of the upstream
+branch, as well (see also <code>git remote show &lt;remote&gt;</code>).  Note that the
+current worktree&#8217;s <code>HEAD</code> will not have its path printed (it will always
+be your current directory).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-qcode"><a id="Documentation/git-branch.txt--q" class="anchor" href="#Documentation/git-branch.txt--q"></a><code>-q</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--quietcode"><a id="Documentation/git-branch.txt---quiet" class="anchor" href="#Documentation/git-branch.txt---quiet"></a><code>--quiet</code> </dt>
+<dd>
+<p>Be more quiet when creating or deleting a branch, suppressing
+non-error messages.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--abbrevltngtcode"><a id="Documentation/git-branch.txt---abbrevn" class="anchor" href="#Documentation/git-branch.txt---abbrevn"></a><code>--abbrev=&lt;n&gt;</code> </dt>
+<dd>
+<p>In the verbose listing that show the commit object name,
+show the shortest prefix that is at least <em>&lt;n&gt;</em> hexdigits
+long that uniquely refers the object.
+The default value is 7 and can be overridden by the <code>core.abbrev</code>
+config option.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-abbrevcode"><a id="Documentation/git-branch.txt---no-abbrev" class="anchor" href="#Documentation/git-branch.txt---no-abbrev"></a><code>--no-abbrev</code> </dt>
+<dd>
+<p>Display the full sha1s in the output listing rather than abbreviating them.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-tcode"><a id="Documentation/git-branch.txt--t" class="anchor" href="#Documentation/git-branch.txt--t"></a><code>-t</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--trackdirectinheritcode"><a id="Documentation/git-branch.txt---trackdirectinherit" class="anchor" href="#Documentation/git-branch.txt---trackdirectinherit"></a><code>--track[=(direct|inherit)]</code> </dt>
+<dd>
+<p>When creating a new branch, set up <code>branch.&lt;name&gt;.remote</code> and
+<code>branch.&lt;name&gt;.merge</code> configuration entries to set "upstream" tracking
+configuration for the new branch. This
+configuration will tell git to show the relationship between the
+two branches in <code>git status</code> and <code>git branch -v</code>. Furthermore,
+it directs <code>git pull</code> without arguments to pull from the
+upstream when the new branch is checked out.</p>
+<div class="paragraph">
+<p>The exact upstream branch is chosen depending on the optional argument:
+<code>-t</code>, <code>--track</code>, or <code>--track=direct</code> means to use the start-point branch
+itself as the upstream; <code>--track=inherit</code> means to copy the upstream
+configuration of the start-point branch.</p>
+</div>
+<div class="paragraph">
+<p>The <code>branch.autoSetupMerge</code> configuration variable specifies how <code>git switch</code>,
+<code>git checkout</code> and <code>git branch</code> should behave when neither <code>--track</code> nor
+<code>--no-track</code> are specified:</p>
+</div>
+<div class="paragraph">
+<p>The default option, <code>true</code>, behaves as though <code>--track=direct</code>
+were given whenever the start-point is a remote-tracking branch.
+<code>false</code> behaves as if <code>--no-track</code> were given. <code>always</code> behaves as though
+<code>--track=direct</code> were given. <code>inherit</code> behaves as though <code>--track=inherit</code>
+were given. <code>simple</code> behaves as though <code>--track=direct</code> were given only when
+the <em>&lt;start-point&gt;</em> is a remote-tracking branch and the new branch has the same
+name as the remote branch.</p>
+</div>
+<div class="paragraph">
+<p>See <a href='/docs/git-pull'>git-pull[1]</a> and <a href='/docs/git-config'>git-config[1]</a> for additional discussion on
+how the <code>branch.&lt;name&gt;.remote</code> and <code>branch.&lt;name&gt;.merge</code> options are used.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-trackcode"><a id="Documentation/git-branch.txt---no-track" class="anchor" href="#Documentation/git-branch.txt---no-track"></a><code>--no-track</code> </dt>
+<dd>
+<p>Do not set up "upstream" configuration, even if the
+<code>branch.autoSetupMerge</code> configuration variable is set.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--recurse-submodulescode"><a id="Documentation/git-branch.txt---recurse-submodules" class="anchor" href="#Documentation/git-branch.txt---recurse-submodules"></a><code>--recurse-submodules</code> </dt>
+<dd>
+<p>THIS OPTION IS EXPERIMENTAL! Cause the current command to
+recurse into submodules if <code>submodule.propagateBranches</code> is
+enabled. See <code>submodule.propagateBranches</code> in
+<a href='/docs/git-config'>git-config[1]</a>. Currently, only branch creation is
+supported.</p>
+<div class="paragraph">
+<p>When used in branch creation, a new branch <em>&lt;branch-name&gt;</em> will be created
+in the superproject and all of the submodules in the superproject&#8217;s
+<em>&lt;start-point&gt;</em>. In submodules, the branch will point to the submodule
+commit in the superproject&#8217;s <em>&lt;start-point&gt;</em> but the branch&#8217;s tracking
+information will be set up based on the submodule&#8217;s branches and remotes
+e.g. <code>git branch --recurse-submodules topic origin/main</code> will create the
+submodule branch "topic" that points to the submodule commit in the
+superproject&#8217;s "origin/main", but tracks the submodule&#8217;s "origin/main".</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--set-upstreamcode"><a id="Documentation/git-branch.txt---set-upstream" class="anchor" href="#Documentation/git-branch.txt---set-upstream"></a><code>--set-upstream</code> </dt>
+<dd>
+<p>As this option had confusing syntax, it is no longer supported.
+Please use <code>--track</code> or <code>--set-upstream-to</code> instead.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code-ultupstreamgtcode"><a id="Documentation/git-branch.txt--uupstream" class="anchor" href="#Documentation/git-branch.txt--uupstream"></a><code>-u &lt;upstream&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--set-upstream-toltupstreamgtcode"><a id="Documentation/git-branch.txt---set-upstream-toupstream" class="anchor" href="#Documentation/git-branch.txt---set-upstream-toupstream"></a><code>--set-upstream-to=&lt;upstream&gt;</code> </dt>
+<dd>
+<p>Set up <em>&lt;branch-name&gt;</em>'s tracking information so <em>&lt;upstream&gt;</em> is
+considered <em>&lt;branch-name&gt;</em>'s upstream branch. If no <em>&lt;branch-name&gt;</em>
+is specified, then it defaults to the current branch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--unset-upstreamcode"><a id="Documentation/git-branch.txt---unset-upstream" class="anchor" href="#Documentation/git-branch.txt---unset-upstream"></a><code>--unset-upstream</code> </dt>
+<dd>
+<p>Remove the upstream information for <em>&lt;branch-name&gt;</em>. If no branch
+is specified it defaults to the current branch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--edit-descriptioncode"><a id="Documentation/git-branch.txt---edit-description" class="anchor" href="#Documentation/git-branch.txt---edit-description"></a><code>--edit-description</code> </dt>
+<dd>
+<p>Open an editor and edit the text to explain what the branch is
+for, to be used by various other commands (e.g. <code>format-patch</code>,
+<code>request-pull</code>, and <code>merge</code> (if enabled)). Multi-line explanations
+may be used.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--containsltcommitgtcode"><a id="Documentation/git-branch.txt---containscommit" class="anchor" href="#Documentation/git-branch.txt---containscommit"></a><code>--contains [&lt;commit&gt;]</code> </dt>
+<dd>
+<p>Only list branches which contain <em>&lt;commit&gt;</em> (<code>HEAD</code>
+if not specified). Implies <code>--list</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-containsltcommitgtcode"><a id="Documentation/git-branch.txt---no-containscommit" class="anchor" href="#Documentation/git-branch.txt---no-containscommit"></a><code>--no-contains [&lt;commit&gt;]</code> </dt>
+<dd>
+<p>Only list branches which don&#8217;t contain <em>&lt;commit&gt;</em>
+(<code>HEAD</code> if not specified). Implies <code>--list</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--mergedltcommitgtcode"><a id="Documentation/git-branch.txt---mergedcommit" class="anchor" href="#Documentation/git-branch.txt---mergedcommit"></a><code>--merged [&lt;commit&gt;]</code> </dt>
+<dd>
+<p>Only list branches whose tips are reachable from
+<em>&lt;commit&gt;</em> (<code>HEAD</code> if not specified). Implies <code>--list</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--no-mergedltcommitgtcode"><a id="Documentation/git-branch.txt---no-mergedcommit" class="anchor" href="#Documentation/git-branch.txt---no-mergedcommit"></a><code>--no-merged [&lt;commit&gt;]</code> </dt>
+<dd>
+<p>Only list branches whose tips are not reachable from
+<em>&lt;commit&gt;</em> (<code>HEAD</code> if not specified). Implies <code>--list</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--points-atltobjectgtcode"><a id="Documentation/git-branch.txt---points-atobject" class="anchor" href="#Documentation/git-branch.txt---points-atobject"></a><code>--points-at &lt;object&gt;</code> </dt>
+<dd>
+<p>Only list branches of <em>&lt;object&gt;</em>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-code--formatltformatgtcode"><a id="Documentation/git-branch.txt---formatformat" class="anchor" href="#Documentation/git-branch.txt---formatformat"></a><code>--format &lt;format&gt;</code> </dt>
+<dd>
+<p>A string that interpolates <code>%(fieldname)</code> from a branch ref being shown
+and the object it points at.  <em>&lt;format&gt;</em> is the same as
+that of <a href='/docs/git-for-each-ref'>git-for-each-ref[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-emltbranch-namegtem"><a id="Documentation/git-branch.txt-branch-name" class="anchor" href="#Documentation/git-branch.txt-branch-name"></a><em>&lt;branch-name&gt;</em> </dt>
+<dd>
+<p>The name of the branch to create or delete.
+The new branch name must pass all checks defined by
+<a href='/docs/git-check-ref-format'>git-check-ref-format[1]</a>.  Some of these checks
+may restrict the characters allowed in a branch name.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-emltstart-pointgtem"><a id="Documentation/git-branch.txt-start-point" class="anchor" href="#Documentation/git-branch.txt-start-point"></a><em>&lt;start-point&gt;</em> </dt>
+<dd>
+<p>The new branch head will point to this commit.  It may be
+given as a branch name, a commit-id, or a tag.  If this
+option is omitted, the current <code>HEAD</code> will be used instead.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-emltold-branchgtem"><a id="Documentation/git-branch.txt-old-branch" class="anchor" href="#Documentation/git-branch.txt-old-branch"></a><em>&lt;old-branch&gt;</em> </dt>
+<dd>
+<p>The name of an existing branch.  If this option is omitted,
+the name of the current branch will be used instead.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-emltnew-branchgtem"><a id="Documentation/git-branch.txt-new-branch" class="anchor" href="#Documentation/git-branch.txt-new-branch"></a><em>&lt;new-branch&gt;</em> </dt>
+<dd>
+<p>The new name for an existing branch. The same restrictions as for
+<em>&lt;branch-name&gt;</em> apply.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>pager.branch</code> is only respected when listing branches, i.e., when
+<code>--list</code> is used or implied. The default is to use a pager.
+See <a href='/docs/git-config'>git-config[1]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Everything above this line in this section isn&#8217;t included from the
+<a href='/docs/git-config'>git-config[1]</a> documentation. The content that follows is the
+same as what&#8217;s found there:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchautoSetupMergecode"><a id="Documentation/git-branch.txt-branchautoSetupMerge" class="anchor" href="#Documentation/git-branch.txt-branchautoSetupMerge"></a><code>branch.autoSetupMerge</code> </dt>
+<dd>
+<p>Tells <code>git branch</code>, <code>git switch</code> and <code>git checkout</code> to set up new branches
+so that <a href='/docs/git-pull'>git-pull[1]</a> will appropriately merge from the
+starting point branch. Note that even if this option is not set,
+this behavior can be chosen per-branch using the <code>--track</code>
+and <code>--no-track</code> options.  This option defaults to <code>true</code>. The valid settings
+are:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codefalsecode"><a id="Documentation/git-branch.txt-false" class="anchor" href="#Documentation/git-branch.txt-false"></a><code>false</code> </dt>
+<dd>
+<p>no automatic setup is done</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codetruecode"><a id="Documentation/git-branch.txt-true" class="anchor" href="#Documentation/git-branch.txt-true"></a><code>true</code> </dt>
+<dd>
+<p>automatic setup is done when the starting point is a remote-tracking branch</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codealwayscode"><a id="Documentation/git-branch.txt-always" class="anchor" href="#Documentation/git-branch.txt-always"></a><code>always</code> </dt>
+<dd>
+<p>automatic setup is done when the starting point is either a
+local branch or remote-tracking branch</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codeinheritcode"><a id="Documentation/git-branch.txt-inherit" class="anchor" href="#Documentation/git-branch.txt-inherit"></a><code>inherit</code> </dt>
+<dd>
+<p>if the starting point has a tracking configuration, it is copied to the new
+branch</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codesimplecode"><a id="Documentation/git-branch.txt-simple" class="anchor" href="#Documentation/git-branch.txt-simple"></a><code>simple</code> </dt>
+<dd>
+<p>automatic setup is done only when the starting point
+is a remote-tracking branch and the new branch has the same name as the
+remote branch.</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchautoSetupRebasecode"><a id="Documentation/git-branch.txt-branchautoSetupRebase" class="anchor" href="#Documentation/git-branch.txt-branchautoSetupRebase"></a><code>branch.autoSetupRebase</code> </dt>
+<dd>
+<p>When a new branch is created with <code>git branch</code>, <code>git switch</code> or <code>git checkout</code>
+that tracks another branch, this variable tells Git to set
+up pull to rebase instead of merge (see <code>branch.&lt;name&gt;.rebase</code>).
+The valid settings are:</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codenevercode"><a id="Documentation/git-branch.txt-never" class="anchor" href="#Documentation/git-branch.txt-never"></a><code>never</code> </dt>
+<dd>
+<p>rebase is never automatically set to true.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codelocalcode"><a id="Documentation/git-branch.txt-local" class="anchor" href="#Documentation/git-branch.txt-local"></a><code>local</code> </dt>
+<dd>
+<p>rebase is set to true for tracked branches of other local branches.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-coderemotecode"><a id="Documentation/git-branch.txt-remote" class="anchor" href="#Documentation/git-branch.txt-remote"></a><code>remote</code> </dt>
+<dd>
+<p>rebase is set to true for tracked branches of remote-tracking branches.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codealwayscode-1"><a id="Documentation/git-branch.txt-always-1" class="anchor" href="#Documentation/git-branch.txt-always-1"></a><code>always</code> </dt>
+<dd>
+<p>rebase will be set to true for all tracking branches.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See <code>branch.autoSetupMerge</code> for details on how to set up a branch to track another branch.
+This option defaults to <code>never</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchsortcode"><a id="Documentation/git-branch.txt-branchsort" class="anchor" href="#Documentation/git-branch.txt-branchsort"></a><code>branch.sort</code> </dt>
+<dd>
+<p>This variable controls the sort ordering of branches when displayed by
+<a href='/docs/git-branch'>git-branch[1]</a>. Without the <code>--sort=&lt;value&gt;</code> option provided, the
+value of this variable will be used as the default.
+See <a href='/docs/git-for-each-ref'>git-for-each-ref[1]</a> field names for valid values.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtremotecode"><a id="Documentation/git-branch.txt-branchnameremote" class="anchor" href="#Documentation/git-branch.txt-branchnameremote"></a><code>branch.&lt;name&gt;.remote</code> </dt>
+<dd>
+<p>When on branch <em>&lt;name&gt;</em>, it tells <code>git fetch</code> and <code>git push</code>
+which remote to fetch from or push to.  The remote to push to
+may be overridden with <code>remote.pushDefault</code> (for all branches).
+The remote to push to, for the current branch, may be further
+overridden by <code>branch.&lt;name&gt;.pushRemote</code>.  If no remote is
+configured, or if you are not on any branch and there is more than
+one remote defined in the repository, it defaults to <code>origin</code> for
+fetching and <code>remote.pushDefault</code> for pushing.
+Additionally, <code>.</code> (a period) is the current local repository
+(a dot-repository), see <code>branch.&lt;name&gt;.merge</code>'s final note below.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtpushRemotecode"><a id="Documentation/git-branch.txt-branchnamepushRemote" class="anchor" href="#Documentation/git-branch.txt-branchnamepushRemote"></a><code>branch.&lt;name&gt;.pushRemote</code> </dt>
+<dd>
+<p>When on branch <em>&lt;name&gt;</em>, it overrides <code>branch.&lt;name&gt;.remote</code> for
+pushing.  It also overrides <code>remote.pushDefault</code> for pushing
+from branch <em>&lt;name&gt;</em>.  When you pull from one place (e.g. your
+upstream) and push to another place (e.g. your own publishing
+repository), you would want to set <code>remote.pushDefault</code> to
+specify the remote to push to for all branches, and use this
+option to override it for a specific branch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtmergecode"><a id="Documentation/git-branch.txt-branchnamemerge" class="anchor" href="#Documentation/git-branch.txt-branchnamemerge"></a><code>branch.&lt;name&gt;.merge</code> </dt>
+<dd>
+<p>Defines, together with <code>branch.&lt;name&gt;.remote</code>, the upstream branch
+for the given branch. It tells <code>git fetch</code>/<code>git pull</code>/<code>git rebase</code> which
+branch to merge and can also affect <code>git push</code> (see <code>push.default</code>).
+When in branch <em>&lt;name&gt;</em>, it tells <code>git fetch</code> the default
+refspec to be marked for merging in <code>FETCH_HEAD</code>. The value is
+handled like the remote part of a refspec, and must match a
+ref which is fetched from the remote given by
+<code>branch.&lt;name&gt;.remote</code>.
+The merge information is used by <code>git pull</code> (which first calls
+<code>git fetch</code>) to lookup the default branch for merging. Without
+this option, <code>git pull</code> defaults to merge the first refspec fetched.
+Specify multiple values to get an octopus merge.
+If you wish to setup <code>git pull</code> so that it merges into &lt;name&gt; from
+another branch in the local repository, you can point
+branch.&lt;name&gt;.merge to the desired branch, and use the relative path
+setting <code>.</code> (a period) for <code>branch.&lt;name&gt;.remote</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtmergeOptionscode"><a id="Documentation/git-branch.txt-branchnamemergeOptions" class="anchor" href="#Documentation/git-branch.txt-branchnamemergeOptions"></a><code>branch.&lt;name&gt;.mergeOptions</code> </dt>
+<dd>
+<p>Sets default options for merging into branch <em>&lt;name&gt;</em>. The syntax and
+supported options are the same as those of <a href='/docs/git-merge'>git-merge[1]</a>, but
+option values containing whitespace characters are currently not
+supported.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtrebasecode"><a id="Documentation/git-branch.txt-branchnamerebase" class="anchor" href="#Documentation/git-branch.txt-branchnamerebase"></a><code>branch.&lt;name&gt;.rebase</code> </dt>
+<dd>
+<p>When true, rebase the branch <em>&lt;name&gt;</em> on top of the fetched branch,
+instead of merging the default branch from the default remote when
+<code>git pull</code> is run. See <code>pull.rebase</code> for doing this in a non
+branch-specific manner.</p>
+<div class="paragraph">
+<p>When <code>merges</code> (or just <code>m</code>), pass the <code>--rebase-merges</code> option to <code>git rebase</code>
+so that the local merge commits are included in the rebase (see
+<a href='/docs/git-rebase'>git-rebase[1]</a> for details).</p>
+</div>
+<div class="paragraph">
+<p>When the value is <code>interactive</code> (or just <code>i</code>), the rebase is run in interactive
+mode.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE</strong>: this is a possibly dangerous operation; do <strong>not</strong> use
+it unless you understand the implications (see <a href='/docs/git-rebase'>git-rebase[1]</a>
+for details).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-codebranchltnamegtdescriptioncode"><a id="Documentation/git-branch.txt-branchnamedescription" class="anchor" href="#Documentation/git-branch.txt-branchnamedescription"></a><code>branch.&lt;name&gt;.description</code> </dt>
+<dd>
+<p>Branch description, can be edited with
+<code>git branch --edit-description</code>. Branch description is
+automatically added to the <code>format-patch</code> cover letter or
+<code>request-pull</code> summary.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-branch.txt-Startdevelopmentfromaknowntag"><a class="anchor" href="#Documentation/git-branch.txt-Startdevelopmentfromaknowntag"></a>Start development from a known tag </dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone git://git.kernel.org/pub/scm/.../linux-2.6 my2.6
+$ cd my2.6
+$ git branch my2.6.14 v2.6.14   <b class="conum">(1)</b>
+$ git switch my2.6.14</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>This step and the next one could be combined into a single step with
+"checkout -b my2.6.14 v2.6.14".</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-Deleteanunneededbranch"><a class="anchor" href="#Documentation/git-branch.txt-Deleteanunneededbranch"></a>Delete an unneeded branch </dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone git://git.kernel.org/.../git.git my.git
+$ cd my.git
+$ git branch -d -r origin/todo origin/html origin/man   <b class="conum">(1)</b>
+$ git branch -D test                                    <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Delete the remote-tracking branches "todo", "html" and "man". The next
+<code>git fetch</code> or <code>git pull</code> will create them again unless you configure them not to.
+See <a href='/docs/git-fetch'>git-fetch[1]</a>.</p>
+</li>
+<li>
+<p>Delete the "test" branch even if the "master" branch (or whichever branch
+is currently checked out) does not have all commits from the test branch.</p>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-branch.txt-Listingbranchesfromaspecificremote"><a class="anchor" href="#Documentation/git-branch.txt-Listingbranchesfromaspecificremote"></a>Listing branches from a specific remote </dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>$ git branch -r -l '&lt;remote&gt;/&lt;pattern&gt;'                 <b class="conum">(1)</b>
+$ git for-each-ref 'refs/remotes/&lt;remote&gt;/&lt;pattern&gt;'    <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Using <code>-a</code> would conflate <em>&lt;remote&gt;</em> with any local branches you happen to
+have been prefixed with the same <em>&lt;remote&gt;</em> pattern.</p>
+</li>
+<li>
+<p><code>for-each-ref</code> can take a wide range of options. See <a href='/docs/git-for-each-ref'>git-for-each-ref[1]</a></p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Patterns will normally need quoting.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notes"><a class="anchor" href="#_notes"></a>NOTES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are creating a branch that you want to switch to immediately,
+it is easier to use the <code>git switch</code> command with its <code>-c</code> option to
+do the same thing with a single command.</p>
+</div>
+<div class="paragraph">
+<p>The options <code>--contains</code>, <code>--no-contains</code>, <code>--merged</code> and <code>--no-merged</code>
+serve four related but different purposes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--contains &lt;commit&gt;</code> is used to find all branches which will need
+special attention if <em>&lt;commit&gt;</em> were to be rebased or amended, since those
+branches contain the specified <em>&lt;commit&gt;</em>.</p>
+</li>
+<li>
+<p><code>--no-contains &lt;commit&gt;</code> is the inverse of that, i.e. branches that don&#8217;t
+contain the specified <em>&lt;commit&gt;</em>.</p>
+</li>
+<li>
+<p><code>--merged</code> is used to find all branches which can be safely deleted,
+since those branches are fully contained by <code>HEAD</code>.</p>
+</li>
+<li>
+<p><code>--no-merged</code> is used to find branches which are candidates for merging
+into <code>HEAD</code>, since those branches are not fully contained by <code>HEAD</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When combining multiple <code>--contains</code> and <code>--no-contains</code> filters, only
+references that contain at least one of the <code>--contains</code> commits and
+contain none of the <code>--no-contains</code> commits are shown.</p>
+</div>
+<div class="paragraph">
+<p>When combining multiple <code>--merged</code> and <code>--no-merged</code> filters, only
+references that are reachable from at least one of the <code>--merged</code>
+commits and from none of the <code>--no-merged</code> commits are shown.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href='/docs/git-check-ref-format'>git-check-ref-format[1]</a>,
+<a href='/docs/git-fetch'>git-fetch[1]</a>,
+<a href='/docs/git-remote'>git-remote[1]</a>,
+<a href="/docs/user-manual#what-is-a-branch">"Understanding history: What is
+a branch?"</a> in the Git User&#8217;s Manual.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">branch</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+

@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-daemon Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-daemon</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-daemon"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-daemon/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-daemon/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-daemon/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-daemon last updated in 2.50.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-daemon</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.50.0"><span class="version">2.50.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-06-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.44.1 &rarr; 2.49.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.44.0"><span class="version">2.44.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-23</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.1 &rarr; 2.43.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.37.3 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.37.2"><span class="version">2.37.2</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-08-11</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.22.1 &rarr; 2.37.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.22.0"><span class="version">2.22.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-06-07</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.17.1 &rarr; 2.21.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.17.0"><span class="version">2.17.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-04-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.10.5 &rarr; 2.16.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.9.5"><span class="version">2.9.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.2.3 &rarr; 2.8.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.1.4"><span class="version">2.1.4</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-daemon/2.0.5"><span class="version">2.0.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-daemon - A really simple server for Git repositories</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git daemon [--verbose] [--syslog] [--export-all]
+	   [--timeout=&lt;n&gt;] [--init-timeout=&lt;n&gt;] [--max-connections=&lt;n&gt;]
+	   [--strict-paths] [--base-path=&lt;path&gt;] [--base-path-relaxed]
+	   [--user-path | --user-path=&lt;path&gt;]
+	   [--interpolated-path=&lt;pathtemplate&gt;]
+	   [--reuseaddr] [--detach] [--pid-file=&lt;file&gt;]
+	   [--enable=&lt;service&gt;] [--disable=&lt;service&gt;]
+	   [--allow-override=&lt;service&gt;] [--forbid-override=&lt;service&gt;]
+	   [--access-hook=&lt;path&gt;] [--[no-]informative-errors]
+	   [--inetd |
+	     [--listen=&lt;host-or-ipaddr&gt;] [--port=&lt;n&gt;]
+	     [--user=&lt;user&gt; [--group=&lt;group&gt;]]]
+	   [--log-destination=(stderr|syslog|none)]
+	   [&lt;directory&gt;&#8230;&#8203;]</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A really simple TCP Git daemon that normally listens on port "DEFAULT_GIT_PORT"
+aka 9418.  It waits for a connection asking for a service, and will serve
+that service if it is enabled.</p>
+</div>
+<div class="paragraph">
+<p>It verifies that the directory has the magic file "git-daemon-export-ok", and
+it will refuse to export any Git directory that hasn&#8217;t explicitly been marked
+for export this way (unless the <code>--export-all</code> parameter is specified). If you
+pass some directory paths as <code>git daemon</code> arguments, the offers are limited to
+repositories within those directories.</p>
+</div>
+<div class="paragraph">
+<p>By default, only <code>upload-pack</code> service is enabled, which serves
+<code>git fetch-pack</code> and <code>git ls-remote</code> clients, which are invoked
+from <code>git fetch</code>, <code>git pull</code>, and <code>git clone</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is ideally suited for read-only updates, i.e., pulling from
+Git repositories.</p>
+</div>
+<div class="paragraph">
+<p>An <code>upload-archive</code> also exists to serve <code>git archive</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--strict-pathscode"><a id="Documentation/git-daemon.txt---strict-paths" class="anchor" href="#Documentation/git-daemon.txt---strict-paths"></a><code>--strict-paths</code> </dt>
+<dd>
+<p>Match paths exactly (i.e. don&#8217;t allow "/foo/repo" when the real path is
+"/foo/repo.git" or "/foo/repo/.git") and don&#8217;t do user-relative paths.
+<code>git daemon</code> will refuse to start when this option is enabled and no
+directory arguments are provided.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--base-pathltpathgtcode"><a id="Documentation/git-daemon.txt---base-pathpath" class="anchor" href="#Documentation/git-daemon.txt---base-pathpath"></a><code>--base-path=&lt;path&gt;</code> </dt>
+<dd>
+<p>Remap all the path requests as relative to the given path.
+This is sort of "Git root" - if you run <code>git daemon</code> with
+<code>--base-path=/srv/git</code> on <code>example.com</code>, then if you later try
+to pull from <code>git://example.com/hello.git</code>, <code>git daemon</code> will
+interpret the path as <code>/srv/git/hello.git</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--base-path-relaxedcode"><a id="Documentation/git-daemon.txt---base-path-relaxed" class="anchor" href="#Documentation/git-daemon.txt---base-path-relaxed"></a><code>--base-path-relaxed</code> </dt>
+<dd>
+<p>If <code>--base-path</code> is enabled and repo lookup fails, with this option
+<code>git daemon</code> will attempt to lookup without prefixing the base path.
+This is useful for switching to <code>--base-path</code> usage, while still
+allowing the old paths.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--interpolated-pathltpathtemplategtcode"><a id="Documentation/git-daemon.txt---interpolated-pathpathtemplate" class="anchor" href="#Documentation/git-daemon.txt---interpolated-pathpathtemplate"></a><code>--interpolated-path=&lt;pathtemplate&gt;</code> </dt>
+<dd>
+<p>To support virtual hosting, an interpolated path template can be
+used to dynamically construct alternate paths.  The template
+supports <code>%H</code> for the target hostname as supplied by the client but
+converted to all lowercase, <code>%CH</code> for the canonical hostname,
+<code>%IP</code> for the server&#8217;s IP address, <code>%P</code> for the port number,
+and <code>%D</code> for the absolute path of the named repository.
+After interpolation, the path is validated against the directory
+list.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--export-allcode"><a id="Documentation/git-daemon.txt---export-all" class="anchor" href="#Documentation/git-daemon.txt---export-all"></a><code>--export-all</code> </dt>
+<dd>
+<p>Allow pulling from all directories that look like Git repositories
+(have the <em>objects</em> and <em>refs</em> subdirectories), even if they
+do not have the <code>git-daemon-export-ok</code> file.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--inetdcode"><a id="Documentation/git-daemon.txt---inetd" class="anchor" href="#Documentation/git-daemon.txt---inetd"></a><code>--inetd</code> </dt>
+<dd>
+<p>Have the server run as an inetd service. Implies <code>--syslog</code> (may
+be overridden with <code>--log-destination=</code>).
+Incompatible with <code>--detach</code>, <code>--port</code>, <code>--listen</code>, <code>--user</code> and
+<code>--group</code> options.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--listenlthost-or-ipaddrgtcode"><a id="Documentation/git-daemon.txt---listenhost-or-ipaddr" class="anchor" href="#Documentation/git-daemon.txt---listenhost-or-ipaddr"></a><code>--listen=&lt;host-or-ipaddr&gt;</code> </dt>
+<dd>
+<p>Listen on a specific IP address or hostname.  IP addresses can
+be either an IPv4 address or an IPv6 address if supported.  If IPv6
+is not supported, then <code>--listen=&lt;hostname&gt;</code> is also not supported
+and <code>--listen</code> must be given an IPv4 address.
+Can be given more than once.
+Incompatible with <code>--inetd</code> option.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--portltngtcode"><a id="Documentation/git-daemon.txt---portn" class="anchor" href="#Documentation/git-daemon.txt---portn"></a><code>--port=&lt;n&gt;</code> </dt>
+<dd>
+<p>Listen on an alternative port.  Incompatible with <code>--inetd</code> option.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--init-timeoutltngtcode"><a id="Documentation/git-daemon.txt---init-timeoutn" class="anchor" href="#Documentation/git-daemon.txt---init-timeoutn"></a><code>--init-timeout=&lt;n&gt;</code> </dt>
+<dd>
+<p>Timeout (in seconds) between the moment the connection is established
+and the client request is received (typically a rather low value, since
+that should be basically immediate).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--timeoutltngtcode"><a id="Documentation/git-daemon.txt---timeoutn" class="anchor" href="#Documentation/git-daemon.txt---timeoutn"></a><code>--timeout=&lt;n&gt;</code> </dt>
+<dd>
+<p>Timeout (in seconds) for specific client sub-requests. This includes
+the time it takes for the server to process the sub-request and the
+time spent waiting for the next client&#8217;s request.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--max-connectionsltngtcode"><a id="Documentation/git-daemon.txt---max-connectionsn" class="anchor" href="#Documentation/git-daemon.txt---max-connectionsn"></a><code>--max-connections=&lt;n&gt;</code> </dt>
+<dd>
+<p>Maximum number of concurrent clients, defaults to 32.  Set it to
+zero for no limit.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--syslogcode"><a id="Documentation/git-daemon.txt---syslog" class="anchor" href="#Documentation/git-daemon.txt---syslog"></a><code>--syslog</code> </dt>
+<dd>
+<p>Short for <code>--log-destination=syslog</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--log-destinationltdestinationgtcode"><a id="Documentation/git-daemon.txt---log-destinationdestination" class="anchor" href="#Documentation/git-daemon.txt---log-destinationdestination"></a><code>--log-destination=&lt;destination&gt;</code> </dt>
+<dd>
+<p>Send log messages to the specified destination.
+Note that this option does not imply <code>--verbose</code>,
+thus by default only error conditions will be logged.
+The <em>&lt;destination&gt;</em> must be one of:</p>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-codestderrcode"><a id="Documentation/git-daemon.txt-stderr" class="anchor" href="#Documentation/git-daemon.txt-stderr"></a><code>stderr</code> </dt>
+<dd>
+<p>Write to standard error.
+Note that if <code>--detach</code> is specified,
+the process disconnects from the real standard error,
+making this destination effectively equivalent to <code>none</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-codesyslogcode"><a id="Documentation/git-daemon.txt-syslog" class="anchor" href="#Documentation/git-daemon.txt-syslog"></a><code>syslog</code> </dt>
+<dd>
+<p>Write to syslog, using the <code>git-daemon</code> identifier.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-codenonecode"><a id="Documentation/git-daemon.txt-none" class="anchor" href="#Documentation/git-daemon.txt-none"></a><code>none</code> </dt>
+<dd>
+<p>Disable all logging.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The default destination is <code>syslog</code> if <code>--inetd</code> or <code>--detach</code> is specified,
+otherwise <code>stderr</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--user-pathcode"><a id="Documentation/git-daemon.txt---user-path" class="anchor" href="#Documentation/git-daemon.txt---user-path"></a><code>--user-path</code> </dt>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--user-pathltpathgtcode"><a id="Documentation/git-daemon.txt---user-pathpath" class="anchor" href="#Documentation/git-daemon.txt---user-pathpath"></a><code>--user-path=&lt;path&gt;</code> </dt>
+<dd>
+<p>Allow ~user notation to be used in requests.  When
+specified with no parameter, a request to
+git://host/~alice/foo is taken as a request to access
+<em>foo</em> repository in the home directory of user <code>alice</code>.
+If <code>--user-path=&lt;path&gt;</code> is specified, the same request is
+taken as a request to access <code>&lt;path&gt;/foo</code> repository in
+the home directory of user <code>alice</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--verbosecode"><a id="Documentation/git-daemon.txt---verbose" class="anchor" href="#Documentation/git-daemon.txt---verbose"></a><code>--verbose</code> </dt>
+<dd>
+<p>Log details about the incoming connections and requested files.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--reuseaddrcode"><a id="Documentation/git-daemon.txt---reuseaddr" class="anchor" href="#Documentation/git-daemon.txt---reuseaddr"></a><code>--reuseaddr</code> </dt>
+<dd>
+<p>Use <code>SO_REUSEADDR</code> when binding the listening socket.
+This allows the server to restart without waiting for
+old connections to time out.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--detachcode"><a id="Documentation/git-daemon.txt---detach" class="anchor" href="#Documentation/git-daemon.txt---detach"></a><code>--detach</code> </dt>
+<dd>
+<p>Detach from the shell. Implies <code>--syslog</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--pid-fileltfilegtcode"><a id="Documentation/git-daemon.txt---pid-filefile" class="anchor" href="#Documentation/git-daemon.txt---pid-filefile"></a><code>--pid-file=&lt;file&gt;</code> </dt>
+<dd>
+<p>Save the process id in <em>&lt;file&gt;</em>.  Ignored when the daemon
+is run under <code>--inetd</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--userltusergtcode"><a id="Documentation/git-daemon.txt---useruser" class="anchor" href="#Documentation/git-daemon.txt---useruser"></a><code>--user=&lt;user&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--groupltgroupgtcode"><a id="Documentation/git-daemon.txt---groupgroup" class="anchor" href="#Documentation/git-daemon.txt---groupgroup"></a><code>--group=&lt;group&gt;</code> </dt>
+<dd>
+<p>Change daemon&#8217;s uid and gid before entering the service loop.
+When only <code>--user</code> is given without <code>--group</code>, the
+primary group ID for the user is used.  The values of
+the option are given to <code>getpwnam(3)</code> and <code>getgrnam(3)</code>
+and numeric IDs are not supported.</p>
+<div class="paragraph">
+<p>Giving these options is an error when used with <code>--inetd</code>; use
+the facility of inet daemon to achieve the same before spawning
+<code>git daemon</code> if needed.</p>
+</div>
+<div class="paragraph">
+<p>Like many programs that switch user id, the daemon does not reset
+environment variables such as <code>HOME</code> when it runs git programs,
+e.g. <code>upload-pack</code> and <code>receive-pack</code>. When using this option, you
+may also want to set and export <code>HOME</code> to point at the home
+directory of <em>&lt;user&gt;</em> before starting the daemon, and make sure any
+Git configuration files in that directory are readable by <em>&lt;user&gt;</em>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--enableltservicegtcode"><a id="Documentation/git-daemon.txt---enableservice" class="anchor" href="#Documentation/git-daemon.txt---enableservice"></a><code>--enable=&lt;service&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--disableltservicegtcode"><a id="Documentation/git-daemon.txt---disableservice" class="anchor" href="#Documentation/git-daemon.txt---disableservice"></a><code>--disable=&lt;service&gt;</code> </dt>
+<dd>
+<p>Enable/disable the service site-wide per default.  Note
+that a service disabled site-wide can still be enabled
+per repository if it is marked overridable and the
+repository enables the service with a configuration
+item.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--allow-overrideltservicegtcode"><a id="Documentation/git-daemon.txt---allow-overrideservice" class="anchor" href="#Documentation/git-daemon.txt---allow-overrideservice"></a><code>--allow-override=&lt;service&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--forbid-overrideltservicegtcode"><a id="Documentation/git-daemon.txt---forbid-overrideservice" class="anchor" href="#Documentation/git-daemon.txt---forbid-overrideservice"></a><code>--forbid-override=&lt;service&gt;</code> </dt>
+<dd>
+<p>Allow/forbid overriding the site-wide default with per
+repository configuration.  By default, all the services
+may be overridden.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--informative-errorscode"><a id="Documentation/git-daemon.txt---informative-errors" class="anchor" href="#Documentation/git-daemon.txt---informative-errors"></a><code>--informative-errors</code> </dt>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--no-informative-errorscode"><a id="Documentation/git-daemon.txt---no-informative-errors" class="anchor" href="#Documentation/git-daemon.txt---no-informative-errors"></a><code>--no-informative-errors</code> </dt>
+<dd>
+<p>When informative errors are turned on, git-daemon will report
+more verbose errors to the client, differentiating conditions
+like "no such repository" from "repository not exported". This
+is more convenient for clients, but may leak information about
+the existence of unexported repositories.  When informative
+errors are not enabled, all errors report "access denied" to the
+client. The default is <code>--no-informative-errors</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-code--access-hookltpathgtcode"><a id="Documentation/git-daemon.txt---access-hookpath" class="anchor" href="#Documentation/git-daemon.txt---access-hookpath"></a><code>--access-hook=&lt;path&gt;</code> </dt>
+<dd>
+<p>Every time a client connects, first run an external command
+specified by the &lt;path&gt; with service name (e.g. "upload-pack"),
+path to the repository, hostname (<code>%H</code>), canonical hostname
+(<code>%CH</code>), IP address (<code>%IP</code>), and TCP port (<code>%P</code>) as its command-line
+arguments. The external command can decide to decline the
+service by exiting with a non-zero status (or to allow it by
+exiting with a zero status).  It can also look at the $REMOTE_ADDR
+and <code>$REMOTE_PORT</code> environment variables to learn about the
+requestor when making this decision.</p>
+<div class="paragraph">
+<p>The external command can optionally write a single line to its
+standard output to be sent to the requestor as an error message when
+it declines the service.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-emltdirectorygtem"><a id="Documentation/git-daemon.txt-directory" class="anchor" href="#Documentation/git-daemon.txt-directory"></a><em>&lt;directory&gt;</em> </dt>
+<dd>
+<p>The remaining arguments provide a list of directories. If any
+directories are specified, then the <code>git-daemon</code> process will
+serve a requested directory only if it is contained in one of
+these directories. If <code>--strict-paths</code> is specified, then the
+requested directory must match one of these directories exactly.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_services"><a class="anchor" href="#_services"></a>SERVICES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These services can be globally enabled/disabled using the
+command-line options of this command.  If finer-grained
+control is desired (e.g. to allow <code>git archive</code> to be run
+against only in a few selected repositories the daemon serves),
+the per-repository configuration file can be used to enable or
+disable them.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-upload-pack"><a class="anchor" href="#Documentation/git-daemon.txt-upload-pack"></a>upload-pack </dt>
+<dd>
+<p>This serves <code>git fetch-pack</code> and <code>git ls-remote</code>
+clients.  It is enabled by default, but a repository can
+disable it by setting <code>daemon.uploadpack</code> configuration
+item to <code>false</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-upload-archive"><a class="anchor" href="#Documentation/git-daemon.txt-upload-archive"></a>upload-archive </dt>
+<dd>
+<p>This serves <code>git archive --remote</code>.  It is disabled by
+default, but a repository can enable it by setting
+<code>daemon.uploadarch</code> configuration item to <code>true</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-receive-pack"><a class="anchor" href="#Documentation/git-daemon.txt-receive-pack"></a>receive-pack </dt>
+<dd>
+<p>This serves <code>git send-pack</code> clients, allowing anonymous
+push.  It is disabled by default, as there is <em>no</em>
+authentication in the protocol (in other words, anybody
+can push anything into the repository, including removal
+of refs).  This is solely meant for a closed LAN setting
+where everybody is friendly.  This service can be
+enabled by setting <code>daemon.receivepack</code> configuration item to
+<code>true</code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-Weassumethefollowinginetcservices"><a class="anchor" href="#Documentation/git-daemon.txt-Weassumethefollowinginetcservices"></a>We assume the following in /etc/services </dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>$ grep 9418 /etc/services
+git		9418/tcp		# Git Version Control System</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-emgitdaemonemasinetdserver"><a id="Documentation/git-daemon.txt-gitdaemonasinetdserver" class="anchor" href="#Documentation/git-daemon.txt-gitdaemonasinetdserver"></a><em>git daemon</em> as inetd server </dt>
+<dd>
+<p>To set up <em>git daemon</em> as an inetd service that handles any
+repository within <code>/pub/foo</code> or <code>/pub/bar</code>, place an entry like
+the following into <code>/etc/inetd</code> all on one line:</p>
+<div class="listingblock">
+<div class="content">
+<pre>	git stream tcp nowait nobody  /usr/bin/git
+		git daemon --inetd --verbose --export-all
+		/pub/foo /pub/bar</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-emgitdaemonemasinetdserverforvirtualhosts"><a id="Documentation/git-daemon.txt-gitdaemonasinetdserverforvirtualhosts" class="anchor" href="#Documentation/git-daemon.txt-gitdaemonasinetdserverforvirtualhosts"></a><em>git daemon</em> as inetd server for virtual hosts </dt>
+<dd>
+<p>To set up <em>git daemon</em> as an inetd service that handles
+repositories for different virtual hosts, <code>www.example.com</code>
+and <code>www.example.org</code>, place an entry like the following into
+<code>/etc/inetd</code> all on one line:</p>
+<div class="listingblock">
+<div class="content">
+<pre>	git stream tcp nowait nobody /usr/bin/git
+		git daemon --inetd --verbose --export-all
+		--interpolated-path=/pub/%H%D
+		/pub/www.example.org/software
+		/pub/www.example.com/software
+		/software</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the root-level directory <code>/pub</code> will contain
+a subdirectory for each virtual host name supported.
+Further, both hosts advertise repositories simply as
+<code>git://www.example.com/software/repo.git</code>.  For pre-1.4.0
+clients, a symlink from <code>/software</code> into the appropriate
+default repository could be made as well.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-emgitdaemonemasregulardaemonforvirtualhosts"><a id="Documentation/git-daemon.txt-gitdaemonasregulardaemonforvirtualhosts" class="anchor" href="#Documentation/git-daemon.txt-gitdaemonasregulardaemonforvirtualhosts"></a><em>git daemon</em> as regular daemon for virtual hosts </dt>
+<dd>
+<p>To set up <code>git daemon</code> as a regular, non-inetd service that
+handles repositories for multiple virtual hosts based on
+their IP addresses, start the daemon like this:</p>
+<div class="listingblock">
+<div class="content">
+<pre>	git daemon --verbose --export-all
+		--interpolated-path=/pub/%IP/%D
+		/pub/192.168.1.200/software
+		/pub/10.10.220.23/software</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the root-level directory <code>/pub</code> will contain
+a subdirectory for each virtual host IP address supported.
+Repositories can still be accessed by hostname though, assuming
+they correspond to these IP addresses.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-daemon.txt-selectivelyenabledisableservicesperrepository"><a class="anchor" href="#Documentation/git-daemon.txt-selectivelyenabledisableservicesperrepository"></a>selectively enable/disable services per repository </dt>
+<dd>
+<p>To enable <code>git archive --remote</code> and disable <code>git fetch</code> against
+a repository, have the following in the configuration file in the
+repository (that is the file <em>config</em> next to <code>HEAD</code>, <em>refs</em> and
+<em>objects</em>).</p>
+<div class="listingblock">
+<div class="content">
+<pre>	[daemon]
+		uploadpack = false
+		uploadarch = true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_environment"><a class="anchor" href="#_environment"></a>ENVIRONMENT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>git daemon</code> will set <code>REMOTE_ADDR</code> to the IP address of the client
+that connected to it, if the IP address is available. <code>REMOTE_ADDR</code> will
+be available in the environment of hooks called when
+services are performed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">daemon</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+
