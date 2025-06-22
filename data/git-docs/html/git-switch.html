@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-switch Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-switch</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-switch"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-switch/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-switch/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-switch/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-switch last updated in 2.50.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-switch</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.50.0"><span class="version">2.50.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-06-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.44.1 &rarr; 2.49.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.44.0"><span class="version">2.44.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-23</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.2 &rarr; 2.43.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.43.1"><span class="version">2.43.1</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-09</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.35.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.35.0"><span class="version">2.35.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-01-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.30.1 &rarr; 2.34.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.30.0"><span class="version">2.30.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-12-27</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.27.1 &rarr; 2.29.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.27.0"><span class="version">2.27.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-06-01</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.23.1 &rarr; 2.26.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-switch/2.23.0"><span class="version">2.23.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-08-16</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-switch - Switch branches</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git switch [&lt;options&gt;] [--no-guess] &lt;branch&gt;
+git switch [&lt;options&gt;] --detach [&lt;start-point&gt;]
+git switch [&lt;options&gt;] (-c|-C) &lt;new-branch&gt; [&lt;start-point&gt;]
+git switch [&lt;options&gt;] --orphan &lt;new-branch&gt;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Switch to a specified branch. The working tree and the index are
+updated to match the branch. All new commits will be added to the tip
+of this branch.</p>
+</div>
+<div class="paragraph">
+<p>Optionally a new branch could be created with either <code>-c</code>, <code>-C</code>,
+automatically from a remote branch of same name (see <code>--guess</code>), or
+detach the working tree from any branch with <code>--detach</code>, along with
+switching.</p>
+</div>
+<div class="paragraph">
+<p>Switching branches does not require a clean index and working tree
+(i.e. no differences compared to <code>HEAD</code>). The operation is aborted
+however if the operation leads to loss of local changes, unless told
+otherwise with <code>--discard-changes</code> or <code>--merge</code>.</p>
+</div>
+<div class="paragraph">
+<p>THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-switch.txt-emltbranchgtem"><a id="Documentation/git-switch.txt-branch" class="anchor" href="#Documentation/git-switch.txt-branch"></a><em>&lt;branch&gt;</em> </dt>
+<dd>
+<p>Branch to switch to.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-emltnew-branchgtem"><a id="Documentation/git-switch.txt-new-branch" class="anchor" href="#Documentation/git-switch.txt-new-branch"></a><em>&lt;new-branch&gt;</em> </dt>
+<dd>
+<p>Name for the new branch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-emltstart-pointgtem"><a id="Documentation/git-switch.txt-start-point" class="anchor" href="#Documentation/git-switch.txt-start-point"></a><em>&lt;start-point&gt;</em> </dt>
+<dd>
+<p>The starting point for the new branch. Specifying a
+<em>&lt;start-point&gt;</em> allows you to create a branch based on some
+other point in history than where <code>HEAD</code> currently points. (Or,
+in the case of <code>--detach</code>, allows you to inspect and detach
+from some other point.)</p>
+<div class="paragraph">
+<p>You can use the <code>@{-&lt;N&gt;}</code> syntax to refer to the <em>&lt;N&gt;</em>-th last
+branch/commit switched to using <code>git switch</code> or <code>git checkout</code>
+operation. You may also specify <code>-</code> which is synonymous to <code>@{-1}</code>.
+This is often used to switch quickly between two branches, or to undo
+a branch switch by mistake.</p>
+</div>
+<div class="paragraph">
+<p>As a special case, you may use <code>&lt;rev-a&gt;...&lt;rev-b&gt;</code> as a shortcut for the merge
+base of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em> if there is exactly one merge base. You can leave
+out at most one of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em>, in which case it defaults to <code>HEAD</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-cltnew-branchgtcode"><a id="Documentation/git-switch.txt--cnew-branch" class="anchor" href="#Documentation/git-switch.txt--cnew-branch"></a><code>-c &lt;new-branch&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--createltnew-branchgtcode"><a id="Documentation/git-switch.txt---createnew-branch" class="anchor" href="#Documentation/git-switch.txt---createnew-branch"></a><code>--create &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Create a new branch named <em>&lt;new-branch&gt;</em> starting at
+<em>&lt;start-point&gt;</em> before switching to the branch. This is the
+transactional equivalent of</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git branch &lt;new-branch&gt;
+$ git switch &lt;new-branch&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>that is to say, the branch is not reset/created unless <code>git switch</code> is
+successful (e.g., when the branch is in use in another worktree, not
+just the current branch stays the same, but the branch is not reset to
+the start-point, either).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-Cltnew-branchgtcode"><a id="Documentation/git-switch.txt--Cnew-branch" class="anchor" href="#Documentation/git-switch.txt--Cnew-branch"></a><code>-C &lt;new-branch&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--force-createltnew-branchgtcode"><a id="Documentation/git-switch.txt---force-createnew-branch" class="anchor" href="#Documentation/git-switch.txt---force-createnew-branch"></a><code>--force-create &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Similar to <code>--create</code> except that if <em>&lt;new-branch&gt;</em> already
+exists, it will be reset to <em>&lt;start-point&gt;</em>. This is a
+convenient shortcut for:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git branch -f _&lt;new-branch&gt;_
+$ git switch _&lt;new-branch&gt;_</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-dcode"><a id="Documentation/git-switch.txt--d" class="anchor" href="#Documentation/git-switch.txt--d"></a><code>-d</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--detachcode"><a id="Documentation/git-switch.txt---detach" class="anchor" href="#Documentation/git-switch.txt---detach"></a><code>--detach</code> </dt>
+<dd>
+<p>Switch to a commit for inspection and discardable
+experiments. See the "DETACHED HEAD" section in
+<a href='/docs/git-checkout'>git-checkout[1]</a> for details.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--guesscode"><a id="Documentation/git-switch.txt---guess" class="anchor" href="#Documentation/git-switch.txt---guess"></a><code>--guess</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--no-guesscode"><a id="Documentation/git-switch.txt---no-guess" class="anchor" href="#Documentation/git-switch.txt---no-guess"></a><code>--no-guess</code> </dt>
+<dd>
+<p>If <em>&lt;branch&gt;</em> is not found but there does exist a tracking
+branch in exactly one remote (call it <em>&lt;remote&gt;</em>) with a
+matching name, treat as equivalent to</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch -c &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the branch exists in multiple remotes and one of them is named by
+the <code>checkout.defaultRemote</code> configuration variable, we&#8217;ll use that
+one for the purposes of disambiguation, even if the <em>&lt;branch&gt;</em> isn&#8217;t
+unique across all remotes. Set it to e.g. <code>checkout.defaultRemote=origin</code>
+to always checkout remote branches from there if <em>&lt;branch&gt;</em> is
+ambiguous but exists on the <em>origin</em> remote. See also
+<code>checkout.defaultRemote</code> in <a href='/docs/git-config'>git-config[1]</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>--guess</code> is the default behavior. Use <code>--no-guess</code> to disable it.</p>
+</div>
+<div class="paragraph">
+<p>The default behavior can be set via the <code>checkout.guess</code> configuration
+variable.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-fcode"><a id="Documentation/git-switch.txt--f" class="anchor" href="#Documentation/git-switch.txt--f"></a><code>-f</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--forcecode"><a id="Documentation/git-switch.txt---force" class="anchor" href="#Documentation/git-switch.txt---force"></a><code>--force</code> </dt>
+<dd>
+<p>An alias for <code>--discard-changes</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--discard-changescode"><a id="Documentation/git-switch.txt---discard-changes" class="anchor" href="#Documentation/git-switch.txt---discard-changes"></a><code>--discard-changes</code> </dt>
+<dd>
+<p>Proceed even if the index or the working tree differs from
+<code>HEAD</code>. Both the index and working tree are restored to match
+the switching target. If <code>--recurse-submodules</code> is specified,
+submodule content is also restored to match the switching
+target. This is used to throw away local changes.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-mcode"><a id="Documentation/git-switch.txt--m" class="anchor" href="#Documentation/git-switch.txt--m"></a><code>-m</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--mergecode"><a id="Documentation/git-switch.txt---merge" class="anchor" href="#Documentation/git-switch.txt---merge"></a><code>--merge</code> </dt>
+<dd>
+<p>If you have local modifications to one or more files that are
+different between the current branch and the branch to which
+you are switching, the command refuses to switch branches in
+order to preserve your modifications in context.  However,
+with this option, a three-way merge between the current
+branch, your working tree contents, and the new branch is
+done, and you will be on the new branch.</p>
+<div class="paragraph">
+<p>When a merge conflict happens, the index entries for conflicting
+paths are left unmerged, and you need to resolve the conflicts
+and mark the resolved paths with <code>git add</code> (or <code>git rm</code> if the merge
+should result in deletion of the path).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--conflictltstylegtcode"><a id="Documentation/git-switch.txt---conflictstyle" class="anchor" href="#Documentation/git-switch.txt---conflictstyle"></a><code>--conflict=&lt;style&gt;</code> </dt>
+<dd>
+<p>The same as <code>--merge</code> option above, but changes the way the
+conflicting hunks are presented, overriding the
+<code>merge.conflictStyle</code> configuration variable.  Possible values are
+<code>merge</code> (default), <code>diff3</code>, and <code>zdiff3</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-qcode"><a id="Documentation/git-switch.txt--q" class="anchor" href="#Documentation/git-switch.txt--q"></a><code>-q</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--quietcode"><a id="Documentation/git-switch.txt---quiet" class="anchor" href="#Documentation/git-switch.txt---quiet"></a><code>--quiet</code> </dt>
+<dd>
+<p>Quiet, suppress feedback messages.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--progresscode"><a id="Documentation/git-switch.txt---progress" class="anchor" href="#Documentation/git-switch.txt---progress"></a><code>--progress</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--no-progresscode"><a id="Documentation/git-switch.txt---no-progress" class="anchor" href="#Documentation/git-switch.txt---no-progress"></a><code>--no-progress</code> </dt>
+<dd>
+<p>Progress status is reported on the standard error stream
+by default when it is attached to a terminal, unless <code>--quiet</code>
+is specified. This flag enables progress reporting even if not
+attached to a terminal, regardless of <code>--quiet</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code-tcode"><a id="Documentation/git-switch.txt--t" class="anchor" href="#Documentation/git-switch.txt--t"></a><code>-t</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--trackdirectinheritcode"><a id="Documentation/git-switch.txt---trackdirectinherit" class="anchor" href="#Documentation/git-switch.txt---trackdirectinherit"></a><code>--track[ (direct|inherit)]</code> </dt>
+<dd>
+<p>When creating a new branch, set up "upstream" configuration.
+<code>-c</code> is implied. See <code>--track</code> in <a href='/docs/git-branch'>git-branch[1]</a> for
+details.</p>
+<div class="paragraph">
+<p>If no <code>-c</code> option is given, the name of the new branch will be derived
+from the remote-tracking branch, by looking at the local part of the
+refspec configured for the corresponding remote, and then stripping
+the initial part up to the "*".  This would tell us to use <code>hack</code> as
+the local branch when branching off of <code>origin/hack</code> (or
+<code>remotes/origin/hack</code>, or even <code>refs/remotes/origin/hack</code>).  If the
+given name has no slash, or the above guessing results in an empty
+name, the guessing is aborted.  You can explicitly give a name with
+<code>-c</code> in such a case.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--no-trackcode"><a id="Documentation/git-switch.txt---no-track" class="anchor" href="#Documentation/git-switch.txt---no-track"></a><code>--no-track</code> </dt>
+<dd>
+<p>Do not set up "upstream" configuration, even if the
+<code>branch.autoSetupMerge</code> configuration variable is true.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--orphanltnew-branchgtcode"><a id="Documentation/git-switch.txt---orphannew-branch" class="anchor" href="#Documentation/git-switch.txt---orphannew-branch"></a><code>--orphan &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Create a new unborn branch, named <em>&lt;new-branch&gt;</em>. All
+tracked files are removed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--ignore-other-worktreescode"><a id="Documentation/git-switch.txt---ignore-other-worktrees" class="anchor" href="#Documentation/git-switch.txt---ignore-other-worktrees"></a><code>--ignore-other-worktrees</code> </dt>
+<dd>
+<p><code>git switch</code> refuses when the wanted ref is already
+checked out by another worktree. This option makes it check
+the ref out anyway. In other words, the ref can be held by
+more than one worktree.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--recurse-submodulescode"><a id="Documentation/git-switch.txt---recurse-submodules" class="anchor" href="#Documentation/git-switch.txt---recurse-submodules"></a><code>--recurse-submodules</code> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-code--no-recurse-submodulescode"><a id="Documentation/git-switch.txt---no-recurse-submodules" class="anchor" href="#Documentation/git-switch.txt---no-recurse-submodules"></a><code>--no-recurse-submodules</code> </dt>
+<dd>
+<p>Using <code>--recurse-submodules</code> will update the content of all
+active submodules according to the commit recorded in the
+superproject. If nothing (or <code>--no-recurse-submodules</code>) is
+used, submodules working trees will not be updated. Just
+like <a href='/docs/git-submodule'>git-submodule[1]</a>, this will detach <code>HEAD</code> of the
+submodules.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following command switches to the "master" branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch master</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After working in the wrong branch, switching to the correct branch
+would be done using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch mytopic</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, your "wrong" branch and correct "mytopic" branch may differ
+in files that you have modified locally, in which case the above
+switch would fail like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch mytopic
+error: You have local changes to 'frotz'; not switching branches.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can give the <code>-m</code> flag to the command, which would try a three-way
+merge:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch -m mytopic
+Auto-merging frotz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After this three-way merge, the local modifications are <em>not</em>
+registered in your index file, so <code>git diff</code> would show you what
+changes you made since the tip of the new branch.</p>
+</div>
+<div class="paragraph">
+<p>To switch back to the previous branch before we switched to mytopic
+(i.e. "master" branch):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch -</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can grow a new branch from any commit. For example, switch to
+"<code>HEAD~3</code>" and create branch "<code>fixup</code>":</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch -c fixup HEAD~3
+Switched to a new branch 'fixup'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to start a new branch from a remote branch of the same
+name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch new-topic
+Branch `new-topic` set up to track remote branch `new-topic` from `origin`
+Switched to a new branch `new-topic`</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To check out commit <code>HEAD~3</code> for temporary inspection or experiment
+without creating a new branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch --detach HEAD~3
+HEAD is now at 9fc9555312 Merge branch 'cc/shared-index-permbits'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If it turns out whatever you have done is worth keeping, you can
+always create a new name for it (without switching away):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git switch -c good-surprises</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everything below this line in this section is selectively included
+from the <a href='/docs/git-config'>git-config[1]</a> documentation. The content is the same
+as what&#8217;s found there:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-switch.txt-codecheckoutdefaultRemotecode"><a id="Documentation/git-switch.txt-checkoutdefaultRemote" class="anchor" href="#Documentation/git-switch.txt-checkoutdefaultRemote"></a><code>checkout.defaultRemote</code> </dt>
+<dd>
+<p>When you run <code>git checkout &lt;something&gt;</code>
+or <code>git switch &lt;something&gt;</code> and only have one
+remote, it may implicitly fall back on checking out and
+tracking e.g. <code>origin/&lt;something&gt;</code>. This stops working as soon
+as you have more than one remote with a <em>&lt;something&gt;</em>
+reference. This setting allows for setting the name of a
+preferred remote that should always win when it comes to
+disambiguation. The typical use-case is to set this to
+<code>origin</code>.</p>
+<div class="paragraph">
+<p>Currently this is used by <a href='/docs/git-switch'>git-switch[1]</a> and
+<a href='/docs/git-checkout'>git-checkout[1]</a> when <code>git checkout &lt;something&gt;</code>
+or <code>git switch &lt;something&gt;</code>
+will checkout the <em>&lt;something&gt;</em> branch on another remote,
+and by <a href='/docs/git-worktree'>git-worktree[1]</a> when <code>git worktree add</code> refers to a
+remote branch. This setting might be used for other checkout-like
+commands or functionality in the future.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-codecheckoutguesscode"><a id="Documentation/git-switch.txt-checkoutguess" class="anchor" href="#Documentation/git-switch.txt-checkoutguess"></a><code>checkout.guess</code> </dt>
+<dd>
+<p>Provides the default value for the <code>--guess</code> or <code>--no-guess</code>
+option in <code>git checkout</code> and <code>git switch</code>. See
+<a href='/docs/git-switch'>git-switch[1]</a> and <a href='/docs/git-checkout'>git-checkout[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-codecheckoutworkerscode"><a id="Documentation/git-switch.txt-checkoutworkers" class="anchor" href="#Documentation/git-switch.txt-checkoutworkers"></a><code>checkout.workers</code> </dt>
+<dd>
+<p>The number of parallel workers to use when updating the working tree.
+The default is one, i.e. sequential execution. If set to a value less
+than one, Git will use as many workers as the number of logical cores
+available. This setting and <code>checkout.thresholdForParallelism</code> affect
+all commands that perform checkout. E.g. checkout, clone, reset,
+sparse-checkout, etc.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Parallel checkout usually delivers better performance for repositories
+located on SSDs or over NFS. For repositories on spinning disks and/or machines
+with a small number of cores, the default sequential checkout often performs
+better. The size and compression level of a repository might also influence how
+well the parallel version performs.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-switch.txt-codecheckoutthresholdForParallelismcode"><a id="Documentation/git-switch.txt-checkoutthresholdForParallelism" class="anchor" href="#Documentation/git-switch.txt-checkoutthresholdForParallelism"></a><code>checkout.thresholdForParallelism</code> </dt>
+<dd>
+<p>When running parallel checkout with a small number of files, the cost
+of subprocess spawning and inter-process communication might outweigh
+the parallelization gains. This setting allows you to define the minimum
+number of files for which parallel checkout should be attempted. The
+default is 100.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href='/docs/git-checkout'>git-checkout[1]</a>,
+<a href='/docs/git-branch'>git-branch[1]</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">switch</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+

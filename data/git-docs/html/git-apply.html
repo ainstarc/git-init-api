@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-apply Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-apply</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-apply"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-apply/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-apply/ja"><span class="version">日本語</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-apply/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-apply/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-apply last updated in 2.47.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-apply</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li class="no-change"><span>2.47.1 &rarr; 2.50.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.47.0"><span class="version">2.47.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-10-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.1 &rarr; 2.46.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.40.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.40.0"><span class="version">2.40.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-03-12</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.39.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.35.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.35.0"><span class="version">2.35.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-01-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.32.1 &rarr; 2.34.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.32.0"><span class="version">2.32.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-06-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.29.1 &rarr; 2.31.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.29.0"><span class="version">2.29.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-10-19</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.1 &rarr; 2.28.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.19.0"><span class="version">2.19.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-09-10</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.18.1 &rarr; 2.18.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.18.0"><span class="version">2.18.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-06-21</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.16.6 &rarr; 2.17.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.15.4"><span class="version">2.15.4</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.14.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.13.7"><span class="version">2.13.7</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-05-22</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.9.5 &rarr; 2.12.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.8.6"><span class="version">2.8.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.5.6 &rarr; 2.7.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.4.12"><span class="version">2.4.12</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-05-05</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.3.10"><span class="version">2.3.10</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2015-09-28</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.1.4 &rarr; 2.2.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.0.5"><span class="version">2.0.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-apply - Apply a patch to files and/or to the index</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="verseblock">
+<pre class="content"><em>git apply</em> [--stat] [--numstat] [--summary] [--check]
+	  [--index | --intent-to-add] [--3way] [--ours | --theirs | --union]
+	  [--apply] [--no-add] [--build-fake-ancestor=&lt;file&gt;] [-R | --reverse]
+	  [--allow-binary-replacement | --binary] [--reject] [-z]
+	  [-p&lt;n&gt;] [-C&lt;n&gt;] [--inaccurate-eof] [--recount] [--cached]
+	  [--ignore-space-change | --ignore-whitespace]
+	  [--whitespace=(nowarn|warn|fix|error|error-all)]
+	  [--exclude=&lt;path&gt;] [--include=&lt;path&gt;] [--directory=&lt;root&gt;]
+	  [--verbose | --quiet] [--unsafe-paths] [--allow-empty] [&lt;patch&gt;&#8230;&#8203;]</pre>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reads the supplied diff output (i.e. "a patch") and applies it to files.
+When running from a subdirectory in a repository, patched paths
+outside the directory are ignored.
+With the <code>--index</code> option, the patch is also applied to the index, and
+with the <code>--cached</code> option, the patch is only applied to the index.
+Without these options, the command applies the patch only to files,
+and does not require them to be in a Git repository.</p>
+</div>
+<div class="paragraph">
+<p>This command applies the patch but does not create a commit.  Use
+<a href='/docs/git-am'>git-am[1]</a> to create commits from patches generated by
+<a href='/docs/git-format-patch'>git-format-patch[1]</a> and/or received by email.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-apply.txt-ltpatchgt82308203"> <a class="anchor" href="#Documentation/git-apply.txt-patch"></a> <a class="anchor" href="#Documentation/git-apply.txt-ltpatchgt82308203"></a>&lt;patch&gt;&#8230;&#8203; </dt>
+<dd>
+<p>The files to read the patch from.  <em>-</em> can be used to read
+from the standard input.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---stat"> <a class="anchor" href="#Documentation/git-apply.txt---stat"></a>--stat </dt>
+<dd>
+<p>Instead of applying the patch, output diffstat for the
+input.  Turns off "apply".</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---numstat"> <a class="anchor" href="#Documentation/git-apply.txt---numstat"></a>--numstat </dt>
+<dd>
+<p>Similar to <code>--stat</code>, but shows the number of added and
+deleted lines in decimal notation and the pathname without
+abbreviation, to make it more machine friendly.  For
+binary files, outputs two <code>-</code> instead of saying
+<code>0 0</code>.  Turns off "apply".</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---summary"> <a class="anchor" href="#Documentation/git-apply.txt---summary"></a>--summary </dt>
+<dd>
+<p>Instead of applying the patch, output a condensed
+summary of information obtained from git diff extended
+headers, such as creations, renames, and mode changes.
+Turns off "apply".</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---check"> <a class="anchor" href="#Documentation/git-apply.txt---check"></a>--check </dt>
+<dd>
+<p>Instead of applying the patch, see if the patch is
+applicable to the current working tree and/or the index
+file and detects errors.  Turns off "apply".</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---index"> <a class="anchor" href="#Documentation/git-apply.txt---index"></a>--index </dt>
+<dd>
+<p>Apply the patch to both the index and the working tree (or
+merely check that it would apply cleanly to both if <code>--check</code> is
+in effect). Note that <code>--index</code> expects index entries and
+working tree copies for relevant paths to be identical (their
+contents and metadata such as file mode must match), and will
+raise an error if they are not, even if the patch would apply
+cleanly to both the index and the working tree in isolation.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---cached"> <a class="anchor" href="#Documentation/git-apply.txt---cached"></a>--cached </dt>
+<dd>
+<p>Apply the patch to just the index, without touching the working
+tree. If <code>--check</code> is in effect, merely check that it would
+apply cleanly to the index entry.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---intent-to-add"> <a class="anchor" href="#Documentation/git-apply.txt---intent-to-add"></a>--intent-to-add </dt>
+<dd>
+<p>When applying the patch only to the working tree, mark new
+files to be added to the index later (see <code>--intent-to-add</code>
+option in <a href='/docs/git-add'>git-add[1]</a>). This option is ignored unless
+running in a Git repository and <code>--index</code> is not specified.
+Note that <code>--index</code> could be implied by other options such
+as <code>--cached</code> or <code>--3way</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--3"> <a class="anchor" href="#Documentation/git-apply.txt--3"></a>-3 </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---3way"> <a class="anchor" href="#Documentation/git-apply.txt---3way"></a>--3way </dt>
+<dd>
+<p>Attempt 3-way merge if the patch records the identity of blobs it is supposed
+to apply to and we have those blobs available locally, possibly leaving the
+conflict markers in the files in the working tree for the user to
+resolve.  This option implies the <code>--index</code> option unless the
+<code>--cached</code> option is used, and is incompatible with the <code>--reject</code> option.
+When used with the <code>--cached</code> option, any conflicts are left at higher stages
+in the cache.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---ours"> <a class="anchor" href="#Documentation/git-apply.txt---ours"></a>--ours </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---theirs"> <a class="anchor" href="#Documentation/git-apply.txt---theirs"></a>--theirs </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---union"> <a class="anchor" href="#Documentation/git-apply.txt---union"></a>--union </dt>
+<dd>
+<p>Instead of leaving conflicts in the file, resolve conflicts favouring
+our (or their or both) side of the lines. Requires --3way.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---build-fake-ancestorltfilegt"> <a class="anchor" href="#Documentation/git-apply.txt---build-fake-ancestorfile"></a> <a class="anchor" href="#Documentation/git-apply.txt---build-fake-ancestorltfilegt"></a>--build-fake-ancestor=&lt;file&gt; </dt>
+<dd>
+<p>Newer <em>git diff</em> output has embedded <em>index information</em>
+for each blob to help identify the original version that
+the patch applies to.  When this flag is given, and if
+the original versions of the blobs are available locally,
+builds a temporary index containing those blobs.</p>
+<div class="paragraph">
+<p>When a pure mode change is encountered (which has no index information),
+the information is read from the current index instead.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--R"> <a class="anchor" href="#Documentation/git-apply.txt--R"></a>-R </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---reverse"> <a class="anchor" href="#Documentation/git-apply.txt---reverse"></a>--reverse </dt>
+<dd>
+<p>Apply the patch in reverse.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---reject"> <a class="anchor" href="#Documentation/git-apply.txt---reject"></a>--reject </dt>
+<dd>
+<p>For atomicity, <em>git apply</em> by default fails the whole patch and
+does not touch the working tree when some of the hunks
+do not apply.  This option makes it apply
+the parts of the patch that are applicable, and leave the
+rejected hunks in corresponding *.rej files.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--z"> <a class="anchor" href="#Documentation/git-apply.txt--z"></a>-z </dt>
+<dd>
+<p>When <code>--numstat</code> has been given, do not munge pathnames,
+but use a NUL-terminated machine-readable format.</p>
+<div class="paragraph">
+<p>Without this option, pathnames with "unusual" characters are quoted as
+explained for the configuration variable <code>core.quotePath</code> (see
+<a href='/docs/git-config'>git-config[1]</a>).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--pltngt"> <a class="anchor" href="#Documentation/git-apply.txt--pn"></a> <a class="anchor" href="#Documentation/git-apply.txt--pltngt"></a>-p&lt;n&gt; </dt>
+<dd>
+<p>Remove &lt;n&gt; leading path components (separated by slashes) from
+traditional diff paths. E.g., with <code>-p2</code>, a patch against
+<code>a/dir/file</code> will be applied directly to <code>file</code>. The default is
+1.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--Cltngt"> <a class="anchor" href="#Documentation/git-apply.txt--Cn"></a> <a class="anchor" href="#Documentation/git-apply.txt--Cltngt"></a>-C&lt;n&gt; </dt>
+<dd>
+<p>Ensure at least &lt;n&gt; lines of surrounding context match before
+and after each change.  When fewer lines of surrounding
+context exist they all must match.  By default no context is
+ever ignored.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---unidiff-zero"> <a class="anchor" href="#Documentation/git-apply.txt---unidiff-zero"></a>--unidiff-zero </dt>
+<dd>
+<p>By default, <em>git apply</em> expects that the patch being
+applied is a unified diff with at least one line of context.
+This provides good safety measures, but breaks down when
+applying a diff generated with <code>--unified=0</code>. To bypass these
+checks use <code>--unidiff-zero</code>.</p>
+<div class="paragraph">
+<p>Note, for the reasons stated above, the usage of context-free patches is
+discouraged.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---apply"> <a class="anchor" href="#Documentation/git-apply.txt---apply"></a>--apply </dt>
+<dd>
+<p>If you use any of the options marked "Turns off
+<em>apply</em>" above, <em>git apply</em> reads and outputs the
+requested information without actually applying the
+patch.  Give this flag after those flags to also apply
+the patch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---no-add"> <a class="anchor" href="#Documentation/git-apply.txt---no-add"></a>--no-add </dt>
+<dd>
+<p>When applying a patch, ignore additions made by the
+patch.  This can be used to extract the common part between
+two files by first running <em>diff</em> on them and applying
+the result with this option, which would apply the
+deletion part but not the addition part.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---allow-binary-replacement"> <a class="anchor" href="#Documentation/git-apply.txt---allow-binary-replacement"></a>--allow-binary-replacement </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---binary"> <a class="anchor" href="#Documentation/git-apply.txt---binary"></a>--binary </dt>
+<dd>
+<p>Historically we did not allow binary patch application
+without an explicit permission from the user, and this
+flag was the way to do so.  Currently, we always allow binary
+patch application, so this is a no-op.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---excludeltpath-patterngt"> <a class="anchor" href="#Documentation/git-apply.txt---excludepath-pattern"></a> <a class="anchor" href="#Documentation/git-apply.txt---excludeltpath-patterngt"></a>--exclude=&lt;path-pattern&gt; </dt>
+<dd>
+<p>Don&#8217;t apply changes to files matching the given path pattern. This can
+be useful when importing patchsets, where you want to exclude certain
+files or directories.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---includeltpath-patterngt"> <a class="anchor" href="#Documentation/git-apply.txt---includepath-pattern"></a> <a class="anchor" href="#Documentation/git-apply.txt---includeltpath-patterngt"></a>--include=&lt;path-pattern&gt; </dt>
+<dd>
+<p>Apply changes to files matching the given path pattern. This can
+be useful when importing patchsets, where you want to include certain
+files or directories.</p>
+<div class="paragraph">
+<p>When <code>--exclude</code> and <code>--include</code> patterns are used, they are examined in the
+order they appear on the command line, and the first match determines if a
+patch to each path is used.  A patch to a path that does not match any
+include/exclude pattern is used by default if there is no include pattern
+on the command line, and ignored if there is any include pattern.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---ignore-space-change"> <a class="anchor" href="#Documentation/git-apply.txt---ignore-space-change"></a>--ignore-space-change </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---ignore-whitespace"> <a class="anchor" href="#Documentation/git-apply.txt---ignore-whitespace"></a>--ignore-whitespace </dt>
+<dd>
+<p>When applying a patch, ignore changes in whitespace in context
+lines if necessary.
+Context lines will preserve their whitespace, and they will not
+undergo whitespace fixing regardless of the value of the
+<code>--whitespace</code> option. New lines will still be fixed, though.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---whitespaceltactiongt"> <a class="anchor" href="#Documentation/git-apply.txt---whitespaceaction"></a> <a class="anchor" href="#Documentation/git-apply.txt---whitespaceltactiongt"></a>--whitespace=&lt;action&gt; </dt>
+<dd>
+<p>When applying a patch, detect a new or modified line that has
+whitespace errors.  What are considered whitespace errors is
+controlled by <code>core.whitespace</code> configuration.  By default,
+trailing whitespaces (including lines that solely consist of
+whitespaces) and a space character that is immediately followed
+by a tab character inside the initial indent of the line are
+considered whitespace errors.</p>
+<div class="paragraph">
+<p>By default, the command outputs warning messages but applies the patch.
+When <code>git-apply</code> is used for statistics and not applying a
+patch, it defaults to <code>nowarn</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can use different <code>&lt;action&gt;</code> values to control this
+behavior:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>nowarn</code> turns off the trailing whitespace warning.</p>
+</li>
+<li>
+<p><code>warn</code> outputs warnings for a few such errors, but applies the
+patch as-is (default).</p>
+</li>
+<li>
+<p><code>fix</code> outputs warnings for a few such errors, and applies the
+patch after fixing them (<code>strip</code> is a synonym&#8201;&#8212;&#8201;the tool
+used to consider only trailing whitespace characters as errors, and the
+fix involved <em>stripping</em> them, but modern Gits do more).</p>
+</li>
+<li>
+<p><code>error</code> outputs warnings for a few such errors, and refuses
+to apply the patch.</p>
+</li>
+<li>
+<p><code>error-all</code> is similar to <code>error</code> but shows all errors.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---inaccurate-eof"> <a class="anchor" href="#Documentation/git-apply.txt---inaccurate-eof"></a>--inaccurate-eof </dt>
+<dd>
+<p>Under certain circumstances, some versions of <em>diff</em> do not correctly
+detect a missing new-line at the end of the file. As a result, patches
+created by such <em>diff</em> programs do not record incomplete lines
+correctly. This option adds support for applying such patches by
+working around this bug.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--v"> <a class="anchor" href="#Documentation/git-apply.txt--v"></a>-v </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---verbose"> <a class="anchor" href="#Documentation/git-apply.txt---verbose"></a>--verbose </dt>
+<dd>
+<p>Report progress to stderr. By default, only a message about the
+current patch being applied will be printed. This option will cause
+additional information to be reported.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--q"> <a class="anchor" href="#Documentation/git-apply.txt--q"></a>-q </dt>
+<dt class="hdlist1" id="Documentation/git-apply.txt---quiet"> <a class="anchor" href="#Documentation/git-apply.txt---quiet"></a>--quiet </dt>
+<dd>
+<p>Suppress stderr output. Messages about patch status and progress
+will not be printed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---recount"> <a class="anchor" href="#Documentation/git-apply.txt---recount"></a>--recount </dt>
+<dd>
+<p>Do not trust the line counts in the hunk headers, but infer them
+by inspecting the patch (e.g. after editing the patch without
+adjusting the hunk headers appropriately).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---directoryltrootgt"> <a class="anchor" href="#Documentation/git-apply.txt---directoryroot"></a> <a class="anchor" href="#Documentation/git-apply.txt---directoryltrootgt"></a>--directory=&lt;root&gt; </dt>
+<dd>
+<p>Prepend &lt;root&gt; to all filenames.  If a "-p" argument was also passed,
+it is applied before prepending the new root.</p>
+<div class="paragraph">
+<p>For example, a patch that talks about updating <code>a/git-gui.sh</code> to <code>b/git-gui.sh</code>
+can be applied to the file in the working tree <code>modules/git-gui/git-gui.sh</code> by
+running <code>git apply --directory=modules/git-gui</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---unsafe-paths"> <a class="anchor" href="#Documentation/git-apply.txt---unsafe-paths"></a>--unsafe-paths </dt>
+<dd>
+<p>By default, a patch that affects outside the working area
+(either a Git controlled working tree, or the current working
+directory when "git apply" is used as a replacement of GNU
+patch) is rejected as a mistake (or a mischief).</p>
+<div class="paragraph">
+<p>When <code>git apply</code> is used as a "better GNU patch", the user can pass
+the <code>--unsafe-paths</code> option to override this safety check.  This option
+has no effect when <code>--index</code> or <code>--cached</code> is in use.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt---allow-empty"> <a class="anchor" href="#Documentation/git-apply.txt---allow-empty"></a>--allow-empty </dt>
+<dd>
+<p>Don&#8217;t return an error for patches containing no diff. This includes
+empty patches and patches with commit text only.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everything below this line in this section is selectively included
+from the <a href='/docs/git-config'>git-config[1]</a> documentation. The content is the same
+as what&#8217;s found there:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-apply.txt-applyignoreWhitespace"> <a class="anchor" href="#Documentation/git-apply.txt-applyignoreWhitespace"></a>apply.ignoreWhitespace </dt>
+<dd>
+<p>When set to <em>change</em>, tells <em>git apply</em> to ignore changes in
+whitespace, in the same way as the <code>--ignore-space-change</code>
+option.
+When set to one of: no, none, never, false, it tells <em>git apply</em> to
+respect all whitespace differences.
+See <a href='/docs/git-apply'>git-apply[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt-applywhitespace"> <a class="anchor" href="#Documentation/git-apply.txt-applywhitespace"></a>apply.whitespace </dt>
+<dd>
+<p>Tells <em>git apply</em> how to handle whitespace, in the same way
+as the <code>--whitespace</code> option. See <a href='/docs/git-apply'>git-apply[1]</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_submodules"><a class="anchor" href="#_submodules"></a>SUBMODULES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the patch contains any changes to submodules then <em>git apply</em>
+treats these changes as follows.</p>
+</div>
+<div class="paragraph">
+<p>If <code>--index</code> is specified (explicitly or implicitly), then the submodule
+commits must match the index exactly for the patch to apply.  If any
+of the submodules are checked-out, then these check-outs are completely
+ignored, i.e., they are not required to be up to date or clean and they
+are not updated.</p>
+</div>
+<div class="paragraph">
+<p>If <code>--index</code> is not specified, then the submodule commits in the patch
+are ignored and only the absence or presence of the corresponding
+subdirectory is checked and (if possible) updated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href='/docs/git-am'>git-am[1]</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">apply</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+

@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-help Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-help</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-help"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-help/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-help/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-help/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-help last updated in 2.43.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-help</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li class="no-change"><span>2.43.1 &rarr; 2.50.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.36.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.36.0"><span class="version">2.36.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-04-18</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.35.1 &rarr; 2.35.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.35.0"><span class="version">2.35.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-01-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.34.1 &rarr; 2.34.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.34.0"><span class="version">2.34.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-11-15</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.29.1 &rarr; 2.33.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.29.0"><span class="version">2.29.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-10-19</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.22.1 &rarr; 2.28.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.22.0"><span class="version">2.22.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-06-07</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.21.1 &rarr; 2.21.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.21.0"><span class="version">2.21.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-02-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.20.1 &rarr; 2.20.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.20.0"><span class="version">2.20.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-12-09</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.1 &rarr; 2.19.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.19.0"><span class="version">2.19.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-09-10</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.18.1 &rarr; 2.18.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.18.0"><span class="version">2.18.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-06-21</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.10.5 &rarr; 2.17.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.9.5"><span class="version">2.9.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.2.3 &rarr; 2.8.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.1.4"><span class="version">2.1.4</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-help/2.0.5"><span class="version">2.0.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-help - Display help information about Git</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="verseblock">
+<pre class="content"><em>git help</em> [-a|--all] [--[no-]verbose] [--[no-]external-commands] [--[no-]aliases]
+<em>git help</em> [[-i|--info] [-m|--man] [-w|--web]] [&lt;command&gt;|&lt;doc&gt;]
+<em>git help</em> [-g|--guides]
+<em>git help</em> [-c|--config]
+<em>git help</em> [--user-interfaces]
+<em>git help</em> [--developer-interfaces]</pre>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With no options and no <em>&lt;command&gt;</em> or <em>&lt;doc&gt;</em> given, the synopsis of the <em>git</em>
+command and a list of the most commonly used Git commands are printed
+on the standard output.</p>
+</div>
+<div class="paragraph">
+<p>If the option <code>--all</code> or <code>-a</code> is given, all available commands are
+printed on the standard output.</p>
+</div>
+<div class="paragraph">
+<p>If the option <code>--guides</code> or <code>-g</code> is given, a list of the
+Git concept guides is also printed on the standard output.</p>
+</div>
+<div class="paragraph">
+<p>If a command or other documentation is given, the relevant manual page
+will be brought up. The <em>man</em> program is used by default for this
+purpose, but this can be overridden by other options or configuration
+variables.</p>
+</div>
+<div class="paragraph">
+<p>If an alias is given, git shows the definition of the alias on
+standard output. To get the manual page for the aliased command, use
+<code>git &lt;command&gt; --help</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note that <code>git --help ...</code> is identical to <code>git help ...</code> because the
+former is internally converted into the latter.</p>
+</div>
+<div class="paragraph">
+<p>To display the <a href='/docs/git'>git[1]</a> man page, use <code>git help git</code>.</p>
+</div>
+<div class="paragraph">
+<p>This page can be displayed with <em>git help help</em> or <code>git help --help</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-help.txt--a"> <a class="anchor" href="#Documentation/git-help.txt--a"></a>-a </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---all"> <a class="anchor" href="#Documentation/git-help.txt---all"></a>--all </dt>
+<dd>
+<p>Print all the available commands on the standard output.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt---no-external-commands"> <a class="anchor" href="#Documentation/git-help.txt---no-external-commands"></a>--no-external-commands </dt>
+<dd>
+<p>When used with <code>--all</code>, exclude the listing of external "git-*"
+commands found in the <code>$PATH</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt---no-aliases"> <a class="anchor" href="#Documentation/git-help.txt---no-aliases"></a>--no-aliases </dt>
+<dd>
+<p>When used with <code>--all</code>, exclude the listing of configured
+aliases.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt---verbose"> <a class="anchor" href="#Documentation/git-help.txt---verbose"></a>--verbose </dt>
+<dd>
+<p>When used with <code>--all</code>, print description for all recognized
+commands. This is the default.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt--c"> <a class="anchor" href="#Documentation/git-help.txt--c"></a>-c </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---config"> <a class="anchor" href="#Documentation/git-help.txt---config"></a>--config </dt>
+<dd>
+<p>List all available configuration variables. This is a short
+summary of the list in <a href='/docs/git-config'>git-config[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt--g"> <a class="anchor" href="#Documentation/git-help.txt--g"></a>-g </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---guides"> <a class="anchor" href="#Documentation/git-help.txt---guides"></a>--guides </dt>
+<dd>
+<p>Print a list of the Git concept guides on the standard output.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt---user-interfaces"> <a class="anchor" href="#Documentation/git-help.txt---user-interfaces"></a>--user-interfaces </dt>
+<dd>
+<p>Print a list of the repository, command and file interfaces
+documentation on the standard output.</p>
+<div class="paragraph">
+<p>In-repository file interfaces such as <code>.git/info/exclude</code> are
+documented here (see <a href='/docs/gitrepository-layout'>gitrepository-layout[5]</a>), as well as
+in-tree configuration such as <code>.mailmap</code> (see <a href='/docs/gitmailmap'>gitmailmap[5]</a>).</p>
+</div>
+<div class="paragraph">
+<p>This section of the documentation also covers general or widespread
+user-interface conventions (e.g. <a href='/docs/gitcli'>gitcli[7]</a>), and
+pseudo-configuration such as the file-based <code>.git/hooks/*</code> interface
+described in <a href='/docs/githooks'>githooks[5]</a>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt---developer-interfaces"> <a class="anchor" href="#Documentation/git-help.txt---developer-interfaces"></a>--developer-interfaces </dt>
+<dd>
+<p>Print a list of file formats, protocols and other developer
+interfaces documentation on the standard output.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt--i"> <a class="anchor" href="#Documentation/git-help.txt--i"></a>-i </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---info"> <a class="anchor" href="#Documentation/git-help.txt---info"></a>--info </dt>
+<dd>
+<p>Display manual page for the command in the <em>info</em> format. The
+<em>info</em> program will be used for that purpose.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt--m"> <a class="anchor" href="#Documentation/git-help.txt--m"></a>-m </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---man"> <a class="anchor" href="#Documentation/git-help.txt---man"></a>--man </dt>
+<dd>
+<p>Display manual page for the command in the <em>man</em> format. This
+option may be used to override a value set in the
+<code>help.format</code> configuration variable.</p>
+<div class="paragraph">
+<p>By default the <em>man</em> program will be used to display the manual page,
+but the <code>man.viewer</code> configuration variable may be used to choose
+other display programs (see below).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-help.txt--w"> <a class="anchor" href="#Documentation/git-help.txt--w"></a>-w </dt>
+<dt class="hdlist1" id="Documentation/git-help.txt---web"> <a class="anchor" href="#Documentation/git-help.txt---web"></a>--web </dt>
+<dd>
+<p>Display manual page for the command in the <em>web</em> (HTML)
+format. A web browser will be used for that purpose.</p>
+<div class="paragraph">
+<p>The web browser can be specified using the configuration variable
+<code>help.browser</code>, or <code>web.browser</code> if the former is not set. If neither of
+these config variables is set, the <em>git web&#x2d;&#x2d;browse</em> helper script
+(called by <em>git help</em>) will pick a suitable default. See
+<a href='/docs/git-web--browse'>git-web&#x2d;&#x2d;browse[1]</a> for more information about this.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_variables"><a class="anchor" href="#_configuration_variables"></a>CONFIGURATION VARIABLES</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_help_format"><a class="anchor" href="#_help_format"></a>help.format</h3>
+<div class="paragraph">
+<p>If no command-line option is passed, the <code>help.format</code> configuration
+variable will be checked. The following values are supported for this
+variable; they make <em>git help</em> behave as their corresponding command-
+line option:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"man" corresponds to <em>-m|--man</em>,</p>
+</li>
+<li>
+<p>"info" corresponds to <em>-i|--info</em>,</p>
+</li>
+<li>
+<p>"web" or "html" correspond to <em>-w|--web</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_help_browser_web_browser_and_browser_tool_path"><a class="anchor" href="#_help_browser_web_browser_and_browser_tool_path"></a>help.browser, web.browser, and browser.&lt;tool&gt;.path</h3>
+<div class="paragraph">
+<p>The <code>help.browser</code>, <code>web.browser</code> and <code>browser.&lt;tool&gt;.path</code> will also
+be checked if the <em>web</em> format is chosen (either by command-line
+option or configuration variable). See <em>-w|--web</em> in the OPTIONS
+section above and <a href='/docs/git-web--browse'>git-web&#x2d;&#x2d;browse[1]</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_man_viewer"><a class="anchor" href="#_man_viewer"></a>man.viewer</h3>
+<div class="paragraph">
+<p>The <code>man.viewer</code> configuration variable will be checked if the <em>man</em>
+format is chosen. The following values are currently supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"man": use the <em>man</em> program as usual,</p>
+</li>
+<li>
+<p>"woman": use <em>emacsclient</em> to launch the "woman" mode in emacs
+(this only works starting with emacsclient versions 22),</p>
+</li>
+<li>
+<p>"konqueror": use <em>kfmclient</em> to open the man page in a new konqueror
+tab (see <em>Note about konqueror</em> below).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Values for other tools can be used if there is a corresponding
+<code>man.&lt;tool&gt;.cmd</code> configuration entry (see below).</p>
+</div>
+<div class="paragraph">
+<p>Multiple values may be given to the <code>man.viewer</code> configuration
+variable. Their corresponding programs will be tried in the order
+listed in the configuration file.</p>
+</div>
+<div class="paragraph">
+<p>For example, this configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[man]
+		viewer = konqueror
+		viewer = woman</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will try to use konqueror first. But this may fail (for example, if
+DISPLAY is not set) and in that case emacs' woman mode will be tried.</p>
+</div>
+<div class="paragraph">
+<p>If everything fails, or if no viewer is configured, the viewer specified
+in the <code>GIT_MAN_VIEWER</code> environment variable will be tried.  If that
+fails too, the <em>man</em> program will be tried anyway.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_man_tool_path"><a class="anchor" href="#_man_tool_path"></a>man.&lt;tool&gt;.path</h3>
+<div class="paragraph">
+<p>You can explicitly provide a full path to your preferred man viewer by
+setting the configuration variable <code>man.&lt;tool&gt;.path</code>. For example, you
+can configure the absolute path to konqueror by setting
+<em>man.konqueror.path</em>. Otherwise, <em>git help</em> assumes the tool is
+available in PATH.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_man_tool_cmd"><a class="anchor" href="#_man_tool_cmd"></a>man.&lt;tool&gt;.cmd</h3>
+<div class="paragraph">
+<p>When the man viewer, specified by the <code>man.viewer</code> configuration
+variables, is not among the supported ones, then the corresponding
+<code>man.&lt;tool&gt;.cmd</code> configuration variable will be looked up. If this
+variable exists then the specified tool will be treated as a custom
+command and a shell eval will be used to run the command with the man
+page passed as arguments.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_note_about_konqueror"><a class="anchor" href="#_note_about_konqueror"></a>Note about konqueror</h3>
+<div class="paragraph">
+<p>When <em>konqueror</em> is specified in the <code>man.viewer</code> configuration
+variable, we launch <em>kfmclient</em> to try to open the man page on an
+already opened konqueror in a new tab if possible.</p>
+</div>
+<div class="paragraph">
+<p>For consistency, we also try such a trick if <em>man.konqueror.path</em> is
+set to something like <code>A_PATH_TO/konqueror</code>. That means we will try to
+launch <code>A_PATH_TO/kfmclient</code> instead.</p>
+</div>
+<div class="paragraph">
+<p>If you really want to use <em>konqueror</em>, then you can use something like
+the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[man]
+		viewer = konq
+
+	[man "konq"]
+		cmd = A_PATH_TO/konqueror</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_note_about_git_config_global"><a class="anchor" href="#_note_about_git_config_global"></a>Note about git config --global</h3>
+<div class="paragraph">
+<p>Note that all these configuration variables should probably be set
+using the <code>--global</code> flag, for example like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git config --global help.format web
+$ git config --global web.browser firefox</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>as they are probably more user specific than repository specific.
+See <a href='/docs/git-config'>git-config[1]</a> for more information about this.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">help</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+

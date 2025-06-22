@@ -1,0 +1,3209 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-checkout Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-checkout</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-checkout"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-checkout/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-checkout/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-checkout/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-checkout last updated in 2.50.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-checkout</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.50.0"><span class="version">2.50.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-06-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.47.2 &rarr; 2.49.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.47.1"><span class="version">2.47.1</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-11-25</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.44.1 &rarr; 2.47.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.44.0"><span class="version">2.44.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-23</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.2 &rarr; 2.43.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.43.1"><span class="version">2.43.1</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2024-02-09</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.41.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.41.0"><span class="version">2.41.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-06-01</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.40.1 &rarr; 2.40.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.40.0"><span class="version">2.40.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-03-12</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.39.4 &rarr; 2.39.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.39.3"><span class="version">2.39.3</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-04-17</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.39.2 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.35.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.35.0"><span class="version">2.35.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-01-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.34.1 &rarr; 2.34.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.34.0"><span class="version">2.34.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-11-15</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.30.1 &rarr; 2.33.8 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.30.0"><span class="version">2.30.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-12-27</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.29.1 &rarr; 2.29.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.29.0"><span class="version">2.29.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-10-19</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.27.1 &rarr; 2.28.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.27.0"><span class="version">2.27.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-06-01</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.25.1 &rarr; 2.26.3 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.25.0"><span class="version">2.25.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-01-13</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.23.1 &rarr; 2.24.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.23.0"><span class="version">2.23.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-08-16</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.22.1 &rarr; 2.22.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.22.0"><span class="version">2.22.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-06-07</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.21.1 &rarr; 2.21.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.21.0"><span class="version">2.21.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-02-24</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.3 &rarr; 2.20.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.19.2"><span class="version">2.19.2</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-11-21</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.1 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.19.0"><span class="version">2.19.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-09-10</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.17.0 &rarr; 2.18.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.16.6"><span class="version">2.16.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.15.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.14.6"><span class="version">2.14.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2019-12-06</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.13.7"><span class="version">2.13.7</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-05-22</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.11.4 &rarr; 2.12.5 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.10.5"><span class="version">2.10.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-09-22</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.9.5"><span class="version">2.9.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.8.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.7.6"><span class="version">2.7.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-07-30</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.6.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.5.6"><span class="version">2.5.6</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-05-05</em>
+        </a>
+        </li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.4.12"><span class="version">2.4.12</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2017-05-05</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.1.4 &rarr; 2.3.10 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-checkout/2.0.5"><span class="version">2.0.5</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2014-12-17</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-checkout - Switch branches or restore working tree files</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git checkout [-q] [-f] [-m] [&lt;branch&gt;]
+git checkout [-q] [-f] [-m] --detach [&lt;branch&gt;]
+git checkout [-q] [-f] [-m] [--detach] &lt;commit&gt;
+git checkout [-q] [-f] [-m] [[-b|-B|--orphan] &lt;new-branch&gt;] [&lt;start-point&gt;]
+git checkout [-f] &lt;tree-ish&gt; [--] &lt;pathspec&gt;&#8230;&#8203;
+git checkout [-f] &lt;tree-ish&gt; --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
+git checkout [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [--] &lt;pathspec&gt;&#8230;&#8203;
+git checkout [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
+git checkout (-p|--patch) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;&#8230;&#8203;]</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Updates files in the working tree to match the version in the index
+or the specified tree.  If no pathspec was given, <code>git checkout</code> will
+also update <code>HEAD</code> to set the specified branch as the current
+branch.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckoutltbranchgtcode"><a id="Documentation/git-checkout.txt-gitcheckoutbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckoutbranch"></a><code>git checkout [&lt;branch&gt;]</code> </dt>
+<dd>
+<p>To prepare for working on <em>&lt;branch&gt;</em>, switch to it by updating
+the index and the files in the working tree, and by pointing
+<code>HEAD</code> at the branch. Local modifications to the files in the
+working tree are kept, so that they can be committed to the
+<em>&lt;branch&gt;</em>.</p>
+<div class="paragraph">
+<p>If <em>&lt;branch&gt;</em> is not found but there does exist a tracking branch in
+exactly one remote (call it <em>&lt;remote&gt;</em>) with a matching name and
+<code>--no-guess</code> is not specified, treat as equivalent to</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -b &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You could omit <em>&lt;branch&gt;</em>, in which case the command degenerates to
+"check out the current branch", which is a glorified no-op with
+rather expensive side-effects to show only the tracking information,
+if it exists, for the current branch.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout-b-Bltnew-branchgtltstart-pointgtcode"><a id="Documentation/git-checkout.txt-gitcheckout-b-Bnew-branchstart-point" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-b-Bnew-branchstart-point"></a><code>git checkout (-b|-B) &lt;new-branch&gt; [&lt;start-point&gt;]</code> </dt>
+<dd>
+<p>Specifying <code>-b</code> causes a new branch to be created as if
+<a href='/docs/git-branch'>git-branch[1]</a> were called and then checked out.  In
+this case you can use the <code>--track</code> or <code>--no-track</code> options,
+which will be passed to <code>git branch</code>.  As a convenience,
+<code>--track</code> without <code>-b</code> implies branch creation; see the
+description of <code>--track</code> below.</p>
+<div class="paragraph">
+<p>If <code>-B</code> is given, <em>&lt;new-branch&gt;</em> is created if it doesn&#8217;t exist; otherwise, it
+is reset. This is the transactional equivalent of</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git branch -f &lt;branch&gt; [&lt;start-point&gt;]
+$ git checkout &lt;branch&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>that is to say, the branch is not reset/created unless "git checkout" is
+successful (e.g., when the branch is in use in another worktree, not
+just the current branch stays the same, but the branch is not reset to
+the start-point, either).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout--detachltbranchgtcode"><a id="Documentation/git-checkout.txt-gitcheckout--detachbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachbranch"></a><code>git checkout --detach [&lt;branch&gt;]</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout--detachltcommitgtcode"><a id="Documentation/git-checkout.txt-gitcheckout--detachcommit" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachcommit"></a><code>git checkout [--detach] &lt;commit&gt;</code> </dt>
+<dd>
+<p>Prepare to work on top of <em>&lt;commit&gt;</em>, by detaching <code>HEAD</code> at it
+(see "DETACHED HEAD" section), and updating the index and the
+files in the working tree.  Local modifications to the files
+in the working tree are kept, so that the resulting working
+tree will be the state recorded in the commit plus the local
+modifications.</p>
+<div class="paragraph">
+<p>When the <em>&lt;commit&gt;</em> argument is a branch name, the <code>--detach</code> option can
+be used to detach <code>HEAD</code> at the tip of the branch (<code>git checkout
+&lt;branch&gt;</code> would check out that branch without detaching <code>HEAD</code>).</p>
+</div>
+<div class="paragraph">
+<p>Omitting <em>&lt;branch&gt;</em> detaches <code>HEAD</code> at the tip of the current branch.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout-f--ours--theirs-m--conflictltstylegtlttree-ishgt--ltpathspecgtcode"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec"></a><code>git checkout [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [&lt;tree-ish&gt;] [--] &lt;pathspec&gt;...</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout-f--ours--theirs-m--conflictltstylegtlttree-ishgt--pathspec-from-fileltfilegt--pathspec-file-nulcode"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul"></a><code>git checkout [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [&lt;tree-ish&gt;] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]</code> </dt>
+<dd>
+<p>Overwrite the contents of the files that match the pathspec.
+When the <em>&lt;tree-ish&gt;</em> (most often a commit) is not given,
+overwrite working tree with the contents in the index.
+When the <em>&lt;tree-ish&gt;</em> is given, overwrite both the index and
+the working tree with the contents at the <em>&lt;tree-ish&gt;</em>.</p>
+<div class="paragraph">
+<p>The index may contain unmerged entries because of a previous failed merge.
+By default, if you try to check out such an entry from the index, the
+checkout operation will fail and nothing will be checked out.
+Using <code>-f</code> will ignore these unmerged entries.  The contents from a
+specific side of the merge can be checked out of the index by
+using <code>--ours</code> or <code>--theirs</code>.  With <code>-m</code>, changes made to the working tree
+file can be discarded to re-create the original conflicted merge result.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codegitcheckout-p--patchlttree-ishgt--ltpathspecgtcode"><a id="Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec"></a><code>git checkout (-p|--patch) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;...]</code> </dt>
+<dd>
+<p>This is similar to the previous mode, but lets you use the
+interactive interface to show the "diff" output and choose which
+hunks to use in the result.  See below for the description of
+<code>--patch</code> option.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-qcode"><a id="Documentation/git-checkout.txt--q" class="anchor" href="#Documentation/git-checkout.txt--q"></a><code>-q</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--quietcode"><a id="Documentation/git-checkout.txt---quiet" class="anchor" href="#Documentation/git-checkout.txt---quiet"></a><code>--quiet</code> </dt>
+<dd>
+<p>Quiet, suppress feedback messages.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--progresscode"><a id="Documentation/git-checkout.txt---progress" class="anchor" href="#Documentation/git-checkout.txt---progress"></a><code>--progress</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-progresscode"><a id="Documentation/git-checkout.txt---no-progress" class="anchor" href="#Documentation/git-checkout.txt---no-progress"></a><code>--no-progress</code> </dt>
+<dd>
+<p>Progress status is reported on the standard error stream
+by default when it is attached to a terminal, unless <code>--quiet</code>
+is specified. This flag enables progress reporting even if not
+attached to a terminal, regardless of <code>--quiet</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-fcode"><a id="Documentation/git-checkout.txt--f" class="anchor" href="#Documentation/git-checkout.txt--f"></a><code>-f</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--forcecode"><a id="Documentation/git-checkout.txt---force" class="anchor" href="#Documentation/git-checkout.txt---force"></a><code>--force</code> </dt>
+<dd>
+<p>When switching branches, proceed even if the index or the
+working tree differs from <code>HEAD</code>, and even if there are untracked
+files in the way.  This is used to throw away local changes and
+any untracked files or directories that are in the way.</p>
+<div class="paragraph">
+<p>When checking out paths from the index, do not fail upon unmerged
+entries; instead, unmerged entries are ignored.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--ourscode"><a id="Documentation/git-checkout.txt---ours" class="anchor" href="#Documentation/git-checkout.txt---ours"></a><code>--ours</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--theirscode"><a id="Documentation/git-checkout.txt---theirs" class="anchor" href="#Documentation/git-checkout.txt---theirs"></a><code>--theirs</code> </dt>
+<dd>
+<p>When checking out paths from the index, check out stage #2
+(<code>ours</code>) or #3 (<code>theirs</code>) for unmerged paths.</p>
+<div class="paragraph">
+<p>Note that during <code>git rebase</code> and <code>git pull --rebase</code>, <code>ours</code> and
+<code>theirs</code> may appear swapped; <code>--ours</code> gives the version from the
+branch the changes are rebased onto, while <code>--theirs</code> gives the
+version from the branch that holds your work that is being rebased.</p>
+</div>
+<div class="paragraph">
+<p>This is because <code>rebase</code> is used in a workflow that treats the
+history at the remote as the shared canonical one, and treats the
+work done on the branch you are rebasing as the third-party work to
+be integrated, and you are temporarily assuming the role of the
+keeper of the canonical history during the rebase.  As the keeper of
+the canonical history, you need to view the history from the remote
+as <code>ours</code> (i.e. "our shared canonical history"), while what you did
+on your side branch as <code>theirs</code> (i.e. "one contributor&#8217;s work on top
+of it").</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-bltnew-branchgtcode"><a id="Documentation/git-checkout.txt--bnew-branch" class="anchor" href="#Documentation/git-checkout.txt--bnew-branch"></a><code>-b &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Create a new branch named <em>&lt;new-branch&gt;</em>, start it at
+<em>&lt;start-point&gt;</em>, and check the resulting branch out;
+see <a href='/docs/git-branch'>git-branch[1]</a> for details.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-Bltnew-branchgtcode"><a id="Documentation/git-checkout.txt--Bnew-branch" class="anchor" href="#Documentation/git-checkout.txt--Bnew-branch"></a><code>-B &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Creates the branch <em>&lt;new-branch&gt;</em>, start it at <em>&lt;start-point&gt;</em>;
+if it already exists, then reset it to <em>&lt;start-point&gt;</em>. And then
+check the resulting branch out.  This is equivalent to running
+<code>git branch</code> with <code>-f</code> followed by <code>git checkout</code> of that branch;
+see <a href='/docs/git-branch'>git-branch[1]</a> for details.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-tcode"><a id="Documentation/git-checkout.txt--t" class="anchor" href="#Documentation/git-checkout.txt--t"></a><code>-t</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--trackdirectinheritcode"><a id="Documentation/git-checkout.txt---trackdirectinherit" class="anchor" href="#Documentation/git-checkout.txt---trackdirectinherit"></a><code>--track[=(direct|inherit)]</code> </dt>
+<dd>
+<p>When creating a new branch, set up "upstream" configuration. See
+<code>--track</code> in <a href='/docs/git-branch'>git-branch[1]</a> for details.</p>
+<div class="paragraph">
+<p>If no <code>-b</code> option is given, the name of the new branch will be
+derived from the remote-tracking branch, by looking at the local part of
+the refspec configured for the corresponding remote, and then stripping
+the initial part up to the "*".
+This would tell us to use <code>hack</code> as the local branch when branching
+off of <code>origin/hack</code> (or <code>remotes/origin/hack</code>, or even
+<code>refs/remotes/origin/hack</code>).  If the given name has no slash, or the above
+guessing results in an empty name, the guessing is aborted.  You can
+explicitly give a name with <code>-b</code> in such a case.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-trackcode"><a id="Documentation/git-checkout.txt---no-track" class="anchor" href="#Documentation/git-checkout.txt---no-track"></a><code>--no-track</code> </dt>
+<dd>
+<p>Do not set up "upstream" configuration, even if the
+<code>branch.autoSetupMerge</code> configuration variable is true.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--guesscode"><a id="Documentation/git-checkout.txt---guess" class="anchor" href="#Documentation/git-checkout.txt---guess"></a><code>--guess</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-guesscode"><a id="Documentation/git-checkout.txt---no-guess" class="anchor" href="#Documentation/git-checkout.txt---no-guess"></a><code>--no-guess</code> </dt>
+<dd>
+<p>If <em>&lt;branch&gt;</em> is not found but there does exist a tracking
+branch in exactly one remote (call it <em>&lt;remote&gt;</em>) with a
+matching name, treat as equivalent to</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -b &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the branch exists in multiple remotes and one of them is named by
+the <code>checkout.defaultRemote</code> configuration variable, we&#8217;ll use that
+one for the purposes of disambiguation, even if the <em>&lt;branch&gt;</em> isn&#8217;t
+unique across all remotes. Set it to
+e.g. <code>checkout.defaultRemote=origin</code> to always checkout remote
+branches from there if <em>&lt;branch&gt;</em> is ambiguous but exists on the
+<em>origin</em> remote. See also <code>checkout.defaultRemote</code> in
+<a href='/docs/git-config'>git-config[1]</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>--guess</code> is the default behavior. Use <code>--no-guess</code> to disable it.</p>
+</div>
+<div class="paragraph">
+<p>The default behavior can be set via the <code>checkout.guess</code> configuration
+variable.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-lcode"><a id="Documentation/git-checkout.txt--l" class="anchor" href="#Documentation/git-checkout.txt--l"></a><code>-l</code> </dt>
+<dd>
+<p>Create the new branch&#8217;s reflog; see <a href='/docs/git-branch'>git-branch[1]</a> for
+details.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-dcode"><a id="Documentation/git-checkout.txt--d" class="anchor" href="#Documentation/git-checkout.txt--d"></a><code>-d</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--detachcode"><a id="Documentation/git-checkout.txt---detach" class="anchor" href="#Documentation/git-checkout.txt---detach"></a><code>--detach</code> </dt>
+<dd>
+<p>Rather than checking out a branch to work on it, check out a
+commit for inspection and discardable experiments.
+This is the default behavior of <code>git checkout &lt;commit&gt;</code> when
+<em>&lt;commit&gt;</em> is not a branch name.  See the "DETACHED HEAD" section
+below for details.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--orphanltnew-branchgtcode"><a id="Documentation/git-checkout.txt---orphannew-branch" class="anchor" href="#Documentation/git-checkout.txt---orphannew-branch"></a><code>--orphan &lt;new-branch&gt;</code> </dt>
+<dd>
+<p>Create a new unborn branch, named <em>&lt;new-branch&gt;</em>, started from
+<em>&lt;start-point&gt;</em> and switch to it.  The first commit made on this
+new branch will have no parents and it will be the root of a new
+history totally disconnected from all the other branches and
+commits.</p>
+<div class="paragraph">
+<p>The index and the working tree are adjusted as if you had previously run
+<code>git checkout &lt;start-point&gt;</code>.  This allows you to start a new history
+that records a set of paths similar to <em>&lt;start-point&gt;</em> by easily running
+<code>git commit -a</code> to make the root commit.</p>
+</div>
+<div class="paragraph">
+<p>This can be useful when you want to publish the tree from a commit
+without exposing its full history. You might want to do this to publish
+an open source branch of a project whose current tree is "clean", but
+whose full history contains proprietary or otherwise encumbered bits of
+code.</p>
+</div>
+<div class="paragraph">
+<p>If you want to start a disconnected history that records a set of paths
+that is totally different from the one of <em>&lt;start-point&gt;</em>, then you should
+clear the index and the working tree right after creating the orphan
+branch by running <code>git rm -rf .</code> from the top level of the working tree.
+Afterwards you will be ready to prepare your new files, repopulating the
+working tree, by copying them from elsewhere, extracting a tarball, etc.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--ignore-skip-worktree-bitscode"><a id="Documentation/git-checkout.txt---ignore-skip-worktree-bits" class="anchor" href="#Documentation/git-checkout.txt---ignore-skip-worktree-bits"></a><code>--ignore-skip-worktree-bits</code> </dt>
+<dd>
+<p>In sparse checkout mode, <code>git checkout -- &lt;path&gt;...</code> would
+update only entries matched by <em>&lt;paths&gt;</em> and sparse patterns
+in <code>$GIT_DIR/info/sparse-checkout</code>. This option ignores
+the sparse patterns and adds back any files in <code>&lt;path&gt;...</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-mcode"><a id="Documentation/git-checkout.txt--m" class="anchor" href="#Documentation/git-checkout.txt--m"></a><code>-m</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--mergecode"><a id="Documentation/git-checkout.txt---merge" class="anchor" href="#Documentation/git-checkout.txt---merge"></a><code>--merge</code> </dt>
+<dd>
+<p>When switching branches,
+if you have local modifications to one or more files that
+are different between the current branch and the branch to
+which you are switching, the command refuses to switch
+branches in order to preserve your modifications in context.
+However, with this option, a three-way merge between the current
+branch, your working tree contents, and the new branch
+is done, and you will be on the new branch.</p>
+<div class="paragraph">
+<p>When a merge conflict happens, the index entries for conflicting
+paths are left unmerged, and you need to resolve the conflicts
+and mark the resolved paths with <code>git add</code> (or <code>git rm</code> if the merge
+should result in deletion of the path).</p>
+</div>
+<div class="paragraph">
+<p>When checking out paths from the index, this option lets you recreate
+the conflicted merge in the specified paths.  This option cannot be
+used when checking out paths from a tree-ish.</p>
+</div>
+<div class="paragraph">
+<p>When switching branches with <code>--merge</code>, staged changes may be lost.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--conflictltstylegtcode"><a id="Documentation/git-checkout.txt---conflictstyle" class="anchor" href="#Documentation/git-checkout.txt---conflictstyle"></a><code>--conflict=&lt;style&gt;</code> </dt>
+<dd>
+<p>The same as <code>--merge</code> option above, but changes the way the
+conflicting hunks are presented, overriding the
+<code>merge.conflictStyle</code> configuration variable.  Possible values are
+<code>merge</code> (default), <code>diff3</code>, and <code>zdiff3</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code-pcode"><a id="Documentation/git-checkout.txt--p" class="anchor" href="#Documentation/git-checkout.txt--p"></a><code>-p</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--patchcode"><a id="Documentation/git-checkout.txt---patch" class="anchor" href="#Documentation/git-checkout.txt---patch"></a><code>--patch</code> </dt>
+<dd>
+<p>Interactively select hunks in the difference between the
+<em>&lt;tree-ish&gt;</em> (or the index, if unspecified) and the working
+tree.  The chosen hunks are then applied in reverse to the
+working tree (and if a <em>&lt;tree-ish&gt;</em> was specified, the index).</p>
+<div class="paragraph">
+<p>This means that you can use <code>git checkout -p</code> to selectively discard
+edits from your current working tree. See the "Interactive Mode"
+section of <a href='/docs/git-add'>git-add[1]</a> to learn how to operate the <code>--patch</code> mode.</p>
+</div>
+<div class="paragraph">
+<p>Note that this option uses the no overlay mode by default (see also
+<code>--overlay</code>), and currently doesn&#8217;t support overlay mode.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--ignore-other-worktreescode"><a id="Documentation/git-checkout.txt---ignore-other-worktrees" class="anchor" href="#Documentation/git-checkout.txt---ignore-other-worktrees"></a><code>--ignore-other-worktrees</code> </dt>
+<dd>
+<p><code>git checkout</code> refuses when the wanted branch is already checked
+out or otherwise in use by another worktree. This option makes
+it check the branch out anyway. In other words, the branch can
+be in use by more than one worktree.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--overwrite-ignorecode"><a id="Documentation/git-checkout.txt---overwrite-ignore" class="anchor" href="#Documentation/git-checkout.txt---overwrite-ignore"></a><code>--overwrite-ignore</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-overwrite-ignorecode"><a id="Documentation/git-checkout.txt---no-overwrite-ignore" class="anchor" href="#Documentation/git-checkout.txt---no-overwrite-ignore"></a><code>--no-overwrite-ignore</code> </dt>
+<dd>
+<p>Silently overwrite ignored files when switching branches. This
+is the default behavior. Use <code>--no-overwrite-ignore</code> to abort
+the operation when the new branch contains ignored files.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--recurse-submodulescode"><a id="Documentation/git-checkout.txt---recurse-submodules" class="anchor" href="#Documentation/git-checkout.txt---recurse-submodules"></a><code>--recurse-submodules</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-recurse-submodulescode"><a id="Documentation/git-checkout.txt---no-recurse-submodules" class="anchor" href="#Documentation/git-checkout.txt---no-recurse-submodules"></a><code>--no-recurse-submodules</code> </dt>
+<dd>
+<p>Using <code>--recurse-submodules</code> will update the content of all active
+submodules according to the commit recorded in the superproject. If
+local modifications in a submodule would be overwritten the checkout
+will fail unless <code>-f</code> is used. If nothing (or <code>--no-recurse-submodules</code>)
+is used, submodules working trees will not be updated.
+Just like <a href='/docs/git-submodule'>git-submodule[1]</a>, this will detach <code>HEAD</code> of the
+submodule.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--overlaycode"><a id="Documentation/git-checkout.txt---overlay" class="anchor" href="#Documentation/git-checkout.txt---overlay"></a><code>--overlay</code> </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--no-overlaycode"><a id="Documentation/git-checkout.txt---no-overlay" class="anchor" href="#Documentation/git-checkout.txt---no-overlay"></a><code>--no-overlay</code> </dt>
+<dd>
+<p>In the default overlay mode, <code>git checkout</code> never
+removes files from the index or the working tree.  When
+specifying <code>--no-overlay</code>, files that appear in the index and
+working tree, but not in <em>&lt;tree-ish&gt;</em> are removed, to make them
+match <em>&lt;tree-ish&gt;</em> exactly.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--pathspec-from-fileltfilegtcode"><a id="Documentation/git-checkout.txt---pathspec-from-filefile" class="anchor" href="#Documentation/git-checkout.txt---pathspec-from-filefile"></a><code>--pathspec-from-file=&lt;file&gt;</code> </dt>
+<dd>
+<p>Pathspec is passed in <em>&lt;file&gt;</em> instead of commandline args. If
+<em>&lt;file&gt;</em> is exactly <code>-</code> then standard input is used. Pathspec
+elements are separated by <em>LF</em> or <em>CR</em>/<em>LF</em>. Pathspec elements can be
+quoted as explained for the configuration variable <code>core.quotePath</code>
+(see <a href='/docs/git-config'>git-config[1]</a>). See also <code>--pathspec-file-nul</code> and
+global <code>--literal-pathspecs</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--pathspec-file-nulcode"><a id="Documentation/git-checkout.txt---pathspec-file-nul" class="anchor" href="#Documentation/git-checkout.txt---pathspec-file-nul"></a><code>--pathspec-file-nul</code> </dt>
+<dd>
+<p>Only meaningful with <code>--pathspec-from-file</code>. Pathspec elements are
+separated with <em>NUL</em> character and all other characters are taken
+literally (including newlines and quotes).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-ltbranchgt"><a id="Documentation/git-checkout.txt-branch" class="anchor" href="#Documentation/git-checkout.txt-branch"></a>&lt;branch&gt; </dt>
+<dd>
+<p>Branch to checkout; if it refers to a branch (i.e., a name that,
+when prepended with "refs/heads/", is a valid ref), then that
+branch is checked out. Otherwise, if it refers to a valid
+commit, your <code>HEAD</code> becomes "detached" and you are no longer on
+any branch (see below for details).</p>
+<div class="paragraph">
+<p>You can use the <code>@{-N}</code> syntax to refer to the N-th last
+branch/commit checked out using "git checkout" operation. You may
+also specify <code>-</code> which is synonymous to <code>@{-1}</code>.</p>
+</div>
+<div class="paragraph">
+<p>As a special case, you may use <code>&lt;rev-a&gt;...&lt;rev-b&gt;</code> as a shortcut for the
+merge base of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em> if there is exactly one merge base. You can
+leave out at most one of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em>, in which case it defaults to <code>HEAD</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emltnew-branchgtem"><a id="Documentation/git-checkout.txt-new-branch" class="anchor" href="#Documentation/git-checkout.txt-new-branch"></a><em>&lt;new-branch&gt;</em> </dt>
+<dd>
+<p>Name for the new branch.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emltstart-pointgtem"><a id="Documentation/git-checkout.txt-start-point" class="anchor" href="#Documentation/git-checkout.txt-start-point"></a><em>&lt;start-point&gt;</em> </dt>
+<dd>
+<p>The name of a commit at which to start the new branch; see
+<a href='/docs/git-branch'>git-branch[1]</a> for details. Defaults to <code>HEAD</code>.</p>
+<div class="paragraph">
+<p>As a special case, you may use <code>&lt;rev-a&gt;...&lt;rev-b&gt;</code> as a shortcut for the
+merge base of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em> if there is exactly one merge base. You can
+leave out at most one of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em>, in which case it defaults to <code>HEAD</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emlttree-ishgtem"><a id="Documentation/git-checkout.txt-tree-ish" class="anchor" href="#Documentation/git-checkout.txt-tree-ish"></a><em>&lt;tree-ish&gt;</em> </dt>
+<dd>
+<p>Tree to checkout from (when paths are given). If not specified,
+the index will be used.</p>
+<div class="paragraph">
+<p>As a special case, you may use <code>&lt;rev-a&gt;...&lt;rev-b&gt;</code> as a shortcut for the
+merge base of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em> if there is exactly one merge base. You can
+leave out at most one of <em>&lt;rev-a&gt;</em> and <em>&lt;rev-b&gt;</em>, in which case it defaults to <code>HEAD</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-code--code"><a id="Documentation/git-checkout.txt---" class="anchor" href="#Documentation/git-checkout.txt---"></a><code>--</code> </dt>
+<dd>
+<p>Do not interpret any more arguments as options.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codeltpathspecgtcode"><a id="Documentation/git-checkout.txt-pathspec" class="anchor" href="#Documentation/git-checkout.txt-pathspec"></a><code>&lt;pathspec&gt;...</code> </dt>
+<dd>
+<p>Limits the paths affected by the operation.</p>
+<div class="paragraph">
+<p>For more details, see the <em>pathspec</em> entry in <a href='/docs/gitglossary'>gitglossary[7]</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_detached_head"><a class="anchor" href="#_detached_head"></a>DETACHED HEAD</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>HEAD</code> normally refers to a named branch (e.g. <code>master</code>). Meanwhile, each
+branch refers to a specific commit. Let&#8217;s look at a repo with three
+commits, one of them tagged, and with branch <code>master</code> checked out:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>           HEAD (refers to branch 'master')
+            |
+            v
+a---b---c  branch 'master' (refers to commit 'c')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a commit is created in this state, the branch is updated to refer to
+the new commit. Specifically, <code>git commit</code> creates a new commit <code>d</code>, whose
+parent is commit <code>c</code>, and then updates branch <code>master</code> to refer to new
+commit <code>d</code>. <code>HEAD</code> still refers to branch <code>master</code> and so indirectly now refers
+to commit <code>d</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ edit; git add; git commit
+
+               HEAD (refers to branch 'master')
+                |
+                v
+a---b---c---d  branch 'master' (refers to commit 'd')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is sometimes useful to be able to checkout a commit that is not at
+the tip of any named branch, or even to create a new commit that is not
+referenced by a named branch. Let&#8217;s look at what happens when we
+checkout commit <code>b</code> (here we show two ways this may be done):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout v2.0  # or
+$ git checkout master^^
+
+   HEAD (refers to commit 'b')
+    |
+    v
+a---b---c---d  branch 'master' (refers to commit 'd')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice that regardless of which checkout command we use, <code>HEAD</code> now refers
+directly to commit <code>b</code>. This is known as being in detached <code>HEAD</code> state.
+It means simply that <code>HEAD</code> refers to a specific commit, as opposed to
+referring to a named branch. Let&#8217;s see what happens when we create a commit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ edit; git add; git commit
+
+     HEAD (refers to commit 'e')
+      |
+      v
+      e
+     /
+a---b---c---d  branch 'master' (refers to commit 'd')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is now a new commit <code>e</code>, but it is referenced only by <code>HEAD</code>. We can
+of course add yet another commit in this state:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ edit; git add; git commit
+
+	 HEAD (refers to commit 'f')
+	  |
+	  v
+      e---f
+     /
+a---b---c---d  branch 'master' (refers to commit 'd')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In fact, we can perform all the normal Git operations. But, let&#8217;s look
+at what happens when we then checkout <code>master</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout master
+
+               HEAD (refers to branch 'master')
+      e---f     |
+     /          v
+a---b---c---d  branch 'master' (refers to commit 'd')
+    ^
+    |
+  tag 'v2.0' (refers to commit 'b')</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is important to realize that at this point nothing refers to commit
+<code>f</code>. Eventually commit <code>f</code> (and by extension commit <code>e</code>) will be deleted
+by the routine Git garbage collection process, unless we create a reference
+before that happens. If we have not yet moved away from commit <code>f</code>,
+any of these will create a reference to it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -b foo  # or "git switch -c foo"  <b class="conum">(1)</b>
+$ git branch foo                                 <b class="conum">(2)</b>
+$ git tag foo                                    <b class="conum">(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>creates a new branch <code>foo</code>, which refers to commit <code>f</code>, and then
+updates <code>HEAD</code> to refer to branch <code>foo</code>. In other words, we&#8217;ll no longer
+be in detached <code>HEAD</code> state after this command.</p>
+</li>
+<li>
+<p>similarly creates a new branch <code>foo</code>, which refers to commit <code>f</code>,
+but leaves <code>HEAD</code> detached.</p>
+</li>
+<li>
+<p>creates a new tag <code>foo</code>, which refers to commit <code>f</code>,
+leaving <code>HEAD</code> detached.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If we have moved away from commit <code>f</code>, then we must first recover its object
+name (typically by using git reflog), and then we can create a reference to
+it. For example, to see the last two commits to which <code>HEAD</code> referred, we
+can use either of these commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git reflog -2 HEAD # or
+$ git log -g -2 HEAD</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_argument_disambiguation"><a class="anchor" href="#_argument_disambiguation"></a>ARGUMENT DISAMBIGUATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When there is only one argument given and it is not <code>--</code> (e.g. <code>git
+checkout abc</code>), and when the argument is both a valid <em>&lt;tree-ish&gt;</em>
+(e.g. a branch <code>abc</code> exists) and a valid <em>&lt;pathspec&gt;</em> (e.g. a file
+or a directory whose name is "abc" exists), Git would usually ask
+you to disambiguate.  Because checking out a branch is so common an
+operation, however, <code>git checkout abc</code> takes "abc" as a <em>&lt;tree-ish&gt;</em>
+in such a situation.  Use <code>git checkout -- &lt;pathspec&gt;</code> if you want
+to checkout these paths out of the index.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_paths"><a class="anchor" href="#_1_paths"></a>1. Paths</h3>
+<div class="paragraph">
+<p>The following sequence checks out the <code>master</code> branch, reverts
+the <code>Makefile</code> to two revisions back, deletes <code>hello.c</code> by
+mistake, and gets it back from the index.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout master             <b class="conum">(1)</b>
+$ git checkout master~2 Makefile  <b class="conum">(2)</b>
+$ rm -f hello.c
+$ git checkout hello.c            <b class="conum">(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>switch branch</p>
+</li>
+<li>
+<p>take a file out of another commit</p>
+</li>
+<li>
+<p>restore <code>hello.c</code> from the index</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you want to check out <em>all</em> C source files out of the index,
+you can say</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -- '*.c'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the quotes around <code>*.c</code>.  The file <code>hello.c</code> will also be
+checked out, even though it is no longer in the working tree,
+because the file globbing is used to match entries in the index
+(not in the working tree by the shell).</p>
+</div>
+<div class="paragraph">
+<p>If you have an unfortunate branch that is named <code>hello.c</code>, this
+step would be confused as an instruction to switch to that branch.
+You should instead write:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -- hello.c</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_merge"><a class="anchor" href="#_2_merge"></a>2. Merge</h3>
+<div class="paragraph">
+<p>After working in the wrong branch, switching to the correct
+branch would be done using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout mytopic</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, your "wrong" branch and correct <code>mytopic</code> branch may
+differ in files that you have modified locally, in which case
+the above checkout would fail like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout mytopic
+error: You have local changes to 'frotz'; not switching branches.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can give the <code>-m</code> flag to the command, which would try a
+three-way merge:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -m mytopic
+Auto-merging frotz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After this three-way merge, the local modifications are <em>not</em>
+registered in your index file, so <code>git diff</code> would show you what
+changes you made since the tip of the new branch.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_merge_conflict"><a class="anchor" href="#_3_merge_conflict"></a>3. Merge conflict</h3>
+<div class="paragraph">
+<p>When a merge conflict happens during switching branches with
+the <code>-m</code> option, you would see something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout -m mytopic
+Auto-merging frotz
+ERROR: Merge conflict in frotz
+fatal: merge program failed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, <code>git diff</code> shows the changes cleanly merged as in
+the previous example, as well as the changes in the conflicted
+files.  Edit and resolve the conflict and mark it resolved with
+<code>git add</code> as usual:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ edit frotz
+$ git add frotz</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everything below this line in this section is selectively included
+from the <a href='/docs/git-config'>git-config[1]</a> documentation. The content is the same
+as what&#8217;s found there:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codecheckoutdefaultRemotecode"><a id="Documentation/git-checkout.txt-checkoutdefaultRemote" class="anchor" href="#Documentation/git-checkout.txt-checkoutdefaultRemote"></a><code>checkout.defaultRemote</code> </dt>
+<dd>
+<p>When you run <code>git checkout &lt;something&gt;</code>
+or <code>git switch &lt;something&gt;</code> and only have one
+remote, it may implicitly fall back on checking out and
+tracking e.g. <code>origin/&lt;something&gt;</code>. This stops working as soon
+as you have more than one remote with a <em>&lt;something&gt;</em>
+reference. This setting allows for setting the name of a
+preferred remote that should always win when it comes to
+disambiguation. The typical use-case is to set this to
+<code>origin</code>.</p>
+<div class="paragraph">
+<p>Currently this is used by <a href='/docs/git-switch'>git-switch[1]</a> and
+<a href='/docs/git-checkout'>git-checkout[1]</a> when <code>git checkout &lt;something&gt;</code>
+or <code>git switch &lt;something&gt;</code>
+will checkout the <em>&lt;something&gt;</em> branch on another remote,
+and by <a href='/docs/git-worktree'>git-worktree[1]</a> when <code>git worktree add</code> refers to a
+remote branch. This setting might be used for other checkout-like
+commands or functionality in the future.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codecheckoutguesscode"><a id="Documentation/git-checkout.txt-checkoutguess" class="anchor" href="#Documentation/git-checkout.txt-checkoutguess"></a><code>checkout.guess</code> </dt>
+<dd>
+<p>Provides the default value for the <code>--guess</code> or <code>--no-guess</code>
+option in <code>git checkout</code> and <code>git switch</code>. See
+<a href='/docs/git-switch'>git-switch[1]</a> and <a href='/docs/git-checkout'>git-checkout[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codecheckoutworkerscode"><a id="Documentation/git-checkout.txt-checkoutworkers" class="anchor" href="#Documentation/git-checkout.txt-checkoutworkers"></a><code>checkout.workers</code> </dt>
+<dd>
+<p>The number of parallel workers to use when updating the working tree.
+The default is one, i.e. sequential execution. If set to a value less
+than one, Git will use as many workers as the number of logical cores
+available. This setting and <code>checkout.thresholdForParallelism</code> affect
+all commands that perform checkout. E.g. checkout, clone, reset,
+sparse-checkout, etc.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Parallel checkout usually delivers better performance for repositories
+located on SSDs or over NFS. For repositories on spinning disks and/or machines
+with a small number of cores, the default sequential checkout often performs
+better. The size and compression level of a repository might also influence how
+well the parallel version performs.
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-codecheckoutthresholdForParallelismcode"><a id="Documentation/git-checkout.txt-checkoutthresholdForParallelism" class="anchor" href="#Documentation/git-checkout.txt-checkoutthresholdForParallelism"></a><code>checkout.thresholdForParallelism</code> </dt>
+<dd>
+<p>When running parallel checkout with a small number of files, the cost
+of subprocess spawning and inter-process communication might outweigh
+the parallelization gains. This setting allows you to define the minimum
+number of files for which parallel checkout should be attempted. The
+default is 100.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href='/docs/git-switch'>git-switch[1]</a>,
+<a href='/docs/git-restore'>git-restore[1]</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="10">checkout</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+

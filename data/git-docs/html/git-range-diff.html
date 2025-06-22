@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+
+
+
+<head>
+  <script type="text/javascript">
+    
+    const currentTheme = localStorage.getItem("theme")
+    if (currentTheme) {
+      
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      if (prefersDarkScheme === (currentTheme === "dark")) localStorage.removeItem("theme")
+      else if ((prefersDarkScheme && currentTheme === "light")
+        || (!prefersDarkScheme && currentTheme === "dark")) {
+	document.documentElement.dataset.theme = currentTheme
+      }
+    }
+  </script>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git - git-range-diff Documentation</title>
+
+  <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
+
+  
+  <link rel="stylesheet" href="/application.min.b23418a9b9481d25484247d93ddebbdfbd8badcba48c392933f13f40bfc0bb69.css">
+  <script src="/js/modernizr.js"></script>
+  
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+  <a id="logo" href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" class="no-filter" /></a>
+  <span id="tagline"></span>
+  <script type="text/javascript">
+   const taglines = [
+     "fast-version-control",
+     "everything-is-local",
+     "distributed-even-if-your-workflow-isnt",
+     "local-branching-on-the-cheap",
+     "distributed-is-the-new-centralized"
+   ];
+   var tagline = taglines[Math.floor(Math.random() * taglines.length)];
+   document.getElementById('tagline').innerHTML = '--' + tagline;
+  </script>
+
+  
+  <div id="search-container">
+    <form id="search" action="/search/results">
+      <input id="search-text" name="search" placeholder="Type / to search entire site…" autocomplete="off" type="text" />
+    </form>
+    <div id="search-results"></div>
+  </div>
+  
+  <img src="/images/dark-mode.svg" id="dark-mode-button" />
+</header>
+
+  </div> 
+
+  
+    <div class="inner">
+      <div id="content-wrapper">
+        
+<div tabindex="1" class="sidebar-btn"></div>
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+        <ul>
+          
+        </ul>
+      </li>
+      <li>
+        <a href="/doc" class="active">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs" class="active">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul >
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+    
+  </nav>
+</aside>
+
+        <div id="content">
+          <div id='reference-version'>
+            
+<a class="dropdown-trigger" id="reference-languages-trigger" data-panel-id="l10n-versions-dropdown" href="#"> English ▾</a>
+<div class='dropdown-panel right' id='l10n-versions-dropdown'>
+  <header>Localized versions of <strong>git-range-diff</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+    <li>
+      <a href="/docs/git-range-diff"><span class="version">English</span>
+      </a>
+      </li>
+    
+    
+    <li>
+        <a href="/docs/git-range-diff/fr"><span class="version">Français</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-range-diff/pt_BR"><span class="version">Português (Brasil)</span>
+        </a>
+        </li>
+    
+    <li>
+        <a href="/docs/git-range-diff/zh_HANS-CN"><span class="version">简体中文</span>
+        </a>
+        </li>
+    
+  </ol>
+  <footer>
+    Want to read in your language or fix typos?<br/> <a href="https://github.com/jnavila/git-manpages-l10n">You can help translate this page</a>.
+  </footer>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ▾</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      
+      
+      
+
+<h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git">
+    
+      
+        git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-config">
+    
+      
+        config
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-help">
+    
+      
+        help
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bugreport">
+    
+      
+        bugreport
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/doc/credential-helpers">
+    
+      
+        Credential helpers
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-init">
+    
+      
+        init
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-clone">
+    
+      
+        clone
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-add">
+    
+      
+        add
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-status">
+    
+      
+        status
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit">
+    
+      
+        commit
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-notes">
+    
+      
+        notes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-restore">
+    
+      
+        restore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reset">
+    
+      
+        reset
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rm">
+    
+      
+        rm
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mv">
+    
+      
+        mv
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-branch">
+    
+      
+        branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout">
+    
+      
+        checkout
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-switch">
+    
+      
+        switch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge">
+    
+      
+        merge
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-mergetool">
+    
+      
+        mergetool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-stash">
+    
+      
+        stash
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-tag">
+    
+      
+        tag
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-worktree">
+    
+      
+        worktree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-fetch">
+    
+      
+        fetch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-pull">
+    
+      
+        pull
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-push">
+    
+      
+        push
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-remote">
+    
+      
+        remote
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-submodule">
+    
+      
+        submodule
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-middle'>
+      
+      
+      
+
+<h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-show">
+    
+      
+        show
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-log">
+    
+      
+        log
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-difftool">
+    
+      
+        difftool
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-range-diff">
+    
+      
+        range-diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-shortlog">
+    
+      
+        shortlog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-describe">
+    
+      
+        describe
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-cherry-pick">
+    
+      
+        cherry-pick
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff">
+    
+      
+        diff
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rebase">
+    
+      
+        rebase
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-revert">
+    
+      
+        revert
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-bisect">
+    
+      
+        bisect
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-blame">
+    
+      
+        blame
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-grep">
+    
+      
+        grep
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-am">
+    
+      
+        am
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-apply">
+    
+      
+        apply
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-format-patch">
+    
+      
+        format-patch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-send-email">
+    
+      
+        send-email
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-request-pull">
+    
+      
+        request-pull
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-svn">
+    
+      
+        svn
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fast-import">
+    
+      
+        fast-import
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-daemon">
+    
+      
+        daemon
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-server-info">
+    
+      
+        update-server-info
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+    <div class='column-right'>
+      
+      
+      
+
+<h3 class='guides'>Guides</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/gitattributes">
+    
+      
+        gitattributes
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitcli">
+    
+      
+        Command-line interface conventions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/giteveryday">
+    
+      
+        Everyday Git
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitfaq">
+    
+      
+        Frequently Asked Questions (FAQ)
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitglossary">
+    
+      
+        Glossary
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/githooks">
+    
+      
+        Hooks
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitignore">
+    
+      
+        gitignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitmodules">
+    
+      
+        gitmodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitrevisions">
+    
+      
+        Revisions
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitsubmodules">
+    
+      
+        Submodules
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gittutorial">
+    
+      
+        Tutorial
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/gitworkflows">
+    
+      
+        Workflows
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git#_guides">
+    
+      
+        All guides...
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-clean">
+    
+      
+        clean
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-gc">
+    
+      
+        gc
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-fsck">
+    
+      
+        fsck
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-reflog">
+    
+      
+        reflog
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-filter-branch">
+    
+      
+        filter-branch
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-instaweb">
+    
+      
+        instaweb
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-archive">
+    
+      
+        archive
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-bundle">
+    
+      
+        bundle
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+      
+      
+
+<h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  
+  <li>
+    
+      <a href="/docs/git-cat-file">
+    
+      
+        cat-file
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-check-ignore">
+    
+      
+        check-ignore
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-checkout-index">
+    
+      
+        checkout-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-commit-tree">
+    
+      
+        commit-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-count-objects">
+    
+      
+        count-objects
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-diff-index">
+    
+      
+        diff-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-for-each-ref">
+    
+      
+        for-each-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-hash-object">
+    
+      
+        hash-object
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-files">
+    
+      
+        ls-files
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-ls-tree">
+    
+      
+        ls-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-merge-base">
+    
+      
+        merge-base
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-read-tree">
+    
+      
+        read-tree
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-list">
+    
+      
+        rev-list
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-rev-parse">
+    
+      
+        rev-parse
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-show-ref">
+    
+      
+        show-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-symbolic-ref">
+    
+      
+        symbolic-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-index">
+    
+      
+        update-index
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-update-ref">
+    
+      
+        update-ref
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-verify-pack">
+    
+      
+        verify-pack
+      
+    </a>
+  </li>
+  
+  <li>
+    
+      <a href="/docs/git-write-tree">
+    
+      
+        write-tree
+      
+    </a>
+  </li>
+  
+</ul>
+
+      
+    </div>
+  </div>
+</div>
+
+            
+<a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">
+  
+    Latest version
+   ▾ </a>
+<span class="light d-flex">git-range-diff last updated in 2.48.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-range-diff</strong> manual</header>
+  <ol class='reference-previous-versions'>
+    
+      
+        <li class="no-change"><span>2.48.1 &rarr; 2.50.0 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.48.0"><span class="version">2.48.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-01-10</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.43.1 &rarr; 2.47.2 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.43.0"><span class="version">2.43.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2023-11-20</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.38.1 &rarr; 2.42.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.38.0"><span class="version">2.38.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2022-10-02</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.31.1 &rarr; 2.37.7 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.31.0"><span class="version">2.31.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2021-03-15</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.25.1 &rarr; 2.30.9 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.25.0"><span class="version">2.25.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2020-01-13</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.20.1 &rarr; 2.24.4 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.20.0"><span class="version">2.20.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-12-09</em>
+        </a>
+        </li>
+      
+    
+      
+        <li class="no-change"><span>2.19.1 &rarr; 2.19.6 no changes</span></li>
+      
+    
+      
+        <li>
+        <a href="/docs/git-range-diff/2.19.0"><span class="version">2.19.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2018-09-10</em>
+        </a>
+        </li>
+      
+    
+    <li>&nbsp;</li>
+    
+  </ol>
+  <footer>
+    <p>Check your version of git by running</p>
+    <code class="command">git --version</code>
+  </footer>
+</div>
+
+          </div>
+
+          
+          
+          <div id="main" data-pagefind-filter="category:reference" data-pagefind-meta="category:Reference" data-pagefind-weight="0.05" data-pagefind-body>
+	    
+            <div class="sect1">
+<h2 id="_name"><a class="anchor" href="#_name"></a>NAME</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>git-range-diff - Compare two commit ranges (e.g. two versions of a branch)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="verseblock">
+<pre class="content"><em>git range-diff</em> [--color=[&lt;when&gt;]] [--no-color] [&lt;diff-options&gt;]
+	[--no-dual-color] [--creation-factor=&lt;factor&gt;]
+	[--left-only | --right-only] [--diff-merges=&lt;format&gt;]
+	[--remerge-diff]
+	( &lt;range1&gt; &lt;range2&gt; | &lt;rev1&gt;&#8230;&#8203;&lt;rev2&gt; | &lt;base&gt; &lt;rev1&gt; &lt;rev2&gt; )
+	[[--] &lt;path&gt;&#8230;&#8203;]</pre>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This command shows the differences between two versions of a patch
+series, or more generally, two commit ranges (ignoring merge commits).</p>
+</div>
+<div class="paragraph">
+<p>In the presence of <code>&lt;path&gt;</code> arguments, these commit ranges are limited
+accordingly.</p>
+</div>
+<div class="paragraph">
+<p>To that end, it first finds pairs of commits from both commit ranges
+that correspond with each other. Two commits are said to correspond when
+the diff between their patches (i.e. the author information, the commit
+message and the commit diff) is reasonably small compared to the
+patches' size. See ``Algorithm`` below for details.</p>
+</div>
+<div class="paragraph">
+<p>Finally, the list of matching commits is shown in the order of the
+second commit range, with unmatched commits being inserted just after
+all of their ancestors have been shown.</p>
+</div>
+<div class="paragraph">
+<p>There are three ways to specify the commit ranges:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;range1&gt; &lt;range2&gt;</code>: Either commit range can be of the form
+<code>&lt;base&gt;..&lt;rev&gt;</code>, <code>&lt;rev&gt;^!</code> or <code>&lt;rev&gt;^-&lt;n&gt;</code>. See <code>SPECIFYING RANGES</code>
+in <a href='/docs/gitrevisions'>gitrevisions[7]</a> for more details.</p>
+</li>
+<li>
+<p><code>&lt;rev1&gt;...&lt;rev2&gt;</code>. This is equivalent to
+<code>&lt;rev2&gt;..&lt;rev1&gt; &lt;rev1&gt;..&lt;rev2&gt;</code>.</p>
+</li>
+<li>
+<p><code>&lt;base&gt; &lt;rev1&gt; &lt;rev2&gt;</code>: This is equivalent to <code>&lt;base&gt;..&lt;rev1&gt;
+&lt;base&gt;..&lt;rev2&gt;</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---no-dual-color"> <a class="anchor" href="#Documentation/git-range-diff.txt---no-dual-color"></a>--no-dual-color </dt>
+<dd>
+<p>When the commit diffs differ, <code>git range-diff</code> recreates the
+original diffs' coloring, and adds outer -/+ diff markers with
+the <strong>background</strong> being red/green to make it easier to see e.g.
+when there was a change in what exact lines were added.</p>
+<div class="paragraph">
+<p>Additionally, the commit diff lines that are only present in the first commit
+range are shown "dimmed" (this can be overridden using the <code>color.diff.&lt;slot&gt;</code>
+config setting where <code>&lt;slot&gt;</code> is one of <code>contextDimmed</code>, <code>oldDimmed</code> and
+<code>newDimmed</code>), and the commit diff lines that are only present in the second
+commit range are shown in bold (which can be overridden using the config
+settings <code>color.diff.&lt;slot&gt;</code> with <code>&lt;slot&gt;</code> being one of <code>contextBold</code>,
+<code>oldBold</code> or <code>newBold</code>).</p>
+</div>
+<div class="paragraph">
+<p>This is known to <code>range-diff</code> as "dual coloring". Use <code>--no-dual-color</code>
+to revert to color all lines according to the outer diff markers
+(and completely ignore the inner diff when it comes to color).</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---creation-factorltpercentgt"> <a class="anchor" href="#Documentation/git-range-diff.txt---creation-factorpercent"></a> <a class="anchor" href="#Documentation/git-range-diff.txt---creation-factorltpercentgt"></a>--creation-factor=&lt;percent&gt; </dt>
+<dd>
+<p>Set the creation/deletion cost fudge factor to <code>&lt;percent&gt;</code>.
+Defaults to 60. Try a larger value if <code>git range-diff</code> erroneously
+considers a large change a total rewrite (deletion of one commit
+and addition of another), and a smaller one in the reverse case.
+See the ``Algorithm`` section below for an explanation of why this is
+needed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---left-only"> <a class="anchor" href="#Documentation/git-range-diff.txt---left-only"></a>--left-only </dt>
+<dd>
+<p>Suppress commits that are missing from the first specified range
+(or the "left range" when using the <code>&lt;rev1&gt;...&lt;rev2&gt;</code> format).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---right-only"> <a class="anchor" href="#Documentation/git-range-diff.txt---right-only"></a>--right-only </dt>
+<dd>
+<p>Suppress commits that are missing from the second specified range
+(or the "right range" when using the <code>&lt;rev1&gt;...&lt;rev2&gt;</code> format).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---diff-mergesltformatgt"> <a class="anchor" href="#Documentation/git-range-diff.txt---diff-mergesformat"></a> <a class="anchor" href="#Documentation/git-range-diff.txt---diff-mergesltformatgt"></a>--diff-merges=&lt;format&gt; </dt>
+<dd>
+<p>Instead of ignoring merge commits, generate diffs for them using the
+corresponding <code>--diff-merges=&lt;format&gt;</code> option of <a href='/docs/git-log'>git-log[1]</a>,
+and include them in the comparison.</p>
+<div class="paragraph">
+<p>Note: In the common case, the <code>remerge</code> mode will be the most natural one
+to use, as it shows only the diff on top of what Git&#8217;s merge machinery would
+have produced. In other words, if a merge commit is the result of a
+non-conflicting <code>git merge</code>, the <code>remerge</code> mode will represent it with an empty
+diff.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---remerge-diff"> <a class="anchor" href="#Documentation/git-range-diff.txt---remerge-diff"></a>--remerge-diff </dt>
+<dd>
+<p>Convenience option, equivalent to <code>--diff-merges=remerge</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt---no-notesltrefgt"> <a class="anchor" href="#Documentation/git-range-diff.txt---no-notesref"></a> <a class="anchor" href="#Documentation/git-range-diff.txt---no-notesltrefgt"></a>--[no-]notes[=&lt;ref&gt;] </dt>
+<dd>
+<p>This flag is passed to the <code>git log</code> program
+(see <a href='/docs/git-log'>git-log[1]</a>) that generates the patches.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt-ltrange1gtltrange2gt"> <a class="anchor" href="#Documentation/git-range-diff.txt-range1range2"></a> <a class="anchor" href="#Documentation/git-range-diff.txt-ltrange1gtltrange2gt"></a>&lt;range1&gt; &lt;range2&gt; </dt>
+<dd>
+<p>Compare the commits specified by the two ranges, where
+<code>&lt;range1&gt;</code> is considered an older version of <code>&lt;range2&gt;</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt-ltrev1gt82308203ltrev2gt"> <a class="anchor" href="#Documentation/git-range-diff.txt-rev1rev2"></a> <a class="anchor" href="#Documentation/git-range-diff.txt-ltrev1gt82308203ltrev2gt"></a>&lt;rev1&gt;&#8230;&#8203;&lt;rev2&gt; </dt>
+<dd>
+<p>Equivalent to passing <code>&lt;rev2&gt;..&lt;rev1&gt;</code> and <code>&lt;rev1&gt;..&lt;rev2&gt;</code>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-range-diff.txt-ltbasegtltrev1gtltrev2gt"> <a class="anchor" href="#Documentation/git-range-diff.txt-baserev1rev2"></a> <a class="anchor" href="#Documentation/git-range-diff.txt-ltbasegtltrev1gtltrev2gt"></a>&lt;base&gt; &lt;rev1&gt; &lt;rev2&gt; </dt>
+<dd>
+<p>Equivalent to passing <code>&lt;base&gt;..&lt;rev1&gt;</code> and <code>&lt;base&gt;..&lt;rev2&gt;</code>.
+Note that <code>&lt;base&gt;</code> does not need to be the exact branch point
+of the branches. Example: after rebasing a branch <code>my-topic</code>,
+<code>git range-diff my-topic@{u} my-topic@{1} my-topic</code> would
+show the differences introduced by the rebase.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><code>git range-diff</code> also accepts the regular diff options (see
+<a href='/docs/git-diff'>git-diff[1]</a>), most notably the <code>--color=[&lt;when&gt;]</code> and
+<code>--no-color</code> options. These options are used when generating the "diff
+between patches", i.e. to compare the author, commit message and diff of
+corresponding old/new commits. There is currently no means to tweak most of the
+diff options passed to <code>git log</code> when generating those patches.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_output_stability"><a class="anchor" href="#_output_stability"></a>OUTPUT STABILITY</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The output of the <code>range-diff</code> command is subject to change. It is
+intended to be human-readable porcelain output, not something that can
+be used across versions of Git to get a textually stable <code>range-diff</code>
+(as opposed to something like the <code>--stable</code> option to
+<a href='/docs/git-patch-id'>git-patch-id[1]</a>). There&#8217;s also no equivalent of
+<a href='/docs/git-apply'>git-apply[1]</a> for <code>range-diff</code>, the output is not intended to
+be machine-readable.</p>
+</div>
+<div class="paragraph">
+<p>This is particularly true when passing in diff options. Currently some
+options like <code>--stat</code> can, as an emergent effect, produce output
+that&#8217;s quite useless in the context of <code>range-diff</code>. Future versions
+of <code>range-diff</code> may learn to interpret such options in a manner
+specific to <code>range-diff</code> (e.g. for <code>--stat</code> producing human-readable
+output which summarizes how the diffstat changed).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This command uses the <code>diff.color.*</code> and <code>pager.range-diff</code> settings
+(the latter is on by default).
+See <a href='/docs/git-config'>git-config[1]</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a rebase required merge conflicts to be resolved, compare the changes
+introduced by the rebase directly afterwards using:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git range-diff @{u} @{1} @</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A typical output of <code>git range-diff</code> would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>-:  ------- &gt; 1:  0ddba11 Prepare for the inevitable!
+1:  c0debee = 2:  cab005e Add a helpful message at the start
+2:  f00dbal ! 3:  decafe1 Describe a bug
+    @@ -1,3 +1,3 @@
+     Author: A U Thor &lt;author@example.com&gt;
+
+    -TODO: Describe a bug
+    +Describe a bug
+    @@ -324,5 +324,6
+      This is expected.
+
+    -+What is unexpected is that it will also crash.
+    ++Unexpectedly, it also crashes. This is a bug, and the jury is
+    ++still out there how to fix it best. See ticket #314 for details.
+
+      Contact
+3:  bedead &lt; -:  ------- TO-UNDO</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, there are 3 old and 3 new commits, where the developer
+removed the 3rd, added a new one before the first two, and modified the
+commit message of the 2nd commit as well as its diff.</p>
+</div>
+<div class="paragraph">
+<p>When the output goes to a terminal, it is color-coded by default, just
+like regular <code>git diff</code>'s output. In addition, the first line (adding a
+commit) is green, the last line (deleting a commit) is red, the second
+line (with a perfect match) is yellow like the commit header of <code>git
+show</code>'s output, and the third line colors the old commit red, the new
+one green and the rest like <code>git show</code>'s commit header.</p>
+</div>
+<div class="paragraph">
+<p>A naive color-coded diff of diffs is actually a bit hard to read,
+though, as it colors the entire lines red or green. The line that added
+"What is unexpected" in the old commit, for example, is completely red,
+even if the intent of the old commit was to add something.</p>
+</div>
+<div class="paragraph">
+<p>To help with that, <code>range</code> uses the <code>--dual-color</code> mode by default. In
+this mode, the diff of diffs will retain the original diff colors, and
+prefix the lines with -/+ markers that have their <strong>background</strong> red or
+green, to make it more obvious that they describe how the diff itself
+changed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algorithm"><a class="anchor" href="#_algorithm"></a>Algorithm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The general idea is this: we generate a cost matrix between the commits
+in both commit ranges, then solve the least-cost assignment.</p>
+</div>
+<div class="paragraph">
+<p>The cost matrix is populated thusly: for each pair of commits, both
+diffs are generated and the "diff of diffs" is generated, with 3 context
+lines, then the number of lines in that diff is used as cost.</p>
+</div>
+<div class="paragraph">
+<p>To avoid false positives (e.g. when a patch has been removed, and an
+unrelated patch has been added between two iterations of the same patch
+series), the cost matrix is extended to allow for that, by adding
+fixed-cost entries for wholesale deletes/adds.</p>
+</div>
+<div class="paragraph">
+<p>Example: Let commits <code>1--2</code> be the first iteration of a patch series and
+<code>A--C</code> the second iteration. Let&#8217;s assume that <code>A</code> is a cherry-pick of
+<code>2,</code> and <code>C</code> is a cherry-pick of <code>1</code> but with a small modification (say,
+a fixed typo). Visualize the commits as a bipartite graph:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    1            A
+
+    2            B
+
+		 C</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are looking for a "best" explanation of the new series in terms of
+the old one. We can represent an "explanation" as an edge in the graph:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    1            A
+	       /
+    2 --------'  B
+
+		 C</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This explanation comes for "free" because there was no change. Similarly
+<code>C</code> could be explained using <code>1</code>, but that comes at some cost c&gt;0
+because of the modification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    1 ----.      A
+	  |    /
+    2 ----+---'  B
+	  |
+	  `----- C
+	  c&gt;0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In mathematical terms, what we are looking for is some sort of a minimum
+cost bipartite matching; <code>1</code> is matched to <code>C</code> at some cost, etc. The
+underlying graph is in fact a complete bipartite graph; the cost we
+associate with every edge is the size of the diff between the two
+commits' patches. To explain also new commits, we introduce dummy nodes
+on both sides:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    1 ----.      A
+	  |    /
+    2 ----+---'  B
+	  |
+    o     `----- C
+	  c&gt;0
+    o            o
+
+    o            o</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The cost of an edge <code>o--C</code> is the size of <code>C</code>'s diff, modified by a
+fudge factor that should be smaller than 100%. The cost of an edge
+<code>o--o</code> is free. The fudge factor is necessary because even if <code>1</code> and
+<code>C</code> have nothing in common, they may still share a few empty lines and
+such, possibly making the assignment <code>1--C</code>, <code>o--o</code> slightly cheaper
+than <code>1--o</code>, <code>o--C</code> even if <code>1</code> and <code>C</code> have nothing in common. With the
+fudge factor we require a much larger common part to consider patches as
+corresponding.</p>
+</div>
+<div class="paragraph">
+<p>The overall time needed to compute this algorithm is the time needed to
+compute n+m commit diffs and then n*m diffs of patches, plus the time
+needed to compute the least-cost assignment between n and m diffs. Git
+uses an implementation of the Jonker-Volgenant algorithm to solve the
+assignment problem, which has cubic runtime complexity. The matching
+found in this case will look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    1 ----.      A
+	  |    /
+    2 ----+---'  B
+       .--+-----'
+    o -'  `----- C
+	  c&gt;0
+    o ---------- o
+
+    o ---------- o</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also"><a class="anchor" href="#_see_also"></a>SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href='/docs/git-log'>git-log[1]</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git"><a class="anchor" href="#_git"></a>GIT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div>
+</div>
+</div>
+            
+            
+              
+              
+              
+              <h3 hidden="true" data-pagefind-weight="7">range-diff</h3>
+            
+          </div>
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    <a href="/site">About this site</a><br>
+    Patches, suggestions, and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+<a href="#top" class="no-js scrollToTop" id="scrollToTop" data-label="Scroll to top">
+  <img src="/images/icons/chevron-up@2x.png" width="20" height="20" alt="scroll-to-top"/>
+</a>
+
+<script src="/js/jquery-1.7.1.min.js"></script>
+<script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/js/jquery.defaultvalue.js"></script>
+<script src="/js/session.min.js"></script>
+
+<script src="/js/application.min.a53560ad67320f253b273f25e0ef1e538973fa6061ae96e0686f0a120ad6f2e0.js"></script>
+
+    </div>
+  
+
+</body>
+</html>
+
