@@ -1,0 +1,32 @@
+name: Update Git Docs
+
+on:
+  workflow_dispatch:   # manual trigger
+  schedule:
+    - cron: '0 3 * * *'  # runs daily at 3:00 AM UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Git Docs Update Script
+        run: npx tsx scripts/updateDocs.ts
+
+      - name: Commit Changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "🔄 Update Git docs" || echo "No changes"
+          git push

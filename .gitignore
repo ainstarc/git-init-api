@@ -47,3 +47,5 @@ lcov.info
 .DS_Store
 Thumbs.db
 
+# Ignore generated Git doc HTML (locally only)
+data/git-docs/html/
