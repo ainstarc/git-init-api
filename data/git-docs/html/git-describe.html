@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.cbdc67dad990994231dddfe762f0ea560c1a7092f5cfc2897e545f06bc5d10f5.css">
+  <link rel="stylesheet" href="/application.min.78cc7bcde06a1c819feae8ca85b77ae65da94fa5bf5260e62c7dc077a67d7df3.css" integrity="sha256-eMx7zeBqHIGf6ujKhbd65l2pT6W/UmDmLH3Ad6Z9ffM=">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1704,12 +1704,12 @@ from HEAD.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-describe.txt-ltcommit-ishgt82308203"> <a class="anchor" href="#Documentation/git-describe.txt-commit-ish"></a> <a class="anchor" href="#Documentation/git-describe.txt-ltcommit-ishgt82308203"></a>&lt;commit-ish&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt-ltcommit-ishgt82308203"><a id="Documentation/git-describe.txt-commit-ish" class="anchor" href="#Documentation/git-describe.txt-commit-ish"></a>&lt;commit-ish&gt;&#8230;&#8203; </dt>
 <dd>
 <p>Commit-ish object names to describe.  Defaults to HEAD if omitted.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---dirtyltmarkgt"> <a class="anchor" href="#Documentation/git-describe.txt---dirtymark"></a> <a class="anchor" href="#Documentation/git-describe.txt---dirtyltmarkgt"></a>--dirty[=&lt;mark&gt;] </dt>
-<dt class="hdlist1" id="Documentation/git-describe.txt---brokenltmarkgt"> <a class="anchor" href="#Documentation/git-describe.txt---brokenmark"></a> <a class="anchor" href="#Documentation/git-describe.txt---brokenltmarkgt"></a>--broken[=&lt;mark&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---dirtyltmarkgt"><a id="Documentation/git-describe.txt---dirtymark" class="anchor" href="#Documentation/git-describe.txt---dirtymark"></a>--dirty[=&lt;mark&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---brokenltmarkgt"><a id="Documentation/git-describe.txt---brokenmark" class="anchor" href="#Documentation/git-describe.txt---brokenmark"></a>--broken[=&lt;mark&gt;] </dt>
 <dd>
 <p>Describe the state of the working tree.  When the working
 tree matches HEAD, the output is the same as "git describe
@@ -1719,25 +1719,25 @@ cannot determine if there is local modification, Git will
 error out, unless &#8216;--broken&#8217; is given, which appends
 the suffix "-broken" instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---all"> <a class="anchor" href="#Documentation/git-describe.txt---all"></a>--all </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---all"><a class="anchor" href="#Documentation/git-describe.txt---all"></a>--all </dt>
 <dd>
 <p>Instead of using only the annotated tags, use any ref
 found in <code>refs/</code> namespace.  This option enables matching
 any known branch, remote-tracking branch, or lightweight tag.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---tags"> <a class="anchor" href="#Documentation/git-describe.txt---tags"></a>--tags </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---tags"><a class="anchor" href="#Documentation/git-describe.txt---tags"></a>--tags </dt>
 <dd>
 <p>Instead of using only the annotated tags, use any tag
 found in <code>refs/tags</code> namespace.  This option enables matching
 a lightweight (non-annotated) tag.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---contains"> <a class="anchor" href="#Documentation/git-describe.txt---contains"></a>--contains </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---contains"><a class="anchor" href="#Documentation/git-describe.txt---contains"></a>--contains </dt>
 <dd>
 <p>Instead of finding the tag that predates the commit, find
 the tag that comes after the commit, and thus contains it.
 Automatically implies --tags.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---abbrevltngt"> <a class="anchor" href="#Documentation/git-describe.txt---abbrevn"></a> <a class="anchor" href="#Documentation/git-describe.txt---abbrevltngt"></a>--abbrev=&lt;n&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---abbrevltngt"><a id="Documentation/git-describe.txt---abbrevn" class="anchor" href="#Documentation/git-describe.txt---abbrevn"></a>--abbrev=&lt;n&gt; </dt>
 <dd>
 <p>Instead of using the default number of hexadecimal digits (which
 will vary according to the number of objects in the repository with
@@ -1745,7 +1745,7 @@ a default of 7) of the abbreviated object name, use &lt;n&gt; digits, or
 as many digits as needed to form a unique object name. An &lt;n&gt; of 0
 will suppress long format, only showing the closest tag.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---candidatesltngt"> <a class="anchor" href="#Documentation/git-describe.txt---candidatesn"></a> <a class="anchor" href="#Documentation/git-describe.txt---candidatesltngt"></a>--candidates=&lt;n&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---candidatesltngt"><a id="Documentation/git-describe.txt---candidatesn" class="anchor" href="#Documentation/git-describe.txt---candidatesn"></a>--candidates=&lt;n&gt; </dt>
 <dd>
 <p>Instead of considering only the 10 most recent tags as
 candidates to describe the input commit-ish consider
@@ -1753,18 +1753,18 @@ up to &lt;n&gt; candidates.  Increasing &lt;n&gt; above 10 will take
 slightly longer but may produce a more accurate result.
 An &lt;n&gt; of 0 will cause only exact matches to be output.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---exact-match"> <a class="anchor" href="#Documentation/git-describe.txt---exact-match"></a>--exact-match </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---exact-match"><a class="anchor" href="#Documentation/git-describe.txt---exact-match"></a>--exact-match </dt>
 <dd>
 <p>Only output exact matches (a tag directly references the
 supplied commit).  This is a synonym for --candidates=0.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---debug"> <a class="anchor" href="#Documentation/git-describe.txt---debug"></a>--debug </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---debug"><a class="anchor" href="#Documentation/git-describe.txt---debug"></a>--debug </dt>
 <dd>
 <p>Verbosely display information about the searching strategy
 being employed to standard error.  The tag name will still
 be printed to standard out.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---long"> <a class="anchor" href="#Documentation/git-describe.txt---long"></a>--long </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---long"><a class="anchor" href="#Documentation/git-describe.txt---long"></a>--long </dt>
 <dd>
 <p>Always output the long format (the tag, the number of commits
 and the abbreviated commit name) even when it matches a tag.
@@ -1774,7 +1774,7 @@ a tagged version.  Instead of just emitting the tag name, it will
 describe such a commit as v1.2-0-gdeadbee (0th commit since tag v1.2
 that points at object deadbee&#8230;&#8203;.).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---matchltpatterngt"> <a class="anchor" href="#Documentation/git-describe.txt---matchpattern"></a> <a class="anchor" href="#Documentation/git-describe.txt---matchltpatterngt"></a>--match &lt;pattern&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---matchltpatterngt"><a id="Documentation/git-describe.txt---matchpattern" class="anchor" href="#Documentation/git-describe.txt---matchpattern"></a>--match &lt;pattern&gt; </dt>
 <dd>
 <p>Only consider tags matching the given <code>glob(7)</code> pattern,
 excluding the "refs/tags/" prefix. If used with <code>--all</code>, it also
@@ -1785,7 +1785,7 @@ multiple times, a list of patterns will be accumulated, and tags
 matching any of the patterns will be considered.  Use <code>--no-match</code> to
 clear and reset the list of patterns.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---excludeltpatterngt"> <a class="anchor" href="#Documentation/git-describe.txt---excludepattern"></a> <a class="anchor" href="#Documentation/git-describe.txt---excludeltpatterngt"></a>--exclude &lt;pattern&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---excludeltpatterngt"><a id="Documentation/git-describe.txt---excludepattern" class="anchor" href="#Documentation/git-describe.txt---excludepattern"></a>--exclude &lt;pattern&gt; </dt>
 <dd>
 <p>Do not consider tags matching the given <code>glob(7)</code> pattern, excluding
 the "refs/tags/" prefix. If used with <code>--all</code>, it also does not consider
@@ -1798,11 +1798,11 @@ considered when it matches at least one --match pattern and does not
 match any of the --exclude patterns. Use <code>--no-exclude</code> to clear and
 reset the list of patterns.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---always"> <a class="anchor" href="#Documentation/git-describe.txt---always"></a>--always </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---always"><a class="anchor" href="#Documentation/git-describe.txt---always"></a>--always </dt>
 <dd>
 <p>Show uniquely abbreviated commit object as fallback.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-describe.txt---first-parent"> <a class="anchor" href="#Documentation/git-describe.txt---first-parent"></a>--first-parent </dt>
+<dt class="hdlist1" id="Documentation/git-describe.txt---first-parent"><a class="anchor" href="#Documentation/git-describe.txt---first-parent"></a>--first-parent </dt>
 <dd>
 <p>Follow only the first parent commit upon seeing a merge commit.
 This is useful when you wish to not match tags on branches merged
@@ -1961,7 +1961,7 @@ tag being favorable.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
 
     </div>
   

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.cbdc67dad990994231dddfe762f0ea560c1a7092f5cfc2897e545f06bc5d10f5.css">
+  <link rel="stylesheet" href="/application.min.78cc7bcde06a1c819feae8ca85b77ae65da94fa5bf5260e62c7dc077a67d7df3.css" integrity="sha256-eMx7zeBqHIGf6ujKhbd65l2pT6W/UmDmLH3Ad6Z9ffM=">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2705,25 +2705,25 @@ may be used by scripts or other git commands, such as <a href='/docs/git-pull'>g
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-all"> <a class="anchor" href="#Documentation/git-fetch.txt---no-all"></a>--[no-]all </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-all"><a class="anchor" href="#Documentation/git-fetch.txt---no-all"></a>--[no-]all </dt>
 <dd>
 <p>Fetch all remotes, except for the ones that has the
 <code>remote.&lt;name&gt;.skipFetchAll</code> configuration variable set.
 This overrides the configuration variable fetch.all`.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--a"> <a class="anchor" href="#Documentation/git-fetch.txt--a"></a>-a </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---append"> <a class="anchor" href="#Documentation/git-fetch.txt---append"></a>--append </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--a"><a class="anchor" href="#Documentation/git-fetch.txt--a"></a>-a </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---append"><a class="anchor" href="#Documentation/git-fetch.txt---append"></a>--append </dt>
 <dd>
 <p>Append ref names and object names of fetched refs to the
 existing contents of <code>.git/FETCH_HEAD</code>.  Without this
 option old data in <code>.git/FETCH_HEAD</code> will be overwritten.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---atomic"> <a class="anchor" href="#Documentation/git-fetch.txt---atomic"></a>--atomic </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---atomic"><a class="anchor" href="#Documentation/git-fetch.txt---atomic"></a>--atomic </dt>
 <dd>
 <p>Use an atomic transaction to update local refs. Either all refs are
 updated, or on error, no refs are updated.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---depthltdepthgt"> <a class="anchor" href="#Documentation/git-fetch.txt---depthdepth"></a> <a class="anchor" href="#Documentation/git-fetch.txt---depthltdepthgt"></a>--depth=&lt;depth&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---depthltdepthgt"><a id="Documentation/git-fetch.txt---depthdepth" class="anchor" href="#Documentation/git-fetch.txt---depthdepth"></a>--depth=&lt;depth&gt; </dt>
 <dd>
 <p>Limit fetching to the specified number of commits from the tip of
 each remote branch history. If fetching to a <em>shallow</em> repository
@@ -2731,24 +2731,24 @@ created by <code>git clone</code> with <code>--depth=&lt;depth&gt;</code> option
 <a href='/docs/git-clone'>git-clone[1]</a>), deepen or shorten the history to the specified
 number of commits. Tags for the deepened commits are not fetched.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---deepenltdepthgt"> <a class="anchor" href="#Documentation/git-fetch.txt---deependepth"></a> <a class="anchor" href="#Documentation/git-fetch.txt---deepenltdepthgt"></a>--deepen=&lt;depth&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---deepenltdepthgt"><a id="Documentation/git-fetch.txt---deependepth" class="anchor" href="#Documentation/git-fetch.txt---deependepth"></a>--deepen=&lt;depth&gt; </dt>
 <dd>
 <p>Similar to --depth, except it specifies the number of commits
 from the current shallow boundary instead of from the tip of
 each remote branch history.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---shallow-sinceltdategt"> <a class="anchor" href="#Documentation/git-fetch.txt---shallow-sincedate"></a> <a class="anchor" href="#Documentation/git-fetch.txt---shallow-sinceltdategt"></a>--shallow-since=&lt;date&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---shallow-sinceltdategt"><a id="Documentation/git-fetch.txt---shallow-sincedate" class="anchor" href="#Documentation/git-fetch.txt---shallow-sincedate"></a>--shallow-since=&lt;date&gt; </dt>
 <dd>
 <p>Deepen or shorten the history of a shallow repository to
 include all reachable commits after &lt;date&gt;.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---shallow-excludeltrefgt"> <a class="anchor" href="#Documentation/git-fetch.txt---shallow-excluderef"></a> <a class="anchor" href="#Documentation/git-fetch.txt---shallow-excludeltrefgt"></a>--shallow-exclude=&lt;ref&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---shallow-excludeltrefgt"><a id="Documentation/git-fetch.txt---shallow-excluderef" class="anchor" href="#Documentation/git-fetch.txt---shallow-excluderef"></a>--shallow-exclude=&lt;ref&gt; </dt>
 <dd>
 <p>Deepen or shorten the history of a shallow repository to
 exclude commits reachable from a specified remote branch or tag.
 This option can be specified multiple times.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---unshallow"> <a class="anchor" href="#Documentation/git-fetch.txt---unshallow"></a>--unshallow </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---unshallow"><a class="anchor" href="#Documentation/git-fetch.txt---unshallow"></a>--unshallow </dt>
 <dd>
 <p>If the source repository is complete, convert a shallow
 repository to a complete one, removing all the limitations
@@ -2758,14 +2758,14 @@ imposed by shallow repositories.</p>
 the current repository has the same history as the source repository.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---update-shallow"> <a class="anchor" href="#Documentation/git-fetch.txt---update-shallow"></a>--update-shallow </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---update-shallow"><a class="anchor" href="#Documentation/git-fetch.txt---update-shallow"></a>--update-shallow </dt>
 <dd>
 <p>By default when fetching from a shallow repository,
 <code>git fetch</code> refuses refs that require updating
 .git/shallow. This option updates .git/shallow and accepts such
 refs.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---negotiation-tipltcommitglobgt"> <a class="anchor" href="#Documentation/git-fetch.txt---negotiation-tipcommitglob"></a> <a class="anchor" href="#Documentation/git-fetch.txt---negotiation-tipltcommitglobgt"></a>--negotiation-tip=&lt;commit|glob&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---negotiation-tipltcommitglobgt"><a id="Documentation/git-fetch.txt---negotiation-tipcommitglob" class="anchor" href="#Documentation/git-fetch.txt---negotiation-tipcommitglob"></a>--negotiation-tip=&lt;commit|glob&gt; </dt>
 <dd>
 <p>By default, Git will report, to the server, commits reachable
 from all local refs to find common commits in an attempt to
@@ -2789,7 +2789,7 @@ configuration variables documented in <a href='/docs/git-config'>git-config[1]</
 <code>--negotiate-only</code> option below.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---negotiate-only"> <a class="anchor" href="#Documentation/git-fetch.txt---negotiate-only"></a>--negotiate-only </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---negotiate-only"><a class="anchor" href="#Documentation/git-fetch.txt---negotiate-only"></a>--negotiate-only </dt>
 <dd>
 <p>Do not fetch anything from the server, and instead print the
 ancestors of the provided <code>--negotiation-tip=*</code> arguments,
@@ -2800,11 +2800,11 @@ Internally this is used to implement the <code>push.negotiate</code> option, see
 <a href='/docs/git-config'>git-config[1]</a>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---dry-run"> <a class="anchor" href="#Documentation/git-fetch.txt---dry-run"></a>--dry-run </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---dry-run"><a class="anchor" href="#Documentation/git-fetch.txt---dry-run"></a>--dry-run </dt>
 <dd>
 <p>Show what would be done, without making any changes.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---porcelain"> <a class="anchor" href="#Documentation/git-fetch.txt---porcelain"></a>--porcelain </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---porcelain"><a class="anchor" href="#Documentation/git-fetch.txt---porcelain"></a>--porcelain </dt>
 <dd>
 <p>Print the output to standard output in an easy-to-parse format for
 scripts. See section OUTPUT in <a href='/docs/git-fetch'>git-fetch[1]</a> for details.</p>
@@ -2813,7 +2813,7 @@ scripts. See section OUTPUT in <a href='/docs/git-fetch'>git-fetch[1]</a> for de
 precedence over the <code>fetch.output</code> config option.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-write-fetch-head"> <a class="anchor" href="#Documentation/git-fetch.txt---no-write-fetch-head"></a>--[no-]write-fetch-head </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-write-fetch-head"><a class="anchor" href="#Documentation/git-fetch.txt---no-write-fetch-head"></a>--[no-]write-fetch-head </dt>
 <dd>
 <p>Write the list of remote refs fetched in the <code>FETCH_HEAD</code>
 file directly under <code>$GIT_DIR</code>.  This is the default.
@@ -2821,44 +2821,44 @@ Passing <code>--no-write-fetch-head</code> from the command line tells
 Git not to write the file.  Under <code>--dry-run</code> option, the
 file is never written.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--f"> <a class="anchor" href="#Documentation/git-fetch.txt--f"></a>-f </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---force"> <a class="anchor" href="#Documentation/git-fetch.txt---force"></a>--force </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--f"><a class="anchor" href="#Documentation/git-fetch.txt--f"></a>-f </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---force"><a class="anchor" href="#Documentation/git-fetch.txt---force"></a>--force </dt>
 <dd>
 <p>When <em>git fetch</em> is used with <code>&lt;src&gt;:&lt;dst&gt;</code> refspec, it may
 refuse to update the local branch as discussed
 in the <code>&lt;refspec&gt;</code> part below.
 This option overrides that check.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--k"> <a class="anchor" href="#Documentation/git-fetch.txt--k"></a>-k </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---keep"> <a class="anchor" href="#Documentation/git-fetch.txt---keep"></a>--keep </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--k"><a class="anchor" href="#Documentation/git-fetch.txt--k"></a>-k </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---keep"><a class="anchor" href="#Documentation/git-fetch.txt---keep"></a>--keep </dt>
 <dd>
 <p>Keep downloaded pack.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---multiple"> <a class="anchor" href="#Documentation/git-fetch.txt---multiple"></a>--multiple </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---multiple"><a class="anchor" href="#Documentation/git-fetch.txt---multiple"></a>--multiple </dt>
 <dd>
 <p>Allow several &lt;repository&gt; and &lt;group&gt; arguments to be
 specified. No &lt;refspec&gt;s may be specified.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-auto-maintenance"> <a class="anchor" href="#Documentation/git-fetch.txt---no-auto-maintenance"></a>--[no-]auto-maintenance </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-auto-gc"> <a class="anchor" href="#Documentation/git-fetch.txt---no-auto-gc"></a>--[no-]auto-gc </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-auto-maintenance"><a class="anchor" href="#Documentation/git-fetch.txt---no-auto-maintenance"></a>--[no-]auto-maintenance </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-auto-gc"><a class="anchor" href="#Documentation/git-fetch.txt---no-auto-gc"></a>--[no-]auto-gc </dt>
 <dd>
 <p>Run <code>git maintenance run --auto</code> at the end to perform automatic
 repository maintenance if needed. (<code>--[no-]auto-gc</code> is a synonym.)
 This is enabled by default.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-write-commit-graph"> <a class="anchor" href="#Documentation/git-fetch.txt---no-write-commit-graph"></a>--[no-]write-commit-graph </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-write-commit-graph"><a class="anchor" href="#Documentation/git-fetch.txt---no-write-commit-graph"></a>--[no-]write-commit-graph </dt>
 <dd>
 <p>Write a commit-graph after fetching. This overrides the config
 setting <code>fetch.writeCommitGraph</code>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---prefetch"> <a class="anchor" href="#Documentation/git-fetch.txt---prefetch"></a>--prefetch </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---prefetch"><a class="anchor" href="#Documentation/git-fetch.txt---prefetch"></a>--prefetch </dt>
 <dd>
 <p>Modify the configured refspec to place all refs into the
 <code>refs/prefetch/</code> namespace. See the <code>prefetch</code> task in
 <a href='/docs/git-maintenance'>git-maintenance[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--p"> <a class="anchor" href="#Documentation/git-fetch.txt--p"></a>-p </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---prune"> <a class="anchor" href="#Documentation/git-fetch.txt---prune"></a>--prune </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--p"><a class="anchor" href="#Documentation/git-fetch.txt--p"></a>-p </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---prune"><a class="anchor" href="#Documentation/git-fetch.txt---prune"></a>--prune </dt>
 <dd>
 <p>Before fetching, remove any remote-tracking references that no
 longer exist on the remote.  Tags are not subject to pruning
@@ -2873,8 +2873,8 @@ providing the tag refspec.</p>
 <p>See the PRUNING section below for more details.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--P"> <a class="anchor" href="#Documentation/git-fetch.txt--P"></a>-P </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---prune-tags"> <a class="anchor" href="#Documentation/git-fetch.txt---prune-tags"></a>--prune-tags </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--P"><a class="anchor" href="#Documentation/git-fetch.txt--P"></a>-P </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---prune-tags"><a class="anchor" href="#Documentation/git-fetch.txt---prune-tags"></a>--prune-tags </dt>
 <dd>
 <p>Before fetching, remove any local tags that no longer exist on
 the remote if <code>--prune</code> is enabled. This option should be used
@@ -2886,8 +2886,8 @@ a shorthand for providing the explicit tag refspec along with
 <p>See the PRUNING section below for more details.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--n"> <a class="anchor" href="#Documentation/git-fetch.txt--n"></a>-n </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-tags"> <a class="anchor" href="#Documentation/git-fetch.txt---no-tags"></a>--no-tags </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--n"><a class="anchor" href="#Documentation/git-fetch.txt--n"></a>-n </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-tags"><a class="anchor" href="#Documentation/git-fetch.txt---no-tags"></a>--no-tags </dt>
 <dd>
 <p>By default, tags that point at objects that are downloaded
 from the remote repository are fetched and stored locally.
@@ -2895,7 +2895,7 @@ This option disables this automatic tag following. The default
 behavior for a remote may be specified with the remote.&lt;name&gt;.tagOpt
 setting. See <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---refetch"> <a class="anchor" href="#Documentation/git-fetch.txt---refetch"></a>--refetch </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---refetch"><a class="anchor" href="#Documentation/git-fetch.txt---refetch"></a>--refetch </dt>
 <dd>
 <p>Instead of negotiating with the server to avoid transferring commits and
 associated objects that are already present locally, this option fetches
@@ -2904,7 +2904,7 @@ filter from configuration or using <code>--filter=</code> when the filter
 definition has changed. Automatic post-fetch maintenance will perform
 object database pack consolidation to remove any duplicate objects.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---refmapltrefspecgt"> <a class="anchor" href="#Documentation/git-fetch.txt---refmaprefspec"></a> <a class="anchor" href="#Documentation/git-fetch.txt---refmapltrefspecgt"></a>--refmap=&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---refmapltrefspecgt"><a id="Documentation/git-fetch.txt---refmaprefspec" class="anchor" href="#Documentation/git-fetch.txt---refmaprefspec"></a>--refmap=&lt;refspec&gt; </dt>
 <dd>
 <p>When fetching refs listed on the command line, use the
 specified refspec (can be given more than once) to map the
@@ -2916,8 +2916,8 @@ refspecs and rely entirely on the refspecs supplied as
 command-line arguments. See section on "Configured Remote-tracking
 Branches" for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--t"> <a class="anchor" href="#Documentation/git-fetch.txt--t"></a>-t </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---tags"> <a class="anchor" href="#Documentation/git-fetch.txt---tags"></a>--tags </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--t"><a class="anchor" href="#Documentation/git-fetch.txt--t"></a>-t </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---tags"><a class="anchor" href="#Documentation/git-fetch.txt---tags"></a>--tags </dt>
 <dd>
 <p>Fetch all tags from the remote (i.e., fetch remote tags
 <code>refs/tags/*</code> into local tags with the same name), in addition
@@ -2926,7 +2926,7 @@ option alone does not subject tags to pruning, even if --prune
 is used (though tags may be pruned anyway if they are also the
 destination of an explicit refspec; see <code>--prune</code>).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---recurse-submodulesyeson-demandno"> <a class="anchor" href="#Documentation/git-fetch.txt---recurse-submodulesyeson-demandno"></a>--recurse-submodules[=(yes|on-demand|no)] </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---recurse-submodulesyeson-demandno"><a class="anchor" href="#Documentation/git-fetch.txt---recurse-submodulesyeson-demandno"></a>--recurse-submodules[=(yes|on-demand|no)] </dt>
 <dd>
 <p>This option controls if and under what conditions new commits of
 submodules should be fetched too. When recursing through submodules,
@@ -2949,8 +2949,8 @@ is set (see <a href='/docs/git-config'>git-config[1]</a>), defaulting to <em>on-
 When this option is used without any value, it defaults to <em>yes</em>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--j"> <a class="anchor" href="#Documentation/git-fetch.txt--j"></a>-j </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---jobsltngt"> <a class="anchor" href="#Documentation/git-fetch.txt---jobsn"></a> <a class="anchor" href="#Documentation/git-fetch.txt---jobsltngt"></a>--jobs=&lt;n&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--j"><a class="anchor" href="#Documentation/git-fetch.txt--j"></a>-j </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---jobsltngt"><a id="Documentation/git-fetch.txt---jobsn" class="anchor" href="#Documentation/git-fetch.txt---jobsn"></a>--jobs=&lt;n&gt; </dt>
 <dd>
 <p>Number of parallel children to be used for all forms of fetching.</p>
 <div class="paragraph">
@@ -2964,12 +2964,12 @@ parallel. To control them independently, use the config settings
 default fetches are performed sequentially, not in parallel.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-recurse-submodules"> <a class="anchor" href="#Documentation/git-fetch.txt---no-recurse-submodules"></a>--no-recurse-submodules </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-recurse-submodules"><a class="anchor" href="#Documentation/git-fetch.txt---no-recurse-submodules"></a>--no-recurse-submodules </dt>
 <dd>
 <p>Disable recursive fetching of submodules (this has the same effect as
 using the <code>--recurse-submodules=no</code> option).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---set-upstream"> <a class="anchor" href="#Documentation/git-fetch.txt---set-upstream"></a>--set-upstream </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---set-upstream"><a class="anchor" href="#Documentation/git-fetch.txt---set-upstream"></a>--set-upstream </dt>
 <dd>
 <p>If the remote is fetched successfully, add upstream
 (tracking) reference, used by argument-less
@@ -2977,13 +2977,13 @@ using the <code>--recurse-submodules=no</code> option).</p>
 see <code>branch.&lt;name&gt;.merge</code> and <code>branch.&lt;name&gt;.remote</code> in
 <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---submodule-prefixltpathgt"> <a class="anchor" href="#Documentation/git-fetch.txt---submodule-prefixpath"></a> <a class="anchor" href="#Documentation/git-fetch.txt---submodule-prefixltpathgt"></a>--submodule-prefix=&lt;path&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---submodule-prefixltpathgt"><a id="Documentation/git-fetch.txt---submodule-prefixpath" class="anchor" href="#Documentation/git-fetch.txt---submodule-prefixpath"></a>--submodule-prefix=&lt;path&gt; </dt>
 <dd>
 <p>Prepend &lt;path&gt; to paths printed in informative messages
 such as "Fetching submodule foo".  This option is used
 internally when recursing over submodules.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---recurse-submodules-defaultyeson-demand"> <a class="anchor" href="#Documentation/git-fetch.txt---recurse-submodules-defaultyeson-demand"></a>--recurse-submodules-default=[yes|on-demand] </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---recurse-submodules-defaultyeson-demand"><a class="anchor" href="#Documentation/git-fetch.txt---recurse-submodules-defaultyeson-demand"></a>--recurse-submodules-default=[yes|on-demand] </dt>
 <dd>
 <p>This option is used internally to temporarily provide a
 non-negative default value for the --recurse-submodules
@@ -2992,8 +2992,8 @@ recursion (such as settings in <a href='/docs/gitmodules'>gitmodules[5]</a> and
 <a href='/docs/git-config'>git-config[1]</a>) override this option, as does
 specifying --[no-]recurse-submodules directly.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--u"> <a class="anchor" href="#Documentation/git-fetch.txt--u"></a>-u </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---update-head-ok"> <a class="anchor" href="#Documentation/git-fetch.txt---update-head-ok"></a>--update-head-ok </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--u"><a class="anchor" href="#Documentation/git-fetch.txt--u"></a>-u </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---update-head-ok"><a class="anchor" href="#Documentation/git-fetch.txt---update-head-ok"></a>--update-head-ok </dt>
 <dd>
 <p>By default <em>git fetch</em> refuses to update the head which
 corresponds to the current branch.  This flag disables the
@@ -3002,34 +3002,34 @@ to communicate with <em>git fetch</em>, and unless you are
 implementing your own Porcelain you are not supposed to
 use it.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---upload-packltupload-packgt"> <a class="anchor" href="#Documentation/git-fetch.txt---upload-packupload-pack"></a> <a class="anchor" href="#Documentation/git-fetch.txt---upload-packltupload-packgt"></a>--upload-pack &lt;upload-pack&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---upload-packltupload-packgt"><a id="Documentation/git-fetch.txt---upload-packupload-pack" class="anchor" href="#Documentation/git-fetch.txt---upload-packupload-pack"></a>--upload-pack &lt;upload-pack&gt; </dt>
 <dd>
 <p>When given, and the repository to fetch from is handled
 by <em>git fetch-pack</em>, <code>--exec=&lt;upload-pack&gt;</code> is passed to
 the command to specify non-default path for the command
 run on the other end.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--q"> <a class="anchor" href="#Documentation/git-fetch.txt--q"></a>-q </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---quiet"> <a class="anchor" href="#Documentation/git-fetch.txt---quiet"></a>--quiet </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--q"><a class="anchor" href="#Documentation/git-fetch.txt--q"></a>-q </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---quiet"><a class="anchor" href="#Documentation/git-fetch.txt---quiet"></a>--quiet </dt>
 <dd>
 <p>Pass --quiet to git-fetch-pack and silence any other internally
 used git commands. Progress is not reported to the standard error
 stream.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--v"> <a class="anchor" href="#Documentation/git-fetch.txt--v"></a>-v </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---verbose"> <a class="anchor" href="#Documentation/git-fetch.txt---verbose"></a>--verbose </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--v"><a class="anchor" href="#Documentation/git-fetch.txt--v"></a>-v </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---verbose"><a class="anchor" href="#Documentation/git-fetch.txt---verbose"></a>--verbose </dt>
 <dd>
 <p>Be verbose.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---progress"> <a class="anchor" href="#Documentation/git-fetch.txt---progress"></a>--progress </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---progress"><a class="anchor" href="#Documentation/git-fetch.txt---progress"></a>--progress </dt>
 <dd>
 <p>Progress status is reported on the standard error stream
 by default when it is attached to a terminal, unless -q
 is specified. This flag forces progress status even if the
 standard error stream is not directed to a terminal.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--oltoptiongt"> <a class="anchor" href="#Documentation/git-fetch.txt--ooption"></a> <a class="anchor" href="#Documentation/git-fetch.txt--oltoptiongt"></a>-o &lt;option&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---server-optionltoptiongt"> <a class="anchor" href="#Documentation/git-fetch.txt---server-optionoption"></a> <a class="anchor" href="#Documentation/git-fetch.txt---server-optionltoptiongt"></a>--server-option=&lt;option&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--oltoptiongt"><a id="Documentation/git-fetch.txt--ooption" class="anchor" href="#Documentation/git-fetch.txt--ooption"></a>-o &lt;option&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---server-optionltoptiongt"><a id="Documentation/git-fetch.txt---server-optionoption" class="anchor" href="#Documentation/git-fetch.txt---server-optionoption"></a>--server-option=&lt;option&gt; </dt>
 <dd>
 <p>Transmit the given string to the server when communicating using
 protocol version 2.  The given string must not contain a NUL or LF
@@ -3041,14 +3041,14 @@ When no <code>--server-option=&lt;option&gt;</code> is given from the command li
 the values of configuration variable <code>remote.&lt;name&gt;.serverOption</code>
 are used instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---show-forced-updates"> <a class="anchor" href="#Documentation/git-fetch.txt---show-forced-updates"></a>--show-forced-updates </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---show-forced-updates"><a class="anchor" href="#Documentation/git-fetch.txt---show-forced-updates"></a>--show-forced-updates </dt>
 <dd>
 <p>By default, git checks if a branch is force-updated during
 fetch. This can be disabled through fetch.showForcedUpdates, but
 the --show-forced-updates option guarantees this check occurs.
 See <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---no-show-forced-updates"> <a class="anchor" href="#Documentation/git-fetch.txt---no-show-forced-updates"></a>--no-show-forced-updates </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---no-show-forced-updates"><a class="anchor" href="#Documentation/git-fetch.txt---no-show-forced-updates"></a>--no-show-forced-updates </dt>
 <dd>
 <p>By default, git checks if a branch is force-updated during
 fetch. Pass --no-show-forced-updates or set fetch.showForcedUpdates
@@ -3056,30 +3056,30 @@ to false to skip this check for performance reasons. If used during
 <em>git-pull</em> the --ff-only option will still check for forced updates
 before attempting a fast-forward update. See <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--4"> <a class="anchor" href="#Documentation/git-fetch.txt--4"></a>-4 </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---ipv4"> <a class="anchor" href="#Documentation/git-fetch.txt---ipv4"></a>--ipv4 </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--4"><a class="anchor" href="#Documentation/git-fetch.txt--4"></a>-4 </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---ipv4"><a class="anchor" href="#Documentation/git-fetch.txt---ipv4"></a>--ipv4 </dt>
 <dd>
 <p>Use IPv4 addresses only, ignoring IPv6 addresses.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt--6"> <a class="anchor" href="#Documentation/git-fetch.txt--6"></a>-6 </dt>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---ipv6"> <a class="anchor" href="#Documentation/git-fetch.txt---ipv6"></a>--ipv6 </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt--6"><a class="anchor" href="#Documentation/git-fetch.txt--6"></a>-6 </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---ipv6"><a class="anchor" href="#Documentation/git-fetch.txt---ipv6"></a>--ipv6 </dt>
 <dd>
 <p>Use IPv6 addresses only, ignoring IPv4 addresses.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrepositorygt"> <a class="anchor" href="#Documentation/git-fetch.txt-repository"></a> <a class="anchor" href="#Documentation/git-fetch.txt-ltrepositorygt"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrepositorygt"><a id="Documentation/git-fetch.txt-repository" class="anchor" href="#Documentation/git-fetch.txt-repository"></a>&lt;repository&gt; </dt>
 <dd>
 <p>The "remote" repository that is the source of a fetch
 or pull operation.  This parameter can be either a URL
 (see the section <a href="#URLS">GIT URLS</a> below) or the name
 of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-ltgroupgt"> <a class="anchor" href="#Documentation/git-fetch.txt-group"></a> <a class="anchor" href="#Documentation/git-fetch.txt-ltgroupgt"></a>&lt;group&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-ltgroupgt"><a id="Documentation/git-fetch.txt-group" class="anchor" href="#Documentation/git-fetch.txt-group"></a>&lt;group&gt; </dt>
 <dd>
 <p>A name referring to a list of repositories as the value
 of remotes.&lt;group&gt; in the configuration file.
 (See <a href='/docs/git-config'>git-config[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrefspecgt"> <a class="anchor" href="#Documentation/git-fetch.txt-refspec"></a> <a class="anchor" href="#Documentation/git-fetch.txt-ltrefspecgt"></a>&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrefspecgt"><a id="Documentation/git-fetch.txt-refspec" class="anchor" href="#Documentation/git-fetch.txt-refspec"></a>&lt;refspec&gt; </dt>
 <dd>
 <p>Specifies which refs to fetch and which local refs to update.
 When no &lt;refspec&gt;s appear on the command line, the refs to fetch
@@ -3180,7 +3180,7 @@ must know this is the expected usage pattern for a branch.
 </table>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---stdin"> <a class="anchor" href="#Documentation/git-fetch.txt---stdin"></a>--stdin </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---stdin"><a class="anchor" href="#Documentation/git-fetch.txt---stdin"></a>--stdin </dt>
 <dd>
 <p>Read refspecs, one per line, from stdin in addition to those provided
 as arguments. The "tag &lt;name&gt;" format is not supported.</p>
@@ -3670,61 +3670,61 @@ example, <code>master -&gt; origin/master</code> becomes <code>master -&gt; orig
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-flag"> <a class="anchor" href="#Documentation/git-fetch.txt-flag"></a>flag </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-flag"><a class="anchor" href="#Documentation/git-fetch.txt-flag"></a>flag </dt>
 <dd>
 <p>A single character indicating the status of the ref:</p>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-space"> <a class="anchor" href="#Documentation/git-fetch.txt-space"></a>(space) </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-space"><a class="anchor" href="#Documentation/git-fetch.txt-space"></a>(space) </dt>
 <dd>
 <p>for a successfully fetched fast-forward;</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode"> <a class="anchor" href="#Documentation/git-fetch.txt-"></a> <a class="anchor" href="#Documentation/git-fetch.txt-codecode"></a><code>+</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode"><a id="Documentation/git-fetch.txt-" class="anchor" href="#Documentation/git-fetch.txt-"></a><code>+</code> </dt>
 <dd>
 <p>for a successful forced update;</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-code-code"> <a class="anchor" href="#Documentation/git-fetch.txt--"></a> <a class="anchor" href="#Documentation/git-fetch.txt-code-code"></a><code>-</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-code-code"><a id="Documentation/git-fetch.txt--" class="anchor" href="#Documentation/git-fetch.txt--"></a><code>-</code> </dt>
 <dd>
 <p>for a successfully pruned ref;</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-codetcode"> <a class="anchor" href="#Documentation/git-fetch.txt-t"></a> <a class="anchor" href="#Documentation/git-fetch.txt-codetcode"></a><code>t</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-codetcode"><a id="Documentation/git-fetch.txt-t" class="anchor" href="#Documentation/git-fetch.txt-t"></a><code>t</code> </dt>
 <dd>
 <p>for a successful tag update;</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1"> <a class="anchor" href="#Documentation/git-fetch.txt--1"></a> <a class="anchor" href="#Documentation/git-fetch.txt-codecode-1"></a><code>*</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1"><a id="Documentation/git-fetch.txt--1" class="anchor" href="#Documentation/git-fetch.txt--1"></a><code>*</code> </dt>
 <dd>
 <p>for a successfully fetched new ref;</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1-1"> <a class="anchor" href="#Documentation/git-fetch.txt--1-1"></a> <a class="anchor" href="#Documentation/git-fetch.txt-codecode-1-1"></a><code>!</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1-1"><a id="Documentation/git-fetch.txt--1-1" class="anchor" href="#Documentation/git-fetch.txt--1-1"></a><code>!</code> </dt>
 <dd>
 <p>for a ref that was rejected or failed to update; and</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1-1-1"> <a class="anchor" href="#Documentation/git-fetch.txt--1-1-1"></a> <a class="anchor" href="#Documentation/git-fetch.txt-codecode-1-1-1"></a><code>=</code> </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-codecode-1-1-1"><a id="Documentation/git-fetch.txt--1-1-1" class="anchor" href="#Documentation/git-fetch.txt--1-1-1"></a><code>=</code> </dt>
 <dd>
 <p>for a ref that was up to date and did not need fetching.</p>
 </dd>
 </dl>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-summary"> <a class="anchor" href="#Documentation/git-fetch.txt-summary"></a>summary </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-summary"><a class="anchor" href="#Documentation/git-fetch.txt-summary"></a>summary </dt>
 <dd>
 <p>For a successfully fetched ref, the summary shows the old and new
 values of the ref in a form suitable for using as an argument to
 <code>git log</code> (this is <code>&lt;old&gt;..&lt;new&gt;</code> in most cases, and
 <code>&lt;old&gt;...&lt;new&gt;</code> for forced non-fast-forward updates).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-from"> <a class="anchor" href="#Documentation/git-fetch.txt-from"></a>from </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-from"><a class="anchor" href="#Documentation/git-fetch.txt-from"></a>from </dt>
 <dd>
 <p>The name of the remote ref being fetched from, minus its
 <code>refs/&lt;type&gt;/</code> prefix. In the case of deletion, the name of
 the remote ref is "(none)".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-to"> <a class="anchor" href="#Documentation/git-fetch.txt-to"></a>to </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-to"><a class="anchor" href="#Documentation/git-fetch.txt-to"></a>to </dt>
 <dd>
 <p>The name of the local ref being updated, minus its
 <code>refs/&lt;type&gt;/</code> prefix.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-reason"> <a class="anchor" href="#Documentation/git-fetch.txt-reason"></a>reason </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-reason"><a class="anchor" href="#Documentation/git-fetch.txt-reason"></a>reason </dt>
 <dd>
 <p>A human-readable explanation. In the case of successfully fetched
 refs, no explanation is needed. For a failed ref, the reason for
@@ -3843,7 +3843,7 @@ as what&#8217;s found there:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchrecurseSubmodules"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchrecurseSubmodules"></a>fetch.recurseSubmodules </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchrecurseSubmodules"><a class="anchor" href="#Documentation/git-fetch.txt-fetchrecurseSubmodules"></a>fetch.recurseSubmodules </dt>
 <dd>
 <p>This option controls whether <code>git fetch</code> (and the underlying fetch
 in <code>git pull</code>) will recursively fetch into populated submodules.
@@ -3856,26 +3856,26 @@ superproject retrieves a commit that updates the submodule&#8217;s
 reference.
 Defaults to <em>on-demand</em>, or to the value of <em>submodule.recurse</em> if set.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckObjects"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckObjects"></a>fetch.fsckObjects </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckObjects"><a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckObjects"></a>fetch.fsckObjects </dt>
 <dd>
 <p>If it is set to true, git-fetch-pack will check all fetched
 objects. See <code>transfer.fsckObjects</code> for what&#8217;s
 checked. Defaults to false. If not set, the value of
 <code>transfer.fsckObjects</code> is used instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckltmsg-idgt"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckmsg-id"></a> <a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckltmsg-idgt"></a>fetch.fsck.&lt;msg-id&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckltmsg-idgt"><a id="Documentation/git-fetch.txt-fetchfsckmsg-id" class="anchor" href="#Documentation/git-fetch.txt-fetchfsckmsg-id"></a>fetch.fsck.&lt;msg-id&gt; </dt>
 <dd>
 <p>Acts like <code>fsck.&lt;msg-id&gt;</code>, but is used by
 <a href='/docs/git-fetch-pack'>git-fetch-pack[1]</a> instead of <a href='/docs/git-fsck'>git-fsck[1]</a>. See
 the <code>fsck.&lt;msg-id&gt;</code> documentation for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckskipList"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckskipList"></a>fetch.fsck.skipList </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchfsckskipList"><a class="anchor" href="#Documentation/git-fetch.txt-fetchfsckskipList"></a>fetch.fsck.skipList </dt>
 <dd>
 <p>Acts like <code>fsck.skipList</code>, but is used by
 <a href='/docs/git-fetch-pack'>git-fetch-pack[1]</a> instead of <a href='/docs/git-fsck'>git-fsck[1]</a>. See
 the <code>fsck.skipList</code> documentation for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchunpackLimit"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchunpackLimit"></a>fetch.unpackLimit </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchunpackLimit"><a class="anchor" href="#Documentation/git-fetch.txt-fetchunpackLimit"></a>fetch.unpackLimit </dt>
 <dd>
 <p>If the number of objects fetched over the Git native
 transfer is below this
@@ -3887,13 +3887,13 @@ pack from a push can make the push operation complete faster,
 especially on slow filesystems.  If not set, the value of
 <code>transfer.unpackLimit</code> is used instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchprune"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchprune"></a>fetch.prune </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchprune"><a class="anchor" href="#Documentation/git-fetch.txt-fetchprune"></a>fetch.prune </dt>
 <dd>
 <p>If true, fetch will automatically behave as if the <code>--prune</code>
 option was given on the command line.  See also <code>remote.&lt;name&gt;.prune</code>
 and the PRUNING section of <a href='/docs/git-fetch'>git-fetch[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchpruneTags"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchpruneTags"></a>fetch.pruneTags </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchpruneTags"><a class="anchor" href="#Documentation/git-fetch.txt-fetchpruneTags"></a>fetch.pruneTags </dt>
 <dd>
 <p>If true, fetch will automatically behave as if the
 <code>refs/tags/*:refs/tags/*</code> refspec was provided when pruning,
@@ -3902,20 +3902,20 @@ and <code>fetch.prune</code> to maintain a 1=1 mapping to upstream
 refs. See also <code>remote.&lt;name&gt;.pruneTags</code> and the PRUNING
 section of <a href='/docs/git-fetch'>git-fetch[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchall"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchall"></a>fetch.all </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchall"><a class="anchor" href="#Documentation/git-fetch.txt-fetchall"></a>fetch.all </dt>
 <dd>
 <p>If true, fetch will attempt to update all available remotes.
 This behavior can be overridden by passing <code>--no-all</code> or by
 explicitly specifying one or more remote(s) to fetch from.
 Defaults to false.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchoutput"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchoutput"></a>fetch.output </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchoutput"><a class="anchor" href="#Documentation/git-fetch.txt-fetchoutput"></a>fetch.output </dt>
 <dd>
 <p>Control how ref update status is printed. Valid values are
 <code>full</code> and <code>compact</code>. Default value is <code>full</code>. See the
 OUTPUT section in <a href='/docs/git-fetch'>git-fetch[1]</a> for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchnegotiationAlgorithm"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchnegotiationAlgorithm"></a>fetch.negotiationAlgorithm </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchnegotiationAlgorithm"><a class="anchor" href="#Documentation/git-fetch.txt-fetchnegotiationAlgorithm"></a>fetch.negotiationAlgorithm </dt>
 <dd>
 <p>Control how information about the commits in the local repository
 is sent when negotiating the contents of the packfile to be sent by
@@ -3935,13 +3935,13 @@ error out.</p>
 <a href='/docs/git-fetch'>git-fetch[1]</a>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchshowForcedUpdates"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchshowForcedUpdates"></a>fetch.showForcedUpdates </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchshowForcedUpdates"><a class="anchor" href="#Documentation/git-fetch.txt-fetchshowForcedUpdates"></a>fetch.showForcedUpdates </dt>
 <dd>
 <p>Set to false to enable <code>--no-show-forced-updates</code> in
 <a href='/docs/git-fetch'>git-fetch[1]</a> and <a href='/docs/git-pull'>git-pull[1]</a> commands.
 Defaults to true.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchparallel"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchparallel"></a>fetch.parallel </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchparallel"><a class="anchor" href="#Documentation/git-fetch.txt-fetchparallel"></a>fetch.parallel </dt>
 <dd>
 <p>Specifies the maximal number of fetch operations to be run in parallel
 at a time (submodules, or remotes when the <code>--multiple</code> option of
@@ -3954,7 +3954,7 @@ at a time (submodules, or remotes when the <code>--multiple</code> option of
 config setting.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchwriteCommitGraph"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchwriteCommitGraph"></a>fetch.writeCommitGraph </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchwriteCommitGraph"><a class="anchor" href="#Documentation/git-fetch.txt-fetchwriteCommitGraph"></a>fetch.writeCommitGraph </dt>
 <dd>
 <p>Set to true to write a commit-graph after every <code>git fetch</code> command
 that downloads a pack-file from a remote. Using the <code>--split</code> option,
@@ -3964,7 +3964,7 @@ merge and the write may take longer. Having an updated commit-graph
 file helps performance of many Git commands, including <code>git merge-base</code>,
 <code>git push -f</code>, and <code>git log --graph</code>. Defaults to false.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchbundleURI"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchbundleURI"></a>fetch.bundleURI </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchbundleURI"><a class="anchor" href="#Documentation/git-fetch.txt-fetchbundleURI"></a>fetch.bundleURI </dt>
 <dd>
 <p>This value stores a URI for downloading Git object data from a bundle
 URI before performing an incremental fetch from the origin Git server.
@@ -3978,7 +3978,7 @@ value, then remove that <code>fetch.bundleCreationToken</code> value before fetc
 the new bundle URI.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchbundleCreationToken"> <a class="anchor" href="#Documentation/git-fetch.txt-fetchbundleCreationToken"></a>fetch.bundleCreationToken </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-fetchbundleCreationToken"><a class="anchor" href="#Documentation/git-fetch.txt-fetchbundleCreationToken"></a>fetch.bundleCreationToken </dt>
 <dd>
 <p>When using <code>fetch.bundleURI</code> to fetch incrementally from a bundle
 list that uses the "creationToken" heuristic, this config value
@@ -4051,7 +4051,7 @@ submodule update</code>. This is expected to be fixed in a future Git version.</
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
 
     </div>
   
