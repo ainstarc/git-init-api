@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1853,8 +1853,8 @@
 <p>Reads the supplied diff output (i.e. "a patch") and applies it to files.
 When running from a subdirectory in a repository, patched paths
 outside the directory are ignored.
-With the <code>--index</code> option, the patch is also applied to the index, and
-with the <code>--cached</code> option, the patch is only applied to the index.
+With the <span class='synopsis'><code>--index</code></span> option, the patch is also applied to the index, and
+with the <span class='synopsis'><code>--cached</code></span> option, the patch is only applied to the index.
 Without these options, the command applies the patch only to files,
 and does not require them to be in a Git repository.</p>
 </div>
@@ -1882,11 +1882,11 @@ input.  Turns off "apply".</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---numstat"><a class="anchor" href="#Documentation/git-apply.txt---numstat"></a>--numstat </dt>
 <dd>
-<p>Similar to <code>--stat</code>, but shows the number of added and
+<p>Similar to <span class='synopsis'><code>--stat</code></span>, but shows the number of added and
 deleted lines in decimal notation and the pathname without
 abbreviation, to make it more machine friendly.  For
-binary files, outputs two <code>-</code> instead of saying
-<code>0 0</code>.  Turns off "apply".</p>
+binary files, outputs two <span class='synopsis'><code>-</code></span> instead of saying
+<span class='synopsis'><code>0</code> <code>0</code></span>.  Turns off "apply".</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---summary"><a class="anchor" href="#Documentation/git-apply.txt---summary"></a>--summary </dt>
 <dd>
@@ -1904,8 +1904,8 @@ file and detects errors.  Turns off "apply".</p>
 <dt class="hdlist1" id="Documentation/git-apply.txt---index"><a class="anchor" href="#Documentation/git-apply.txt---index"></a>--index </dt>
 <dd>
 <p>Apply the patch to both the index and the working tree (or
-merely check that it would apply cleanly to both if <code>--check</code> is
-in effect). Note that <code>--index</code> expects index entries and
+merely check that it would apply cleanly to both if <span class='synopsis'><code>--check</code></span> is
+in effect). Note that <span class='synopsis'><code>--index</code></span> expects index entries and
 working tree copies for relevant paths to be identical (their
 contents and metadata such as file mode must match), and will
 raise an error if they are not, even if the patch would apply
@@ -1914,17 +1914,17 @@ cleanly to both the index and the working tree in isolation.</p>
 <dt class="hdlist1" id="Documentation/git-apply.txt---cached"><a class="anchor" href="#Documentation/git-apply.txt---cached"></a>--cached </dt>
 <dd>
 <p>Apply the patch to just the index, without touching the working
-tree. If <code>--check</code> is in effect, merely check that it would
+tree. If <span class='synopsis'><code>--check</code></span> is in effect, merely check that it would
 apply cleanly to the index entry.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---intent-to-add"><a class="anchor" href="#Documentation/git-apply.txt---intent-to-add"></a>--intent-to-add </dt>
 <dd>
 <p>When applying the patch only to the working tree, mark new
-files to be added to the index later (see <code>--intent-to-add</code>
+files to be added to the index later (see <span class='synopsis'><code>--intent-to-add</code></span>
 option in <a href='/docs/git-add'>git-add[1]</a>). This option is ignored unless
-running in a Git repository and <code>--index</code> is not specified.
-Note that <code>--index</code> could be implied by other options such
-as <code>--cached</code> or <code>--3way</code>.</p>
+running in a Git repository and <span class='synopsis'><code>--index</code></span> is not specified.
+Note that <span class='synopsis'><code>--index</code></span> could be implied by other options such
+as <span class='synopsis'><code>--cached</code></span> or <span class='synopsis'><code>--3way</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt--3"><a class="anchor" href="#Documentation/git-apply.txt--3"></a>-3 </dt>
 <dt class="hdlist1" id="Documentation/git-apply.txt---3way"><a class="anchor" href="#Documentation/git-apply.txt---3way"></a>--3way </dt>
@@ -1932,9 +1932,9 @@ as <code>--cached</code> or <code>--3way</code>.</p>
 <p>Attempt 3-way merge if the patch records the identity of blobs it is supposed
 to apply to and we have those blobs available locally, possibly leaving the
 conflict markers in the files in the working tree for the user to
-resolve.  This option implies the <code>--index</code> option unless the
-<code>--cached</code> option is used, and is incompatible with the <code>--reject</code> option.
-When used with the <code>--cached</code> option, any conflicts are left at higher stages
+resolve.  This option implies the <span class='synopsis'><code>--index</code></span> option unless the
+<span class='synopsis'><code>--cached</code></span> option is used, and is incompatible with the <span class='synopsis'><code>--reject</code></span> option.
+When used with the <span class='synopsis'><code>--cached</code></span> option, any conflicts are left at higher stages
 in the cache.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---ours"><a class="anchor" href="#Documentation/git-apply.txt---ours"></a>--ours </dt>
@@ -1971,19 +1971,19 @@ rejected hunks in corresponding *.rej files.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt--z"><a class="anchor" href="#Documentation/git-apply.txt--z"></a>-z </dt>
 <dd>
-<p>When <code>--numstat</code> has been given, do not munge pathnames,
+<p>When <span class='synopsis'><code>--numstat</code></span> has been given, do not munge pathnames,
 but use a NUL-terminated machine-readable format.</p>
 <div class="paragraph">
 <p>Without this option, pathnames with "unusual" characters are quoted as
-explained for the configuration variable <code>core.quotePath</code> (see
+explained for the configuration variable <span class='synopsis'><code>core.quotePath</code></span> (see
 <a href='/docs/git-config'>git-config[1]</a>).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt--pltngt"><a id="Documentation/git-apply.txt--pn" class="anchor" href="#Documentation/git-apply.txt--pn"></a>-p&lt;n&gt; </dt>
 <dd>
 <p>Remove &lt;n&gt; leading path components (separated by slashes) from
-traditional diff paths. E.g., with <code>-p2</code>, a patch against
-<code>a/dir/file</code> will be applied directly to <code>file</code>. The default is
+traditional diff paths. E.g., with <span class='synopsis'><code>-p2</code></span>, a patch against
+<span class='synopsis'><code>a/dir/file</code></span> will be applied directly to <span class='synopsis'><code>file</code></span>. The default is
 1.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt--Cltngt"><a id="Documentation/git-apply.txt--Cn" class="anchor" href="#Documentation/git-apply.txt--Cn"></a>-C&lt;n&gt; </dt>
@@ -1998,8 +1998,8 @@ ever ignored.</p>
 <p>By default, <em>git apply</em> expects that the patch being
 applied is a unified diff with at least one line of context.
 This provides good safety measures, but breaks down when
-applying a diff generated with <code>--unified=0</code>. To bypass these
-checks use <code>--unidiff-zero</code>.</p>
+applying a diff generated with <span class='synopsis'><code>--unified=0</code></span>. To bypass these
+checks use <span class='synopsis'><code>--unidiff-zero</code></span>.</p>
 <div class="paragraph">
 <p>Note, for the reasons stated above, the usage of context-free patches is
 discouraged.</p>
@@ -2041,7 +2041,7 @@ files or directories.</p>
 be useful when importing patchsets, where you want to include certain
 files or directories.</p>
 <div class="paragraph">
-<p>When <code>--exclude</code> and <code>--include</code> patterns are used, they are examined in the
+<p>When <span class='synopsis'><code>--exclude</code></span> and <span class='synopsis'><code>--include</code></span> patterns are used, they are examined in the
 order they appear on the command line, and the first match determines if a
 patch to each path is used.  A patch to a path that does not match any
 include/exclude pattern is used by default if there is no include pattern
@@ -2055,47 +2055,47 @@ on the command line, and ignored if there is any include pattern.</p>
 lines if necessary.
 Context lines will preserve their whitespace, and they will not
 undergo whitespace fixing regardless of the value of the
-<code>--whitespace</code> option. New lines will still be fixed, though.</p>
+<span class='synopsis'><code>--whitespace</code></span> option. New lines will still be fixed, though.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---whitespaceltactiongt"><a id="Documentation/git-apply.txt---whitespaceaction" class="anchor" href="#Documentation/git-apply.txt---whitespaceaction"></a>--whitespace=&lt;action&gt; </dt>
 <dd>
 <p>When applying a patch, detect a new or modified line that has
 whitespace errors.  What are considered whitespace errors is
-controlled by <code>core.whitespace</code> configuration.  By default,
+controlled by <span class='synopsis'><code>core.whitespace</code></span> configuration.  By default,
 trailing whitespaces (including lines that solely consist of
 whitespaces) and a space character that is immediately followed
 by a tab character inside the initial indent of the line are
 considered whitespace errors.</p>
 <div class="paragraph">
 <p>By default, the command outputs warning messages but applies the patch.
-When <code>git-apply</code> is used for statistics and not applying a
-patch, it defaults to <code>nowarn</code>.</p>
+When <span class='synopsis'><code>git-apply</code></span> is used for statistics and not applying a
+patch, it defaults to <span class='synopsis'><code>nowarn</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>You can use different <code>&lt;action&gt;</code> values to control this
+<p>You can use different <span class='synopsis'><em>&lt;action&gt;</em></span> values to control this
 behavior:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>nowarn</code> turns off the trailing whitespace warning.</p>
+<p><span class='synopsis'><code>nowarn</code></span> turns off the trailing whitespace warning.</p>
 </li>
 <li>
-<p><code>warn</code> outputs warnings for a few such errors, but applies the
+<p><span class='synopsis'><code>warn</code></span> outputs warnings for a few such errors, but applies the
 patch as-is (default).</p>
 </li>
 <li>
-<p><code>fix</code> outputs warnings for a few such errors, and applies the
-patch after fixing them (<code>strip</code> is a synonym&#8201;&#8212;&#8201;the tool
+<p><span class='synopsis'><code>fix</code></span> outputs warnings for a few such errors, and applies the
+patch after fixing them (<span class='synopsis'><code>strip</code></span> is a synonym&#8201;&#8212;&#8201;the tool
 used to consider only trailing whitespace characters as errors, and the
 fix involved <em>stripping</em> them, but modern Gits do more).</p>
 </li>
 <li>
-<p><code>error</code> outputs warnings for a few such errors, and refuses
+<p><span class='synopsis'><code>error</code></span> outputs warnings for a few such errors, and refuses
 to apply the patch.</p>
 </li>
 <li>
-<p><code>error-all</code> is similar to <code>error</code> but shows all errors.</p>
+<p><span class='synopsis'><code>error-all</code></span> is similar to <span class='synopsis'><code>error</code></span> but shows all errors.</p>
 </li>
 </ul>
 </div>
@@ -2132,9 +2132,9 @@ adjusting the hunk headers appropriately).</p>
 <p>Prepend &lt;root&gt; to all filenames.  If a "-p" argument was also passed,
 it is applied before prepending the new root.</p>
 <div class="paragraph">
-<p>For example, a patch that talks about updating <code>a/git-gui.sh</code> to <code>b/git-gui.sh</code>
-can be applied to the file in the working tree <code>modules/git-gui/git-gui.sh</code> by
-running <code>git apply --directory=modules/git-gui</code>.</p>
+<p>For example, a patch that talks about updating <span class='synopsis'><code>a/git-gui.sh</code></span> to <span class='synopsis'><code>b/git-gui.sh</code></span>
+can be applied to the file in the working tree <span class='synopsis'><code>modules/git-gui/git-gui.sh</code></span> by
+running <span class='synopsis'><code>git</code> <code>apply</code> <code>--directory=modules/git-gui</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---unsafe-paths"><a class="anchor" href="#Documentation/git-apply.txt---unsafe-paths"></a>--unsafe-paths </dt>
@@ -2144,9 +2144,9 @@ running <code>git apply --directory=modules/git-gui</code>.</p>
 directory when "git apply" is used as a replacement of GNU
 patch) is rejected as a mistake (or a mischief).</p>
 <div class="paragraph">
-<p>When <code>git apply</code> is used as a "better GNU patch", the user can pass
-the <code>--unsafe-paths</code> option to override this safety check.  This option
-has no effect when <code>--index</code> or <code>--cached</code> is in use.</p>
+<p>When <span class='synopsis'><code>git</code> <code>apply</code></span> is used as a "better GNU patch", the user can pass
+the <span class='synopsis'><code>--unsafe-paths</code></span> option to override this safety check.  This option
+has no effect when <span class='synopsis'><code>--index</code></span> or <span class='synopsis'><code>--cached</code></span> is in use.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt---allow-empty"><a class="anchor" href="#Documentation/git-apply.txt---allow-empty"></a>--allow-empty </dt>
@@ -2171,7 +2171,7 @@ as what&#8217;s found there:</p>
 <dt class="hdlist1" id="Documentation/git-apply.txt-applyignoreWhitespace"><a class="anchor" href="#Documentation/git-apply.txt-applyignoreWhitespace"></a>apply.ignoreWhitespace </dt>
 <dd>
 <p>When set to <em>change</em>, tells <em>git apply</em> to ignore changes in
-whitespace, in the same way as the <code>--ignore-space-change</code>
+whitespace, in the same way as the <span class='synopsis'><code>--ignore-space-change</code></span>
 option.
 When set to one of: no, none, never, false, it tells <em>git apply</em> to
 respect all whitespace differences.
@@ -2180,7 +2180,7 @@ See <a href='/docs/git-apply'>git-apply[1]</a>.</p>
 <dt class="hdlist1" id="Documentation/git-apply.txt-applywhitespace"><a class="anchor" href="#Documentation/git-apply.txt-applywhitespace"></a>apply.whitespace </dt>
 <dd>
 <p>Tells <em>git apply</em> how to handle whitespace, in the same way
-as the <code>--whitespace</code> option. See <a href='/docs/git-apply'>git-apply[1]</a>.</p>
+as the <span class='synopsis'><code>--whitespace</code></span> option. See <a href='/docs/git-apply'>git-apply[1]</a>.</p>
 </dd>
 </dl>
 </div>
@@ -2194,14 +2194,14 @@ as the <code>--whitespace</code> option. See <a href='/docs/git-apply'>git-apply
 treats these changes as follows.</p>
 </div>
 <div class="paragraph">
-<p>If <code>--index</code> is specified (explicitly or implicitly), then the submodule
+<p>If <span class='synopsis'><code>--index</code></span> is specified (explicitly or implicitly), then the submodule
 commits must match the index exactly for the patch to apply.  If any
 of the submodules are checked-out, then these check-outs are completely
 ignored, i.e., they are not required to be up to date or clean and they
 are not updated.</p>
 </div>
 <div class="paragraph">
-<p>If <code>--index</code> is not specified, then the submodule commits in the patch
+<p>If <span class='synopsis'><code>--index</code></span> is not specified, then the submodule commits in the patch
 are ignored and only the absence or presence of the corresponding
 subdirectory is checked and (if possible) updated.</p>
 </div>
@@ -2251,7 +2251,7 @@ subdirectory is checked and (if possible) updated.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

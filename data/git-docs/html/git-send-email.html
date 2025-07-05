@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2486,13 +2486,13 @@ and the "Subject:" of the message as the second line.</p>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---annotate"><a class="anchor" href="#Documentation/git-send-email.txt---annotate"></a>--annotate </dt>
 <dd>
 <p>Review and edit each patch you&#8217;re about to send. Default is the value
-of <code>sendemail.annotate</code>. See the CONFIGURATION section for
-<code>sendemail.multiEdit</code>.</p>
+of <span class='synopsis'><code>sendemail.annotate</code></span>. See the CONFIGURATION section for
+<span class='synopsis'><code>sendemail.multiEdit</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---bccltaddressgt82308203"><a id="Documentation/git-send-email.txt---bccaddress" class="anchor" href="#Documentation/git-send-email.txt---bccaddress"></a>--bcc=&lt;address&gt;,&#8230;&#8203; </dt>
 <dd>
 <p>Specify a "Bcc:" value for each email. Default is the value of
-<code>sendemail.bcc</code>.</p>
+<span class='synopsis'><code>sendemail.bcc</code></span>.</p>
 <div class="paragraph">
 <p>This option may be specified multiple times.</p>
 </div>
@@ -2500,7 +2500,7 @@ of <code>sendemail.annotate</code>. See the CONFIGURATION section for
 <dt class="hdlist1" id="Documentation/git-send-email.txt---ccltaddressgt82308203"><a id="Documentation/git-send-email.txt---ccaddress" class="anchor" href="#Documentation/git-send-email.txt---ccaddress"></a>--cc=&lt;address&gt;,&#8230;&#8203; </dt>
 <dd>
 <p>Specify a starting "Cc:" value for each email.
-Default is the value of <code>sendemail.cc</code>.</p>
+Default is the value of <span class='synopsis'><code>sendemail.cc</code></span>.</p>
 <div class="paragraph">
 <p>This option may be specified multiple times.</p>
 </div>
@@ -2510,7 +2510,7 @@ Default is the value of <code>sendemail.cc</code>.</p>
 <p>Invoke a text editor (see GIT_EDITOR in <a href='/docs/git-var'>git-var[1]</a>)
 to edit an introductory message for the patch series.</p>
 <div class="paragraph">
-<p>When <code>--compose</code> is used, git send-email will use the From, To, Cc, Bcc,
+<p>When <span class='synopsis'><code>--compose</code></span> is used, git send-email will use the From, To, Cc, Bcc,
 Subject, Reply-To, and In-Reply-To headers specified in the message. If
 the body of the message (what you type after the headers and a blank
 line) only contains blank (or Git: prefixed) lines, the summary won&#8217;t be
@@ -2521,14 +2521,14 @@ removed.</p>
 <p>Missing From or In-Reply-To headers will be prompted for.</p>
 </div>
 <div class="paragraph">
-<p>See the CONFIGURATION section for <code>sendemail.multiEdit</code>.</p>
+<p>See the CONFIGURATION section for <span class='synopsis'><code>sendemail.multiEdit</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---fromltaddressgt"><a id="Documentation/git-send-email.txt---fromaddress" class="anchor" href="#Documentation/git-send-email.txt---fromaddress"></a>--from=&lt;address&gt; </dt>
 <dd>
 <p>Specify the sender of the emails.  If not specified on the command line,
-the value of the <code>sendemail.from</code> configuration option is used.  If
-neither the command-line option nor <code>sendemail.from</code> are set, then the
+the value of the <span class='synopsis'><code>sendemail.from</code></span> configuration option is used.  If
+neither the command-line option nor <span class='synopsis'><code>sendemail.from</code></span> are set, then the
 user will be prompted for the value.  The default for the prompt will be
 the value of GIT_AUTHOR_IDENT, or GIT_COMMITTER_IDENT if that is not
 set, as returned by "git var -l".</p>
@@ -2541,15 +2541,15 @@ is specified with the --from parameter.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---in-reply-toltidentifiergt"><a id="Documentation/git-send-email.txt---in-reply-toidentifier" class="anchor" href="#Documentation/git-send-email.txt---in-reply-toidentifier"></a>--in-reply-to=&lt;identifier&gt; </dt>
 <dd>
-<p>Make the first mail (or all the mails with <code>--no-thread</code>) appear as a
+<p>Make the first mail (or all the mails with <span class='synopsis'><code>--no-thread</code></span>) appear as a
 reply to the given Message-ID, which avoids breaking threads to
 provide a new patch series.
 The second and subsequent emails will be sent as replies according to
-the <code>--[no-]chain-reply-to</code> setting.</p>
+the <span class='synopsis'><code>--</code>[<code>no-</code>]<code>chain-reply-to</code></span> setting.</p>
 <div class="paragraph">
-<p>So for example when <code>--thread</code> and <code>--no-chain-reply-to</code> are specified, the
+<p>So for example when <span class='synopsis'><code>--thread</code></span> and <span class='synopsis'><code>--no-chain-reply-to</code></span> are specified, the
 second and subsequent patches will be replies to the first one like in the
-illustration below where <code>[PATCH v2 0/3]</code> is in reply to <code>[PATCH 0/2]</code>:</p>
+illustration below where <span class='synopsis'>[<code>PATCH</code> <code>v2</code> <code>0/3</code>]</span> is in reply to <span class='synopsis'>[<code>PATCH</code> <code>0/2</code>]</span>:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2572,7 +2572,7 @@ is not set, this will be prompted for.</p>
 <p>Microsoft Outlook SMTP servers discard the Message-ID sent via email and
 assign a new random Message-ID, thus breaking threads.</p>
 <div class="paragraph">
-<p>With <code>--outlook-id-fix</code>, <em>git send-email</em> uses a mechanism specific to
+<p>With <span class='synopsis'><code>--outlook-id-fix</code></span>, <em>git send-email</em> uses a mechanism specific to
 Outlook servers to learn the Message-ID the server assigned to fix the
 threading. Use it only when you know that the server reports the
 rewritten Message-ID the same way as Outlook servers do.</p>
@@ -2580,7 +2580,7 @@ rewritten Message-ID the same way as Outlook servers do.</p>
 <div class="paragraph">
 <p>Without this option specified, the fix is done by default when talking
 to <em>smtp.office365.com</em> or <em>smtp-mail.outlook.com</em>. Use
-<code>--no-outlook-id-fix</code> to disable even when talking to these two servers.</p>
+<span class='synopsis'><code>--no-outlook-id-fix</code></span> to disable even when talking to these two servers.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---subjectltstringgt"><a id="Documentation/git-send-email.txt---subjectstring" class="anchor" href="#Documentation/git-send-email.txt---subjectstring"></a>--subject=&lt;string&gt; </dt>
@@ -2593,7 +2593,7 @@ is not set, this will be prompted for.</p>
 <dd>
 <p>Specify the primary recipient of the emails generated. Generally, this
 will be the upstream maintainer of the project involved. Default is the
-value of the <code>sendemail.to</code> configuration value; if that is unspecified,
+value of the <span class='synopsis'><code>sendemail.to</code></span> configuration value; if that is unspecified,
 and --to-cmd is not specified, this will be prompted for.</p>
 <div class="paragraph">
 <p>This option may be specified multiple times.</p>
@@ -2625,8 +2625,8 @@ harder to inspect manually.  base64 is even more fool proof, but also
 even more opaque.  auto will use 8bit when possible, and quoted-printable
 otherwise.</p>
 <div class="paragraph">
-<p>Default is the value of the <code>sendemail.transferEncoding</code> configuration
-value; if that is unspecified, default to <code>auto</code>.</p>
+<p>Default is the value of the <span class='synopsis'><code>sendemail.transferEncoding</code></span> configuration
+value; if that is unspecified, default to <span class='synopsis'><code>auto</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---xmailer"><a class="anchor" href="#Documentation/git-send-email.txt---xmailer"></a>--xmailer </dt>
@@ -2634,7 +2634,7 @@ value; if that is unspecified, default to <code>auto</code>.</p>
 <dd>
 <p>Add (or prevent adding) the "X-Mailer:" header.  By default,
 the header is added, but it can be turned off by setting the
-<code>sendemail.xmailer</code> configuration variable to <code>false</code>.</p>
+<span class='synopsis'><code>sendemail.xmailer</code></span> configuration variable to <span class='synopsis'><code>false</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -2650,17 +2650,17 @@ This is useful if your default address is not the address that is
 subscribed to a list. In order to use the <em>From</em> address, set the
 value to "auto". If you use the sendmail binary, you must have
 suitable privileges for the -f parameter.  Default is the value of the
-<code>sendemail.envelopeSender</code> configuration variable; if that is
+<span class='synopsis'><code>sendemail.envelopeSender</code></span> configuration variable; if that is
 unspecified, choosing the envelope sender is left to your MTA.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---sendmail-cmdltcommandgt"><a id="Documentation/git-send-email.txt---sendmail-cmdcommand" class="anchor" href="#Documentation/git-send-email.txt---sendmail-cmdcommand"></a>--sendmail-cmd=&lt;command&gt; </dt>
 <dd>
 <p>Specify a command to run to send the email. The command should
-be sendmail-like; specifically, it must support the <code>-i</code> option.
+be sendmail-like; specifically, it must support the <span class='synopsis'><code>-i</code></span> option.
 The command will be executed in the shell if necessary.  Default
-is the value of <code>sendemail.sendmailCmd</code>.  If unspecified, and if
+is the value of <span class='synopsis'><code>sendemail.sendmailCmd</code></span>.  If unspecified, and if
 --smtp-server is also unspecified, git-send-email will search
-for <code>sendmail</code> in <code>/usr/sbin</code>, <code>/usr/lib</code> and $PATH.</p>
+for <span class='synopsis'><code>sendmail</code></span> in <span class='synopsis'><code>/usr/sbin</code></span>, <span class='synopsis'><code>/usr/lib</code></span> and $PATH.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-encryptionltencryptiongt"><a id="Documentation/git-send-email.txt---smtp-encryptionencryption" class="anchor" href="#Documentation/git-send-email.txt---smtp-encryptionencryption"></a>--smtp-encryption=&lt;encryption&gt; </dt>
 <dd>
@@ -2675,7 +2675,7 @@ that uses port 25 by default. Other ports might be used by the SMTP
 server, which are not the default. Commonly found alternative port for
 <em>tls</em> and unencrypted is 587. You need to check your provider&#8217;s
 documentation or your server configuration to make sure
-for your own case. Default is the value of <code>sendemail.smtpEncryption</code>.</p>
+for your own case. Default is the value of <span class='synopsis'><code>sendemail.smtpEncryption</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-domainltFQDNgt"><a id="Documentation/git-send-email.txt---smtp-domainFQDN" class="anchor" href="#Documentation/git-send-email.txt---smtp-domainFQDN"></a>--smtp-domain=&lt;FQDN&gt; </dt>
 <dd>
@@ -2683,7 +2683,7 @@ for your own case. Default is the value of <code>sendemail.smtpEncryption</code>
 HELO/EHLO command to the SMTP server.  Some servers require the
 FQDN to match your IP address.  If not set, git send-email attempts
 to determine your FQDN automatically.  Default is the value of
-<code>sendemail.smtpDomain</code>.</p>
+<span class='synopsis'><code>sendemail.smtpDomain</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-authltmechanismsgt"><a id="Documentation/git-send-email.txt---smtp-authmechanisms" class="anchor" href="#Documentation/git-send-email.txt---smtp-authmechanisms"></a>--smtp-auth=&lt;mechanisms&gt; </dt>
 <dd>
@@ -2697,42 +2697,42 @@ forces using only the listed mechanisms. Example:</p>
 <div class="paragraph">
 <p>If at least one of the specified mechanisms matches the ones advertised by the
 SMTP server and if it is supported by the utilized SASL library, the mechanism
-is used for authentication. If neither <em>sendemail.smtpAuth</em> nor <code>--smtp-auth</code>
+is used for authentication. If neither <em>sendemail.smtpAuth</em> nor <span class='synopsis'><code>--smtp-auth</code></span>
 is specified, all mechanisms supported by the SASL library can be used. The
 special value <em>none</em> maybe specified to completely disable authentication
-independently of <code>--smtp-user</code></p>
+independently of <span class='synopsis'><code>--smtp-user</code></span></p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-passltpasswordgt"><a id="Documentation/git-send-email.txt---smtp-passpassword" class="anchor" href="#Documentation/git-send-email.txt---smtp-passpassword"></a>--smtp-pass[=&lt;password&gt;] </dt>
 <dd>
 <p>Password for SMTP-AUTH. The argument is optional: If no
 argument is specified, then the empty string is used as
-the password. Default is the value of <code>sendemail.smtpPass</code>,
-however <code>--smtp-pass</code> always overrides this value.</p>
+the password. Default is the value of <span class='synopsis'><code>sendemail.smtpPass</code></span>,
+however <span class='synopsis'><code>--smtp-pass</code></span> always overrides this value.</p>
 <div class="paragraph">
 <p>Furthermore, passwords need not be specified in configuration files
 or on the command line. If a username has been specified (with
-<code>--smtp-user</code> or a <code>sendemail.smtpUser</code>), but no password has been
-specified (with <code>--smtp-pass</code> or <code>sendemail.smtpPass</code>), then
+<span class='synopsis'><code>--smtp-user</code></span> or a <span class='synopsis'><code>sendemail.smtpUser</code></span>), but no password has been
+specified (with <span class='synopsis'><code>--smtp-pass</code></span> or <span class='synopsis'><code>sendemail.smtpPass</code></span>), then
 a password is obtained using <em>git-credential</em>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-smtp-auth"><a class="anchor" href="#Documentation/git-send-email.txt---no-smtp-auth"></a>--no-smtp-auth </dt>
 <dd>
-<p>Disable SMTP authentication. Short hand for <code>--smtp-auth=none</code></p>
+<p>Disable SMTP authentication. Short hand for <span class='synopsis'><code>--smtp-auth=none</code></span></p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-serverlthostgt"><a id="Documentation/git-send-email.txt---smtp-serverhost" class="anchor" href="#Documentation/git-send-email.txt---smtp-serverhost"></a>--smtp-server=&lt;host&gt; </dt>
 <dd>
 <p>If set, specifies the outgoing SMTP server to use (e.g.
-<code>smtp.example.com</code> or a raw IP address).  If unspecified, and if
-<code>--sendmail-cmd</code> is also unspecified, the default is to search
-for <code>sendmail</code> in <code>/usr/sbin</code>, <code>/usr/lib</code> and $PATH if such a
-program is available, falling back to <code>localhost</code> otherwise.</p>
+<span class='synopsis'><code>smtp.example.com</code></span> or a raw IP address).  If unspecified, and if
+<span class='synopsis'><code>--sendmail-cmd</code></span> is also unspecified, the default is to search
+for <span class='synopsis'><code>sendmail</code></span> in <span class='synopsis'><code>/usr/sbin</code></span>, <span class='synopsis'><code>/usr/lib</code></span> and $PATH if such a
+program is available, falling back to <span class='synopsis'><code>localhost</code></span> otherwise.</p>
 <div class="paragraph">
 <p>For backward compatibility, this option can also specify a full pathname
-of a sendmail-like program instead; the program must support the <code>-i</code>
+of a sendmail-like program instead; the program must support the <span class='synopsis'><code>-i</code></span>
 option.  This method does not support passing arguments or using plain
-command names.  For those use cases, consider using <code>--sendmail-cmd</code>
+command names.  For those use cases, consider using <span class='synopsis'><code>--sendmail-cmd</code></span>
 instead.</p>
 </div>
 </dd>
@@ -2743,12 +2743,12 @@ servers typically listen to smtp port 25, but may also listen to
 submission port 587, or the common SSL smtp port 465);
 symbolic port names (e.g. "submission" instead of 587)
 are also accepted. The port can also be set with the
-<code>sendemail.smtpServerPort</code> configuration variable.</p>
+<span class='synopsis'><code>sendemail.smtpServerPort</code></span> configuration variable.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-server-optionltoptiongt"><a id="Documentation/git-send-email.txt---smtp-server-optionoption" class="anchor" href="#Documentation/git-send-email.txt---smtp-server-optionoption"></a>--smtp-server-option=&lt;option&gt; </dt>
 <dd>
 <p>If set, specifies the outgoing SMTP server option to use.
-Default value can be specified by the <code>sendemail.smtpServerOption</code>
+Default value can be specified by the <span class='synopsis'><code>sendemail.smtpServerOption</code></span>
 configuration option.</p>
 <div class="paragraph">
 <p>The --smtp-server-option option must be repeated for each option you want
@@ -2768,14 +2768,14 @@ by <em>c_rehash</em>, or a single file containing one or more PEM format
 certificates concatenated together: see verify(1) -CAfile and
 -CApath for more information on these). Set it to an empty string
 to disable certificate verification. Defaults to the value of the
-<code>sendemail.smtpSSLCertPath</code> configuration variable, if set, or the
+<span class='synopsis'><code>sendemail.smtpSSLCertPath</code></span> configuration variable, if set, or the
 backing SSL library&#8217;s compiled-in default otherwise (which should
 be the best choice on most platforms).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-userltusergt"><a id="Documentation/git-send-email.txt---smtp-useruser" class="anchor" href="#Documentation/git-send-email.txt---smtp-useruser"></a>--smtp-user=&lt;user&gt; </dt>
 <dd>
-<p>Username for SMTP-AUTH. Default is the value of <code>sendemail.smtpUser</code>;
-if a username is not specified (with <code>--smtp-user</code> or <code>sendemail.smtpUser</code>),
+<p>Username for SMTP-AUTH. Default is the value of <span class='synopsis'><code>sendemail.smtpUser</code></span>;
+if a username is not specified (with <span class='synopsis'><code>--smtp-user</code></span> or <span class='synopsis'><code>sendemail.smtpUser</code></span>),
 then authentication is not attempted.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---smtp-debug01"><a class="anchor" href="#Documentation/git-send-email.txt---smtp-debug01"></a>--smtp-debug=(0|1) </dt>
@@ -2793,12 +2793,12 @@ sending $&lt;num&gt; messages and wait for a few seconds (see --relogin-delay)
 and reconnect, to work around such a limit.  You may want to
 use some form of credential helper to avoid having to retype
 your password every time this happens.  Defaults to the
-<code>sendemail.smtpBatchSize</code> configuration variable.</p>
+<span class='synopsis'><code>sendemail.smtpBatchSize</code></span> configuration variable.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---relogin-delayltintgt"><a id="Documentation/git-send-email.txt---relogin-delayint" class="anchor" href="#Documentation/git-send-email.txt---relogin-delayint"></a>--relogin-delay=&lt;int&gt; </dt>
 <dd>
 <p>Waiting $&lt;int&gt; seconds before reconnecting to SMTP server. Used together
-with --batch-size option.  Defaults to the <code>sendemail.smtpReloginDelay</code>
+with --batch-size option.  Defaults to the <span class='synopsis'><code>sendemail.smtpReloginDelay</code></span>
 configuration variable.</p>
 </dd>
 </dl>
@@ -2817,7 +2817,7 @@ set via config.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-identity"><a class="anchor" href="#Documentation/git-send-email.txt---no-identity"></a>--no-identity </dt>
 <dd>
-<p>Clears the previously read value of <code>sendemail.identity</code> set
+<p>Clears the previously read value of <span class='synopsis'><code>sendemail.identity</code></span> set
 via config, if any.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---to-cmdltcommandgt"><a id="Documentation/git-send-email.txt---to-cmdcommand" class="anchor" href="#Documentation/git-send-email.txt---to-cmdcommand"></a>--to-cmd=&lt;command&gt; </dt>
@@ -2832,16 +2832,16 @@ Default is the value of <em>sendemail.toCmd</em> configuration value.</p>
 <p>Specify a command to execute once per patch file which
 should generate patch file specific "Cc:" entries.
 Output of this command must be single email address per line.
-Default is the value of <code>sendemail.ccCmd</code> configuration value.</p>
+Default is the value of <span class='synopsis'><code>sendemail.ccCmd</code></span> configuration value.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---header-cmdltcommandgt"><a id="Documentation/git-send-email.txt---header-cmdcommand" class="anchor" href="#Documentation/git-send-email.txt---header-cmdcommand"></a>--header-cmd=&lt;command&gt; </dt>
 <dd>
 <p>Specify a command that is executed once per outgoing message
 and output RFC 2822 style header lines to be inserted into
-them. When the <code>sendemail.headerCmd</code> configuration variable is
+them. When the <span class='synopsis'><code>sendemail.headerCmd</code></span> configuration variable is
 set, its value is always used. When --header-cmd is provided
 at the command line, its value takes precedence over the
-<code>sendemail.headerCmd</code> configuration variable.</p>
+<span class='synopsis'><code>sendemail.headerCmd</code></span> configuration variable.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-header-cmd"><a class="anchor" href="#Documentation/git-send-email.txt---no-header-cmd"></a>--no-header-cmd </dt>
 <dd>
@@ -2853,7 +2853,7 @@ at the command line, its value takes precedence over the
 email sent.  If disabled with "--no-chain-reply-to", all emails after
 the first will be sent as replies to the first email sent.  When using
 this, it is recommended that the first file given be an overview of the
-entire patch series. Disabled by default, but the <code>sendemail.chainReplyTo</code>
+entire patch series. Disabled by default, but the <span class='synopsis'><code>sendemail.chainReplyTo</code></span>
 configuration variable can be used to enable it.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---identityltidentitygt"><a id="Documentation/git-send-email.txt---identityidentity" class="anchor" href="#Documentation/git-send-email.txt---identityidentity"></a>--identity=&lt;identity&gt; </dt>
@@ -2861,12 +2861,12 @@ configuration variable can be used to enable it.</p>
 <p>A configuration identity. When given, causes values in the
 <em>sendemail.&lt;identity&gt;</em> subsection to take precedence over
 values in the <em>sendemail</em> section. The default identity is
-the value of <code>sendemail.identity</code>.</p>
+the value of <span class='synopsis'><code>sendemail.identity</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-signed-off-by-cc"><a class="anchor" href="#Documentation/git-send-email.txt---no-signed-off-by-cc"></a>--[no-]signed-off-by-cc </dt>
 <dd>
-<p>If this is set, add emails found in the <code>Signed-off-by</code> trailer or Cc: lines to the
-cc list. Default is the value of <code>sendemail.signedOffByCc</code> configuration
+<p>If this is set, add emails found in the <span class='synopsis'><code>Signed-off-by</code></span> trailer or Cc: lines to the
+cc list. Default is the value of <span class='synopsis'><code>sendemail.signedOffByCc</code></span> configuration
 value; if that is unspecified, default to --signed-off-by-cc.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-cc-cover"><a class="anchor" href="#Documentation/git-send-email.txt---no-cc-cover"></a>--[no-]cc-cover </dt>
@@ -2928,7 +2928,7 @@ except Signed-off-by (use <em>sob</em> for that).</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Default is the value of <code>sendemail.suppressCc</code> configuration value; if
+<p>Default is the value of <span class='synopsis'><code>sendemail.suppressCc</code></span> configuration value; if
 that is unspecified, default to <em>self</em> if --suppress-from is
 specified, as well as <em>body</em> if --no-signed-off-cc is specified.</p>
 </div>
@@ -2936,20 +2936,20 @@ specified, as well as <em>body</em> if --no-signed-off-cc is specified.</p>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-suppress-from"><a class="anchor" href="#Documentation/git-send-email.txt---no-suppress-from"></a>--[no-]suppress-from </dt>
 <dd>
 <p>If this is set, do not add the From: address to the cc: list.
-Default is the value of <code>sendemail.suppressFrom</code> configuration
+Default is the value of <span class='synopsis'><code>sendemail.suppressFrom</code></span> configuration
 value; if that is unspecified, default to --no-suppress-from.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-thread"><a class="anchor" href="#Documentation/git-send-email.txt---no-thread"></a>--[no-]thread </dt>
 <dd>
 <p>If this is set, the In-Reply-To and References headers will be
 added to each email sent.  Whether each mail refers to the
-previous email (<code>deep</code> threading per <em>git format-patch</em>
-wording) or to the first email (<code>shallow</code> threading) is
+previous email (<span class='synopsis'><code>deep</code></span> threading per <em>git format-patch</em>
+wording) or to the first email (<span class='synopsis'><code>shallow</code></span> threading) is
 governed by "--[no-]chain-reply-to".</p>
 <div class="paragraph">
 <p>If disabled with "--no-thread", those headers will not be added
 (unless specified with --in-reply-to).  Default is the value of the
-<code>sendemail.thread</code> configuration value; if that is unspecified,
+<span class='synopsis'><code>sendemail.thread</code></span> configuration value; if that is unspecified,
 default to --thread.</p>
 </div>
 <div class="paragraph">
@@ -2965,8 +2965,8 @@ recipient&#8217;s MUA.</p>
 <p>Use the mailmap file (see <a href='/docs/gitmailmap'>gitmailmap[5]</a>) to map all
 addresses to their canonical real name and email address. Additional
 mailmap data specific to git-send-email may be provided using the
-<code>sendemail.mailmap.file</code> or <code>sendemail.mailmap.blob</code> configuration
-values. Defaults to <code>sendemail.mailmap</code>.</p>
+<span class='synopsis'><code>sendemail.mailmap.file</code></span> or <span class='synopsis'><code>sendemail.mailmap.blob</code></span> configuration
+values. Defaults to <span class='synopsis'><code>sendemail.mailmap</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -3003,7 +3003,7 @@ added addresses from the patch to the Cc list</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Default is the value of <code>sendemail.confirm</code> configuration value; if that
+<p>Default is the value of <span class='synopsis'><code>sendemail.confirm</code></span> configuration value; if that
 is unspecified, default to <em>auto</em> unless any of the suppress options
 have been specified, in which case default to <em>compose</em>.</p>
 </div>
@@ -3015,8 +3015,8 @@ have been specified, in which case default to <em>compose</em>.</p>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---no-format-patch"><a class="anchor" href="#Documentation/git-send-email.txt---no-format-patch"></a>--[no-]format-patch </dt>
 <dd>
 <p>When an argument may be understood either as a reference or as a file name,
-choose to understand it as a format-patch argument (<code>--format-patch</code>)
-or as a file name (<code>--no-format-patch</code>). By default, when such a conflict
+choose to understand it as a format-patch argument (<span class='synopsis'><code>--format-patch</code></span>)
+or as a file name (<span class='synopsis'><code>--no-format-patch</code></span>). By default, when such a conflict
 occurs, git send-email will fail.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---quiet"><a class="anchor" href="#Documentation/git-send-email.txt---quiet"></a>--quiet </dt>
@@ -3047,8 +3047,8 @@ this is due to SMTP limits as described by
 </div>
 </div>
 <div class="paragraph">
-<p>Default is the value of <code>sendemail.validate</code>; if this is not set,
-default to <code>--validate</code>.</p>
+<p>Default is the value of <span class='synopsis'><code>sendemail.validate</code></span>; if this is not set,
+default to <span class='synopsis'><code>--validate</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt---force"><a class="anchor" href="#Documentation/git-send-email.txt---force"></a>--force </dt>
@@ -3097,7 +3097,7 @@ as what&#8217;s found there:</p>
 <p>A configuration identity. When given, causes values in the
 <em>sendemail.&lt;identity&gt;</em> subsection to take precedence over
 values in the <em>sendemail</em> section. The default identity is
-the value of <code>sendemail.identity</code>.</p>
+the value of <span class='synopsis'><code>sendemail.identity</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailsmtpEncryption"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailsmtpEncryption"></a>sendemail.smtpEncryption </dt>
 <dd>
@@ -3114,44 +3114,44 @@ Set it to an empty string to disable certificate verification.</p>
 <p>Identity-specific versions of the <em>sendemail.*</em> parameters
 found below, taking precedence over those when this
 identity is selected, through either the command-line or
-<code>sendemail.identity</code>.</p>
+<span class='synopsis'><code>sendemail.identity</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailmultiEdit"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailmultiEdit"></a>sendemail.multiEdit </dt>
 <dd>
 <p>If true (default), a single editor instance will be spawned to edit
-files you have to edit (patches when <code>--annotate</code> is used, and the
-summary when <code>--compose</code> is used). If false, files will be edited one
+files you have to edit (patches when <span class='synopsis'><code>--annotate</code></span> is used, and the
+summary when <span class='synopsis'><code>--compose</code></span> is used). If false, files will be edited one
 after the other, spawning a new editor each time.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailconfirm"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailconfirm"></a>sendemail.confirm </dt>
 <dd>
 <p>Sets the default for whether to confirm before sending. Must be
-one of <em>always</em>, <em>never</em>, <em>cc</em>, <em>compose</em>, or <em>auto</em>. See <code>--confirm</code>
+one of <em>always</em>, <em>never</em>, <em>cc</em>, <em>compose</em>, or <em>auto</em>. See <span class='synopsis'><code>--confirm</code></span>
 in the <a href='/docs/git-send-email'>git-send-email[1]</a> documentation for the meaning of these
 values.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailmailmap"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailmailmap"></a>sendemail.mailmap </dt>
 <dd>
-<p>If true, makes <a href='/docs/git-send-email'>git-send-email[1]</a> assume <code>--mailmap</code>,
-otherwise assume <code>--no-mailmap</code>. False by default.</p>
+<p>If true, makes <a href='/docs/git-send-email'>git-send-email[1]</a> assume <span class='synopsis'><code>--mailmap</code></span>,
+otherwise assume <span class='synopsis'><code>--no-mailmap</code></span>. False by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailmailmapfile"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailmailmapfile"></a>sendemail.mailmap.file </dt>
 <dd>
 <p>The location of a <a href='/docs/git-send-email'>git-send-email[1]</a> specific augmenting
-mailmap file. The default mailmap and <code>mailmap.file</code> are loaded
+mailmap file. The default mailmap and <span class='synopsis'><code>mailmap.file</code></span> are loaded
 first. Thus, entries in this file take precedence over entries in
 the default mailmap locations. See <a href='/docs/gitmailmap'>gitmailmap[5]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailmailmapblob"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailmailmapblob"></a>sendemail.mailmap.blob </dt>
 <dd>
-<p>Like <code>sendemail.mailmap.file</code>, but consider the value as a reference
-to a blob in the repository. Entries in <code>sendemail.mailmap.file</code>
+<p>Like <span class='synopsis'><code>sendemail.mailmap.file</code></span>, but consider the value as a reference
+to a blob in the repository. Entries in <span class='synopsis'><code>sendemail.mailmap.file</code></span>
 take precedence over entries here. See <a href='/docs/gitmailmap'>gitmailmap[5]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailaliasesFile"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailaliasesFile"></a>sendemail.aliasesFile </dt>
 <dd>
 <p>To avoid typing long email addresses, point this to one or more
-email aliases files.  You must also supply <code>sendemail.aliasFileType</code>.</p>
+email aliases files.  You must also supply <span class='synopsis'><code>sendemail.aliasFileType</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailaliasFileType"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailaliasFileType"></a>sendemail.aliasFileType </dt>
 <dd>
@@ -3173,14 +3173,14 @@ described below:</p>
 <ul>
 <li>
 <p>Quoted aliases and quoted addresses are not supported: lines that
-contain a <code>"</code> symbol are ignored.</p>
+contain a <span class='synopsis'><code>"</code></span> symbol are ignored.</p>
 </li>
 <li>
-<p>Redirection to a file (<code>/path/name</code>) or pipe (<code>|command</code>) is not
+<p>Redirection to a file (<span class='synopsis'><code>/path/name</code></span>) or pipe (<span class='synopsis'>|<code>command</code></span>) is not
 supported.</p>
 </li>
 <li>
-<p>File inclusion (<code>:include: /path/name</code>) is not supported.</p>
+<p>File inclusion (<span class='synopsis'><code>:include:</code> <code>/path/name</code></span>) is not supported.</p>
 </li>
 <li>
 <p>Warnings are printed on the standard error output for any
@@ -3225,19 +3225,19 @@ documentation for details.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailsignedOffCcdeprecated"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailsignedOffCcdeprecated"></a>sendemail.signedOffCc (deprecated) </dt>
 <dd>
-<p>Deprecated alias for <code>sendemail.signedOffByCc</code>.</p>
+<p>Deprecated alias for <span class='synopsis'><code>sendemail.signedOffByCc</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailsmtpBatchSize"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailsmtpBatchSize"></a>sendemail.smtpBatchSize </dt>
 <dd>
 <p>Number of messages to be sent per connection, after that a relogin
 will happen.  If the value is 0 or undefined, send all messages in
 one connection.
-See also the <code>--batch-size</code> option of <a href='/docs/git-send-email'>git-send-email[1]</a>.</p>
+See also the <span class='synopsis'><code>--batch-size</code></span> option of <a href='/docs/git-send-email'>git-send-email[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailsmtpReloginDelay"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailsmtpReloginDelay"></a>sendemail.smtpReloginDelay </dt>
 <dd>
 <p>Seconds to wait before reconnecting to the smtp server.
-See also the <code>--relogin-delay</code> option of <a href='/docs/git-send-email'>git-send-email[1]</a>.</p>
+See also the <span class='synopsis'><code>--relogin-delay</code></span> option of <a href='/docs/git-send-email'>git-send-email[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-send-email.txt-sendemailforbidSendmailVariables"><a class="anchor" href="#Documentation/git-send-email.txt-sendemailforbidSendmailVariables"></a>sendemail.forbidSendmailVariables </dt>
 <dd>
@@ -3255,8 +3255,8 @@ exist. Set this variable to bypass the check.</p>
 <div class="sect2">
 <h3 id="_use_gmail_as_the_smtp_server"><a class="anchor" href="#_use_gmail_as_the_smtp_server"></a>Use Gmail as the SMTP Server</h3>
 <div class="paragraph">
-<p>To use <code>git send-email</code> to send your patches through the Gmail SMTP server,
-edit <code>~/.gitconfig</code> to specify your account settings:</p>
+<p>To use <span class='synopsis'><code>git</code> <code>send-email</code></span> to send your patches through the Gmail SMTP server,
+edit <span class='synopsis'><code>~/.gitconfig</code></span> to specify your account settings:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3273,10 +3273,10 @@ generate an app-specific password for use with <em>git send-email</em>. Visit
 <a href="https://security.google.com/settings/security/apppasswords" class="bare">https://security.google.com/settings/security/apppasswords</a> to create it.</p>
 </div>
 <div class="paragraph">
-<p>You can also use OAuth2.0 authentication with Gmail. <code>OAUTHBEARER</code> and
-<code>XOAUTH2</code> are common methods used for this type of authentication. Gmail
-supports both of them. As an example, if you want to use <code>OAUTHBEARER</code>, edit
-your <code>~/.gitconfig</code> file and add <code>smtpAuth = OAUTHBEARER</code> to your account
+<p>You can also use OAuth2.0 authentication with Gmail. <span class='synopsis'><code>OAUTHBEARER</code></span> and
+<span class='synopsis'><code>XOAUTH2</code></span> are common methods used for this type of authentication. Gmail
+supports both of them. As an example, if you want to use <span class='synopsis'><code>OAUTHBEARER</code></span>, edit
+your <span class='synopsis'><code>~/.gitconfig</code></span> file and add <span class='synopsis'><code>smtpAuth</code> <code>=</code> <code>OAUTHBEARER</code></span> to your account
 settings:</p>
 </div>
 <div class="listingblock">
@@ -3295,11 +3295,11 @@ settings:</p>
 <div class="paragraph">
 <p>Unlike Gmail, Microsoft Outlook no longer supports app-specific passwords.
 Therefore, OAuth2.0 authentication must be used for Outlook. Also, it only
-supports <code>XOAUTH2</code> authentication method.</p>
+supports <span class='synopsis'><code>XOAUTH2</code></span> authentication method.</p>
 </div>
 <div class="paragraph">
-<p>Edit <code>~/.gitconfig</code> to specify your account settings for Outlook and use its
-SMTP server with <code>git send-email</code>:</p>
+<p>Edit <span class='synopsis'><code>~/.gitconfig</code></span> to specify your account settings for Outlook and use its
+SMTP server with <span class='synopsis'><code>git</code> <code>send-email</code></span>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3412,7 +3412,7 @@ Authen::SASL and Mail::Address.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

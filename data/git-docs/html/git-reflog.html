@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1670,8 +1670,8 @@
 <p>Reference logs, or "reflogs", record when the tips of branches and
 other references were updated in the local repository. Reflogs are
 useful in various Git commands, to specify the old value of a
-reference. For example, <code>HEAD@{2}</code> means "where HEAD used to be two
-moves ago", <code>master@{one.week.ago}</code> means "where master used to point
+reference. For example, <span class='synopsis'><code>HEAD@{2}</code></span> means "where HEAD used to be two
+moves ago", <span class='synopsis'><code>master@{one.week.ago}</code></span> means "where master used to point
 to one week ago in this local repository", and so on. See
 <a href='/docs/gitrevisions'>gitrevisions[7]</a> for more details.</p>
 </div>
@@ -1682,25 +1682,27 @@ depending on the subcommand:</p>
 <div class="paragraph">
 <p>The "show" subcommand (which is also the default, in the absence of
 any subcommands) shows the log of the reference provided in the
-command-line (or <code>HEAD</code>, by default). The reflog covers all recent
-actions, and in addition the <code>HEAD</code> reflog records branch switching.
-<code>git reflog show</code> is an alias for <code>git log -g --abbrev-commit
---pretty=oneline</code>; see <a href='/docs/git-log'>git-log[1]</a> for more information.</p>
+command-line (or <span class='synopsis'><code>HEAD</code></span>, by default). The reflog covers all recent
+actions, and in addition the <span class='synopsis'><code>HEAD</code></span> reflog records branch switching.
+<span class='synopsis'><code>git</code> <code>reflog</code> <code>show</code></span> is an alias for <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code> <code>--abbrev-commit</code>
+
+<code>--pretty=oneline</code></span>; see <a href='/docs/git-log'>git-log[1]</a> for more information.</p>
 </div>
 <div class="paragraph">
 <p>The "list" subcommand lists all refs which have a corresponding reflog.</p>
 </div>
 <div class="paragraph">
 <p>The "expire" subcommand prunes older reflog entries. Entries older
-than <code>expire</code> time, or entries older than <code>expire-unreachable</code> time
+than <span class='synopsis'><code>expire</code></span> time, or entries older than <span class='synopsis'><code>expire-unreachable</code></span> time
 and not reachable from the current tip, are removed from the reflog.
 This is typically not used directly by end users&#8201;&#8212;&#8201;instead, see
 <a href='/docs/git-gc'>git-gc[1]</a>.</p>
 </div>
 <div class="paragraph">
 <p>The "delete" subcommand deletes single entries from the reflog, but
-not the reflog itself. Its argument must be an <em>exact</em> entry (e.g. "<code>git
-reflog delete master@{2}</code>"). This subcommand is also typically not used
+not the reflog itself. Its argument must be an <em>exact</em> entry (e.g. "<span class='synopsis'><code>git</code>
+
+<code>reflog</code> <code>delete</code> <code>master@{2}</code></span>"). This subcommand is also typically not used
 directly by end users.</p>
 </div>
 <div class="paragraph">
@@ -1719,13 +1721,13 @@ not.</p>
 <h2 id="_options"><a class="anchor" href="#_options"></a>OPTIONS</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_options_for_show"><a class="anchor" href="#_options_for_show"></a>Options for <code>show</code></h3>
+<h3 id="_options_for_show"><a class="anchor" href="#_options_for_show"></a>Options for <span class='synopsis'><code>show</code></span></h3>
 <div class="paragraph">
-<p><code>git reflog show</code> accepts any of the options accepted by <code>git log</code>.</p>
+<p><span class='synopsis'><code>git</code> <code>reflog</code> <code>show</code></span> accepts any of the options accepted by <span class='synopsis'><code>git</code> <code>log</code></span>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_options_for_expire"><a class="anchor" href="#_options_for_expire"></a>Options for <code>expire</code></h3>
+<h3 id="_options_for_expire"><a class="anchor" href="#_options_for_expire"></a>Options for <span class='synopsis'><code>expire</code></span></h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---all"><a class="anchor" href="#Documentation/git-reflog.txt---all"></a>--all </dt>
@@ -1734,7 +1736,7 @@ not.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---single-worktree"><a class="anchor" href="#Documentation/git-reflog.txt---single-worktree"></a>--single-worktree </dt>
 <dd>
-<p>By default when <code>--all</code> is specified, reflogs from all working
+<p>By default when <span class='synopsis'><code>--all</code></span> is specified, reflogs from all working
 trees are processed. This option limits the processing to reflogs
 from the current working tree only.</p>
 </dd>
@@ -1742,21 +1744,21 @@ from the current working tree only.</p>
 <dd>
 <p>Prune entries older than the specified time. If this option is
 not specified, the expiration time is taken from the
-configuration setting <code>gc.reflogExpire</code>, which in turn
-defaults to 90 days. <code>--expire=all</code> prunes entries regardless
-of their age; <code>--expire=never</code> turns off pruning of reachable
-entries (but see <code>--expire-unreachable</code>).</p>
+configuration setting <span class='synopsis'><code>gc.reflogExpire</code></span>, which in turn
+defaults to 90 days. <span class='synopsis'><code>--expire=all</code></span> prunes entries regardless
+of their age; <span class='synopsis'><code>--expire=never</code></span> turns off pruning of reachable
+entries (but see <span class='synopsis'><code>--expire-unreachable</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---expire-unreachablelttimegt"><a id="Documentation/git-reflog.txt---expire-unreachabletime" class="anchor" href="#Documentation/git-reflog.txt---expire-unreachabletime"></a>--expire-unreachable=&lt;time&gt; </dt>
 <dd>
-<p>Prune entries older than <code>&lt;time&gt;</code> that are not reachable from
+<p>Prune entries older than <span class='synopsis'><em>&lt;time&gt;</em></span> that are not reachable from
 the current tip of the branch. If this option is not
 specified, the expiration time is taken from the configuration
-setting <code>gc.reflogExpireUnreachable</code>, which in turn defaults
-to 30 days. <code>--expire-unreachable=all</code> prunes unreachable
-entries regardless of their age; <code>--expire-unreachable=never</code>
+setting <span class='synopsis'><code>gc.reflogExpireUnreachable</code></span>, which in turn defaults
+to 30 days. <span class='synopsis'><code>--expire-unreachable=all</code></span> prunes unreachable
+entries regardless of their age; <span class='synopsis'><code>--expire-unreachable=never</code></span>
 turns off early pruning of unreachable entries (but see
-<code>--expire</code>).</p>
+<span class='synopsis'><code>--expire</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---updateref"><a class="anchor" href="#Documentation/git-reflog.txt---updateref"></a>--updateref </dt>
 <dd>
@@ -1797,15 +1799,15 @@ been pruned.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_options_for_delete"><a class="anchor" href="#_options_for_delete"></a>Options for <code>delete</code></h3>
+<h3 id="_options_for_delete"><a class="anchor" href="#_options_for_delete"></a>Options for <span class='synopsis'><code>delete</code></span></h3>
 <div class="paragraph">
-<p><code>git reflog delete</code> accepts options <code>--updateref</code>, <code>--rewrite</code>, <code>-n</code>,
-<code>--dry-run</code>, and <code>--verbose</code>, with the same meanings as when they are
-used with <code>expire</code>.</p>
+<p><span class='synopsis'><code>git</code> <code>reflog</code> <code>delete</code></span> accepts options <span class='synopsis'><code>--updateref</code></span>, <span class='synopsis'><code>--rewrite</code></span>, <span class='synopsis'><code>-n</code></span>,
+<span class='synopsis'><code>--dry-run</code></span>, and <span class='synopsis'><code>--verbose</code></span>, with the same meanings as when they are
+used with <span class='synopsis'><code>expire</code></span>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_options_for_drop"><a class="anchor" href="#_options_for_drop"></a>Options for <code>drop</code></h3>
+<h3 id="_options_for_drop"><a class="anchor" href="#_options_for_drop"></a>Options for <span class='synopsis'><code>drop</code></span></h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---all-1"><a class="anchor" href="#Documentation/git-reflog.txt---all-1"></a>--all </dt>
@@ -1814,7 +1816,7 @@ used with <code>expire</code>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reflog.txt---single-worktree-1"><a class="anchor" href="#Documentation/git-reflog.txt---single-worktree-1"></a>--single-worktree </dt>
 <dd>
-<p>By default when <code>--all</code> is specified, reflogs from all working
+<p>By default when <span class='synopsis'><code>--all</code></span> is specified, reflogs from all working
 trees are dropped. This option limits the processing to reflogs
 from the current working tree only.</p>
 </dd>
@@ -1859,7 +1861,7 @@ from the current working tree only.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

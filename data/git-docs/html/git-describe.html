@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1696,14 +1696,14 @@ is a "human-readable" object name which can also be used to
 identify the commit to other git commands.</p>
 </div>
 <div class="paragraph">
-<p>By default (without --all or --tags) <code>git describe</code> only shows
+<p>By default (without --all or --tags) <span class='synopsis'><code>git</code> <code>describe</code></span> only shows
 annotated tags.  For more information about creating annotated tags
 see the -a and -s options to <a href='/docs/git-tag'>git-tag[1]</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the given object refers to a blob, it will be described
-as <code>&lt;commit-ish&gt;:&lt;path&gt;</code>, such that the blob can be found
-at <code>&lt;path&gt;</code> in the <code>&lt;commit-ish&gt;</code>, which itself describes the
+as <span class='synopsis'><em>&lt;commit-ish&gt;</em><code>:</code><em>&lt;path&gt;</em></span>, such that the blob can be found
+at <span class='synopsis'><em>&lt;path&gt;</em></span> in the <span class='synopsis'><em>&lt;commit-ish&gt;</em></span>, which itself describes the
 first commit in which this blob occurs in a reverse revision walk
 from HEAD.</p>
 </div>
@@ -1732,13 +1732,13 @@ the suffix "-broken" instead.</p>
 <dt class="hdlist1" id="Documentation/git-describe.txt---all"><a class="anchor" href="#Documentation/git-describe.txt---all"></a>--all </dt>
 <dd>
 <p>Instead of using only the annotated tags, use any ref
-found in <code>refs/</code> namespace.  This option enables matching
+found in <span class='synopsis'><code>refs/</code></span> namespace.  This option enables matching
 any known branch, remote-tracking branch, or lightweight tag.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-describe.txt---tags"><a class="anchor" href="#Documentation/git-describe.txt---tags"></a>--tags </dt>
 <dd>
 <p>Instead of using only the annotated tags, use any tag
-found in <code>refs/tags</code> namespace.  This option enables matching
+found in <span class='synopsis'><code>refs/tags</code></span> namespace.  This option enables matching
 a lightweight (non-annotated) tag.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-describe.txt---contains"><a class="anchor" href="#Documentation/git-describe.txt---contains"></a>--contains </dt>
@@ -1786,26 +1786,26 @@ that points at object deadbee&#8230;&#8203;.).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-describe.txt---matchltpatterngt"><a id="Documentation/git-describe.txt---matchpattern" class="anchor" href="#Documentation/git-describe.txt---matchpattern"></a>--match &lt;pattern&gt; </dt>
 <dd>
-<p>Only consider tags matching the given <code>glob(7)</code> pattern,
-excluding the "refs/tags/" prefix. If used with <code>--all</code>, it also
+<p>Only consider tags matching the given <span class='synopsis'><code>glob</code>(<code>7</code>)</span> pattern,
+excluding the "refs/tags/" prefix. If used with <span class='synopsis'><code>--all</code></span>, it also
 considers local branches and remote-tracking references matching the
 pattern, excluding respectively "refs/heads/" and "refs/remotes/"
 prefix; references of other types are never considered. If given
 multiple times, a list of patterns will be accumulated, and tags
-matching any of the patterns will be considered.  Use <code>--no-match</code> to
+matching any of the patterns will be considered.  Use <span class='synopsis'><code>--no-match</code></span> to
 clear and reset the list of patterns.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-describe.txt---excludeltpatterngt"><a id="Documentation/git-describe.txt---excludepattern" class="anchor" href="#Documentation/git-describe.txt---excludepattern"></a>--exclude &lt;pattern&gt; </dt>
 <dd>
-<p>Do not consider tags matching the given <code>glob(7)</code> pattern, excluding
-the "refs/tags/" prefix. If used with <code>--all</code>, it also does not consider
+<p>Do not consider tags matching the given <span class='synopsis'><code>glob</code>(<code>7</code>)</span> pattern, excluding
+the "refs/tags/" prefix. If used with <span class='synopsis'><code>--all</code></span>, it also does not consider
 local branches and remote-tracking references matching the pattern,
 excluding respectively "refs/heads/" and "refs/remotes/" prefix;
 references of other types are never considered. If given multiple times,
 a list of patterns will be accumulated and tags matching any of the
 patterns will be excluded. When combined with --match a tag will be
 considered when it matches at least one --match pattern and does not
-match any of the --exclude patterns. Use <code>--no-exclude</code> to clear and
+match any of the --exclude patterns. Use <span class='synopsis'><code>--no-exclude</code></span> to clear and
 reset the list of patterns.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-describe.txt---always"><a class="anchor" href="#Documentation/git-describe.txt---always"></a>--always </dt>
@@ -1845,7 +1845,7 @@ at the end.</p>
 <p>The number of additional commits is the number
 of commits which would be displayed by "git log v1.0.4..parent".
 The hash suffix is "-g" + an unambiguous abbreviation for the tip commit
-of parent (which was <code>2414721b194453f058079d897d13c4e377f92dc6</code>). The
+of parent (which was <span class='synopsis'><code>2414721b194453f058079d897d13c4e377f92dc6</code></span>). The
 length of the abbreviation scales as the repository grows, using the
 approximate number of objects in the repository and a bit of math
 around the birthday paradox, and defaults to a minimum of 7.
@@ -1911,7 +1911,7 @@ is found, its name will be output and searching will stop.</p>
 <p>If an exact match was not found, <em>git describe</em> will walk back
 through the commit history to locate an ancestor commit which
 has been tagged.  The ancestor&#8217;s tag will be output along with an
-abbreviation of the input commit-ish&#8217;s SHA-1. If <code>--first-parent</code> was
+abbreviation of the input commit-ish&#8217;s SHA-1. If <span class='synopsis'><code>--first-parent</code></span> was
 specified then the walk will only consider the first parent of each
 commit.</p>
 </div>
@@ -1919,7 +1919,7 @@ commit.</p>
 <p>If multiple tags were found during the walk then the tag which
 has the fewest commits different from the input commit-ish will be
 selected and output.  Here fewest commits different is defined as
-the number of commits which would be shown by <code>git log tag..input</code>
+the number of commits which would be shown by <span class='synopsis'><code>git</code> <code>log</code> <code>tag..input</code></span>
 will be the smallest number of commits possible.</p>
 </div>
 </div>
@@ -1971,7 +1971,7 @@ tag being favorable.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

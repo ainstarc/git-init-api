@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -3028,7 +3028,7 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>List commits that are reachable by following the <code>parent</code> links from the
+<p>List commits that are reachable by following the <span class='synopsis'><code>parent</code></span> links from the
 given commit(s), but exclude commits that are reachable from the one(s)
 given with a <em>^</em> in front of them.  The output is given in reverse
 chronological order by default.</p>
@@ -3096,13 +3096,13 @@ limiting may be applied.</p>
 </div>
 <div class="paragraph">
 <p>Using more options generally further limits the output (e.g.
-<code>--since=&lt;date1&gt;</code> limits to commits newer than <code>&lt;date1&gt;</code>, and using it
-with <code>--grep=&lt;pattern&gt;</code> further limits to commits whose log message
-has a line that matches <code>&lt;pattern&gt;</code>), unless otherwise noted.</p>
+<span class='synopsis'><code>--since=</code><em>&lt;date1&gt;</em></span> limits to commits newer than <span class='synopsis'><em>&lt;date1&gt;</em></span>, and using it
+with <span class='synopsis'><code>--grep=</code><em>&lt;pattern&gt;</em></span> further limits to commits whose log message
+has a line that matches <span class='synopsis'><em>&lt;pattern&gt;</em></span>), unless otherwise noted.</p>
 </div>
 <div class="paragraph">
 <p>Note that these are applied before commit
-ordering and formatting options, such as <code>--reverse</code>.</p>
+ordering and formatting options, such as <span class='synopsis'><code>--reverse</code></span>.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -3142,35 +3142,35 @@ is older than a specific date.</p>
 <dd>
 <p>Limit the commits output to ones with author/committer
 header lines that match the specified pattern (regular
-expression).  With more than one <code>--author=&lt;pattern&gt;</code>,
+expression).  With more than one <span class='synopsis'><code>--author=</code><em>&lt;pattern&gt;</em></span>,
 commits whose author matches any of the given patterns are
-chosen (similarly for multiple <code>--committer=&lt;pattern&gt;</code>).</p>
+chosen (similarly for multiple <span class='synopsis'><code>--committer=</code><em>&lt;pattern&gt;</em></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---grep-reflogltpatterngt"><a id="Documentation/git-rev-list.txt---grep-reflogpattern" class="anchor" href="#Documentation/git-rev-list.txt---grep-reflogpattern"></a>--grep-reflog=&lt;pattern&gt; </dt>
 <dd>
 <p>Limit the commits output to ones with reflog entries that
 match the specified pattern (regular expression). With
-more than one <code>--grep-reflog</code>, commits whose reflog message
+more than one <span class='synopsis'><code>--grep-reflog</code></span>, commits whose reflog message
 matches any of the given patterns are chosen.  It is an
-error to use this option unless <code>--walk-reflogs</code> is in use.</p>
+error to use this option unless <span class='synopsis'><code>--walk-reflogs</code></span> is in use.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---grepltpatterngt"><a id="Documentation/git-rev-list.txt---greppattern" class="anchor" href="#Documentation/git-rev-list.txt---greppattern"></a>--grep=&lt;pattern&gt; </dt>
 <dd>
 <p>Limit the commits output to ones with a log message that
 matches the specified pattern (regular expression).  With
-more than one <code>--grep=&lt;pattern&gt;</code>, commits whose message
+more than one <span class='synopsis'><code>--grep=</code><em>&lt;pattern&gt;</em></span>, commits whose message
 matches any of the given patterns are chosen (but see
-<code>--all-match</code>).</p>
+<span class='synopsis'><code>--all-match</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---all-match"><a class="anchor" href="#Documentation/git-rev-list.txt---all-match"></a>--all-match </dt>
 <dd>
-<p>Limit the commits output to ones that match all given <code>--grep</code>,
+<p>Limit the commits output to ones that match all given <span class='synopsis'><code>--grep</code></span>,
 instead of ones that match at least one.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---invert-grep"><a class="anchor" href="#Documentation/git-rev-list.txt---invert-grep"></a>--invert-grep </dt>
 <dd>
 <p>Limit the commits output to ones with a log message that do not
-match the pattern specified with <code>--grep=&lt;pattern&gt;</code>.</p>
+match the pattern specified with <span class='synopsis'><code>--grep=</code><em>&lt;pattern&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt--i"><a class="anchor" href="#Documentation/git-rev-list.txt--i"></a>-i </dt>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---regexp-ignore-case"><a class="anchor" href="#Documentation/git-rev-list.txt---regexp-ignore-case"></a>--regexp-ignore-case </dt>
@@ -3212,12 +3212,12 @@ providing this option will cause it to die.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---merges"><a class="anchor" href="#Documentation/git-rev-list.txt---merges"></a>--merges </dt>
 <dd>
-<p>Print only merge commits. This is exactly the same as <code>--min-parents=2</code>.</p>
+<p>Print only merge commits. This is exactly the same as <span class='synopsis'><code>--min-parents=2</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---no-merges"><a class="anchor" href="#Documentation/git-rev-list.txt---no-merges"></a>--no-merges </dt>
 <dd>
 <p>Do not print commits with more than one parent. This is
-exactly the same as <code>--max-parents=1</code>.</p>
+exactly the same as <span class='synopsis'><code>--max-parents=1</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---min-parentsltnumbergt"><a id="Documentation/git-rev-list.txt---min-parentsnumber" class="anchor" href="#Documentation/git-rev-list.txt---min-parentsnumber"></a>--min-parents=&lt;number&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---max-parentsltnumbergt"><a id="Documentation/git-rev-list.txt---max-parentsnumber" class="anchor" href="#Documentation/git-rev-list.txt---max-parentsnumber"></a>--max-parents=&lt;number&gt; </dt>
@@ -3225,13 +3225,13 @@ exactly the same as <code>--max-parents=1</code>.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---no-max-parents"><a class="anchor" href="#Documentation/git-rev-list.txt---no-max-parents"></a>--no-max-parents </dt>
 <dd>
 <p>Show only commits which have at least (or at most) that many parent
-commits. In particular, <code>--max-parents=1</code> is the same as <code>--no-merges</code>,
-<code>--min-parents=2</code> is the same as <code>--merges</code>.  <code>--max-parents=0</code>
-gives all root commits and <code>--min-parents=3</code> all octopus merges.</p>
+commits. In particular, <span class='synopsis'><code>--max-parents=1</code></span> is the same as <span class='synopsis'><code>--no-merges</code></span>,
+<span class='synopsis'><code>--min-parents=2</code></span> is the same as <span class='synopsis'><code>--merges</code></span>.  <span class='synopsis'><code>--max-parents=0</code></span>
+gives all root commits and <span class='synopsis'><code>--min-parents=3</code></span> all octopus merges.</p>
 <div class="paragraph">
-<p><code>--no-min-parents</code> and <code>--no-max-parents</code> reset these limits (to no limit)
-again.  Equivalent forms are <code>--min-parents=0</code> (any commit has 0 or more
-parents) and <code>--max-parents=-1</code> (negative numbers denote no upper limit).</p>
+<p><span class='synopsis'><code>--no-min-parents</code></span> and <span class='synopsis'><code>--no-max-parents</code></span> reset these limits (to no limit)
+again.  Equivalent forms are <span class='synopsis'><code>--min-parents=0</code></span> (any commit has 0 or more
+parents) and <span class='synopsis'><code>--max-parents=-1</code></span> (negative numbers denote no upper limit).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---first-parent"><a class="anchor" href="#Documentation/git-rev-list.txt---first-parent"></a>--first-parent </dt>
@@ -3256,7 +3256,7 @@ that arbitrary merges can be valid topic branch changes.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---not"><a class="anchor" href="#Documentation/git-rev-list.txt---not"></a>--not </dt>
 <dd>
 <p>Reverses the meaning of the <em>^</em> prefix (or lack thereof)
-for all following revision specifiers, up to the next <code>--not</code>.
+for all following revision specifiers, up to the next <span class='synopsis'><code>--not</code></span>.
 When used on the command line before --stdin, the revisions passed
 through stdin will not be affected by it. Conversely, when passed
 via standard input, the revisions passed on the command line will
@@ -3264,26 +3264,26 @@ not be affected by it.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---all"><a class="anchor" href="#Documentation/git-rev-list.txt---all"></a>--all </dt>
 <dd>
-<p>Pretend as if all the refs in <code>refs/</code>, along with <code>HEAD</code>, are
+<p>Pretend as if all the refs in <span class='synopsis'><code>refs/</code></span>, along with <span class='synopsis'><code>HEAD</code></span>, are
 listed on the command line as <em>&lt;commit&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---branchesltpatterngt"><a id="Documentation/git-rev-list.txt---branchespattern" class="anchor" href="#Documentation/git-rev-list.txt---branchespattern"></a>--branches[=&lt;pattern&gt;] </dt>
 <dd>
-<p>Pretend as if all the refs in <code>refs/heads</code> are listed
+<p>Pretend as if all the refs in <span class='synopsis'><code>refs/heads</code></span> are listed
 on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
 branches to ones matching given shell glob. If pattern lacks <em>?</em>,
 <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---tagsltpatterngt"><a id="Documentation/git-rev-list.txt---tagspattern" class="anchor" href="#Documentation/git-rev-list.txt---tagspattern"></a>--tags[=&lt;pattern&gt;] </dt>
 <dd>
-<p>Pretend as if all the refs in <code>refs/tags</code> are listed
+<p>Pretend as if all the refs in <span class='synopsis'><code>refs/tags</code></span> are listed
 on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
 tags to ones matching given shell glob. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---remotesltpatterngt"><a id="Documentation/git-rev-list.txt---remotespattern" class="anchor" href="#Documentation/git-rev-list.txt---remotespattern"></a>--remotes[=&lt;pattern&gt;] </dt>
 <dd>
-<p>Pretend as if all the refs in <code>refs/remotes</code> are listed
+<p>Pretend as if all the refs in <span class='synopsis'><code>refs/remotes</code></span> are listed
 on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
 remote-tracking branches to ones matching given shell glob.
 If pattern lacks <em>?</em>, <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
@@ -3297,49 +3297,49 @@ or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---excludeltglob-patterngt"><a id="Documentation/git-rev-list.txt---excludeglob-pattern" class="anchor" href="#Documentation/git-rev-list.txt---excludeglob-pattern"></a>--exclude=&lt;glob-pattern&gt; </dt>
 <dd>
-<p>Do not include refs matching <em>&lt;glob-pattern&gt;</em> that the next <code>--all</code>,
-<code>--branches</code>, <code>--tags</code>, <code>--remotes</code>, or <code>--glob</code> would otherwise
+<p>Do not include refs matching <em>&lt;glob-pattern&gt;</em> that the next <span class='synopsis'><code>--all</code></span>,
+<span class='synopsis'><code>--branches</code></span>, <span class='synopsis'><code>--tags</code></span>, <span class='synopsis'><code>--remotes</code></span>, or <span class='synopsis'><code>--glob</code></span> would otherwise
 consider. Repetitions of this option accumulate exclusion patterns
-up to the next <code>--all</code>, <code>--branches</code>, <code>--tags</code>, <code>--remotes</code>, or
-<code>--glob</code> option (other options or arguments do not clear
+up to the next <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--branches</code></span>, <span class='synopsis'><code>--tags</code></span>, <span class='synopsis'><code>--remotes</code></span>, or
+<span class='synopsis'><code>--glob</code></span> option (other options or arguments do not clear
 accumulated patterns).</p>
 <div class="paragraph">
-<p>The patterns given should not begin with <code>refs/heads</code>, <code>refs/tags</code>, or
-<code>refs/remotes</code> when applied to <code>--branches</code>, <code>--tags</code>, or <code>--remotes</code>,
-respectively, and they must begin with <code>refs/</code> when applied to <code>--glob</code>
-or <code>--all</code>. If a trailing <em>/*</em> is intended, it must be given
+<p>The patterns given should not begin with <span class='synopsis'><code>refs/heads</code></span>, <span class='synopsis'><code>refs/tags</code></span>, or
+<span class='synopsis'><code>refs/remotes</code></span> when applied to <span class='synopsis'><code>--branches</code></span>, <span class='synopsis'><code>--tags</code></span>, or <span class='synopsis'><code>--remotes</code></span>,
+respectively, and they must begin with <span class='synopsis'><code>refs/</code></span> when applied to <span class='synopsis'><code>--glob</code></span>
+or <span class='synopsis'><code>--all</code></span>. If a trailing <em>/*</em> is intended, it must be given
 explicitly.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---exclude-hiddenfetchreceiveuploadpack"><a class="anchor" href="#Documentation/git-rev-list.txt---exclude-hiddenfetchreceiveuploadpack"></a>--exclude-hidden=[fetch|receive|uploadpack] </dt>
 <dd>
-<p>Do not include refs that would be hidden by <code>git-fetch</code>,
-<code>git-receive-pack</code> or <code>git-upload-pack</code> by consulting the appropriate
-<code>fetch.hideRefs</code>, <code>receive.hideRefs</code> or <code>uploadpack.hideRefs</code>
-configuration along with <code>transfer.hideRefs</code> (see
+<p>Do not include refs that would be hidden by <span class='synopsis'><code>git-fetch</code></span>,
+<span class='synopsis'><code>git-receive-pack</code></span> or <span class='synopsis'><code>git-upload-pack</code></span> by consulting the appropriate
+<span class='synopsis'><code>fetch.hideRefs</code></span>, <span class='synopsis'><code>receive.hideRefs</code></span> or <span class='synopsis'><code>uploadpack.hideRefs</code></span>
+configuration along with <span class='synopsis'><code>transfer.hideRefs</code></span> (see
 <a href='/docs/git-config'>git-config[1]</a>). This option affects the next pseudo-ref option
-<code>--all</code> or <code>--glob</code> and is cleared after processing them.</p>
+<span class='synopsis'><code>--all</code></span> or <span class='synopsis'><code>--glob</code></span> and is cleared after processing them.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---reflog"><a class="anchor" href="#Documentation/git-rev-list.txt---reflog"></a>--reflog </dt>
 <dd>
 <p>Pretend as if all objects mentioned by reflogs are listed on the
-command line as <code>&lt;commit&gt;</code>.</p>
+command line as <span class='synopsis'><em>&lt;commit&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---alternate-refs"><a class="anchor" href="#Documentation/git-rev-list.txt---alternate-refs"></a>--alternate-refs </dt>
 <dd>
 <p>Pretend as if all objects mentioned as ref tips of alternate
 repositories were listed on the command line. An alternate
 repository is any repository whose object directory is specified
-in <code>objects/info/alternates</code>.  The set of included objects may
-be modified by <code>core.alternateRefsCommand</code>, etc. See
+in <span class='synopsis'><code>objects/info/alternates</code></span>.  The set of included objects may
+be modified by <span class='synopsis'><code>core.alternateRefsCommand</code></span>, etc. See
 <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---single-worktree"><a class="anchor" href="#Documentation/git-rev-list.txt---single-worktree"></a>--single-worktree </dt>
 <dd>
 <p>By default, all working trees will be examined by the
 following options when there are more than one (see
-<a href='/docs/git-worktree'>git-worktree[1]</a>): <code>--all</code>, <code>--reflog</code> and
-<code>--indexed-objects</code>.
+<a href='/docs/git-worktree'>git-worktree[1]</a>): <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--reflog</code></span> and
+<span class='synopsis'><code>--indexed-objects</code></span>.
 This option forces them to examine the current working tree
 only.</p>
 </dd>
@@ -3352,9 +3352,9 @@ the bad input was not given.</p>
 <dd>
 <p>In addition to getting arguments from the command line, read
 them from standard input as well. This accepts commits and
-pseudo-options like <code>--all</code> and <code>--glob=</code>. When a <code>--</code> separator
+pseudo-options like <span class='synopsis'><code>--all</code></span> and <span class='synopsis'><code>--glob=</code></span>. When a <span class='synopsis'><code>--</code></span> separator
 is seen, the following input is treated as paths and used to
-limit the result. Flags like <code>--not</code> which are read via standard input
+limit the result. Flags like <span class='synopsis'><code>--not</code></span> which are read via standard input
 are only respected for arguments passed in the same way and will not
 influence any subsequent command line arguments.</p>
 </dd>
@@ -3364,25 +3364,26 @@ influence any subsequent command line arguments.</p>
 is primarily meant to allow the caller to
 test the exit status to see if a range of objects is fully
 connected (or not).  It is faster than redirecting stdout
-to <code>/dev/null</code> as the output does not have to be formatted.</p>
+to <span class='synopsis'><code>/dev/null</code></span> as the output does not have to be formatted.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---disk-usage"><a class="anchor" href="#Documentation/git-rev-list.txt---disk-usage"></a>--disk-usage </dt>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---disk-usagehuman"><a class="anchor" href="#Documentation/git-rev-list.txt---disk-usagehuman"></a>--disk-usage=human </dt>
 <dd>
 <p>Suppress normal output; instead, print the sum of the bytes used
 for on-disk storage by the selected commits or objects. This is
-equivalent to piping the output into <code>git cat-file
---batch-check='%(objectsize:disk)'</code>, except that it runs much
-faster (especially with <code>--use-bitmap-index</code>). See the <code>CAVEATS</code>
+equivalent to piping the output into <span class='synopsis'><code>git</code> <code>cat-file</code>
+
+<code>--batch-check='%</code>(<code>objectsize:disk</code>)</span>, except that it runs much
+faster (especially with <span class='synopsis'><code>--use-bitmap-index</code></span>). See the <span class='synopsis'><code>CAVEATS</code></span>
 section in <a href='/docs/git-cat-file'>git-cat-file[1]</a> for the limitations of what
 "on-disk storage" means.
-With the optional value <code>human</code>, on-disk storage size is shown
+With the optional value <span class='synopsis'><code>human</code></span>, on-disk storage size is shown
 in human-readable string(e.g. 12.24 Kib, 3.50 Mib).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---cherry-mark"><a class="anchor" href="#Documentation/git-rev-list.txt---cherry-mark"></a>--cherry-mark </dt>
 <dd>
-<p>Like <code>--cherry-pick</code> (see below) but mark equivalent commits
-with <code>=</code> rather than omitting them, and inequivalent ones with <code>+</code>.</p>
+<p>Like <span class='synopsis'><code>--cherry-pick</code></span> (see below) but mark equivalent commits
+with <span class='synopsis'><code>=</code></span> rather than omitting them, and inequivalent ones with <span class='synopsis'><code>+</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---cherry-pick"><a class="anchor" href="#Documentation/git-rev-list.txt---cherry-pick"></a>--cherry-pick </dt>
 <dd>
@@ -3390,10 +3391,10 @@ with <code>=</code> rather than omitting them, and inequivalent ones with <code>
 another commit on the &#8220;other side&#8221; when the set of
 commits are limited with symmetric difference.</p>
 <div class="paragraph">
-<p>For example, if you have two branches, <code>A</code> and <code>B</code>, a usual way
+<p>For example, if you have two branches, <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span>, a usual way
 to list all commits on only one side of them is with
-<code>--left-right</code> (see the example below in the description of
-the <code>--left-right</code> option). However, it shows the commits that were
+<span class='synopsis'><code>--left-right</code></span> (see the example below in the description of
+the <span class='synopsis'><code>--left-right</code></span> option). However, it shows the commits that were
 cherry-picked from the other branch (for example, &#8220;3rd on b&#8221; may be
 cherry-picked from branch A). With this option, such pairs of commits are
 excluded from the output.</p>
@@ -3403,23 +3404,23 @@ excluded from the output.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---right-only"><a class="anchor" href="#Documentation/git-rev-list.txt---right-only"></a>--right-only </dt>
 <dd>
 <p>List only commits on the respective side of a symmetric difference,
-i.e. only those which would be marked <code>&lt;</code> resp. <code>&gt;</code> by
-<code>--left-right</code>.</p>
+i.e. only those which would be marked <span class='synopsis'><em>&lt;</em></span> resp. <span class='synopsis'><em>&gt;</em></span> by
+<span class='synopsis'><code>--left-right</code></span>.</p>
 <div class="paragraph">
-<p>For example, <code>--cherry-pick --right-only A...B</code> omits those
-commits from <code>B</code> which are in <code>A</code> or are patch-equivalent to a commit in
-<code>A</code>. In other words, this lists the <code>+</code> commits from <code>git cherry A B</code>.
-More precisely, <code>--cherry-pick --right-only --no-merges</code> gives the exact
+<p>For example, <span class='synopsis'><code>--cherry-pick</code> <code>--right-only</code> <code>A...B</code></span> omits those
+commits from <span class='synopsis'><code>B</code></span> which are in <span class='synopsis'><code>A</code></span> or are patch-equivalent to a commit in
+<span class='synopsis'><code>A</code></span>. In other words, this lists the <span class='synopsis'><code>+</code></span> commits from <span class='synopsis'><code>git</code> <code>cherry</code> <code>A</code> <code>B</code></span>.
+More precisely, <span class='synopsis'><code>--cherry-pick</code> <code>--right-only</code> <code>--no-merges</code></span> gives the exact
 list.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---cherry"><a class="anchor" href="#Documentation/git-rev-list.txt---cherry"></a>--cherry </dt>
 <dd>
-<p>A synonym for <code>--right-only --cherry-mark --no-merges</code>; useful to
+<p>A synonym for <span class='synopsis'><code>--right-only</code> <code>--cherry-mark</code> <code>--no-merges</code></span>; useful to
 limit the output to the commits on our side and mark those that
 have been applied to the other side of a forked history with
-<code>git log --cherry upstream...mybranch</code>, similar to
-<code>git cherry upstream mybranch</code>.</p>
+<span class='synopsis'><code>git</code> <code>log</code> <code>--cherry</code> <code>upstream...mybranch</code></span>, similar to
+<span class='synopsis'><code>git</code> <code>cherry</code> <code>upstream</code> <code>mybranch</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt--g"><a class="anchor" href="#Documentation/git-rev-list.txt--g"></a>-g </dt>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---walk-reflogs"><a class="anchor" href="#Documentation/git-rev-list.txt---walk-reflogs"></a>--walk-reflogs </dt>
@@ -3430,11 +3431,11 @@ When this option is used you cannot specify commits to
 exclude (that is, <em>^commit</em>, <em>commit1..commit2</em>,
 and <em>commit1...commit2</em> notations cannot be used).</p>
 <div class="paragraph">
-<p>With <code>--pretty</code> format other than <code>oneline</code> and <code>reference</code> (for obvious reasons),
+<p>With <span class='synopsis'><code>--pretty</code></span> format other than <span class='synopsis'><code>oneline</code></span> and <span class='synopsis'><code>reference</code></span> (for obvious reasons),
 this causes the output to have two extra lines of information
 taken from the reflog.  The reflog designator in the output may be shown
-as <code>ref@{&lt;Nth&gt;}</code> (where <em>&lt;Nth&gt;</em> is the reverse-chronological index in the
-reflog) or as <code>ref@{&lt;timestamp&gt;}</code> (with the <em>&lt;timestamp&gt;</em> for that entry),
+as <span class='synopsis'><code>ref@{</code><em>&lt;Nth&gt;</em><code>}</code></span> (where <em>&lt;Nth&gt;</em> is the reverse-chronological index in the
+reflog) or as <span class='synopsis'><code>ref@{</code><em>&lt;timestamp&gt;</em><code>}</code></span> (with the <em>&lt;timestamp&gt;</em> for that entry),
 depending on a few rules:</p>
 </div>
 <div class="openblock">
@@ -3442,16 +3443,16 @@ depending on a few rules:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>If the starting point is specified as <code>ref@{&lt;Nth&gt;}</code>, show the index
+<p>If the starting point is specified as <span class='synopsis'><code>ref@{</code><em>&lt;Nth&gt;</em><code>}</code></span>, show the index
 format.</p>
 </li>
 <li>
-<p>If the starting point was specified as <code>ref@{now}</code>, show the
+<p>If the starting point was specified as <span class='synopsis'><code>ref@{now}</code></span>, show the
 timestamp format.</p>
 </li>
 <li>
-<p>If neither was used, but <code>--date</code> was given on the command line, show
-the timestamp in the format requested by <code>--date</code>.</p>
+<p>If neither was used, but <span class='synopsis'><code>--date</code></span> was given on the command line, show
+the timestamp in the format requested by <span class='synopsis'><code>--date</code></span>.</p>
 </li>
 <li>
 <p>Otherwise, show the index format.</p>
@@ -3461,38 +3462,38 @@ the timestamp in the format requested by <code>--date</code>.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Under <code>--pretty=oneline</code>, the commit message is
+<p>Under <span class='synopsis'><code>--pretty=oneline</code></span>, the commit message is
 prefixed with this information on the same line.
-This option cannot be combined with <code>--reverse</code>.
+This option cannot be combined with <span class='synopsis'><code>--reverse</code></span>.
 See also <a href='/docs/git-reflog'>git-reflog[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Under <code>--pretty=reference</code>, this information will not be shown at all.</p>
+<p>Under <span class='synopsis'><code>--pretty=reference</code></span>, this information will not be shown at all.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---merge"><a class="anchor" href="#Documentation/git-rev-list.txt---merge"></a>--merge </dt>
 <dd>
-<p>Show commits touching conflicted paths in the range <code>HEAD...&lt;other&gt;</code>,
-where <code>&lt;other&gt;</code> is the first existing pseudoref in <code>MERGE_HEAD</code>,
-<code>CHERRY_PICK_HEAD</code>, <code>REVERT_HEAD</code> or <code>REBASE_HEAD</code>. Only works
+<p>Show commits touching conflicted paths in the range <span class='synopsis'><code>HEAD...</code><em>&lt;other&gt;</em></span>,
+where <span class='synopsis'><em>&lt;other&gt;</em></span> is the first existing pseudoref in <span class='synopsis'><code>MERGE_HEAD</code></span>,
+<span class='synopsis'><code>CHERRY_PICK_HEAD</code></span>, <span class='synopsis'><code>REVERT_HEAD</code></span> or <span class='synopsis'><code>REBASE_HEAD</code></span>. Only works
 when the index has unmerged entries. This option can be used to show
 relevant commits when resolving conflicts from a 3-way merge.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---boundary"><a class="anchor" href="#Documentation/git-rev-list.txt---boundary"></a>--boundary </dt>
 <dd>
 <p>Output excluded boundary commits. Boundary commits are
-prefixed with <code>-</code>.</p>
+prefixed with <span class='synopsis'><code>-</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---use-bitmap-index"><a class="anchor" href="#Documentation/git-rev-list.txt---use-bitmap-index"></a>--use-bitmap-index </dt>
 <dd>
 <p>Try to speed up the traversal using the pack bitmap index (if
-one is available). Note that when traversing with <code>--objects</code>,
+one is available). Note that when traversing with <span class='synopsis'><code>--objects</code></span>,
 trees and blobs will not have their associated path printed.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---progressltheadergt"><a id="Documentation/git-rev-list.txt---progressheader" class="anchor" href="#Documentation/git-rev-list.txt---progressheader"></a>--progress=&lt;header&gt; </dt>
 <dd>
 <p>Show progress reports on stderr as objects are considered. The
-<code>&lt;header&gt;</code> text will be printed with each progress update.</p>
+<span class='synopsis'><em>&lt;header&gt;</em></span> text will be printed with each progress update.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt--z"><a class="anchor" href="#Documentation/git-rev-list.txt--z"></a>-z </dt>
 <dd>
@@ -3506,7 +3507,7 @@ in the following form:</p>
 </div>
 <div class="paragraph">
 <p>Additional object metadata, such as object paths or boundary objects, is
-printed using the <code>&lt;token&gt;=&lt;value&gt;</code> form. Token values are printed as-is
+printed using the <span class='synopsis'><em>&lt;token&gt;</em><code>=</code><em>&lt;value&gt;</em></span> form. Token values are printed as-is
 without any encoding/truncation. An OID entry never contains a <em>=</em> character
 and thus is used to signal the start of a new object record. Examples:</p>
 </div>
@@ -3519,8 +3520,8 @@ and thus is used to signal the start of a new object record. Examples:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This mode is only compatible with the <code>--objects</code>, <code>--boundary</code>, and
-<code>--missing</code> output options.</p>
+<p>This mode is only compatible with the <span class='synopsis'><code>--objects</code></span>, <span class='synopsis'><code>--boundary</code></span>, and
+<span class='synopsis'><code>--missing</code></span> output options.</p>
 </div>
 </dd>
 </dl>
@@ -3586,7 +3587,7 @@ meaningful history.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---simplify-merges"><a class="anchor" href="#Documentation/git-rev-list.txt---simplify-merges"></a>--simplify-merges </dt>
 <dd>
-<p>Additional option to <code>--full-history</code> to remove some needless
+<p>Additional option to <span class='synopsis'><code>--full-history</code></span> to remove some needless
 merges from the resulting history, as there are no selected
 commits contributing to this merge.</p>
 </dd>
@@ -3607,14 +3608,14 @@ given or if it is an ancestor or descendant of one of them.</p>
 <p>A more detailed explanation follows.</p>
 </div>
 <div class="paragraph">
-<p>Suppose you specified <code>foo</code> as the &lt;paths&gt;.  We shall call commits
-that modify <code>foo</code> !TREESAME, and the rest TREESAME.  (In a diff
-filtered for <code>foo</code>, they look different and equal, respectively.)</p>
+<p>Suppose you specified <span class='synopsis'><code>foo</code></span> as the &lt;paths&gt;.  We shall call commits
+that modify <span class='synopsis'><code>foo</code></span> !TREESAME, and the rest TREESAME.  (In a diff
+filtered for <span class='synopsis'><code>foo</code></span>, they look different and equal, respectively.)</p>
 </div>
 <div class="paragraph">
 <p>In the following, we will always refer to the same example history to
 illustrate the differences between simplification settings.  We assume
-that you are filtering for a file <code>foo</code> in this commit graph:</p>
+that you are filtering for a file <span class='synopsis'><code>foo</code></span> in this commit graph:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3632,40 +3633,40 @@ each merge.  The commits are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>I</code> is the initial commit, in which <code>foo</code> exists with contents
-&#8220;asdf&#8221;, and a file <code>quux</code> exists with contents &#8220;quux&#8221;. Initial
-commits are compared to an empty tree, so <code>I</code> is !TREESAME.</p>
+<p><span class='synopsis'><code>I</code></span> is the initial commit, in which <span class='synopsis'><code>foo</code></span> exists with contents
+&#8220;asdf&#8221;, and a file <span class='synopsis'><code>quux</code></span> exists with contents &#8220;quux&#8221;. Initial
+commits are compared to an empty tree, so <span class='synopsis'><code>I</code></span> is !TREESAME.</p>
 </li>
 <li>
-<p>In <code>A</code>, <code>foo</code> contains just &#8220;foo&#8221;.</p>
+<p>In <span class='synopsis'><code>A</code></span>, <span class='synopsis'><code>foo</code></span> contains just &#8220;foo&#8221;.</p>
 </li>
 <li>
-<p><code>B</code> contains the same change as <code>A</code>.  Its merge <code>M</code> is trivial and
+<p><span class='synopsis'><code>B</code></span> contains the same change as <span class='synopsis'><code>A</code></span>.  Its merge <span class='synopsis'><code>M</code></span> is trivial and
 hence TREESAME to all parents.</p>
 </li>
 <li>
-<p><code>C</code> does not change <code>foo</code>, but its merge <code>N</code> changes it to &#8220;foobar&#8221;,
+<p><span class='synopsis'><code>C</code></span> does not change <span class='synopsis'><code>foo</code></span>, but its merge <span class='synopsis'><code>N</code></span> changes it to &#8220;foobar&#8221;,
 so it is not TREESAME to any parent.</p>
 </li>
 <li>
-<p><code>D</code> sets <code>foo</code> to &#8220;baz&#8221;. Its merge <code>O</code> combines the strings from
-<code>N</code> and <code>D</code> to &#8220;foobarbaz&#8221;; i.e., it is not TREESAME to any parent.</p>
+<p><span class='synopsis'><code>D</code></span> sets <span class='synopsis'><code>foo</code></span> to &#8220;baz&#8221;. Its merge <span class='synopsis'><code>O</code></span> combines the strings from
+<span class='synopsis'><code>N</code></span> and <span class='synopsis'><code>D</code></span> to &#8220;foobarbaz&#8221;; i.e., it is not TREESAME to any parent.</p>
 </li>
 <li>
-<p><code>E</code> changes <code>quux</code> to &#8220;xyzzy&#8221;, and its merge <code>P</code> combines the
-strings to &#8220;quux xyzzy&#8221;. <code>P</code> is TREESAME to <code>O</code>, but not to <code>E</code>.</p>
+<p><span class='synopsis'><code>E</code></span> changes <span class='synopsis'><code>quux</code></span> to &#8220;xyzzy&#8221;, and its merge <span class='synopsis'><code>P</code></span> combines the
+strings to &#8220;quux xyzzy&#8221;. <span class='synopsis'><code>P</code></span> is TREESAME to <span class='synopsis'><code>O</code></span>, but not to <span class='synopsis'><code>E</code></span>.</p>
 </li>
 <li>
-<p><code>X</code> is an independent root commit that added a new file <code>side</code>, and <code>Y</code>
-modified it. <code>Y</code> is TREESAME to <code>X</code>. Its merge <code>Q</code> added <code>side</code> to <code>P</code>, and
-<code>Q</code> is TREESAME to <code>P</code>, but not to <code>Y</code>.</p>
+<p><span class='synopsis'><code>X</code></span> is an independent root commit that added a new file <span class='synopsis'><code>side</code></span>, and <span class='synopsis'><code>Y</code></span>
+modified it. <span class='synopsis'><code>Y</code></span> is TREESAME to <span class='synopsis'><code>X</code></span>. Its merge <span class='synopsis'><code>Q</code></span> added <span class='synopsis'><code>side</code></span> to <span class='synopsis'><code>P</code></span>, and
+<span class='synopsis'><code>Q</code></span> is TREESAME to <span class='synopsis'><code>P</code></span>, but not to <span class='synopsis'><code>Y</code></span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><code>rev-list</code> walks backwards through history, including or excluding
-commits based on whether <code>--full-history</code> and/or parent rewriting
-(via <code>--parents</code> or <code>--children</code>) are used. The following settings
+<p><span class='synopsis'><code>rev-list</code></span> walks backwards through history, including or excluding
+commits based on whether <span class='synopsis'><code>--full-history</code></span> and/or parent rewriting
+(via <span class='synopsis'><code>--parents</code></span> or <span class='synopsis'><code>--children</code></span>) are used. The following settings
 are available.</p>
 </div>
 <div class="dlist">
@@ -3673,7 +3674,7 @@ are available.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-Defaultmode-1"><a class="anchor" href="#Documentation/git-rev-list.txt-Defaultmode-1"></a>Default mode </dt>
 <dd>
 <p>Commits are included if they are not TREESAME to any parent
-(though this can be changed, see <code>--sparse</code> below).  If the
+(though this can be changed, see <span class='synopsis'><code>--sparse</code></span> below).  If the
 commit was a merge, and it was TREESAME to one parent, follow
 only that parent.  (Even if there are several TREESAME
 parents, follow only one of them.)  Otherwise, follow all
@@ -3690,12 +3691,12 @@ parents.</p>
 </div>
 <div class="paragraph">
 <p>Note how the rule to only follow the TREESAME parent, if one is
-available, removed <code>B</code> from consideration entirely.  <code>C</code> was
-considered via <code>N</code>, but is TREESAME.  Root commits are compared to an
-empty tree, so <code>I</code> is !TREESAME.</p>
+available, removed <span class='synopsis'><code>B</code></span> from consideration entirely.  <span class='synopsis'><code>C</code></span> was
+considered via <span class='synopsis'><code>N</code></span>, but is TREESAME.  Root commits are compared to an
+empty tree, so <span class='synopsis'><code>I</code></span> is !TREESAME.</p>
 </div>
 <div class="paragraph">
-<p>Parent/child relations are only visible with <code>--parents</code>, but that does
+<p>Parent/child relations are only visible with <span class='synopsis'><code>--parents</code></span>, but that does
 not affect the commits selected in default mode, so we have shown the
 parent lines.</p>
 </div>
@@ -3713,8 +3714,8 @@ the example, we get</p>
 </div>
 </div>
 <div class="paragraph">
-<p><code>M</code> was excluded because it is TREESAME to both parents.  <code>E</code>,
-<code>C</code> and <code>B</code> were all walked, but only <code>B</code> was !TREESAME, so the others
+<p><span class='synopsis'><code>M</code></span> was excluded because it is TREESAME to both parents.  <span class='synopsis'><code>E</code></span>,
+<span class='synopsis'><code>C</code></span> and <span class='synopsis'><code>B</code></span> were all walked, but only <span class='synopsis'><code>B</code></span> was !TREESAME, so the others
 do not appear.</p>
 </div>
 <div class="paragraph">
@@ -3726,7 +3727,7 @@ them disconnected.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---full-historywithparentrewriting"><a class="anchor" href="#Documentation/git-rev-list.txt---full-historywithparentrewriting"></a>--full-history with parent rewriting </dt>
 <dd>
 <p>Ordinary commits are only included if they are !TREESAME
-(though this can be changed, see <code>--sparse</code> below).</p>
+(though this can be changed, see <span class='synopsis'><code>--sparse</code></span> below).</p>
 <div class="paragraph">
 <p>Merges are always included.  However, their parent list is rewritten:
 Along each parent, prune away commits that are not included
@@ -3742,10 +3743,10 @@ themselves.  This results in</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Compare to <code>--full-history</code> without rewriting above.  Note that <code>E</code>
+<p>Compare to <span class='synopsis'><code>--full-history</code></span> without rewriting above.  Note that <span class='synopsis'><code>E</code></span>
 was pruned away because it is TREESAME, but the parent list of P was
-rewritten to contain <code>E</code>'s parent <code>I</code>.  The same happened for <code>C</code> and
-<code>N</code>, and <code>X</code>, <code>Y</code> and <code>Q</code>.</p>
+rewritten to contain <span class='synopsis'><code>E</code></span>'s parent <span class='synopsis'><code>I</code></span>.  The same happened for <span class='synopsis'><code>C</code></span> and
+<span class='synopsis'><code>N</code></span>, and <span class='synopsis'><code>X</code></span>, <span class='synopsis'><code>Y</code></span> and <span class='synopsis'><code>Q</code></span>.</p>
 </div>
 </dd>
 </dl>
@@ -3765,7 +3766,7 @@ to any parent.</p>
 <dd>
 <p>All commits that are walked are included.</p>
 <div class="paragraph">
-<p>Note that without <code>--full-history</code>, this still simplifies merges: if
+<p>Note that without <span class='synopsis'><code>--full-history</code></span>, this still simplifies merges: if
 one of the parents is TREESAME, we follow only that one, so the other
 sides of the merge are never walked.</p>
 </div>
@@ -3773,9 +3774,9 @@ sides of the merge are never walked.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---simplify-merges-1"><a class="anchor" href="#Documentation/git-rev-list.txt---simplify-merges-1"></a>--simplify-merges </dt>
 <dd>
 <p>First, build a history graph in the same way that
-<code>--full-history</code> with parent rewriting does (see above).</p>
+<span class='synopsis'><code>--full-history</code></span> with parent rewriting does (see above).</p>
 <div class="paragraph">
-<p>Then simplify each commit <code>C</code> to its replacement <code>C'</code> in the final
+<p>Then simplify each commit <span class='synopsis'><code>C</code></span> to its replacement <span class='synopsis'><code>C'</code></span> in the final
 history according to the following rules:</p>
 </div>
 <div class="openblock">
@@ -3783,16 +3784,16 @@ history according to the following rules:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Set <code>C'</code> to <code>C</code>.</p>
+<p>Set <span class='synopsis'><code>C'</code></span> to <span class='synopsis'><code>C</code></span>.</p>
 </li>
 <li>
-<p>Replace each parent <code>P</code> of <code>C'</code> with its simplification <code>P'</code>.  In
+<p>Replace each parent <span class='synopsis'><code>P</code></span> of <span class='synopsis'><code>C'</code></span> with its simplification <span class='synopsis'><code>P'</code></span>.  In
 the process, drop parents that are ancestors of other parents or that are
 root commits TREESAME to an empty tree, and remove duplicates, but take care
 to never drop all parents that we are TREESAME to.</p>
 </li>
 <li>
-<p>If after this parent rewriting, <code>C'</code> is a root or merge commit (has
+<p>If after this parent rewriting, <span class='synopsis'><code>C'</code></span> is a root or merge commit (has
 zero or &gt;1 parents), a boundary commit, or !TREESAME, it remains.
 Otherwise, it is replaced with its only parent.</p>
 </li>
@@ -3802,7 +3803,7 @@ Otherwise, it is replaced with its only parent.</p>
 </div>
 <div class="paragraph">
 <p>The effect of this is best shown by way of comparing to
-<code>--full-history</code> with parent rewriting.  The example turns into:</p>
+<span class='synopsis'><code>--full-history</code></span> with parent rewriting.  The example turns into:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3814,23 +3815,23 @@ Otherwise, it is replaced with its only parent.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Note the major differences in <code>N</code>, <code>P</code>, and <code>Q</code> over <code>--full-history</code>:</p>
+<p>Note the major differences in <span class='synopsis'><code>N</code></span>, <span class='synopsis'><code>P</code></span>, and <span class='synopsis'><code>Q</code></span> over <span class='synopsis'><code>--full-history</code></span>:</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>N</code>'s parent list had <code>I</code> removed, because it is an ancestor of the
-other parent <code>M</code>.  Still, <code>N</code> remained because it is !TREESAME.</p>
+<p><span class='synopsis'><code>N</code></span>'s parent list had <span class='synopsis'><code>I</code></span> removed, because it is an ancestor of the
+other parent <span class='synopsis'><code>M</code></span>.  Still, <span class='synopsis'><code>N</code></span> remained because it is !TREESAME.</p>
 </li>
 <li>
-<p><code>P</code>'s parent list similarly had <code>I</code> removed.  <code>P</code> was then
+<p><span class='synopsis'><code>P</code></span>'s parent list similarly had <span class='synopsis'><code>I</code></span> removed.  <span class='synopsis'><code>P</code></span> was then
 removed completely, because it had one parent and is TREESAME.</p>
 </li>
 <li>
-<p><code>Q</code>'s parent list had <code>Y</code> simplified to <code>X</code>. <code>X</code> was then removed, because it
-was a TREESAME root. <code>Q</code> was then removed completely, because it had one
+<p><span class='synopsis'><code>Q</code></span>'s parent list had <span class='synopsis'><code>Y</code></span> simplified to <span class='synopsis'><code>X</code></span>. <span class='synopsis'><code>X</code></span> was then removed, because it
+was a TREESAME root. <span class='synopsis'><code>Q</code></span> was then removed completely, because it had one
 parent and is TREESAME.</p>
 </li>
 </ul>
@@ -3863,18 +3864,18 @@ itself.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>A regular <em>D..M</em> computes the set of commits that are ancestors of <code>M</code>,
-but excludes the ones that are ancestors of <code>D</code>. This is useful to see
-what happened to the history leading to <code>M</code> since <code>D</code>, in the sense
-that &#8220;what does <code>M</code> have that did not exist in <code>D</code>&#8221;. The result in this
-example would be all the commits, except <code>A</code> and <code>B</code> (and <code>D</code> itself,
+<p>A regular <em>D..M</em> computes the set of commits that are ancestors of <span class='synopsis'><code>M</code></span>,
+but excludes the ones that are ancestors of <span class='synopsis'><code>D</code></span>. This is useful to see
+what happened to the history leading to <span class='synopsis'><code>M</code></span> since <span class='synopsis'><code>D</code></span>, in the sense
+that &#8220;what does <span class='synopsis'><code>M</code></span> have that did not exist in <span class='synopsis'><code>D</code></span>&#8221;. The result in this
+example would be all the commits, except <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> (and <span class='synopsis'><code>D</code></span> itself,
 of course).</p>
 </div>
 <div class="paragraph">
-<p>When we want to find out what commits in <code>M</code> are contaminated with the
-bug introduced by <code>D</code> and need fixing, however, we might want to view
-only the subset of <em>D..M</em> that are actually descendants of <code>D</code>, i.e.
-excluding <code>C</code> and <code>K</code>. This is exactly what the <code>--ancestry-path</code>
+<p>When we want to find out what commits in <span class='synopsis'><code>M</code></span> are contaminated with the
+bug introduced by <span class='synopsis'><code>D</code></span> and need fixing, however, we might want to view
+only the subset of <em>D..M</em> that are actually descendants of <span class='synopsis'><code>D</code></span>, i.e.
+excluding <span class='synopsis'><code>C</code></span> and <span class='synopsis'><code>K</code></span>. This is exactly what the <span class='synopsis'><code>--ancestry-path</code></span>
 option does. Applied to the <em>D..M</em> range, it results in:</p>
 </div>
 <div class="listingblock">
@@ -3887,15 +3888,15 @@ option does. Applied to the <em>D..M</em> range, it results in:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>We can also use <code>--ancestry-path=D</code> instead of <code>--ancestry-path</code> which
+<p>We can also use <span class='synopsis'><code>--ancestry-path=D</code></span> instead of <span class='synopsis'><code>--ancestry-path</code></span> which
 means the same thing when applied to the <em>D..M</em> range but is just more
 explicit.</p>
 </div>
 <div class="paragraph">
 <p>If we instead are interested in a given topic within this range, and all
 commits affected by that topic, we may only want to view the subset of
-<code>D..M</code> which contain that topic in their ancestry path.  So, using
-<code>--ancestry-path=H D..M</code> for example would result in:</p>
+<span class='synopsis'><code>D..M</code></span> which contain that topic in their ancestry path.  So, using
+<span class='synopsis'><code>--ancestry-path=H</code> <code>D..M</code></span> for example would result in:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3907,7 +3908,7 @@ commits affected by that topic, we may only want to view the subset of
 </div>
 </div>
 <div class="paragraph">
-<p>Whereas <code>--ancestry-path=K D..M</code> would result in</p>
+<p>Whereas <span class='synopsis'><code>--ancestry-path=K</code> <code>D..M</code></span> would result in</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3918,14 +3919,14 @@ commits affected by that topic, we may only want to view the subset of
 </dl>
 </div>
 <div class="paragraph">
-<p>Before discussing another option, <code>--show-pulls</code>, we need to
+<p>Before discussing another option, <span class='synopsis'><code>--show-pulls</code></span>, we need to
 create a new example history.</p>
 </div>
 <div class="paragraph">
 <p>A common problem users face when looking at simplified history is that a
 commit they know changed a file somehow does not appear in the file&#8217;s
 simplified history. Let&#8217;s demonstrate a new example and show how options
-such as <code>--full-history</code> and <code>--simplify-merges</code> works in that case:</p>
+such as <span class='synopsis'><code>--full-history</code></span> and <span class='synopsis'><code>--simplify-merges</code></span> works in that case:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3938,20 +3939,20 @@ such as <code>--full-history</code> and <code>--simplify-merges</code> works in 
 </div>
 </div>
 <div class="paragraph">
-<p>For this example, suppose <code>I</code> created <code>file.txt</code> which was modified by
-<code>A</code>, <code>B</code>, and <code>X</code> in different ways. The single-parent commits <code>C</code>, <code>Z</code>,
-and <code>Y</code> do not change <code>file.txt</code>. The merge commit <code>M</code> was created by
-resolving the merge conflict to include both changes from <code>A</code> and <code>B</code>
-and hence is not TREESAME to either. The merge commit <code>R</code>, however, was
-created by ignoring the contents of <code>file.txt</code> at <code>M</code> and taking only
-the contents of <code>file.txt</code> at <code>X</code>. Hence, <code>R</code> is TREESAME to <code>X</code> but not
-<code>M</code>. Finally, the natural merge resolution to create <code>N</code> is to take the
-contents of <code>file.txt</code> at <code>R</code>, so <code>N</code> is TREESAME to <code>R</code> but not <code>C</code>.
-The merge commits <code>O</code> and <code>P</code> are TREESAME to their first parents, but
-not to their second parents, <code>Z</code> and <code>Y</code> respectively.</p>
+<p>For this example, suppose <span class='synopsis'><code>I</code></span> created <span class='synopsis'><code>file.txt</code></span> which was modified by
+<span class='synopsis'><code>A</code></span>, <span class='synopsis'><code>B</code></span>, and <span class='synopsis'><code>X</code></span> in different ways. The single-parent commits <span class='synopsis'><code>C</code></span>, <span class='synopsis'><code>Z</code></span>,
+and <span class='synopsis'><code>Y</code></span> do not change <span class='synopsis'><code>file.txt</code></span>. The merge commit <span class='synopsis'><code>M</code></span> was created by
+resolving the merge conflict to include both changes from <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span>
+and hence is not TREESAME to either. The merge commit <span class='synopsis'><code>R</code></span>, however, was
+created by ignoring the contents of <span class='synopsis'><code>file.txt</code></span> at <span class='synopsis'><code>M</code></span> and taking only
+the contents of <span class='synopsis'><code>file.txt</code></span> at <span class='synopsis'><code>X</code></span>. Hence, <span class='synopsis'><code>R</code></span> is TREESAME to <span class='synopsis'><code>X</code></span> but not
+<span class='synopsis'><code>M</code></span>. Finally, the natural merge resolution to create <span class='synopsis'><code>N</code></span> is to take the
+contents of <span class='synopsis'><code>file.txt</code></span> at <span class='synopsis'><code>R</code></span>, so <span class='synopsis'><code>N</code></span> is TREESAME to <span class='synopsis'><code>R</code></span> but not <span class='synopsis'><code>C</code></span>.
+The merge commits <span class='synopsis'><code>O</code></span> and <span class='synopsis'><code>P</code></span> are TREESAME to their first parents, but
+not to their second parents, <span class='synopsis'><code>Z</code></span> and <span class='synopsis'><code>Y</code></span> respectively.</p>
 </div>
 <div class="paragraph">
-<p>When using the default mode, <code>N</code> and <code>R</code> both have a TREESAME parent, so
+<p>When using the default mode, <span class='synopsis'><code>N</code></span> and <span class='synopsis'><code>R</code></span> both have a TREESAME parent, so
 those edges are walked and the others are ignored. The resulting history
 graph is:</p>
 </div>
@@ -3961,9 +3962,9 @@ graph is:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>When using <code>--full-history</code>, Git walks every edge. This will discover
-the commits <code>A</code> and <code>B</code> and the merge <code>M</code>, but also will reveal the
-merge commits <code>O</code> and <code>P</code>. With parent rewriting, the resulting graph is:</p>
+<p>When using <span class='synopsis'><code>--full-history</code></span>, Git walks every edge. This will discover
+the commits <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> and the merge <span class='synopsis'><code>M</code></span>, but also will reveal the
+merge commits <span class='synopsis'><code>O</code></span> and <span class='synopsis'><code>P</code></span>. With parent rewriting, the resulting graph is:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3976,19 +3977,19 @@ merge commits <code>O</code> and <code>P</code>. With parent rewriting, the resu
 </div>
 </div>
 <div class="paragraph">
-<p>Here, the merge commits <code>O</code> and <code>P</code> contribute extra noise, as they did
-not actually contribute a change to <code>file.txt</code>. They only merged a topic
-that was based on an older version of <code>file.txt</code>. This is a common
+<p>Here, the merge commits <span class='synopsis'><code>O</code></span> and <span class='synopsis'><code>P</code></span> contribute extra noise, as they did
+not actually contribute a change to <span class='synopsis'><code>file.txt</code></span>. They only merged a topic
+that was based on an older version of <span class='synopsis'><code>file.txt</code></span>. This is a common
 issue in repositories using a workflow where many contributors work in
 parallel and merge their topic branches along a single trunk: many
-unrelated merges appear in the <code>--full-history</code> results.</p>
+unrelated merges appear in the <span class='synopsis'><code>--full-history</code></span> results.</p>
 </div>
 <div class="paragraph">
-<p>When using the <code>--simplify-merges</code> option, the commits <code>O</code> and <code>P</code>
+<p>When using the <span class='synopsis'><code>--simplify-merges</code></span> option, the commits <span class='synopsis'><code>O</code></span> and <span class='synopsis'><code>P</code></span>
 disappear from the results. This is because the rewritten second parents
-of <code>O</code> and <code>P</code> are reachable from their first parents. Those edges are
+of <span class='synopsis'><code>O</code></span> and <span class='synopsis'><code>P</code></span> are reachable from their first parents. Those edges are
 removed and then the commits look like single-parent commits that are
-TREESAME to their parent. This also happens to the commit <code>N</code>, resulting
+TREESAME to their parent. This also happens to the commit <span class='synopsis'><code>N</code></span>, resulting
 in a history view as follows:</p>
 </div>
 <div class="listingblock">
@@ -4003,25 +4004,25 @@ in a history view as follows:</p>
 </div>
 <div class="paragraph">
 <p>In this view, we see all of the important single-parent changes from
-<code>A</code>, <code>B</code>, and <code>X</code>. We also see the carefully-resolved merge <code>M</code> and the
-not-so-carefully-resolved merge <code>R</code>. This is usually enough information
-to determine why the commits <code>A</code> and <code>B</code> "disappeared" from history in
+<span class='synopsis'><code>A</code></span>, <span class='synopsis'><code>B</code></span>, and <span class='synopsis'><code>X</code></span>. We also see the carefully-resolved merge <span class='synopsis'><code>M</code></span> and the
+not-so-carefully-resolved merge <span class='synopsis'><code>R</code></span>. This is usually enough information
+to determine why the commits <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> "disappeared" from history in
 the default view. However, there are a few issues with this approach.</p>
 </div>
 <div class="paragraph">
 <p>The first issue is performance. Unlike any previous option, the
-<code>--simplify-merges</code> option requires walking the entire commit history
+<span class='synopsis'><code>--simplify-merges</code></span> option requires walking the entire commit history
 before returning a single result. This can make the option difficult to
 use for very large repositories.</p>
 </div>
 <div class="paragraph">
 <p>The second issue is one of auditing. When many contributors are working
 on the same repository, it is important which merge commits introduced
-a change into an important branch. The problematic merge <code>R</code> above is
+a change into an important branch. The problematic merge <span class='synopsis'><code>R</code></span> above is
 not likely to be the merge commit that was used to merge into an
-important branch. Instead, the merge <code>N</code> was used to merge <code>R</code> and <code>X</code>
+important branch. Instead, the merge <span class='synopsis'><code>N</code></span> was used to merge <span class='synopsis'><code>R</code></span> and <span class='synopsis'><code>X</code></span>
 into the important branch. This commit may have information about why
-the change <code>X</code> came to override the changes from <code>A</code> and <code>B</code> in its
+the change <span class='synopsis'><code>X</code></span> came to override the changes from <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> in its
 commit message.</p>
 </div>
 <div class="dlist">
@@ -4032,9 +4033,9 @@ commit message.</p>
 each merge commit that is not TREESAME to its first parent but
 is TREESAME to a later parent.</p>
 <div class="paragraph">
-<p>When a merge commit is included by <code>--show-pulls</code>, the merge is
+<p>When a merge commit is included by <span class='synopsis'><code>--show-pulls</code></span>, the merge is
 treated as if it "pulled" the change from another branch. When using
-<code>--show-pulls</code> on this example (and no other options) the resulting
+<span class='synopsis'><code>--show-pulls</code></span> on this example (and no other options) the resulting
 graph is:</p>
 </div>
 <div class="listingblock">
@@ -4043,13 +4044,13 @@ graph is:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Here, the merge commits <code>R</code> and <code>N</code> are included because they pulled
-the commits <code>X</code> and <code>R</code> into the base branch, respectively. These
-merges are the reason the commits <code>A</code> and <code>B</code> do not appear in the
+<p>Here, the merge commits <span class='synopsis'><code>R</code></span> and <span class='synopsis'><code>N</code></span> are included because they pulled
+the commits <span class='synopsis'><code>X</code></span> and <span class='synopsis'><code>R</code></span> into the base branch, respectively. These
+merges are the reason the commits <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> do not appear in the
 default history.</p>
 </div>
 <div class="paragraph">
-<p>When <code>--show-pulls</code> is paired with <code>--simplify-merges</code>, the
+<p>When <span class='synopsis'><code>--show-pulls</code></span> is paired with <span class='synopsis'><code>--simplify-merges</code></span>, the
 graph includes all of the necessary information:</p>
 </div>
 <div class="listingblock">
@@ -4063,16 +4064,16 @@ graph includes all of the necessary information:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Notice that since <code>M</code> is reachable from <code>R</code>, the edge from <code>N</code> to <code>M</code>
-was simplified away. However, <code>N</code> still appears in the history as an
-important commit because it "pulled" the change <code>R</code> into the main
+<p>Notice that since <span class='synopsis'><code>M</code></span> is reachable from <span class='synopsis'><code>R</code></span>, the edge from <span class='synopsis'><code>N</code></span> to <span class='synopsis'><code>M</code></span>
+was simplified away. However, <span class='synopsis'><code>N</code></span> still appears in the history as an
+important commit because it "pulled" the change <span class='synopsis'><code>R</code></span> into the main
 branch.</p>
 </div>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>The <code>--simplify-by-decoration</code> option allows you to view only the
+<p>The <span class='synopsis'><code>--simplify-by-decoration</code></span> option allows you to view only the
 big picture of the topology of the history, by omitting commits
 that are not referenced by tags.  Commits are marked as !TREESAME
 (in other words, kept after history simplification rules described
@@ -4089,10 +4090,10 @@ commits are marked as TREESAME (subject to be simplified away).</p>
 <dd>
 <p>Limit output to the one commit object which is roughly halfway between
 included and excluded commits. Note that the bad bisection ref
-<code>refs/bisect/bad</code> is added to the included commits (if it
-exists) and the good bisection refs <code>refs/bisect/good-*</code> are
+<span class='synopsis'><code>refs/bisect/bad</code></span> is added to the included commits (if it
+exists) and the good bisection refs <span class='synopsis'><code>refs/bisect/good-*</code></span> are
 added to the excluded commits (if they exist). Thus, supposing there
-are no refs in <code>refs/bisect/</code>, if</p>
+are no refs in <span class='synopsis'><code>refs/bisect/</code></span>, if</p>
 <div class="listingblock">
 <div class="content">
 <pre>	$ git rev-list --bisect foo ^bar ^baz</pre>
@@ -4116,33 +4117,33 @@ one.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---bisect-vars"><a class="anchor" href="#Documentation/git-rev-list.txt---bisect-vars"></a>--bisect-vars </dt>
 <dd>
-<p>This calculates the same as <code>--bisect</code>, except that refs in
-<code>refs/bisect/</code> are not used, and except that this outputs
+<p>This calculates the same as <span class='synopsis'><code>--bisect</code></span>, except that refs in
+<span class='synopsis'><code>refs/bisect/</code></span> are not used, and except that this outputs
 text ready to be eval&#8217;ed by the shell. These lines will assign the
-name of the midpoint revision to the variable <code>bisect_rev</code>, and the
-expected number of commits to be tested after <code>bisect_rev</code> is tested
-to <code>bisect_nr</code>, the expected number of commits to be tested if
-<code>bisect_rev</code> turns out to be good to <code>bisect_good</code>, the expected
-number of commits to be tested if <code>bisect_rev</code> turns out to be bad to
-<code>bisect_bad</code>, and the number of commits we are bisecting right now to
-<code>bisect_all</code>.</p>
+name of the midpoint revision to the variable <span class='synopsis'><code>bisect_rev</code></span>, and the
+expected number of commits to be tested after <span class='synopsis'><code>bisect_rev</code></span> is tested
+to <span class='synopsis'><code>bisect_nr</code></span>, the expected number of commits to be tested if
+<span class='synopsis'><code>bisect_rev</code></span> turns out to be good to <span class='synopsis'><code>bisect_good</code></span>, the expected
+number of commits to be tested if <span class='synopsis'><code>bisect_rev</code></span> turns out to be bad to
+<span class='synopsis'><code>bisect_bad</code></span>, and the number of commits we are bisecting right now to
+<span class='synopsis'><code>bisect_all</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---bisect-all"><a class="anchor" href="#Documentation/git-rev-list.txt---bisect-all"></a>--bisect-all </dt>
 <dd>
 <p>This outputs all the commit objects between the included and excluded
 commits, ordered by their distance to the included and excluded
-commits. Refs in <code>refs/bisect/</code> are not used. The farthest
+commits. Refs in <span class='synopsis'><code>refs/bisect/</code></span> are not used. The farthest
 from them is displayed first. (This is the only one displayed by
-<code>--bisect</code>.)</p>
+<span class='synopsis'><code>--bisect</code></span>.)</p>
 <div class="paragraph">
 <p>This is useful because it makes it easy to choose a good commit to
 test when you want to avoid to test some of them for some reason (they
 may not compile for example).</p>
 </div>
 <div class="paragraph">
-<p>This option can be used along with <code>--bisect-vars</code>, in this case,
+<p>This option can be used along with <span class='synopsis'><code>--bisect-vars</code></span>, in this case,
 after all the sorted commit objects, there will be the same text as if
-<code>--bisect-vars</code> had been used alone.</p>
+<span class='synopsis'><code>--bisect-vars</code></span> had been used alone.</p>
 </div>
 </dd>
 </dl>
@@ -4181,12 +4182,13 @@ intermixed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>where the numbers denote the order of commit timestamps, <code>git
-rev-list</code> and friends with <code>--date-order</code> show the commits in the
+<p>where the numbers denote the order of commit timestamps, <span class='synopsis'><code>git</code>
+
+<code>rev-list</code></span> and friends with <span class='synopsis'><code>--date-order</code></span> show the commits in the
 timestamp order: 8 7 6 5 4 3 2 1.</p>
 </div>
 <div class="paragraph">
-<p>With <code>--topo-order</code>, they would show 8 6 5 3 7 4 2 1 (or 8 7 4 2 6 5
+<p>With <span class='synopsis'><code>--topo-order</code></span>, they would show 8 6 5 3 7 4 2 1 (or 8 7 4 2 6 5
 3 1); some older commits are shown before newer ones in order to
 avoid showing the commits from two parallel development track mixed
 together.</p>
@@ -4196,7 +4198,7 @@ together.</p>
 <dd>
 <p>Output the commits chosen to be shown (see Commit Limiting
 section above) in reverse order. Cannot be combined with
-<code>--walk-reflogs</code>.</p>
+<span class='synopsis'><code>--walk-reflogs</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -4211,9 +4213,9 @@ section above) in reverse order. Cannot be combined with
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---objects"><a class="anchor" href="#Documentation/git-rev-list.txt---objects"></a>--objects </dt>
 <dd>
 <p>Print the object IDs of any object referenced by the listed
-commits.  <code>--objects foo ^bar</code> thus means &#8220;send me
+commits.  <span class='synopsis'><code>--objects</code> <code>foo</code> <code>^bar</code></span> thus means &#8220;send me
 all object IDs which I need to download if I have the commit
-object <em>bar</em> but not <em>foo</em>&#8221;. See also <code>--object-names</code> below.</p>
+object <em>bar</em> but not <em>foo</em>&#8221;. See also <span class='synopsis'><code>--object-names</code></span> below.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---in-commit-order"><a class="anchor" href="#Documentation/git-rev-list.txt---in-commit-order"></a>--in-commit-order </dt>
 <dd>
@@ -4223,7 +4225,7 @@ by a commit.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---objects-edge"><a class="anchor" href="#Documentation/git-rev-list.txt---objects-edge"></a>--objects-edge </dt>
 <dd>
-<p>Similar to <code>--objects</code>, but also print the IDs of excluded
+<p>Similar to <span class='synopsis'><code>--objects</code></span>, but also print the IDs of excluded
 commits prefixed with a &#8220;-&#8221; character.  This is used by
 <a href='/docs/git-pack-objects'>git-pack-objects[1]</a> to build a &#8220;thin&#8221; pack, which records
 objects in deltified form based on objects contained in these
@@ -4231,24 +4233,24 @@ excluded commits to reduce network traffic.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---objects-edge-aggressive"><a class="anchor" href="#Documentation/git-rev-list.txt---objects-edge-aggressive"></a>--objects-edge-aggressive </dt>
 <dd>
-<p>Similar to <code>--objects-edge</code>, but it tries harder to find excluded
+<p>Similar to <span class='synopsis'><code>--objects-edge</code></span>, but it tries harder to find excluded
 commits at the cost of increased time.  This is used instead of
-<code>--objects-edge</code> to build &#8220;thin&#8221; packs for shallow repositories.</p>
+<span class='synopsis'><code>--objects-edge</code></span> to build &#8220;thin&#8221; packs for shallow repositories.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---indexed-objects"><a class="anchor" href="#Documentation/git-rev-list.txt---indexed-objects"></a>--indexed-objects </dt>
 <dd>
 <p>Pretend as if all trees and blobs used by the index are listed
 on the command line.  Note that you probably want to use
-<code>--objects</code>, too.</p>
+<span class='synopsis'><code>--objects</code></span>, too.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---unpacked"><a class="anchor" href="#Documentation/git-rev-list.txt---unpacked"></a>--unpacked </dt>
 <dd>
-<p>Only useful with <code>--objects</code>; print the object IDs that are not
+<p>Only useful with <span class='synopsis'><code>--objects</code></span>; print the object IDs that are not
 in packs.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---object-names"><a class="anchor" href="#Documentation/git-rev-list.txt---object-names"></a>--object-names </dt>
 <dd>
-<p>Only useful with <code>--objects</code>; print the names of the object IDs
+<p>Only useful with <span class='synopsis'><code>--objects</code></span>; print the names of the object IDs
 that are found. This is the default behavior. Note that the
 "name" of each object is ambiguous, and mostly intended as a
 hint for packing objects. In particular: no distinction is made between
@@ -4258,14 +4260,14 @@ with different names, only one name is shown.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---no-object-names"><a class="anchor" href="#Documentation/git-rev-list.txt---no-object-names"></a>--no-object-names </dt>
 <dd>
-<p>Only useful with <code>--objects</code>; does not print the names of the object
-IDs that are found. This inverts <code>--object-names</code>. This flag allows
+<p>Only useful with <span class='synopsis'><code>--objects</code></span>; does not print the names of the object
+IDs that are found. This inverts <span class='synopsis'><code>--object-names</code></span>. This flag allows
 the output to be more easily parsed by commands such as
 <a href='/docs/git-cat-file'>git-cat-file[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---filterltfilter-specgt"><a id="Documentation/git-rev-list.txt---filterfilter-spec" class="anchor" href="#Documentation/git-rev-list.txt---filterfilter-spec"></a>--filter=&lt;filter-spec&gt; </dt>
 <dd>
-<p>Only useful with one of the <code>--objects*</code>; omits objects (usually
+<p>Only useful with one of the <span class='synopsis'><code>--objects*</code></span>; omits objects (usually
 blobs) from the list of printed objects.  The <em>&lt;filter-spec&gt;</em>
 may be one of the following:</p>
 <div class="paragraph">
@@ -4313,8 +4315,8 @@ used to combined several filters, but this is harder than just repeating
 the <em>--filter</em> flag and is usually not necessary. Filters are joined by
 <em>&#43;</em> and individual filters are %-encoded (i.e. URL-encoded).
 Besides the <em>&#43;</em> and <em>%</em> characters, the following characters are
-reserved and also must be encoded: <code>~!@#$^&amp;*()[]{}\;",&lt;&gt;?</code><code>&#39;&#96;</code>
-as well as all characters with ASCII code &lt;= <code>0x20</code>, which includes
+reserved and also must be encoded: <span class='synopsis'><em>~!@#$^&amp;*()[]{}\;",&lt;&gt;?</em></span><span class='synopsis'><em>&#39;&#96;</em></span>
+as well as all characters with ASCII code &lt;= <span class='synopsis'><code>0x20</code></span>, which includes
 space and newline.</p>
 </div>
 <div class="paragraph">
@@ -4325,17 +4327,17 @@ equivalent.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---no-filter"><a class="anchor" href="#Documentation/git-rev-list.txt---no-filter"></a>--no-filter </dt>
 <dd>
-<p>Turn off any previous <code>--filter=</code> argument.</p>
+<p>Turn off any previous <span class='synopsis'><code>--filter=</code></span> argument.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---filter-provided-objects"><a class="anchor" href="#Documentation/git-rev-list.txt---filter-provided-objects"></a>--filter-provided-objects </dt>
 <dd>
 <p>Filter the list of explicitly provided objects, which would otherwise
 always be printed even if they did not match any of the filters. Only
-useful with <code>--filter=</code>.</p>
+useful with <span class='synopsis'><code>--filter=</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---filter-print-omitted"><a class="anchor" href="#Documentation/git-rev-list.txt---filter-print-omitted"></a>--filter-print-omitted </dt>
 <dd>
-<p>Only useful with <code>--filter=</code>; prints a list of the objects omitted
+<p>Only useful with <span class='synopsis'><code>--filter=</code></span>; prints a list of the objects omitted
 by the filter.  Object IDs are prefixed with a &#8220;~&#8221; character.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---missingltmissing-actiongt"><a id="Documentation/git-rev-list.txt---missingmissing-action" class="anchor" href="#Documentation/git-rev-list.txt---missingmissing-action"></a>--missing=&lt;missing-action&gt; </dt>
@@ -4364,11 +4366,11 @@ list of the missing objects.  Object IDs are prefixed with a &#8220;?&#8221; cha
 <p>The form <em>--missing=print-info</em> is like <em>print</em>, but will also print additional
 information about the missing object inferred from its containing object. The
 information is all printed on the same line with the missing object ID in the
-form: <code>?&lt;oid&gt; [&lt;token&gt;=&lt;value&gt;]...</code>. The <code>&lt;token&gt;=&lt;value&gt;</code> pairs containing
+form: <span class='synopsis'><em>?&lt;oid&gt; [&lt;token&gt;=&lt;value&gt;]...</em></span>. The <span class='synopsis'><em>&lt;token&gt;</em><code>=</code><em>&lt;value&gt;</em></span> pairs containing
 additional information are separated from each other by a SP. The value is
 encoded in a token specific fashion, but SP or LF contained in value are always
 expected to be represented in such a way that the resulting encoded value does
-not have either of these two problematic bytes. Each <code>&lt;token&gt;=&lt;value&gt;</code> may be
+not have either of these two problematic bytes. Each <span class='synopsis'><em>&lt;token&gt;</em><code>=</code><em>&lt;value&gt;</em></span> may be
 one of the following:</p>
 </div>
 <div class="openblock">
@@ -4376,12 +4378,12 @@ one of the following:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>path=&lt;path&gt;</code> shows the path of the missing object inferred from a
+<p>The <span class='synopsis'><code>path=</code><em>&lt;path&gt;</em></span> shows the path of the missing object inferred from a
 containing object. A path containing SP or special characters is enclosed in
 double-quotes in the C style as needed.</p>
 </li>
 <li>
-<p>The <code>type=&lt;type&gt;</code> shows the type of the missing object inferred from a
+<p>The <span class='synopsis'><code>type=</code><em>&lt;type&gt;</em></span> shows the type of the missing object inferred from a
 containing object.</p>
 </li>
 </ul>
@@ -4398,7 +4400,7 @@ we cannot get their Object ID though, an error will be raised.</p>
 <dd>
 <p>(For internal use only.)  Prefilter object traversal at
 promisor boundary.  This is used with partial clone.  This is
-stronger than <code>--missing=allow-promisor</code> because it limits the
+stronger than <span class='synopsis'><code>--missing=allow-promisor</code></span> because it limits the
 traversal, rather than just silencing errors about missing
 objects.</p>
 </dd>
@@ -4406,15 +4408,15 @@ objects.</p>
 <dd>
 <p>Only show the given commits, but do not traverse their ancestors.
 This has no effect if a range is specified. If the argument
-<code>unsorted</code> is given, the commits are shown in the order they were
-given on the command line. Otherwise (if <code>sorted</code> or no argument
+<span class='synopsis'><code>unsorted</code></span> is given, the commits are shown in the order they were
+given on the command line. Otherwise (if <span class='synopsis'><code>sorted</code></span> or no argument
 was given), the commits are shown in reverse chronological order
 by commit time.
-Cannot be combined with <code>--graph</code>.</p>
+Cannot be combined with <span class='synopsis'><code>--graph</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---do-walk"><a class="anchor" href="#Documentation/git-rev-list.txt---do-walk"></a>--do-walk </dt>
 <dd>
-<p>Overrides a previous <code>--no-walk</code>.</p>
+<p>Overrides a previous <span class='synopsis'><code>--no-walk</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -4460,8 +4462,8 @@ people using 80-column terminals.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---no-abbrev-commit"><a class="anchor" href="#Documentation/git-rev-list.txt---no-abbrev-commit"></a>--no-abbrev-commit </dt>
 <dd>
 <p>Show the full 40-byte hexadecimal commit object name. This negates
-<code>--abbrev-commit</code>, either explicit or implied by other options such
-as "--oneline". It also overrides the <code>log.abbrevCommit</code> variable.</p>
+<span class='synopsis'><code>--abbrev-commit</code></span>, either explicit or implied by other options such
+as "--oneline". It also overrides the <span class='synopsis'><code>log.abbrevCommit</code></span> variable.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---oneline"><a class="anchor" href="#Documentation/git-rev-list.txt---oneline"></a>--oneline </dt>
 <dd>
@@ -4475,7 +4477,7 @@ in their encoding header; this option can be used to tell the
 command to re-code the commit log message in the encoding
 preferred by the user.  For non plumbing commands this
 defaults to UTF-8. Note that if an object claims to be encoded
-in <code>X</code> and we are outputting in <code>X</code>, we will output the object
+in <span class='synopsis'><code>X</code></span> and we are outputting in <span class='synopsis'><code>X</code></span>, we will output the object
 verbatim; this means that invalid sequences in the original
 commit may be copied to the output. Likewise, if iconv(3) fails
 to convert the commit, we will quietly output the original
@@ -4488,8 +4490,8 @@ object verbatim.</p>
 <p>Perform a tab expansion (replace each tab with enough spaces
 to fill to the next display column that is a multiple of <em>&lt;n&gt;</em>)
 in the log message before showing it in the output.
-<code>--expand-tabs</code> is a short-hand for <code>--expand-tabs=8</code>, and
-<code>--no-expand-tabs</code> is a short-hand for <code>--expand-tabs=0</code>,
+<span class='synopsis'><code>--expand-tabs</code></span> is a short-hand for <span class='synopsis'><code>--expand-tabs=8</code></span>, and
+<span class='synopsis'><code>--no-expand-tabs</code></span> is a short-hand for <span class='synopsis'><code>--expand-tabs=0</code></span>,
 which disables tab expansion.</p>
 <div class="paragraph">
 <p>By default, tabs are expanded in pretty formats that indent the log
@@ -4500,38 +4502,38 @@ and <em>fuller</em>).</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---show-signature"><a class="anchor" href="#Documentation/git-rev-list.txt---show-signature"></a>--show-signature </dt>
 <dd>
 <p>Check the validity of a signed commit object by passing the signature
-to <code>gpg --verify</code> and show the output.</p>
+to <span class='synopsis'><code>gpg</code> <code>--verify</code></span> and show the output.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---relative-date"><a class="anchor" href="#Documentation/git-rev-list.txt---relative-date"></a>--relative-date </dt>
 <dd>
-<p>Synonym for <code>--date=relative</code>.</p>
+<p>Synonym for <span class='synopsis'><code>--date=relative</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---dateltformatgt"><a id="Documentation/git-rev-list.txt---dateformat" class="anchor" href="#Documentation/git-rev-list.txt---dateformat"></a>--date=&lt;format&gt; </dt>
 <dd>
 <p>Only takes effect for dates shown in human-readable format, such
-as when using <code>--pretty</code>. <code>log.date</code> config variable sets a default
-value for the log command&#8217;s <code>--date</code> option. By default, dates
+as when using <span class='synopsis'><code>--pretty</code></span>. <span class='synopsis'><code>log.date</code></span> config variable sets a default
+value for the log command&#8217;s <span class='synopsis'><code>--date</code></span> option. By default, dates
 are shown in the original time zone (either committer&#8217;s or
-author&#8217;s). If <code>-local</code> is appended to the format (e.g.,
-<code>iso-local</code>), the user&#8217;s local time zone is used instead.</p>
+author&#8217;s). If <span class='synopsis'><code>-local</code></span> is appended to the format (e.g.,
+<span class='synopsis'><code>iso-local</code></span>), the user&#8217;s local time zone is used instead.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p><code>--date=relative</code> shows dates relative to the current time,
-e.g. &#8220;2 hours ago&#8221;. The <code>-local</code> option has no effect for
-<code>--date=relative</code>.</p>
+<p><span class='synopsis'><code>--date=relative</code></span> shows dates relative to the current time,
+e.g. &#8220;2 hours ago&#8221;. The <span class='synopsis'><code>-local</code></span> option has no effect for
+<span class='synopsis'><code>--date=relative</code></span>.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=local</code> is an alias for <code>--date=default-local</code>.</p>
+<p><span class='synopsis'><code>--date=local</code></span> is an alias for <span class='synopsis'><code>--date=default-local</code></span>.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=iso</code> (or <code>--date=iso8601</code>) shows timestamps in a ISO 8601-like format.
+<p><span class='synopsis'><code>--date=iso</code></span> (or <span class='synopsis'><code>--date=iso8601</code></span>) shows timestamps in a ISO 8601-like format.
 The differences to the strict ISO 8601 format are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>a space instead of the <code>T</code> date/time delimiter</p>
+<p>a space instead of the <span class='synopsis'><code>T</code></span> date/time delimiter</p>
 </li>
 <li>
 <p>a space between time and time zone</p>
@@ -4542,28 +4544,28 @@ The differences to the strict ISO 8601 format are:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><code>--date=iso-strict</code> (or <code>--date=iso8601-strict</code>) shows timestamps in strict
+<p><span class='synopsis'><code>--date=iso-strict</code></span> (or <span class='synopsis'><code>--date=iso8601-strict</code></span>) shows timestamps in strict
 ISO 8601 format.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=rfc</code> (or <code>--date=rfc2822</code>) shows timestamps in RFC 2822
+<p><span class='synopsis'><code>--date=rfc</code></span> (or <span class='synopsis'><code>--date=rfc2822</code></span>) shows timestamps in RFC 2822
 format, often found in email messages.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=short</code> shows only the date, but not the time, in <code>YYYY-MM-DD</code> format.</p>
+<p><span class='synopsis'><code>--date=short</code></span> shows only the date, but not the time, in <span class='synopsis'><code>YYYY-MM-DD</code></span> format.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=raw</code> shows the date as seconds since the epoch (1970-01-01
+<p><span class='synopsis'><code>--date=raw</code></span> shows the date as seconds since the epoch (1970-01-01
 00:00:00 UTC), followed by a space, and then the timezone as an offset
-from UTC (a <code>+</code> or <code>-</code> with four digits; the first two are hours, and
+from UTC (a <span class='synopsis'><code>+</code></span> or <span class='synopsis'><code>-</code></span> with four digits; the first two are hours, and
 the second two are minutes). I.e., as if the timestamp were formatted
-with <code>strftime("%s %z")</code>).
-Note that the <code>-local</code> option does not affect the seconds-since-epoch
+with <span class='synopsis'><code>strftime</code>(<code>"%s</code> <code>%z"</code>)</span>).
+Note that the <span class='synopsis'><code>-local</code></span> option does not affect the seconds-since-epoch
 value (which is always measured in UTC), but does switch the accompanying
 timezone value.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=human</code> shows the timezone if the timezone does not match the
+<p><span class='synopsis'><code>--date=human</code></span> shows the timezone if the timezone does not match the
 current time-zone, and doesn&#8217;t print the whole date if that matches
 (ie skip printing year for dates that are "this year", but also skip
 the whole date itself if it&#8217;s in the last few days and we can just say
@@ -4571,24 +4573,24 @@ what weekday it was).  For older dates the hour and minute is also
 omitted.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=unix</code> shows the date as a Unix epoch timestamp (seconds since
-1970).  As with <code>--raw</code>, this is always in UTC and therefore <code>-local</code>
+<p><span class='synopsis'><code>--date=unix</code></span> shows the date as a Unix epoch timestamp (seconds since
+1970).  As with <span class='synopsis'><code>--raw</code></span>, this is always in UTC and therefore <span class='synopsis'><code>-local</code></span>
 has no effect.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=format:...</code> feeds the format <code>...</code> to your system <code>strftime</code>,
+<p><span class='synopsis'><code>--date=format:...</code></span> feeds the format <span class='synopsis'>...</span> to your system <span class='synopsis'><code>strftime</code></span>,
 except for %s, %z, and %Z, which are handled internally.
-Use <code>--date=format:%c</code> to show the date in your system locale&#8217;s
-preferred format.  See the <code>strftime</code> manual for a complete list of
-format placeholders. When using <code>-local</code>, the correct syntax is
-<code>--date=format-local:...</code>.</p>
+Use <span class='synopsis'><code>--date=format:%c</code></span> to show the date in your system locale&#8217;s
+preferred format.  See the <span class='synopsis'><code>strftime</code></span> manual for a complete list of
+format placeholders. When using <span class='synopsis'><code>-local</code></span>, the correct syntax is
+<span class='synopsis'><code>--date=format-local:...</code></span>.</p>
 </div>
 <div class="paragraph">
-<p><code>--date=default</code> is the default format, and is based on ctime(3)
+<p><span class='synopsis'><code>--date=default</code></span> is the default format, and is based on ctime(3)
 output.  It shows a single line with three-letter day of the week,
 three-letter month, day-of-month, hour-minute-seconds in "HH:MM:SS"
 format, followed by 4-digit year, plus timezone information, unless
-the local time zone is used, e.g. <code>Thu Jan 1 00:00:00 1970 +0000</code>.</p>
+the local time zone is used, e.g. <span class='synopsis'><code>Thu</code> <code>Jan</code> <code>1</code> <code>00:00:00</code> <code>1970</code> <code>+0000</code></span>.</p>
 </div>
 </div>
 </div>
@@ -4606,7 +4608,7 @@ formats are affected.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---commit-header"><a class="anchor" href="#Documentation/git-rev-list.txt---commit-header"></a>--commit-header </dt>
 <dd>
-<p>Overrides a previous <code>--no-commit-header</code>.</p>
+<p>Overrides a previous <span class='synopsis'><code>--no-commit-header</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---parents"><a class="anchor" href="#Documentation/git-rev-list.txt---parents"></a>--parents </dt>
 <dd>
@@ -4625,9 +4627,9 @@ Also enables parent rewriting, see <em>History Simplification</em> above.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---left-right"><a class="anchor" href="#Documentation/git-rev-list.txt---left-right"></a>--left-right </dt>
 <dd>
 <p>Mark which side of a symmetric difference a commit is reachable from.
-Commits from the left side are prefixed with <code>&lt;</code> and those from
-the right with <code>&gt;</code>.  If combined with <code>--boundary</code>, those
-commits are prefixed with <code>-</code>.</p>
+Commits from the left side are prefixed with <span class='synopsis'><em>&lt;</em></span> and those from
+the right with <span class='synopsis'><em>&gt;</em></span>.  If combined with <span class='synopsis'><code>--boundary</code></span>, those
+commits are prefixed with <span class='synopsis'><code>-</code></span>.</p>
 <div class="paragraph">
 <p>For example, if you have this topology:</p>
 </div>
@@ -4662,13 +4664,13 @@ commits are prefixed with <code>-</code>.</p>
 on the left hand side of the output.  This may cause extra lines
 to be printed in between commits, in order for the graph history
 to be drawn properly.
-Cannot be combined with <code>--no-walk</code>.</p>
+Cannot be combined with <span class='synopsis'><code>--no-walk</code></span>.</p>
 <div class="paragraph">
 <p>This enables parent rewriting, see <em>History Simplification</em> above.</p>
 </div>
 <div class="paragraph">
-<p>This implies the <code>--topo-order</code> option by default, but the
-<code>--date-order</code> option may also be specified.</p>
+<p>This implies the <span class='synopsis'><code>--topo-order</code></span> option by default, but the
+<span class='synopsis'><code>--date-order</code></span> option may also be specified.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---show-linear-breakltbarriergt"><a id="Documentation/git-rev-list.txt---show-linear-breakbarrier" class="anchor" href="#Documentation/git-rev-list.txt---show-linear-breakbarrier"></a>--show-linear-break[=&lt;barrier&gt;] </dt>
@@ -4676,16 +4678,16 @@ Cannot be combined with <code>--no-walk</code>.</p>
 <p>When --graph is not used, all history branches are flattened
 which can make it hard to see that the two consecutive commits
 do not belong to a linear branch. This option puts a barrier
-in between them in that case. If <code>&lt;barrier&gt;</code> is specified, it
+in between them in that case. If <span class='synopsis'><em>&lt;barrier&gt;</em></span> is specified, it
 is the string that will be shown instead of the default one.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---count"><a class="anchor" href="#Documentation/git-rev-list.txt---count"></a>--count </dt>
 <dd>
 <p>Print a number stating how many commits would have been
 listed, and suppress all other output.  When used together
-with <code>--left-right</code>, instead print the counts for left and
+with <span class='synopsis'><code>--left-right</code></span>, instead print the counts for left and
 right commits, separated by a tab. When used together with
-<code>--cherry-mark</code>, omit patch equivalent commits from these
+<span class='synopsis'><code>--cherry-mark</code></span>, omit patch equivalent commits from these
 counts and print the count for equivalent commits separated
 by a tab.</p>
 </dd>
@@ -4814,11 +4816,11 @@ CommitDate: &lt;committer-date&gt;</pre>
 </div>
 <div class="paragraph">
 <p>This format is used to refer to another commit in a commit message and
-is the same as <code>--pretty='format:%C(auto)%h (%s, %ad)'</code>.  By default,
-the date is formatted with <code>--date=short</code> unless another <code>--date</code> option
-is explicitly specified.  As with any <code>format:</code> with format
+is the same as <span class='synopsis'><code>--pretty='format:%C</code>(<code>auto</code>)<code>%h</code> (<code>%s,</code> <code>%ad</code>)</span>.  By default,
+the date is formatted with <span class='synopsis'><code>--date=short</code></span> unless another <span class='synopsis'><code>--date</code></span> option
+is explicitly specified.  As with any <span class='synopsis'><code>format:</code></span> with format
 placeholders, its output is not affected by other options like
-<code>--decorate</code> and <code>--walk-reflogs</code>.</p>
+<span class='synopsis'><code>--decorate</code></span> and <span class='synopsis'><code>--walk-reflogs</code></span>.</p>
 </div>
 </li>
 <li>
@@ -4855,8 +4857,8 @@ displayed in full, regardless of whether --abbrev or
 true parent commits, without taking grafts or history
 simplification into account. Note that this format affects the way
 commits are displayed, but not the way the diff is shown e.g. with
-<code>git log --raw</code>. To get full object names in a raw diff format,
-use <code>--no-abbrev</code>.</p>
+<span class='synopsis'><code>git</code> <code>log</code> <code>--raw</code></span>. To get full object names in a raw diff format,
+use <span class='synopsis'><code>--no-abbrev</code></span>.</p>
 </div>
 </li>
 <li>
@@ -4928,21 +4930,21 @@ byte with the hexadecimal digits' value (we will call this
 <p>color specification, as described under Values in the
 "CONFIGURATION FILE" section of <a href='/docs/git-config'>git-config[1]</a>.  By
 default, colors are shown only when enabled for log output
-(by <code>color.diff</code>, <code>color.ui</code>, or <code>--color</code>, and respecting
-the <code>auto</code> settings of the former if we are going to a
-terminal). <code>%C(auto,...)</code> is accepted as a historical
-synonym for the default (e.g., <code>%C(auto,red)</code>). Specifying
-<code>%C(always,...)</code> will show the colors even when color is
+(by <span class='synopsis'><code>color.diff</code></span>, <span class='synopsis'><code>color.ui</code></span>, or <span class='synopsis'><code>--color</code></span>, and respecting
+the <span class='synopsis'><code>auto</code></span> settings of the former if we are going to a
+terminal). <span class='synopsis'><code>%C</code>(<code>auto,...</code>)</span> is accepted as a historical
+synonym for the default (e.g., <span class='synopsis'><code>%C</code>(<code>auto,red</code>)</span>). Specifying
+<span class='synopsis'><code>%C</code>(<code>always,...</code>)</span> will show the colors even when color is
 not otherwise enabled (though consider just using
-<code>--color=always</code> to enable color for the whole output,
+<span class='synopsis'><code>--color=always</code></span> to enable color for the whole output,
 including this format and anything else git might color).
-<code>auto</code> alone (i.e. <code>%C(auto)</code>) will turn on auto coloring
+<span class='synopsis'><code>auto</code></span> alone (i.e. <span class='synopsis'><code>%C</code>(<code>auto</code>)</span>) will turn on auto coloring
 on the next placeholders until the color is switched
 again.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emmem"><a id="Documentation/git-rev-list.txt-m" class="anchor" href="#Documentation/git-rev-list.txt-m"></a><em>%m</em> </dt>
 <dd>
-<p>left (<code>&lt;</code>), right (<code>&gt;</code>) or boundary (<code>-</code>) mark</p>
+<p>left (<span class='synopsis'><em>&lt;</em></span>), right (<span class='synopsis'><em>&gt;</em></span>) or boundary (<span class='synopsis'><code>-</code></span>) mark</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emwltwgtlti1gtlti2gtem"><a id="Documentation/git-rev-list.txt-wwi1i2" class="anchor" href="#Documentation/git-rev-list.txt-wwi1i2"></a><em>%w([&lt;w&gt;[,&lt;i1&gt;[,&lt;i2&gt;]]])</em> </dt>
 <dd>
@@ -4954,9 +4956,9 @@ again.</p>
 <p>make the next placeholder take at
 least N column widths, padding spaces on
 the right if necessary.  Optionally
-truncate (with ellipsis <em>..</em>) at the left (ltrunc) <code>..ft</code>,
-the middle (mtrunc) <code>mi..le</code>, or the end
-(trunc) <code>rig..</code>, if the output is longer than
+truncate (with ellipsis <em>..</em>) at the left (ltrunc) <span class='synopsis'><code>..ft</code></span>,
+the middle (mtrunc) <span class='synopsis'><code>mi..le</code></span>, or the end
+(trunc) <span class='synopsis'><code>rig..</code></span>, if the output is longer than
 N columns.
 Note 1: that truncating
 only works correctly with N &gt;= 2.
@@ -5078,11 +5080,11 @@ or <a href='/docs/git-blame'>git-blame[1]</a>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emasem"><a id="Documentation/git-rev-list.txt-as" class="anchor" href="#Documentation/git-rev-list.txt-as"></a><em>%as</em> </dt>
 <dd>
-<p>author date, short format (<code>YYYY-MM-DD</code>)</p>
+<p>author date, short format (<span class='synopsis'><code>YYYY-MM-DD</code></span>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emahem"><a id="Documentation/git-rev-list.txt-ah" class="anchor" href="#Documentation/git-rev-list.txt-ah"></a><em>%ah</em> </dt>
 <dd>
-<p>author date, human style (like the <code>--date=human</code> option of
+<p>author date, human style (like the <span class='synopsis'><code>--date=human</code></span> option of
 <a href='/docs/git-rev-list'>git-rev-list[1]</a>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emcnem"><a id="Documentation/git-rev-list.txt-cn" class="anchor" href="#Documentation/git-rev-list.txt-cn"></a><em>%cn</em> </dt>
@@ -5138,11 +5140,11 @@ or <a href='/docs/git-blame'>git-blame[1]</a>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emcsem"><a id="Documentation/git-rev-list.txt-cs" class="anchor" href="#Documentation/git-rev-list.txt-cs"></a><em>%cs</em> </dt>
 <dd>
-<p>committer date, short format (<code>YYYY-MM-DD</code>)</p>
+<p>committer date, short format (<span class='synopsis'><code>YYYY-MM-DD</code></span>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emchem"><a id="Documentation/git-rev-list.txt-ch" class="anchor" href="#Documentation/git-rev-list.txt-ch"></a><em>%ch</em> </dt>
 <dd>
-<p>committer date, human style (like the <code>--date=human</code> option of
+<p>committer date, human style (like the <span class='synopsis'><code>--date=human</code></span> option of
 <a href='/docs/git-rev-list'>git-rev-list[1]</a>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emdem"><a id="Documentation/git-rev-list.txt-d" class="anchor" href="#Documentation/git-rev-list.txt-d"></a><em>%d</em> </dt>
@@ -5155,27 +5157,27 @@ or <a href='/docs/git-blame'>git-blame[1]</a>)</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emdecorateltoptionsgtem"><a id="Documentation/git-rev-list.txt-decorateoptions" class="anchor" href="#Documentation/git-rev-list.txt-decorateoptions"></a><em>%(decorate[:&lt;options&gt;])</em> </dt>
 <dd>
-<p>ref names with custom decorations. The <code>decorate</code> string may be followed by a
+<p>ref names with custom decorations. The <span class='synopsis'><code>decorate</code></span> string may be followed by a
 colon and zero or more comma-separated options. Option values may contain
-literal formatting codes. These must be used for commas (<code>%x2C</code>) and closing
-parentheses (<code>%x29</code>), due to their role in the option syntax.</p>
+literal formatting codes. These must be used for commas (<span class='synopsis'><code>%x2C</code></span>) and closing
+parentheses (<span class='synopsis'><code>%x29</code></span>), due to their role in the option syntax.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>prefix=&lt;value&gt;</em>: Shown before the list of ref names.  Defaults to "&#160;<code>(</code>".</p>
+<p><em>prefix=&lt;value&gt;</em>: Shown before the list of ref names.  Defaults to "&#160;<span class='synopsis'>(</span>".</p>
 </li>
 <li>
-<p><em>suffix=&lt;value&gt;</em>: Shown after the list of ref names.  Defaults to "<code>)</code>".</p>
+<p><em>suffix=&lt;value&gt;</em>: Shown after the list of ref names.  Defaults to "<span class='synopsis'>)</span>".</p>
 </li>
 <li>
-<p><em>separator=&lt;value&gt;</em>: Shown between ref names.  Defaults to "<code>,</code>&#160;".</p>
+<p><em>separator=&lt;value&gt;</em>: Shown between ref names.  Defaults to "<span class='synopsis'><code>,</code></span>&#160;".</p>
 </li>
 <li>
 <p><em>pointer=&lt;value&gt;</em>: Shown between HEAD and the branch it points to, if any.
-Defaults to "&#160;<code>-&gt;</code>&#160;".</p>
+Defaults to "&#160;<span class='synopsis'><em>-&gt;</em></span>&#160;".</p>
 </li>
 <li>
-<p><em>tag=&lt;value&gt;</em>: Shown before tag names. Defaults to "<code>tag:</code>&#160;".</p>
+<p><em>tag=&lt;value&gt;</em>: Shown before tag names. Defaults to "<span class='synopsis'><code>tag:</code></span>&#160;".</p>
 </li>
 </ul>
 </div>
@@ -5191,14 +5193,14 @@ or tag annotations, and spaces as separators:</p>
 </div>
 <div class="paragraph">
 <p>+
-<code>%(decorate:prefix=,suffix=,tag=,separator= )</code></p>
+<span class='synopsis'><code>%</code>(<code>decorate:prefix=,suffix=,tag=,separator=</code> )</span></p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emdescribeltoptionsgtem"><a id="Documentation/git-rev-list.txt-describeoptions" class="anchor" href="#Documentation/git-rev-list.txt-describeoptions"></a><em>%(describe[:&lt;options&gt;])</em> </dt>
 <dd>
 <p>human-readable name, like <a href='/docs/git-describe'>git-describe[1]</a>; empty string for
-undescribable commits.  The <code>describe</code> string may be followed by a colon and
+undescribable commits.  The <span class='synopsis'><code>describe</code></span> string may be followed by a colon and
 zero or more comma-separated options.  Descriptions can be inconsistent when
 tags are added or removed at the same time.</p>
 <div class="ulist">
@@ -5215,11 +5217,11 @@ digits as needed to form a unique object name.</p>
 </li>
 <li>
 <p><em>match=&lt;pattern&gt;</em>: Only consider tags matching the given
-<code>glob(7)</code> pattern, excluding the "refs/tags/" prefix.</p>
+<span class='synopsis'><code>glob</code>(<code>7</code>)</span> pattern, excluding the "refs/tags/" prefix.</p>
 </li>
 <li>
 <p><em>exclude=&lt;pattern&gt;</em>: Do not consider tags matching the given
-<code>glob(7)</code> pattern, excluding the "refs/tags/" prefix.</p>
+<span class='synopsis'><code>glob</code>(<code>7</code>)</span> pattern, excluding the "refs/tags/" prefix.</p>
 </li>
 </ul>
 </div>
@@ -5227,7 +5229,7 @@ digits as needed to form a unique object name.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emSem"><a id="Documentation/git-rev-list.txt-S" class="anchor" href="#Documentation/git-rev-list.txt-S"></a><em>%S</em> </dt>
 <dd>
 <p>ref name given on the command line by which the commit was reached
-(like <code>git log --source</code>), only works with <code>git log</code></p>
+(like <span class='synopsis'><code>git</code> <code>log</code> <code>--source</code></span>), only works with <span class='synopsis'><code>git</code> <code>log</code></span></p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emeem"><a id="Documentation/git-rev-list.txt-e" class="anchor" href="#Documentation/git-rev-list.txt-e"></a><em>%e</em> </dt>
 <dd>
@@ -5287,17 +5289,18 @@ to sign a signed commit</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emgDem"><a id="Documentation/git-rev-list.txt-gD" class="anchor" href="#Documentation/git-rev-list.txt-gD"></a><em>%gD</em> </dt>
 <dd>
-<p>reflog selector, e.g., <code>refs/stash@{1}</code> or <code>refs/stash@{2
-minutes ago}</code>; the format follows the rules described for the
-<code>-g</code> option. The portion before the <code>@</code> is the refname as
-given on the command line (so <code>git log -g refs/heads/master</code>
-would yield <code>refs/heads/master@{0}</code>).</p>
+<p>reflog selector, e.g., <span class='synopsis'><code>refs/stash@{1}</code></span> or <span class='synopsis'><code>refs/stash@{2</code>
+
+<code>minutes</code> <code>ago}</code></span>; the format follows the rules described for the
+<span class='synopsis'><code>-g</code></span> option. The portion before the <span class='synopsis'><code>@</code></span> is the refname as
+given on the command line (so <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code> <code>refs/heads/master</code></span>
+would yield <span class='synopsis'><code>refs/heads/master@{0}</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emgdem"><a id="Documentation/git-rev-list.txt-gd" class="anchor" href="#Documentation/git-rev-list.txt-gd"></a><em>%gd</em> </dt>
 <dd>
-<p>shortened reflog selector; same as <code>%gD</code>, but the refname
+<p>shortened reflog selector; same as <span class='synopsis'><code>%gD</code></span>, but the refname
 portion is shortened for human readability (so
-<code>refs/heads/master</code> becomes just <code>master</code>).</p>
+<span class='synopsis'><code>refs/heads/master</code></span> becomes just <span class='synopsis'><code>master</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emgnem"><a id="Documentation/git-rev-list.txt-gn" class="anchor" href="#Documentation/git-rev-list.txt-gn"></a><em>%gn</em> </dt>
 <dd>
@@ -5324,7 +5327,7 @@ portion is shortened for human readability (so
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-emtrailersltoptionsgtem"><a id="Documentation/git-rev-list.txt-trailersoptions" class="anchor" href="#Documentation/git-rev-list.txt-trailersoptions"></a><em>%(trailers[:&lt;options&gt;])</em> </dt>
 <dd>
 <p>display the trailers of the body as interpreted by
-<a href='/docs/git-interpret-trailers'>git-interpret-trailers[1]</a>. The <code>trailers</code> string may be followed by
+<a href='/docs/git-interpret-trailers'>git-interpret-trailers[1]</a>. The <span class='synopsis'><code>trailers</code></span> string may be followed by
 a colon and zero or more comma-separated options. If any option is provided
 multiple times, the last occurrence wins.</p>
 <div class="ulist">
@@ -5333,11 +5336,11 @@ multiple times, the last occurrence wins.</p>
 <p><em>key=&lt;key&gt;</em>: only show trailers with specified &lt;key&gt;. Matching is done
 case-insensitively and trailing colon is optional. If option is
 given multiple times trailer lines matching any of the keys are
-shown. This option automatically enables the <code>only</code> option so that
+shown. This option automatically enables the <span class='synopsis'><code>only</code></span> option so that
 non-trailer lines in the trailer block are hidden. If that is not
-desired it can be disabled with <code>only=false</code>.  E.g.,
-<code>%(trailers:key=Reviewed-by)</code> shows trailer lines with key
-<code>Reviewed-by</code>.</p>
+desired it can be disabled with <span class='synopsis'><code>only=false</code></span>.  E.g.,
+<span class='synopsis'><code>%</code>(<code>trailers:key=Reviewed-by</code>)</span> shows trailer lines with key
+<span class='synopsis'><code>Reviewed-by</code></span>.</p>
 </li>
 <li>
 <p><em>only[=&lt;bool&gt;]</em>: select whether non-trailer lines from the trailer
@@ -5347,15 +5350,15 @@ block should be included.</p>
 <p><em>separator=&lt;sep&gt;</em>: specify the separator inserted between trailer
 lines. Defaults to a line feed character. The string &lt;sep&gt; may contain
 the literal formatting codes described above. To use comma as
-separator one must use <code>%x2C</code> as it would otherwise be parsed as
-next option. E.g., <code>%(trailers:key=Ticket,separator=%x2C )</code>
+separator one must use <span class='synopsis'><code>%x2C</code></span> as it would otherwise be parsed as
+next option. E.g., <span class='synopsis'><code>%</code>(<code>trailers:key=Ticket,separator=%x2C</code> )</span>
 shows all trailer lines whose key is "Ticket" separated by a comma
 and a space.</p>
 </li>
 <li>
-<p><em>unfold[=&lt;bool&gt;]</em>: make it behave as if interpret-trailer&#8217;s <code>--unfold</code>
+<p><em>unfold[=&lt;bool&gt;]</em>: make it behave as if interpret-trailer&#8217;s <span class='synopsis'><code>--unfold</code></span>
 option was given. E.g.,
-<code>%(trailers:only,unfold=true)</code> unfolds and shows all trailer lines.</p>
+<span class='synopsis'><code>%</code>(<code>trailers:only,unfold=true</code>)</span> unfolds and shows all trailer lines.</p>
 </li>
 <li>
 <p><em>keyonly[=&lt;bool&gt;]</em>: only show the key part of the trailer.</p>
@@ -5384,28 +5387,28 @@ shares the same semantics as <em>separator=&lt;sep&gt;</em> above.</p>
 </td>
 <td class="content">
 Some placeholders may depend on other options given to the
-revision traversal engine. For example, the <code>%g*</code> reflog options will
+revision traversal engine. For example, the <span class='synopsis'><code>%g*</code></span> reflog options will
 insert an empty string unless we are traversing reflog entries (e.g., by
-<code>git log -g</code>). The <code>%d</code> and <code>%D</code> placeholders will use the "short"
-decoration format if <code>--decorate</code> was not already provided on the command
+<span class='synopsis'><code>git</code> <code>log</code> <code>-g</code></span>). The <span class='synopsis'><code>%d</code></span> and <span class='synopsis'><code>%D</code></span> placeholders will use the "short"
+decoration format if <span class='synopsis'><code>--decorate</code></span> was not already provided on the command
 line.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The boolean options accept an optional value <code>[=&lt;bool-value&gt;]</code>. The
-values taken by <code>--type=bool</code> git-config[1], like <code>yes</code> and <code>off</code>,
-are all accepted.  Giving a boolean option without <code>=&lt;value&gt;</code> is
-equivalent to giving it with <code>=true</code>.</p>
+<p>The boolean options accept an optional value <span class='synopsis'>[<code>=</code><em>&lt;bool-value&gt;</em>]</span>. The
+values taken by <span class='synopsis'><code>--type=bool</code></span> git-config[1], like <span class='synopsis'><code>yes</code></span> and <span class='synopsis'><code>off</code></span>,
+are all accepted.  Giving a boolean option without <span class='synopsis'><code>=</code><em>&lt;value&gt;</em></span> is
+equivalent to giving it with <span class='synopsis'><code>=true</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>If you add a <code>+</code> (plus sign) after <em>%</em> of a placeholder, a line-feed
+<p>If you add a <span class='synopsis'><code>+</code></span> (plus sign) after <em>%</em> of a placeholder, a line-feed
 is inserted immediately before the expansion if and only if the
 placeholder expands to a non-empty string.</p>
 </div>
 <div class="paragraph">
-<p>If you add a <code>-</code> (minus sign) after <em>%</em> of a placeholder, all consecutive
+<p>If you add a <span class='synopsis'><code>-</code></span> (minus sign) after <em>%</em> of a placeholder, all consecutive
 line-feeds immediately preceding the expansion are deleted if and only if the
 placeholder expands to an empty string.</p>
 </div>
@@ -5441,8 +5444,8 @@ $ git log -2 --pretty=tformat:%h 4da45bef \
 </div>
 </div>
 <div class="paragraph">
-<p>In addition, any unrecognized string that has a <code>%</code> in it is interpreted
-as if it has <code>tformat:</code> in front of it.  For example, these two are
+<p>In addition, any unrecognized string that has a <span class='synopsis'><code>%</code></span> in it is interpreted
+as if it has <span class='synopsis'><code>tformat:</code></span> in front of it.  For example, these two are
 equivalent:</p>
 </div>
 <div class="listingblock">
@@ -5499,7 +5502,7 @@ git diff-tree --stdin --format=medium -p</pre>
 </li>
 <li>
 <p>Print the list of commits on the current branch that touched any
-file in the <code>Documentation</code> directory.</p>
+file in the <span class='synopsis'><code>Documentation</code></span> directory.</p>
 <div class="listingblock">
 <div class="content">
 <pre>git rev-list HEAD -- Documentation/</pre>
@@ -5527,7 +5530,7 @@ commits and the blobs and trees they contain).</p>
 <li>
 <p>Compare the disk size of all reachable objects, versus those
 reachable from reflogs, versus the total packed size. This can tell
-you whether running <code>git repack -ad</code> might reduce the repository size
+you whether running <span class='synopsis'><code>git</code> <code>repack</code> <code>-ad</code></span> might reduce the repository size
 (by dropping unreachable objects), and whether expiring reflogs might
 help.</p>
 <div class="listingblock">
@@ -5564,7 +5567,7 @@ sort -n</pre>
 <p>Compare the on-disk size of branches in one group of refs, excluding
 another. If you co-mingle objects from multiple remotes in a single
 repository, this can show which remotes are contributing to the
-repository size (taking the size of <code>origin</code> as a baseline).</p>
+repository size (taking the size of <span class='synopsis'><code>origin</code></span> as a baseline).</p>
 <div class="listingblock">
 <div class="content">
 <pre>git rev-list --disk-usage --objects --remotes=$suspect --not --remotes=origin</pre>
@@ -5611,7 +5614,7 @@ repository size (taking the size of <code>origin</code> as a baseline).</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2156,7 +2156,7 @@ index (i.e. when used with <em>-c</em>), print only those files
 matching an exclude pattern.  When showing "other" files
 (i.e. when used with <em>-o</em>), show only those matched by an
 exclude pattern.  Standard ignore rules are not automatically
-activated; therefore, at least one of the <code>--exclude*</code> options
+activated; therefore, at least one of the <span class='synopsis'><code>--exclude*</code></span> options
 is required.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt--s"><a class="anchor" href="#Documentation/git-ls-files.txt--s"></a>-s </dt>
@@ -2205,8 +2205,8 @@ See OUTPUT below for more information.</p>
 <dd>
 <p>When only filenames are shown, suppress duplicates that may
 come from having multiple stages during a merge, or giving
-<code>--deleted</code> and <code>--modified</code> option at the same time.
-When any of the <code>-t</code>, <code>--unmerged</code>, or <code>--stage</code> option is
+<span class='synopsis'><code>--deleted</code></span> and <span class='synopsis'><code>--modified</code></span> option at the same time.
+When any of the <span class='synopsis'><code>-t</code></span>, <span class='synopsis'><code>--unmerged</code></span>, or <span class='synopsis'><code>--stage</code></span> option is
 in use, this option has no effect.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt--xltpatterngt"><a id="Documentation/git-ls-files.txt--xpattern" class="anchor" href="#Documentation/git-ls-files.txt--xpattern"></a>-x &lt;pattern&gt; </dt>
@@ -2226,7 +2226,7 @@ below for more information.</p>
 <p>Read additional exclude patterns that apply only to the
 directory and its subdirectories in &lt;file&gt;.  If you are
 trying to emulate the way Porcelain commands work, using
-the <code>--exclude-standard</code> option instead is easier and more
+the <span class='synopsis'><code>--exclude-standard</code></span> option instead is easier and more
 thorough.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt---exclude-standard"><a class="anchor" href="#Documentation/git-ls-files.txt---exclude-standard"></a>--exclude-standard </dt>
@@ -2245,16 +2245,16 @@ error (return 1).</p>
 &lt;file&gt; (i.e. path pattern) arguments to paths, pretend
 that paths which were removed in the index since the
 named &lt;tree-ish&gt; are still present.  Using this option
-with <code>-s</code> or <code>-u</code> options does not make any sense.</p>
+with <span class='synopsis'><code>-s</code></span> or <span class='synopsis'><code>-u</code></span> options does not make any sense.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt--t"><a class="anchor" href="#Documentation/git-ls-files.txt--t"></a>-t </dt>
 <dd>
 <p>Show status tags together with filenames.  Note that for
-scripting purposes, <a href='/docs/git-status'>git-status[1]</a> <code>--porcelain</code> and
-<a href='/docs/git-diff-files'>git-diff-files[1]</a> <code>--name-status</code> are almost always
+scripting purposes, <a href='/docs/git-status'>git-status[1]</a> <span class='synopsis'><code>--porcelain</code></span> and
+<a href='/docs/git-diff-files'>git-diff-files[1]</a> <span class='synopsis'><code>--name-status</code></span> are almost always
 superior alternatives; users should look at
-<a href='/docs/git-status'>git-status[1]</a> <code>--short</code> or <a href='/docs/git-diff'>git-diff[1]</a>
-<code>--name-status</code> for more user-friendly alternatives.</p>
+<a href='/docs/git-status'>git-status[1]</a> <span class='synopsis'><code>--short</code></span> or <a href='/docs/git-diff'>git-diff[1]</a>
+<span class='synopsis'><code>--name-status</code></span> for more user-friendly alternatives.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
@@ -2304,13 +2304,13 @@ which prevent checking out tracked files</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt--v"><a class="anchor" href="#Documentation/git-ls-files.txt--v"></a>-v </dt>
 <dd>
-<p>Similar to <code>-t</code>, but use lowercase letters for files
+<p>Similar to <span class='synopsis'><code>-t</code></span>, but use lowercase letters for files
 that are marked as <em>assume unchanged</em> (see
 <a href='/docs/git-update-index'>git-update-index[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt--f"><a class="anchor" href="#Documentation/git-ls-files.txt--f"></a>-f </dt>
 <dd>
-<p>Similar to <code>-t</code>, but use lowercase letters for files
+<p>Similar to <span class='synopsis'><code>-t</code></span>, but use lowercase letters for files
 that are marked as <em>fsmonitor valid</em> (see
 <a href='/docs/git-update-index'>git-update-index[1]</a>).</p>
 </dd>
@@ -2369,12 +2369,12 @@ trailing slash, such as "x/" for a sparse directory "x".</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt---formatltformatgt"><a id="Documentation/git-ls-files.txt---formatformat" class="anchor" href="#Documentation/git-ls-files.txt---formatformat"></a>--format=&lt;format&gt; </dt>
 <dd>
-<p>A string that interpolates <code>%(fieldname)</code> from the result being shown.
-It also interpolates <code>%%</code> to <code>%</code>, and <code>%xXX</code> where <code>XX</code> are hex digits
-interpolates to character with hex code <code>XX</code>; for example <code>%x00</code>
-interpolates to <code>\0</code> (NUL), <code>%x09</code> to <code>\t</code> (TAB) and %x0a to <code>\n</code> (LF).
---format cannot be combined with <code>-s</code>, <code>-o</code>, <code>-k</code>, <code>-t</code>, <code>--resolve-undo</code>
-and <code>--eol</code>.</p>
+<p>A string that interpolates <span class='synopsis'><code>%</code>(<code>fieldname</code>)</span> from the result being shown.
+It also interpolates <span class='synopsis'><code>%%</code></span> to <span class='synopsis'><code>%</code></span>, and <span class='synopsis'><code>%xXX</code></span> where <span class='synopsis'><code>XX</code></span> are hex digits
+interpolates to character with hex code <span class='synopsis'><code>XX</code></span>; for example <span class='synopsis'><code>%x00</code></span>
+interpolates to <span class='synopsis'><em>\0</em></span> (NUL), <span class='synopsis'><code>%x09</code></span> to <span class='synopsis'><em>\t</em></span> (TAB) and %x0a to <span class='synopsis'><em>\n</em></span> (LF).
+--format cannot be combined with <span class='synopsis'><code>-s</code></span>, <span class='synopsis'><code>-o</code></span>, <span class='synopsis'><code>-k</code></span>, <span class='synopsis'><code>-t</code></span>, <span class='synopsis'><code>--resolve-undo</code></span>
+and <span class='synopsis'><code>--eol</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt---"><a class="anchor" href="#Documentation/git-ls-files.txt---"></a>-- </dt>
 <dd>
@@ -2393,7 +2393,7 @@ specified criteria are shown.</p>
 <h2 id="_output"><a class="anchor" href="#_output"></a>OUTPUT</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>git ls-files</em> just outputs the filenames unless <code>--stage</code> is specified in
+<p><em>git ls-files</em> just outputs the filenames unless <span class='synopsis'><code>--stage</code></span> is specified in
 which case it outputs:</p>
 </div>
 <div class="literalblock">
@@ -2417,15 +2417,15 @@ the user (or the porcelain) to see what should eventually be recorded at the
 path. (see <a href='/docs/git-read-tree'>git-read-tree[1]</a> for more information on state)</p>
 </div>
 <div class="paragraph">
-<p>Without the <code>-z</code> option, pathnames with "unusual" characters are
-quoted as explained for the configuration variable <code>core.quotePath</code>
-(see <a href='/docs/git-config'>git-config[1]</a>).  Using <code>-z</code> the filename is output
+<p>Without the <span class='synopsis'><code>-z</code></span> option, pathnames with "unusual" characters are
+quoted as explained for the configuration variable <span class='synopsis'><code>core.quotePath</code></span>
+(see <a href='/docs/git-config'>git-config[1]</a>).  Using <span class='synopsis'><code>-z</code></span> the filename is output
 verbatim and the line is terminated by a NUL byte.</p>
 </div>
 <div class="paragraph">
-<p>It is possible to print in a custom format by using the <code>--format</code>
+<p>It is possible to print in a custom format by using the <span class='synopsis'><code>--format</code></span>
 option, which is able to interpolate different fields using
-a <code>%(fieldname)</code> notation. For example, if you only care about the
+a <span class='synopsis'><code>%</code>(<code>fieldname</code>)</span> notation. For example, if you only care about the
 "objectname" and "path" fields, you can execute with a specific
 "--format" like</p>
 </div>
@@ -2441,7 +2441,7 @@ a <code>%(fieldname)</code> notation. For example, if you only care about the
 <div class="sectionbody">
 <div class="paragraph">
 <p>The way each path is shown can be customized by using the
-<code>--format=&lt;format&gt;</code> option, where the %(fieldname) in the
+<span class='synopsis'><code>--format=</code><em>&lt;format&gt;</em></span> option, where the %(fieldname) in the
 &lt;format&gt; string for various aspects of the index entry are
 interpolated.  The following "fieldname" are understood:</p>
 </div>
@@ -2462,7 +2462,7 @@ interpolated.  The following "fieldname" are understood:</p>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-objectsizepadded"><a class="anchor" href="#Documentation/git-ls-files.txt-objectsizepadded"></a>objectsize[:padded] </dt>
 <dd>
 <p>The object size of the file which is recorded in the index
-("-" if the object is a <code>commit</code> or <code>tree</code>).
+("-" if the object is a <span class='synopsis'><code>commit</code></span> or <span class='synopsis'><code>tree</code></span>).
 It also supports a padded format of size with "%(objectsize:padded)".</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-stage"><a class="anchor" href="#Documentation/git-ls-files.txt-stage"></a>stage </dt>
@@ -2472,12 +2472,12 @@ It also supports a padded format of size with "%(objectsize:padded)".</p>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-eolinfoindex"><a class="anchor" href="#Documentation/git-ls-files.txt-eolinfoindex"></a>eolinfo:index </dt>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-eolinfoworktree"><a class="anchor" href="#Documentation/git-ls-files.txt-eolinfoworktree"></a>eolinfo:worktree </dt>
 <dd>
-<p>The &lt;eolinfo&gt; (see the description of the <code>--eol</code> option) of
+<p>The &lt;eolinfo&gt; (see the description of the <span class='synopsis'><code>--eol</code></span> option) of
 the contents in the index or in the worktree for the path.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-eolattr"><a class="anchor" href="#Documentation/git-ls-files.txt-eolattr"></a>eolattr </dt>
 <dd>
-<p>The &lt;eolattr&gt; (see the description of the <code>--eol</code> option)
+<p>The &lt;eolattr&gt; (see the description of the <span class='synopsis'><code>--eol</code></span> option)
 that applies to the path.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-ls-files.txt-path"><a class="anchor" href="#Documentation/git-ls-files.txt-path"></a>path </dt>
@@ -2516,7 +2516,7 @@ in the same order they appear in the file.</p>
 <li>
 <p>The command-line flag --exclude-per-directory=&lt;name&gt; specifies
 a name of the file in each directory <em>git ls-files</em>
-examines, normally <code>.gitignore</code>.  Files in deeper
+examines, normally <span class='synopsis'><code>.gitignore</code></span>.  Files in deeper
 directories take precedence.  Patterns are ordered in the
 same order they appear in the files.</p>
 </li>
@@ -2530,24 +2530,24 @@ by --exclude-per-directory is relative to the directory that the
 pattern file appears in.</p>
 </div>
 <div class="paragraph">
-<p>Generally, you should be able to use <code>--exclude-standard</code> when you
+<p>Generally, you should be able to use <span class='synopsis'><code>--exclude-standard</code></span> when you
 want the exclude rules applied the same way as what Porcelain
-commands do.  To emulate what <code>--exclude-standard</code> specifies, you
-can give <code>--exclude-per-directory=.gitignore</code>, and then specify:</p>
+commands do.  To emulate what <span class='synopsis'><code>--exclude-standard</code></span> specifies, you
+can give <span class='synopsis'><code>--exclude-per-directory=.gitignore</code></span>, and then specify:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The file specified by the <code>core.excludesfile</code> configuration
-variable, if exists, or the <code>$XDG_CONFIG_HOME/git/ignore</code> file.</p>
+<p>The file specified by the <span class='synopsis'><code>core.excludesfile</code></span> configuration
+variable, if exists, or the <span class='synopsis'><code>$XDG_CONFIG_HOME/git/ignore</code></span> file.</p>
 </li>
 <li>
-<p>The <code>$GIT_DIR/info/exclude</code> file.</p>
+<p>The <span class='synopsis'><code>$GIT_DIR/info/exclude</code></span> file.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>via the <code>--exclude-from=</code> option.</p>
+<p>via the <span class='synopsis'><code>--exclude-from=</code></span> option.</p>
 </div>
 </div>
 </div>
@@ -2595,7 +2595,7 @@ variable, if exists, or the <code>$XDG_CONFIG_HOME/git/ignore</code> file.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

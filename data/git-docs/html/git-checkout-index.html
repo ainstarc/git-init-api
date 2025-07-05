@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1457,7 +1457,7 @@ the index file.</p>
 <dt class="hdlist1" id="Documentation/git-checkout-index.txt---all"><a class="anchor" href="#Documentation/git-checkout-index.txt---all"></a>--all </dt>
 <dd>
 <p>checks out all files in the index except for those with the
-skip-worktree bit set (see <code>--ignore-skip-worktree-bits</code>).
+skip-worktree bit set (see <span class='synopsis'><code>--ignore-skip-worktree-bits</code></span>).
 Cannot be used together with explicit filenames.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-checkout-index.txt--n"><a class="anchor" href="#Documentation/git-checkout-index.txt--n"></a>-n </dt>
@@ -1496,7 +1496,7 @@ separated by LF (i.e. one path per line) by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-checkout-index.txt--z"><a class="anchor" href="#Documentation/git-checkout-index.txt--z"></a>-z </dt>
 <dd>
-<p>Only meaningful with <code>--stdin</code>; paths are separated with
+<p>Only meaningful with <span class='synopsis'><code>--stdin</code></span>; paths are separated with
 NUL character instead of LF.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-checkout-index.txt---"><a class="anchor" href="#Documentation/git-checkout-index.txt---"></a>-- </dt>
@@ -1509,9 +1509,9 @@ NUL character instead of LF.</p>
 <p>The order of the flags used to matter, but not anymore.</p>
 </div>
 <div class="paragraph">
-<p>Just doing <code>git checkout-index</code> does nothing. You probably meant
-<code>git checkout-index -a</code>. And if you want to force it, you want
-<code>git checkout-index -f -a</code>.</p>
+<p>Just doing <span class='synopsis'><code>git</code> <code>checkout-index</code></span> does nothing. You probably meant
+<span class='synopsis'><code>git</code> <code>checkout-index</code> <code>-a</code></span>. And if you want to force it, you want
+<span class='synopsis'><code>git</code> <code>checkout-index</code> <code>-f</code> <code>-a</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>Intuitiveness is not the goal here. Repeatability is. The reason for
@@ -1524,7 +1524,7 @@ supposed to be able to do:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>which will force all existing <code>*.h</code> files to be replaced with their
+<p>which will force all existing <span class='synopsis'><code>*.h</code></span> files to be replaced with their
 cached copies. If an empty command line implied "all", then this would
 force-refresh everything in the index, which was not the point.  But
 since <em>git checkout-index</em> accepts --stdin it would be faster to use:</p>
@@ -1535,9 +1535,9 @@ since <em>git checkout-index</em> accepts --stdin it would be faster to use:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>--</code> is just a good idea when you know the rest will be filenames;
-it will prevent problems with a filename of, for example,  <code>-a</code>.
-Using <code>--</code> is probably a good policy in scripts.</p>
+<p>The <span class='synopsis'><code>--</code></span> is just a good idea when you know the rest will be filenames;
+it will prevent problems with a filename of, for example,  <span class='synopsis'><code>-a</code></span>.
+Using <span class='synopsis'><code>--</code></span> is probably a good policy in scripts.</p>
 </div>
 </div>
 </div>
@@ -1545,7 +1545,7 @@ Using <code>--</code> is probably a good policy in scripts.</p>
 <h2 id="_using_temp_or_stageall"><a class="anchor" href="#_using_temp_or_stageall"></a>Using --temp or --stage=all</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When <code>--temp</code> is used (or implied by <code>--stage=all</code>)
+<p>When <span class='synopsis'><code>--temp</code></span> is used (or implied by <span class='synopsis'><code>--stage=all</code></span>)
 <em>git checkout-index</em> will create a temporary file for each index
 entry being checked out.  The index will not be updated with stat
 information.  These options can be useful if the caller needs all
@@ -1562,8 +1562,8 @@ has two variations:</p>
 <li>
 <p>tempname TAB path RS</p>
 <div class="paragraph">
-<p>The first format is what gets used when <code>--stage</code> is omitted or
-is not <code>--stage=all</code>. The field tempname is the temporary file
+<p>The first format is what gets used when <span class='synopsis'><code>--stage</code></span> is omitted or
+is not <span class='synopsis'><code>--stage=all</code></span>. The field tempname is the temporary file
 name holding the file content and path is the tracked path name in
 the index.  Only the requested entries are output.</p>
 </div>
@@ -1571,10 +1571,10 @@ the index.  Only the requested entries are output.</p>
 <li>
 <p>stage1temp SP stage2temp SP stage3tmp TAB path RS</p>
 <div class="paragraph">
-<p>The second format is what gets used when <code>--stage=all</code>.  The three
+<p>The second format is what gets used when <span class='synopsis'><code>--stage=all</code></span>.  The three
 stage temporary fields (stage1temp, stage2temp, stage3temp) list the
 name of the temporary file if there is a stage entry in the index
-or <code>.</code> if there is no stage entry.  Paths which only have a stage 0
+or <span class='synopsis'><code>.</code></span> if there is no stage entry.  Paths which only have a stage 0
 entry will always be omitted from the output.</p>
 </div>
 </li>
@@ -1619,7 +1619,7 @@ Just read the desired tree into the index, and do:</p>
 </div>
 </div>
 <div class="paragraph">
-<p><code>git checkout-index</code> will "export" the index into the specified
+<p><span class='synopsis'><code>git</code> <code>checkout-index</code></span> will "export" the index into the specified
 directory.</p>
 </div>
 <div class="paragraph">
@@ -1636,8 +1636,8 @@ following example.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This will check out the currently cached copy of <code>Makefile</code>
-into the file <code>.merged-Makefile</code>.</p>
+<p>This will check out the currently cached copy of <span class='synopsis'><code>Makefile</code></span>
+into the file <span class='synopsis'><code>.merged-Makefile</code></span>.</p>
 </div>
 </dd>
 </dl>
@@ -1680,7 +1680,7 @@ into the file <code>.merged-Makefile</code>.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

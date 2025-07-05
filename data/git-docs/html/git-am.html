@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2194,32 +2194,32 @@ If you supply directories, they will be treated as Maildirs.</p>
 <dt class="hdlist1" id="Documentation/git-am.txt--s"><a class="anchor" href="#Documentation/git-am.txt--s"></a>-s </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---signoff"><a class="anchor" href="#Documentation/git-am.txt---signoff"></a>--signoff </dt>
 <dd>
-<p>Add a <code>Signed-off-by</code> trailer to the commit message, using
+<p>Add a <span class='synopsis'><code>Signed-off-by</code></span> trailer to the commit message, using
 the committer identity of yourself.
 See the signoff option in <a href='/docs/git-commit'>git-commit[1]</a> for more information.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt--k"><a class="anchor" href="#Documentation/git-am.txt--k"></a>-k </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---keep"><a class="anchor" href="#Documentation/git-am.txt---keep"></a>--keep </dt>
 <dd>
-<p>Pass <code>-k</code> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).</p>
+<p>Pass <span class='synopsis'><code>-k</code></span> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---keep-non-patch"><a class="anchor" href="#Documentation/git-am.txt---keep-non-patch"></a>--keep-non-patch </dt>
 <dd>
-<p>Pass <code>-b</code> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).</p>
+<p>Pass <span class='synopsis'><code>-b</code></span> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-keep-cr"><a class="anchor" href="#Documentation/git-am.txt---no-keep-cr"></a>--[no-]keep-cr </dt>
 <dd>
-<p>With <code>--keep-cr</code>, call <em>git mailsplit</em> (see <a href='/docs/git-mailsplit'>git-mailsplit[1]</a>)
+<p>With <span class='synopsis'><code>--keep-cr</code></span>, call <em>git mailsplit</em> (see <a href='/docs/git-mailsplit'>git-mailsplit[1]</a>)
 with the same option, to prevent it from stripping CR at the end of
-lines. <code>am.keepcr</code> configuration variable can be used to specify the
-default behaviour.  <code>--no-keep-cr</code> is useful to override <code>am.keepcr</code>.</p>
+lines. <span class='synopsis'><code>am.keepcr</code></span> configuration variable can be used to specify the
+default behaviour.  <span class='synopsis'><code>--no-keep-cr</code></span> is useful to override <span class='synopsis'><code>am.keepcr</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt--c"><a class="anchor" href="#Documentation/git-am.txt--c"></a>-c </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---scissors"><a class="anchor" href="#Documentation/git-am.txt---scissors"></a>--scissors </dt>
 <dd>
 <p>Remove everything in body before a scissors line (see
 <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>). Can be activated by default using
-the <code>mailinfo.scissors</code> configuration variable.</p>
+the <span class='synopsis'><code>mailinfo.scissors</code></span> configuration variable.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-scissors"><a class="anchor" href="#Documentation/git-am.txt---no-scissors"></a>--no-scissors </dt>
 <dd>
@@ -2236,18 +2236,18 @@ the <code>mailinfo.scissors</code> configuration variable.</p>
 <div class="content">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-am.txt-codedropcode"><a id="Documentation/git-am.txt-drop" class="anchor" href="#Documentation/git-am.txt-drop"></a><code>drop</code> </dt>
+<dt class="hdlist1" id="Documentation/git-am.txt-spanclasssynopsiscodedropcodespan"><a id="Documentation/git-am.txt-drop" class="anchor" href="#Documentation/git-am.txt-drop"></a><span class='synopsis'><code>drop</code></span> </dt>
 <dd>
 <p>The e-mail message will be skipped.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-am.txt-codekeepcode"><a id="Documentation/git-am.txt-keep" class="anchor" href="#Documentation/git-am.txt-keep"></a><code>keep</code> </dt>
+<dt class="hdlist1" id="Documentation/git-am.txt-spanclasssynopsiscodekeepcodespan"><a id="Documentation/git-am.txt-keep" class="anchor" href="#Documentation/git-am.txt-keep"></a><span class='synopsis'><code>keep</code></span> </dt>
 <dd>
 <p>An empty commit will be created, with the contents of the e-mail
 message as its log.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-am.txt-codestopcode"><a id="Documentation/git-am.txt-stop" class="anchor" href="#Documentation/git-am.txt-stop"></a><code>stop</code> </dt>
+<dt class="hdlist1" id="Documentation/git-am.txt-spanclasssynopsiscodestopcodespan"><a id="Documentation/git-am.txt-stop" class="anchor" href="#Documentation/git-am.txt-stop"></a><span class='synopsis'><code>stop</code></span> </dt>
 <dd>
-<p>The command will fail, stopping in the middle of the current <code>am</code>
+<p>The command will fail, stopping in the middle of the current <span class='synopsis'><code>am</code></span>
 session. This is the default behavior.</p>
 </dd>
 </dl>
@@ -2258,15 +2258,15 @@ session. This is the default behavior.</p>
 <dt class="hdlist1" id="Documentation/git-am.txt--m"><a class="anchor" href="#Documentation/git-am.txt--m"></a>-m </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---message-id"><a class="anchor" href="#Documentation/git-am.txt---message-id"></a>--message-id </dt>
 <dd>
-<p>Pass the <code>-m</code> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>),
+<p>Pass the <span class='synopsis'><code>-m</code></span> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>),
 so that the Message-ID header is added to the commit message.
-The <code>am.messageid</code> configuration variable can be used to specify
+The <span class='synopsis'><code>am.messageid</code></span> configuration variable can be used to specify
 the default behaviour.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-message-id"><a class="anchor" href="#Documentation/git-am.txt---no-message-id"></a>--no-message-id </dt>
 <dd>
 <p>Do not add the Message-ID header to the commit message.
-<code>no-message-id</code> is useful to override <code>am.messageid</code>.</p>
+<span class='synopsis'><code>no-message-id</code></span> is useful to override <span class='synopsis'><code>am.messageid</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt--q"><a class="anchor" href="#Documentation/git-am.txt--q"></a>-q </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---quiet"><a class="anchor" href="#Documentation/git-am.txt---quiet"></a>--quiet </dt>
@@ -2276,19 +2276,19 @@ the default behaviour.</p>
 <dt class="hdlist1" id="Documentation/git-am.txt--u"><a class="anchor" href="#Documentation/git-am.txt--u"></a>-u </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---utf8"><a class="anchor" href="#Documentation/git-am.txt---utf8"></a>--utf8 </dt>
 <dd>
-<p>Pass <code>-u</code> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).
+<p>Pass <span class='synopsis'><code>-u</code></span> flag to <em>git mailinfo</em> (see <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).
 The proposed commit log message taken from the e-mail
 is re-coded into UTF-8 encoding (configuration variable
-<code>i18n.commitEncoding</code> can be used to specify the project&#8217;s
+<span class='synopsis'><code>i18n.commitEncoding</code></span> can be used to specify the project&#8217;s
 preferred encoding if it is not UTF-8).</p>
 <div class="paragraph">
 <p>This was optional in prior versions of git, but now it is the
-default.   You can use <code>--no-utf8</code> to override this.</p>
+default.   You can use <span class='synopsis'><code>--no-utf8</code></span> to override this.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-utf8"><a class="anchor" href="#Documentation/git-am.txt---no-utf8"></a>--no-utf8 </dt>
 <dd>
-<p>Pass <code>-n</code> flag to <em>git mailinfo</em> (see
+<p>Pass <span class='synopsis'><code>-n</code></span> flag to <em>git mailinfo</em> (see
 <a href='/docs/git-mailinfo'>git-mailinfo[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt--3"><a class="anchor" href="#Documentation/git-am.txt--3"></a>-3 </dt>
@@ -2298,20 +2298,20 @@ default.   You can use <code>--no-utf8</code> to override this.</p>
 <p>When the patch does not apply cleanly, fall back on
 3-way merge if the patch records the identity of blobs
 it is supposed to apply to and we have those blobs
-available locally. <code>--no-3way</code> can be used to override
+available locally. <span class='synopsis'><code>--no-3way</code></span> can be used to override
 am.threeWay configuration variable. For more information,
 see am.threeWay in <a href='/docs/git-config'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-am.txt-code--rerere-autoupdatecode"><a id="Documentation/git-am.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-am.txt---rerere-autoupdate"></a><code>--rerere-autoupdate</code> </dt>
-<dt class="hdlist1" id="Documentation/git-am.txt-code--no-rerere-autoupdatecode"><a id="Documentation/git-am.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-am.txt---no-rerere-autoupdate"></a><code>--no-rerere-autoupdate</code> </dt>
+<dt class="hdlist1" id="Documentation/git-am.txt-spanclasssynopsiscode--rerere-autoupdatecodespan"><a id="Documentation/git-am.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-am.txt---rerere-autoupdate"></a><span class='synopsis'><code>--rerere-autoupdate</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-am.txt-spanclasssynopsiscode--no-rerere-autoupdatecodespan"><a id="Documentation/git-am.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-am.txt---no-rerere-autoupdate"></a><span class='synopsis'><code>--no-rerere-autoupdate</code></span> </dt>
 <dd>
 <p>After the rerere mechanism reuses a recorded resolution on
 the current conflict to update the files in the working
 tree, allow it to also update the index with the result of
-resolution.  <code>--no-rerere-autoupdate</code> is a good way to
-double-check what <code>rerere</code> did and catch potential
+resolution.  <span class='synopsis'><code>--no-rerere-autoupdate</code></span> is a good way to
+double-check what <span class='synopsis'><code>rerere</code></span> did and catch potential
 mismerges, before committing the result to the index with a
-separate <code>git add</code>.</p>
+separate <span class='synopsis'><code>git</code> <code>add</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---ignore-space-change"><a class="anchor" href="#Documentation/git-am.txt---ignore-space-change"></a>--ignore-space-change </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---ignore-whitespace"><a class="anchor" href="#Documentation/git-am.txt---ignore-whitespace"></a>--ignore-whitespace </dt>
@@ -2327,8 +2327,8 @@ separate <code>git add</code>.</p>
 program that applies
 the patch.</p>
 <div class="paragraph">
-<p>Valid &lt;action&gt; for the <code>--whitespace</code> option are:
-<code>nowarn</code>, <code>warn</code>, <code>fix</code>, <code>error</code>, and <code>error-all</code>.</p>
+<p>Valid &lt;action&gt; for the <span class='synopsis'><code>--whitespace</code></span> option are:
+<span class='synopsis'><code>nowarn</code></span>, <span class='synopsis'><code>warn</code></span>, <span class='synopsis'><code>fix</code></span>, <span class='synopsis'><code>error</code></span>, and <span class='synopsis'><code>error-all</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---patch-format"><a class="anchor" href="#Documentation/git-am.txt---patch-format"></a>--patch-format </dt>
@@ -2348,7 +2348,7 @@ stgit, stgit-series, and hg.</p>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-verify"><a class="anchor" href="#Documentation/git-am.txt---no-verify"></a>--no-verify </dt>
 <dd>
 <p>By default, the pre-applypatch and applypatch-msg hooks are run.
-When any of <code>--no-verify</code> or <code>-n</code> is given, these are bypassed.
+When any of <span class='synopsis'><code>--no-verify</code></span> or <span class='synopsis'><code>-n</code></span> is given, these are bypassed.
 See also <a href='/docs/githooks'>githooks[5]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---committer-date-is-author-date"><a class="anchor" href="#Documentation/git-am.txt---committer-date-is-author-date"></a>--committer-date-is-author-date </dt>
@@ -2376,11 +2376,11 @@ restarting an aborted patch.</p>
 <dt class="hdlist1" id="Documentation/git-am.txt---gpg-signltkeyidgt"><a id="Documentation/git-am.txt---gpg-signkeyid" class="anchor" href="#Documentation/git-am.txt---gpg-signkeyid"></a>--gpg-sign[=&lt;keyid&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt---no-gpg-sign"><a class="anchor" href="#Documentation/git-am.txt---no-gpg-sign"></a>--no-gpg-sign </dt>
 <dd>
-<p>GPG-sign commits. The <code>keyid</code> argument is optional and
+<p>GPG-sign commits. The <span class='synopsis'><code>keyid</code></span> argument is optional and
 defaults to the committer identity; if specified, it must be
-stuck to the option without a space. <code>--no-gpg-sign</code> is useful to
-countermand both <code>commit.gpgSign</code> configuration variable, and
-earlier <code>--gpg-sign</code>.</p>
+stuck to the option without a space. <span class='synopsis'><code>--no-gpg-sign</code></span> is useful to
+countermand both <span class='synopsis'><code>commit.gpgSign</code></span> configuration variable, and
+earlier <span class='synopsis'><code>--gpg-sign</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---continue"><a class="anchor" href="#Documentation/git-am.txt---continue"></a>--continue </dt>
 <dt class="hdlist1" id="Documentation/git-am.txt--r"><a class="anchor" href="#Documentation/git-am.txt--r"></a>-r </dt>
@@ -2397,8 +2397,8 @@ file, and continue.</p>
 <dd>
 <p>When a patch failure occurs, &lt;msg&gt; will be printed
 to the screen before exiting.  This overrides the
-standard message informing you to use <code>--continue</code>
-or <code>--skip</code> to handle the failure.  This is solely
+standard message informing you to use <span class='synopsis'><code>--continue</code></span>
+or <span class='synopsis'><code>--skip</code></span> to handle the failure.  This is solely
 for internal use between <em>git rebase</em> and <em>git am</em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---abort"><a class="anchor" href="#Documentation/git-am.txt---abort"></a>--abort </dt>
@@ -2416,15 +2416,15 @@ untouched.</p>
 <dd>
 <p>Try to apply the last conflicting patch again. This is generally
 only useful for passing extra options to the retry attempt
-(e.g., <code>--3way</code>), since otherwise you&#8217;ll just see the same
+(e.g., <span class='synopsis'><code>--3way</code></span>), since otherwise you&#8217;ll just see the same
 failure again.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---show-current-patchdiffraw"><a class="anchor" href="#Documentation/git-am.txt---show-current-patchdiffraw"></a>--show-current-patch[=(diff|raw)] </dt>
 <dd>
-<p>Show the message at which <code>git am</code> has stopped due to
-conflicts.  If <code>raw</code> is specified, show the raw contents of
-the e-mail message; if <code>diff</code>, show the diff portion only.
-Defaults to <code>raw</code>.</p>
+<p>Show the message at which <span class='synopsis'><code>git</code> <code>am</code></span> has stopped due to
+conflicts.  If <span class='synopsis'><code>raw</code></span> is specified, show the raw contents of
+the e-mail message; if <span class='synopsis'><code>diff</code></span>, show the diff portion only.
+Defaults to <span class='synopsis'><code>raw</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt---allow-empty"><a class="anchor" href="#Documentation/git-am.txt---allow-empty"></a>--allow-empty </dt>
 <dd>
@@ -2479,27 +2479,27 @@ message.  Any line that is of the form:</p>
 is terminated before the first occurrence of such a line.</p>
 </div>
 <div class="paragraph">
-<p>When initially invoking <code>git am</code>, you give it the names of the mailboxes
+<p>When initially invoking <span class='synopsis'><code>git</code> <code>am</code></span>, you give it the names of the mailboxes
 to process.  Upon seeing the first patch that does not apply, it
 aborts in the middle.  You can recover from this in one of two ways:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>skip the current patch by re-running the command with the <code>--skip</code>
+<p>skip the current patch by re-running the command with the <span class='synopsis'><code>--skip</code></span>
 option.</p>
 </li>
 <li>
 <p>hand resolve the conflict in the working directory, and update
 the index file to bring it into a state that the patch should
-have produced.  Then run the command with the <code>--continue</code> option.</p>
+have produced.  Then run the command with the <span class='synopsis'><code>--continue</code></span> option.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>The command refuses to process new mailboxes until the current
 operation is finished, so if you decide to start over from scratch,
-run <code>git am --abort</code> before running the command with mailbox
+run <span class='synopsis'><code>git</code> <code>am</code> <code>--abort</code></span> before running the command with mailbox
 names.</p>
 </div>
 <div class="paragraph">
@@ -2515,8 +2515,8 @@ errors in the "From:" lines).</p>
 <h2 id="_hooks"><a class="anchor" href="#_hooks"></a>HOOKS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This command can run <code>applypatch-msg</code>, <code>pre-applypatch</code>,
-and <code>post-applypatch</code> hooks.  See <a href='/docs/githooks'>githooks[5]</a> for more
+<p>This command can run <span class='synopsis'><code>applypatch-msg</code></span>, <span class='synopsis'><code>pre-applypatch</code></span>,
+and <span class='synopsis'><code>post-applypatch</code></span> hooks.  See <a href='/docs/githooks'>githooks[5]</a> for more
 information.</p>
 </div>
 </div>
@@ -2534,18 +2534,18 @@ as what&#8217;s found there:</p>
 <dt class="hdlist1" id="Documentation/git-am.txt-amkeepcr"><a class="anchor" href="#Documentation/git-am.txt-amkeepcr"></a>am.keepcr </dt>
 <dd>
 <p>If true, git-am will call git-mailsplit for patches in mbox format
-with parameter <code>--keep-cr</code>. In this case git-mailsplit will
-not remove <code>\r</code> from lines ending with <code>\r\n</code>. Can be overridden
-by giving <code>--no-keep-cr</code> from the command line.
+with parameter <span class='synopsis'><code>--keep-cr</code></span>. In this case git-mailsplit will
+not remove <span class='synopsis'><em>\r</em></span> from lines ending with <span class='synopsis'><em>\r\n</em></span>. Can be overridden
+by giving <span class='synopsis'><code>--no-keep-cr</code></span> from the command line.
 See <a href='/docs/git-am'>git-am[1]</a>, <a href='/docs/git-mailsplit'>git-mailsplit[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-am.txt-amthreeWay"><a class="anchor" href="#Documentation/git-am.txt-amthreeWay"></a>am.threeWay </dt>
 <dd>
-<p>By default, <code>git am</code> will fail if the patch does not apply cleanly. When
-set to true, this setting tells <code>git am</code> to fall back on 3-way merge if
+<p>By default, <span class='synopsis'><code>git</code> <code>am</code></span> will fail if the patch does not apply cleanly. When
+set to true, this setting tells <span class='synopsis'><code>git</code> <code>am</code></span> to fall back on 3-way merge if
 the patch records the identity of blobs it is supposed to apply to and
-we have those blobs available locally (equivalent to giving the <code>--3way</code>
-option from the command line). Defaults to <code>false</code>.
+we have those blobs available locally (equivalent to giving the <span class='synopsis'><code>--3way</code></span>
+option from the command line). Defaults to <span class='synopsis'><code>false</code></span>.
 See <a href='/docs/git-am'>git-am[1]</a>.</p>
 </dd>
 </dl>
@@ -2597,7 +2597,7 @@ See <a href='/docs/git-am'>git-am[1]</a>.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

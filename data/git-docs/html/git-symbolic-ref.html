@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1448,8 +1448,8 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given one argument, reads which branch head the given symbolic
-ref refers to and outputs its path, relative to the <code>.git/</code>
-directory.  Typically you would give <code>HEAD</code> as the &lt;name&gt;
+ref refers to and outputs its path, relative to the <span class='synopsis'><code>.git/</code></span>
+directory.  Typically you would give <span class='synopsis'><code>HEAD</code></span> as the &lt;name&gt;
 argument to see which branch your working tree is on.</p>
 </div>
 <div class="paragraph">
@@ -1457,13 +1457,13 @@ argument to see which branch your working tree is on.</p>
 point at the given branch &lt;ref&gt;.</p>
 </div>
 <div class="paragraph">
-<p>Given <code>--delete</code> and an additional argument, deletes the given
+<p>Given <span class='synopsis'><code>--delete</code></span> and an additional argument, deletes the given
 symbolic ref.</p>
 </div>
 <div class="paragraph">
 <p>A symbolic ref is a regular file that stores a string that
-begins with <code>ref: refs/</code>.  For example, your <code>.git/HEAD</code> is
-a regular file whose content is <code>ref: refs/heads/master</code>.</p>
+begins with <span class='synopsis'><code>ref:</code> <code>refs/</code></span>.  For example, your <span class='synopsis'><code>.git/HEAD</code></span> is
+a regular file whose content is <span class='synopsis'><code>ref:</code> <code>refs/heads/master</code></span>.</p>
 </div>
 </div>
 </div>
@@ -1487,7 +1487,7 @@ non-zero status silently.</p>
 <dt class="hdlist1" id="Documentation/git-symbolic-ref.txt---short"><a class="anchor" href="#Documentation/git-symbolic-ref.txt---short"></a>--short </dt>
 <dd>
 <p>When showing the value of &lt;name&gt; as a symbolic ref, try to shorten the
-value, e.g. from <code>refs/heads/master</code> to <code>master</code>.</p>
+value, e.g. from <span class='synopsis'><code>refs/heads/master</code></span> to <span class='synopsis'><code>master</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-symbolic-ref.txt---recurse"><a class="anchor" href="#Documentation/git-symbolic-ref.txt---recurse"></a>--recurse </dt>
 <dt class="hdlist1" id="Documentation/git-symbolic-ref.txt---no-recurse"><a class="anchor" href="#Documentation/git-symbolic-ref.txt---no-recurse"></a>--no-recurse </dt>
@@ -1495,8 +1495,8 @@ value, e.g. from <code>refs/heads/master</code> to <code>master</code>.</p>
 <p>When showing the value of &lt;name&gt; as a symbolic ref, if
 &lt;name&gt; refers to another symbolic ref, follow such a chain
 of symbolic refs until the result no longer points at a
-symbolic ref (<code>--recurse</code>, which is the default).
-<code>--no-recurse</code> stops after dereferencing only a single level
+symbolic ref (<span class='synopsis'><code>--recurse</code></span>, which is the default).
+<span class='synopsis'><code>--no-recurse</code></span> stops after dereferencing only a single level
 of symbolic ref.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-symbolic-ref.txt--m"><a class="anchor" href="#Documentation/git-symbolic-ref.txt--m"></a>-m </dt>
@@ -1512,10 +1512,10 @@ when creating or updating a symbolic ref.</p>
 <h2 id="_notes"><a class="anchor" href="#_notes"></a>NOTES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the past, <code>.git/HEAD</code> was a symbolic link pointing at
-<code>refs/heads/master</code>.  When we wanted to switch to another branch,
-we did <code>ln -sf refs/heads/newbranch .git/HEAD</code>, and when we wanted
-to find out which branch we are on, we did <code>readlink .git/HEAD</code>.
+<p>In the past, <span class='synopsis'><code>.git/HEAD</code></span> was a symbolic link pointing at
+<span class='synopsis'><code>refs/heads/master</code></span>.  When we wanted to switch to another branch,
+we did <span class='synopsis'><code>ln</code> <code>-sf</code> <code>refs/heads/newbranch</code> <code>.git/HEAD</code></span>, and when we wanted
+to find out which branch we are on, we did <span class='synopsis'><code>readlink</code> <code>.git/HEAD</code></span>.
 But symbolic links are not entirely portable, so they are now
 deprecated and symbolic refs (as described above) are used by
 default.</p>
@@ -1571,7 +1571,7 @@ name is not a symbolic ref, or 128 if another error occurs.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

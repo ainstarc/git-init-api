@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1828,8 +1828,8 @@ but does not actually <strong>update</strong> any of the files it "caches". (see
 </div>
 <div class="paragraph">
 <p>Optionally, it can merge a tree into the index, perform a
-fast-forward (i.e. 2-way) merge, or a 3-way merge, with the <code>-m</code>
-flag.  When used with <code>-m</code>, the <code>-u</code> flag causes it to also update
+fast-forward (i.e. 2-way) merge, or a 3-way merge, with the <span class='synopsis'><code>-m</code></span>
+flag.  When used with <span class='synopsis'><code>-m</code></span>, the <span class='synopsis'><code>-u</code></span> flag causes it to also update
 the files in the work tree with the result of the merge.</p>
 </div>
 <div class="paragraph">
@@ -1853,7 +1853,7 @@ started.</p>
 <dt class="hdlist1" id="Documentation/git-read-tree.txt---reset"><a class="anchor" href="#Documentation/git-read-tree.txt---reset"></a>--reset </dt>
 <dd>
 <p>Same as -m, except that unmerged entries are discarded instead
-of failing.  When used with <code>-u</code>, updates leading to loss of
+of failing.  When used with <span class='synopsis'><code>-u</code></span>, updates leading to loss of
 working tree changes or untracked files or directories will not
 abort the operation.</p>
 </dd>
@@ -1915,13 +1915,13 @@ is to add that path.</p>
 <dt class="hdlist1" id="Documentation/git-read-tree.txt---prefixltprefixgt"><a id="Documentation/git-read-tree.txt---prefixprefix" class="anchor" href="#Documentation/git-read-tree.txt---prefixprefix"></a>--prefix=&lt;prefix&gt; </dt>
 <dd>
 <p>Keep the current index contents, and read the contents
-of the named tree-ish under the directory at <code>&lt;prefix&gt;</code>.
+of the named tree-ish under the directory at <span class='synopsis'><em>&lt;prefix&gt;</em></span>.
 The command will refuse to overwrite entries that already
 existed in the original index file.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-read-tree.txt---index-outputltfilegt"><a id="Documentation/git-read-tree.txt---index-outputfile" class="anchor" href="#Documentation/git-read-tree.txt---index-outputfile"></a>--index-output=&lt;file&gt; </dt>
 <dd>
-<p>Instead of writing the results out to <code>$GIT_INDEX_FILE</code>,
+<p>Instead of writing the results out to <span class='synopsis'><code>$GIT_INDEX_FILE</code></span>,
 write the resulting index in the named file.  While the
 command is operating, the original index file is locked
 with the same mechanism as usual.  The file must allow
@@ -1941,7 +1941,7 @@ detached at that commit.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-read-tree.txt---no-sparse-checkout"><a class="anchor" href="#Documentation/git-read-tree.txt---no-sparse-checkout"></a>--no-sparse-checkout </dt>
 <dd>
-<p>Disable sparse checkout support even if <code>core.sparseCheckout</code>
+<p>Disable sparse checkout support even if <span class='synopsis'><code>core.sparseCheckout</code></span>
 is true.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-read-tree.txt---empty"><a class="anchor" href="#Documentation/git-read-tree.txt---empty"></a>--empty </dt>
@@ -1966,7 +1966,7 @@ it.</p>
 <h2 id="_merging"><a class="anchor" href="#_merging"></a>MERGING</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If <code>-m</code> is specified, <em>git read-tree</em> can perform 3 kinds of
+<p>If <span class='synopsis'><code>-m</code></span> is specified, <em>git read-tree</em> can perform 3 kinds of
 merge, a single tree merge if only 1 tree is given, a
 fast-forward merge with 2 trees, or a 3-way merge if 3 or more trees are
 provided.</p>
@@ -1975,14 +1975,14 @@ provided.</p>
 <h3 id="_single_tree_merge"><a class="anchor" href="#_single_tree_merge"></a>Single Tree Merge</h3>
 <div class="paragraph">
 <p>If only 1 tree is specified, <em>git read-tree</em> operates as if the user did not
-specify <code>-m</code>, except that if the original index has an entry for a
+specify <span class='synopsis'><code>-m</code></span>, except that if the original index has an entry for a
 given pathname, and the contents of the path match with the tree
 being read, the stat info from the index is used. (In other words, the
 index&#8217;s stat()s take precedence over the merged tree&#8217;s).</p>
 </div>
 <div class="paragraph">
-<p>That means that if you do a <code>git read-tree -m &lt;newtree&gt;</code> followed by a
-<code>git checkout-index -f -u -a</code>, the <em>git checkout-index</em> only checks out
+<p>That means that if you do a <span class='synopsis'><code>git</code> <code>read-tree</code> <code>-m</code> <em>&lt;newtree&gt;</em></span> followed by a
+<span class='synopsis'><code>git</code> <code>checkout-index</code> <code>-f</code> <code>-u</code> <code>-a</code></span>, the <em>git checkout-index</em> only checks out
 the stuff that really changed.</p>
 </div>
 <div class="paragraph">
@@ -1993,7 +1993,7 @@ run after <em>git read-tree</em>.</p>
 <div class="sect2">
 <h3 id="_two_tree_merge"><a class="anchor" href="#_two_tree_merge"></a>Two Tree Merge</h3>
 <div class="paragraph">
-<p>Typically, this is invoked as <code>git read-tree -m $H $M</code>, where $H
+<p>Typically, this is invoked as <span class='synopsis'><code>git</code> <code>read-tree</code> <code>-m</code> <code>$H</code> <code>$M</code></span>, where $H
 is the head commit of the current repository, and $M is the head
 of a foreign tree, which is simply ahead of $H (i.e. we are in a
 fast-forward situation).</p>
@@ -2014,7 +2014,7 @@ the user may have local changes in them since $H.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>In this case, the <code>git read-tree -m $H $M</code> command makes sure
+<p>In this case, the <span class='synopsis'><code>git</code> <code>read-tree</code> <code>-m</code> <code>$H</code> <code>$M</code></span> command makes sure
 that no local change is lost as the result of this "merge".
 Here are the "carry forward" rules, where "I" denotes the index,
 "clean" means that index and work tree coincide, and "exists"/"nothing"
@@ -2071,13 +2071,14 @@ operating under the -u flag.</p>
 <div class="paragraph">
 <p>When this form of <em>git read-tree</em> returns successfully, you can
 see which of the "local changes" that you made were carried forward by running
-<code>git diff-index --cached $M</code>.  Note that this does not
-necessarily match what <code>git diff-index --cached $H</code> would have
+<span class='synopsis'><code>git</code> <code>diff-index</code> <code>--cached</code> <code>$M</code></span>.  Note that this does not
+necessarily match what <span class='synopsis'><code>git</code> <code>diff-index</code> <code>--cached</code> <code>$H</code></span> would have
 produced before such a two tree merge.  This is because of cases
 18 and 19&#8201;&#8212;&#8201;if you already had the changes in $M (e.g. maybe
-you picked it up via e-mail in a patch form), <code>git diff-index
---cached $H</code> would have told you about the change before this
-merge, but it would not show in <code>git diff-index --cached $M</code>
+you picked it up via e-mail in a patch form), <span class='synopsis'><code>git</code> <code>diff-index</code>
+
+<code>--cached</code> <code>$H</code></span> would have told you about the change before this
+merge, but it would not show in <span class='synopsis'><code>git</code> <code>diff-index</code> <code>--cached</code> <code>$M</code></span>
 output after the two-tree merge.</p>
 </div>
 <div class="paragraph">
@@ -2277,12 +2278,12 @@ have finished your work-in-progress), attempt the merge again.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Note: The skip-worktree capabilities in <a href='/docs/git-update-index'>git-update-index[1]</a>
-and <code>read-tree</code> predated the introduction of
+and <span class='synopsis'><code>read-tree</code></span> predated the introduction of
 <a href='/docs/git-sparse-checkout'>git-sparse-checkout[1]</a>.  Users are encouraged to use the
-<code>sparse-checkout</code> command in preference to these plumbing commands for
+<span class='synopsis'><code>sparse-checkout</code></span> command in preference to these plumbing commands for
 sparse-checkout/skip-worktree related needs.  However, the information
 below might be useful to users trying to understand the pattern style
-used in non-cone mode of the <code>sparse-checkout</code> command.</p>
+used in non-cone mode of the <span class='synopsis'><code>sparse-checkout</code></span> command.</p>
 </div>
 <div class="paragraph">
 <p>"Sparse checkout" allows populating the working directory sparsely.
@@ -2292,7 +2293,7 @@ tell Git whether a file in the working directory is worth looking at.</p>
 <div class="paragraph">
 <p><em>git read-tree</em> and other merge-based commands (<em>git merge</em>, <em>git
 checkout</em>&#8230;&#8203;) can help maintaining the skip-worktree bitmap and working
-directory update. <code>$GIT_DIR/info/sparse-checkout</code> is used to
+directory update. <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> is used to
 define the skip-worktree reference bitmap. When <em>git read-tree</em> needs
 to update the working directory, it resets the skip-worktree bit in the index
 based on this file, which uses the same syntax as .gitignore files.
@@ -2306,9 +2307,9 @@ skip-worktree turns from set to unset, it will add the corresponding
 file back. If it turns from unset to set, that file will be removed.</p>
 </div>
 <div class="paragraph">
-<p>While <code>$GIT_DIR/info/sparse-checkout</code> is usually used to specify what
+<p>While <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> is usually used to specify what
 files are in, you can also specify what files are <em>not</em> in, using
-negate patterns. For example, to remove the file <code>unwanted</code>:</p>
+negate patterns. For example, to remove the file <span class='synopsis'><code>unwanted</code></span>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2321,7 +2322,7 @@ negate patterns. For example, to remove the file <code>unwanted</code>:</p>
 no longer want sparse checkout. You cannot just disable "sparse
 checkout" because skip-worktree bits are still in the index and your working
 directory is still sparsely populated. You should re-populate the working
-directory with the <code>$GIT_DIR/info/sparse-checkout</code> file content as
+directory with the <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> file content as
 follows:</p>
 </div>
 <div class="listingblock">
@@ -2332,7 +2333,7 @@ follows:</p>
 <div class="paragraph">
 <p>Then you can disable sparse checkout. Sparse checkout support in <em>git
 read-tree</em> and similar commands is disabled by default. You need to
-turn <code>core.sparseCheckout</code> on in order to have sparse checkout
+turn <span class='synopsis'><code>core.sparseCheckout</code></span> on in order to have sparse checkout
 support.</p>
 </div>
 </div>
@@ -2382,7 +2383,7 @@ support.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

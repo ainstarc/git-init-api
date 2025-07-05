@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -3015,29 +3015,29 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If <code>&lt;branch&gt;</code> is specified, <code>git rebase</code> will perform an automatic
-<code>git switch &lt;branch&gt;</code> before doing anything else.  Otherwise
+<p>If <span class='synopsis'><em>&lt;branch&gt;</em></span> is specified, <span class='synopsis'><code>git</code> <code>rebase</code></span> will perform an automatic
+<span class='synopsis'><code>git</code> <code>switch</code> <em>&lt;branch&gt;</em></span> before doing anything else.  Otherwise
 it remains on the current branch.</p>
 </div>
 <div class="paragraph">
-<p>If <code>&lt;upstream&gt;</code> is not specified, the upstream configured in
-<code>branch.&lt;name&gt;.remote</code> and <code>branch.&lt;name&gt;.merge</code> options will be used (see
-<a href='/docs/git-config'>git-config[1]</a> for details) and the <code>--fork-point</code> option is
+<p>If <span class='synopsis'><em>&lt;upstream&gt;</em></span> is not specified, the upstream configured in
+<span class='synopsis'><code>branch.</code><em>&lt;name&gt;</em><code>.remote</code></span> and <span class='synopsis'><code>branch.</code><em>&lt;name&gt;</em><code>.merge</code></span> options will be used (see
+<a href='/docs/git-config'>git-config[1]</a> for details) and the <span class='synopsis'><code>--fork-point</code></span> option is
 assumed.  If you are currently not on any branch or if the current
 branch does not have a configured upstream, the rebase will abort.</p>
 </div>
 <div class="paragraph">
 <p>All changes made by commits in the current branch but that are not
-in <code>&lt;upstream&gt;</code> are saved to a temporary area.  This is the same set
-of commits that would be shown by <code>git log &lt;upstream&gt;..HEAD</code>; or by
-<code>git log 'fork_point'..HEAD</code>, if <code>--fork-point</code> is active (see the
-description on <code>--fork-point</code> below); or by <code>git log HEAD</code>, if the
-<code>--root</code> option is specified.</p>
+in <span class='synopsis'><em>&lt;upstream&gt;</em></span> are saved to a temporary area.  This is the same set
+of commits that would be shown by <span class='synopsis'><code>git</code> <code>log</code> <em>&lt;upstream&gt;</em><code>..HEAD</code></span>; or by
+<span class='synopsis'><code>git</code> <code>log</code> <code>fork_point'..HEAD</code></span>, if <span class='synopsis'><code>--fork-point</code></span> is active (see the
+description on <span class='synopsis'><code>--fork-point</code></span> below); or by <span class='synopsis'><code>git</code> <code>log</code> <code>HEAD</code></span>, if the
+<span class='synopsis'><code>--root</code></span> option is specified.</p>
 </div>
 <div class="paragraph">
-<p>The current branch is reset to <code>&lt;upstream&gt;</code> or <code>&lt;newbase&gt;</code> if the
-<code>--onto</code> option was supplied.  This has the exact same effect as
-<code>git reset --hard &lt;upstream&gt;</code> (or <code>&lt;newbase&gt;</code>). <code>ORIG_HEAD</code> is set
+<p>The current branch is reset to <span class='synopsis'><em>&lt;upstream&gt;</em></span> or <span class='synopsis'><em>&lt;newbase&gt;</em></span> if the
+<span class='synopsis'><code>--onto</code></span> option was supplied.  This has the exact same effect as
+<span class='synopsis'><code>git</code> <code>reset</code> <code>--hard</code> <em>&lt;upstream&gt;</em></span> (or <span class='synopsis'><em>&lt;newbase&gt;</em></span>). <span class='synopsis'><code>ORIG_HEAD</code></span> is set
 to point at the tip of the branch before the reset.</p>
 </div>
 <div class="admonitionblock note">
@@ -3047,11 +3047,11 @@ to point at the tip of the branch before the reset.</p>
 <div class="title">Note</div>
 </td>
 <td class="content">
-<code>ORIG_HEAD</code> is not guaranteed to still point to the previous branch tip
+<span class='synopsis'><code>ORIG_HEAD</code></span> is not guaranteed to still point to the previous branch tip
 at the end of the rebase if other commands that write that pseudo-ref
-(e.g. <code>git reset</code>) are used during the rebase. The previous branch tip,
+(e.g. <span class='synopsis'><code>git</code> <code>reset</code></span>) are used during the rebase. The previous branch tip,
 however, is accessible using the reflog of the current branch
-(i.e. <code>@{1}</code>, see <a href='/docs/gitrevisions'>gitrevisions[7]</a>).
+(i.e. <span class='synopsis'><code>@{1}</code></span>, see <a href='/docs/gitrevisions'>gitrevisions[7]</a>).
 </td>
 </tr>
 </table>
@@ -3059,17 +3059,17 @@ however, is accessible using the reflog of the current branch
 <div class="paragraph">
 <p>The commits that were previously saved into the temporary area are
 then reapplied to the current branch, one by one, in order. Note that
-any commits in <code>HEAD</code> which introduce the same textual changes as a commit
-in <code>HEAD..&lt;upstream&gt;</code> are omitted (i.e., a patch already accepted upstream
+any commits in <span class='synopsis'><code>HEAD</code></span> which introduce the same textual changes as a commit
+in <span class='synopsis'><code>HEAD..</code><em>&lt;upstream&gt;</em></span> are omitted (i.e., a patch already accepted upstream
 with a different commit message or timestamp will be skipped).</p>
 </div>
 <div class="paragraph">
 <p>It is possible that a merge failure will prevent this process from being
 completely automatic.  You will have to resolve any such merge failure
-and run <code>git rebase --continue</code>.  Another option is to bypass the commit
-that caused the merge failure with <code>git rebase --skip</code>.  To check out the
-original <code>&lt;branch&gt;</code> and remove the <code>.git/rebase-apply</code> working files, use
-the command <code>git rebase --abort</code> instead.</p>
+and run <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.  Another option is to bypass the commit
+that caused the merge failure with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--skip</code></span>.  To check out the
+original <span class='synopsis'><em>&lt;branch&gt;</em></span> and remove the <span class='synopsis'><code>.git/rebase-apply</code></span> working files, use
+the command <span class='synopsis'><code>git</code> <code>rebase</code> <code>--abort</code></span> instead.</p>
 </div>
 <div class="paragraph">
 <p>Assume the following history exists and the current branch is "topic":</p>
@@ -3101,16 +3101,16 @@ git rebase master topic</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>NOTE:</strong> The latter form is just a short-hand of <code>git checkout topic</code>
-followed by <code>git rebase master</code>. When rebase exits <code>topic</code> will
+<p><strong>NOTE:</strong> The latter form is just a short-hand of <span class='synopsis'><code>git</code> <code>checkout</code> <code>topic</code></span>
+followed by <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code></span>. When rebase exits <span class='synopsis'><code>topic</code></span> will
 remain the checked-out branch.</p>
 </div>
 <div class="paragraph">
 <p>If the upstream branch already contains a change you have made (e.g.,
 because you mailed a patch which was applied upstream), then that commit
 will be skipped and warnings will be issued (if the <em>merge</em> backend is
-used).  For example, running <code>git rebase master</code> on the following
-history (in which <code>A'</code> and <code>A</code> introduce the same set of changes, but
+used).  For example, running <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code></span> on the following
+history (in which <span class='synopsis'><code>A'</code></span> and <span class='synopsis'><code>A</code></span> introduce the same set of changes, but
 have different committer information):</p>
 </div>
 <div class="listingblock">
@@ -3133,7 +3133,7 @@ have different committer information):</p>
 <div class="paragraph">
 <p>Here is how you would transplant a topic branch based on one
 branch to another, to pretend that you forked the topic branch
-from the latter branch, using <code>rebase --onto</code>.</p>
+from the latter branch, using <span class='synopsis'><code>rebase</code> <code>--onto</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>First let&#8217;s assume your <em>topic</em> is based on branch <em>next</em>.
@@ -3234,12 +3234,12 @@ the following situation:</p>
 </div>
 <div class="paragraph">
 <p>This is useful if F and G were flawed in some way, or should not be
-part of topicA.  Note that the argument to <code>--onto</code> and the <code>&lt;upstream&gt;</code>
+part of topicA.  Note that the argument to <span class='synopsis'><code>--onto</code></span> and the <span class='synopsis'><em>&lt;upstream&gt;</em></span>
 parameter can be any valid commit-ish.</p>
 </div>
 <div class="paragraph">
-<p>In case of conflict, <code>git rebase</code> will stop at the first problematic commit
-and leave conflict markers in the tree.  You can use <code>git diff</code> to locate
+<p>In case of conflict, <span class='synopsis'><code>git</code> <code>rebase</code></span> will stop at the first problematic commit
+and leave conflict markers in the tree.  You can use <span class='synopsis'><code>git</code> <code>diff</code></span> to locate
 the markers (&lt;&lt;&lt;&lt;&lt;&lt;) and make edits to resolve the conflict.  For each
 file you edit, you need to tell Git that the conflict has been resolved,
 typically this would be done with</p>
@@ -3288,17 +3288,17 @@ including not with each other:</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---abort"><a class="anchor" href="#Documentation/git-rebase.txt---abort"></a>--abort </dt>
 <dd>
 <p>Abort the rebase operation and reset HEAD to the original
-branch. If <code>&lt;branch&gt;</code> was provided when the rebase operation was
-started, then <code>HEAD</code> will be reset to <code>&lt;branch&gt;</code>. Otherwise <code>HEAD</code>
+branch. If <span class='synopsis'><em>&lt;branch&gt;</em></span> was provided when the rebase operation was
+started, then <span class='synopsis'><code>HEAD</code></span> will be reset to <span class='synopsis'><em>&lt;branch&gt;</em></span>. Otherwise <span class='synopsis'><code>HEAD</code></span>
 will be reset to where it was when the rebase operation was
 started.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---quit"><a class="anchor" href="#Documentation/git-rebase.txt---quit"></a>--quit </dt>
 <dd>
-<p>Abort the rebase operation but <code>HEAD</code> is not reset back to the
+<p>Abort the rebase operation but <span class='synopsis'><code>HEAD</code></span> is not reset back to the
 original branch. The index and working tree are also left
 unchanged as a result. If a temporary stash entry was created
-using <code>--autostash</code>, it will be saved to the stash list.</p>
+using <span class='synopsis'><code>--autostash</code></span>, it will be saved to the stash list.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---edit-todo"><a class="anchor" href="#Documentation/git-rebase.txt---edit-todo"></a>--edit-todo </dt>
 <dd>
@@ -3308,7 +3308,7 @@ using <code>--autostash</code>, it will be saved to the stash list.</p>
 <dd>
 <p>Show the current patch in an interactive rebase or when rebase
 is stopped because of conflicts. This is the equivalent of
-<code>git show REBASE_HEAD</code>.</p>
+<span class='synopsis'><code>git</code> <code>show</code> <code>REBASE_HEAD</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -3322,8 +3322,8 @@ is stopped because of conflicts. This is the equivalent of
 <dt class="hdlist1" id="Documentation/git-rebase.txt---ontoltnewbasegt"><a id="Documentation/git-rebase.txt---ontonewbase" class="anchor" href="#Documentation/git-rebase.txt---ontonewbase"></a>--onto &lt;newbase&gt; </dt>
 <dd>
 <p>Starting point at which to create the new commits. If the
-<code>--onto</code> option is not specified, the starting point is
-<code>&lt;upstream&gt;</code>.  May be any valid commit, and not just an
+<span class='synopsis'><code>--onto</code></span> option is not specified, the starting point is
+<span class='synopsis'><em>&lt;upstream&gt;</em></span>.  May be any valid commit, and not just an
 existing branch name.</p>
 <div class="paragraph">
 <p>As a special case, you may use "A...B" as a shortcut for the
@@ -3334,22 +3334,22 @@ leave out at most one of A and B, in which case it defaults to HEAD.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---keep-base"><a class="anchor" href="#Documentation/git-rebase.txt---keep-base"></a>--keep-base </dt>
 <dd>
 <p>Set the starting point at which to create the new commits to the
-merge base of <code>&lt;upstream&gt;</code> and <code>&lt;branch&gt;</code>. Running
-<code>git rebase --keep-base &lt;upstream&gt; &lt;branch&gt;</code> is equivalent to
+merge base of <span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em>&lt;branch&gt;</em></span>. Running
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--keep-base</code> <em>&lt;upstream&gt;</em> <em>&lt;branch&gt;</em></span> is equivalent to
 running
-<code>git rebase --reapply-cherry-picks --no-fork-point --onto &lt;upstream&gt;...&lt;branch&gt; &lt;upstream&gt; &lt;branch&gt;</code>.</p>
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--reapply-cherry-picks</code> <code>--no-fork-point</code> <code>--onto</code> <em>&lt;upstream&gt;</em><code>...</code><em>&lt;branch&gt;</em> <em>&lt;upstream&gt;</em> <em>&lt;branch&gt;</em></span>.</p>
 <div class="paragraph">
 <p>This option is useful in the case where one is developing a feature on
 top of an upstream branch. While the feature is being worked on, the
 upstream branch may advance and it may not be the best idea to keep
 rebasing on top of the upstream but to keep the base commit as-is. As
-the base commit is unchanged this option implies <code>--reapply-cherry-picks</code>
+the base commit is unchanged this option implies <span class='synopsis'><code>--reapply-cherry-picks</code></span>
 to avoid losing commits.</p>
 </div>
 <div class="paragraph">
-<p>Although both this option and <code>--fork-point</code> find the merge base between
-<code>&lt;upstream&gt;</code> and <code>&lt;branch&gt;</code>, this option uses the merge base as the <em>starting
-point</em> on which new commits will be created, whereas <code>--fork-point</code> uses
+<p>Although both this option and <span class='synopsis'><code>--fork-point</code></span> find the merge base between
+<span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em>&lt;branch&gt;</em></span>, this option uses the merge base as the <em>starting
+point</em> on which new commits will be created, whereas <span class='synopsis'><code>--fork-point</code></span> uses
 the merge base to determine the <em>set of commits</em> which will be rebased.</p>
 </div>
 <div class="paragraph">
@@ -3364,11 +3364,11 @@ upstream for the current branch.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-ltbranchgt"><a id="Documentation/git-rebase.txt-branch" class="anchor" href="#Documentation/git-rebase.txt-branch"></a>&lt;branch&gt; </dt>
 <dd>
-<p>Working branch; defaults to <code>HEAD</code>.</p>
+<p>Working branch; defaults to <span class='synopsis'><code>HEAD</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---apply"><a class="anchor" href="#Documentation/git-rebase.txt---apply"></a>--apply </dt>
 <dd>
-<p>Use applying strategies to rebase (calling <code>git-am</code>
+<p>Use applying strategies to rebase (calling <span class='synopsis'><code>git-am</code></span>
 internally).  This option may become a no-op in the future
 once the merge backend handles everything the apply one does.</p>
 <div class="paragraph">
@@ -3385,32 +3385,32 @@ upstream changes):</p>
 <div class="content">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codedropcode"><a id="Documentation/git-rebase.txt-drop" class="anchor" href="#Documentation/git-rebase.txt-drop"></a><code>drop</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodedropcodespan"><a id="Documentation/git-rebase.txt-drop" class="anchor" href="#Documentation/git-rebase.txt-drop"></a><span class='synopsis'><code>drop</code></span> </dt>
 <dd>
 <p>The commit will be dropped. This is the default behavior.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codekeepcode"><a id="Documentation/git-rebase.txt-keep" class="anchor" href="#Documentation/git-rebase.txt-keep"></a><code>keep</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodekeepcodespan"><a id="Documentation/git-rebase.txt-keep" class="anchor" href="#Documentation/git-rebase.txt-keep"></a><span class='synopsis'><code>keep</code></span> </dt>
 <dd>
-<p>The commit will be kept. This option is implied when <code>--exec</code> is
-specified unless <code>-i</code>/<code>--interactive</code> is also specified.</p>
+<p>The commit will be kept. This option is implied when <span class='synopsis'><code>--exec</code></span> is
+specified unless <span class='synopsis'><code>-i</code></span>/<span class='synopsis'><code>--interactive</code></span> is also specified.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codestopcode"><a id="Documentation/git-rebase.txt-stop" class="anchor" href="#Documentation/git-rebase.txt-stop"></a><code>stop</code> </dt>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeaskcode"><a id="Documentation/git-rebase.txt-ask" class="anchor" href="#Documentation/git-rebase.txt-ask"></a><code>ask</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodestopcodespan"><a id="Documentation/git-rebase.txt-stop" class="anchor" href="#Documentation/git-rebase.txt-stop"></a><span class='synopsis'><code>stop</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeaskcodespan"><a id="Documentation/git-rebase.txt-ask" class="anchor" href="#Documentation/git-rebase.txt-ask"></a><span class='synopsis'><code>ask</code></span> </dt>
 <dd>
 <p>The rebase will halt when the commit is applied, allowing you to
 choose whether to drop it, edit files more, or just commit the empty
-changes. This option is implied when <code>-i</code>/<code>--interactive</code> is
-specified. <code>ask</code> is a deprecated synonym of <code>stop</code>.</p>
+changes. This option is implied when <span class='synopsis'><code>-i</code></span>/<span class='synopsis'><code>--interactive</code></span> is
+specified. <span class='synopsis'><code>ask</code></span> is a deprecated synonym of <span class='synopsis'><code>stop</code></span>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Note that commits which start empty are kept (unless <code>--no-keep-empty</code>
+<p>Note that commits which start empty are kept (unless <span class='synopsis'><code>--no-keep-empty</code></span>
 is specified), and commits which are clean cherry-picks (as determined
-by <code>git log --cherry-mark ...</code>) are detected and dropped as a
-preliminary step (unless <code>--reapply-cherry-picks</code> or <code>--keep-base</code> is
+by <span class='synopsis'><code>git</code> <code>log</code> <code>--cherry-mark</code> ...</span>) are detected and dropped as a
+preliminary step (unless <span class='synopsis'><code>--reapply-cherry-picks</code></span> or <span class='synopsis'><code>--keep-base</code></span> is
 passed).</p>
 </div>
 <div class="paragraph">
@@ -3423,8 +3423,8 @@ passed).</p>
 <p>Do not keep commits that start empty before the rebase
 (i.e. that do not change anything from its parent) in the
 result.  The default is to keep commits which start empty,
-since creating such commits requires passing the <code>--allow-empty</code>
-override flag to <code>git commit</code>, signifying that a user is very
+since creating such commits requires passing the <span class='synopsis'><code>--allow-empty</code></span>
+override flag to <span class='synopsis'><code>git</code> <code>commit</code></span>, signifying that a user is very
 intentionally creating such a commit and thus wants to keep
 it.</p>
 <div class="paragraph">
@@ -3436,7 +3436,7 @@ tools generate many empty commits and you want them all removed.</p>
 </div>
 <div class="paragraph">
 <p>For commits which do not start empty but become empty after rebasing,
-see the <code>--empty</code> flag.</p>
+see the <span class='synopsis'><code>--empty</code></span> flag.</p>
 </div>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
@@ -3449,19 +3449,19 @@ see the <code>--empty</code> flag.</p>
 of preemptively dropping them. (If these commits then become
 empty after rebasing, because they contain a subset of already
 upstream changes, the behavior towards them is controlled by
-the <code>--empty</code> flag.)</p>
+the <span class='synopsis'><code>--empty</code></span> flag.)</p>
 <div class="paragraph">
-<p>In the absence of <code>--keep-base</code> (or if <code>--no-reapply-cherry-picks</code> is
+<p>In the absence of <span class='synopsis'><code>--keep-base</code></span> (or if <span class='synopsis'><code>--no-reapply-cherry-picks</code></span> is
 given), these commits will be automatically dropped.  Because this
 necessitates reading all upstream commits, this can be expensive in
 repositories with a large number of upstream commits that need to be
 read. When using the <em>merge</em> backend, warnings will be issued for each
-dropped commit (unless <code>--quiet</code> is given). Advice will also be issued
-unless <code>advice.skippedCherryPicks</code> is set to false (see
+dropped commit (unless <span class='synopsis'><code>--quiet</code></span> is given). Advice will also be issued
+unless <span class='synopsis'><code>advice.skippedCherryPicks</code></span> is set to false (see
 <a href='/docs/git-config'>git-config[1]</a>).</p>
 </div>
 <div class="paragraph">
-<p><code>--reapply-cherry-picks</code> allows rebase to forgo reading all upstream
+<p><span class='synopsis'><code>--reapply-cherry-picks</code></span> allows rebase to forgo reading all upstream
 commits, potentially improving performance.</p>
 </div>
 <div class="paragraph">
@@ -3484,9 +3484,9 @@ message do not cause rebasing to halt.</p>
 <p>Using merging strategies to rebase (default).</p>
 <div class="paragraph">
 <p>Note that a rebase merge works by replaying each commit from the working
-branch on top of the <code>&lt;upstream&gt;</code> branch.  Because of this, when a merge
+branch on top of the <span class='synopsis'><em>&lt;upstream&gt;</em></span> branch.  Because of this, when a merge
 conflict happens, the side reported as <em>ours</em> is the so-far rebased
-series, starting with <code>&lt;upstream&gt;</code>, and <em>theirs</em> is the working branch.
+series, starting with <span class='synopsis'><em>&lt;upstream&gt;</em></span>, and <em>theirs</em> is the working branch.
 In other words, the sides are swapped.</p>
 </div>
 <div class="paragraph">
@@ -3496,12 +3496,12 @@ In other words, the sides are swapped.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt--sltstrategygt"><a id="Documentation/git-rebase.txt--sstrategy" class="anchor" href="#Documentation/git-rebase.txt--sstrategy"></a>-s &lt;strategy&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---strategyltstrategygt"><a id="Documentation/git-rebase.txt---strategystrategy" class="anchor" href="#Documentation/git-rebase.txt---strategystrategy"></a>--strategy=&lt;strategy&gt; </dt>
 <dd>
-<p>Use the given merge strategy, instead of the default <code>ort</code>.
-This implies <code>--merge</code>.</p>
+<p>Use the given merge strategy, instead of the default <span class='synopsis'><code>ort</code></span>.
+This implies <span class='synopsis'><code>--merge</code></span>.</p>
 <div class="paragraph">
-<p>Because <code>git rebase</code> replays each commit from the working branch
-on top of the <code>&lt;upstream&gt;</code> branch using the given strategy, using
-the <code>ours</code> strategy simply empties all patches from the <code>&lt;branch&gt;</code>,
+<p>Because <span class='synopsis'><code>git</code> <code>rebase</code></span> replays each commit from the working branch
+on top of the <span class='synopsis'><em>&lt;upstream&gt;</em></span> branch using the given strategy, using
+the <span class='synopsis'><code>ours</code></span> strategy simply empties all patches from the <span class='synopsis'><em>&lt;branch&gt;</em></span>,
 which makes little sense.</p>
 </div>
 <div class="paragraph">
@@ -3512,43 +3512,43 @@ which makes little sense.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---strategy-optionltstrategy-optiongt"><a id="Documentation/git-rebase.txt---strategy-optionstrategy-option" class="anchor" href="#Documentation/git-rebase.txt---strategy-optionstrategy-option"></a>--strategy-option=&lt;strategy-option&gt; </dt>
 <dd>
 <p>Pass the &lt;strategy-option&gt; through to the merge strategy.
-This implies <code>--merge</code> and, if no strategy has been
-specified, <code>-s ort</code>.  Note the reversal of <em>ours</em> and
-<em>theirs</em> as noted above for the <code>-m</code> option.</p>
+This implies <span class='synopsis'><code>--merge</code></span> and, if no strategy has been
+specified, <span class='synopsis'><code>-s</code> <code>ort</code></span>.  Note the reversal of <em>ours</em> and
+<em>theirs</em> as noted above for the <span class='synopsis'><code>-m</code></span> option.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-code--rerere-autoupdatecode"><a id="Documentation/git-rebase.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-rebase.txt---rerere-autoupdate"></a><code>--rerere-autoupdate</code> </dt>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-code--no-rerere-autoupdatecode"><a id="Documentation/git-rebase.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-rebase.txt---no-rerere-autoupdate"></a><code>--no-rerere-autoupdate</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscode--rerere-autoupdatecodespan"><a id="Documentation/git-rebase.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-rebase.txt---rerere-autoupdate"></a><span class='synopsis'><code>--rerere-autoupdate</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscode--no-rerere-autoupdatecodespan"><a id="Documentation/git-rebase.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-rebase.txt---no-rerere-autoupdate"></a><span class='synopsis'><code>--no-rerere-autoupdate</code></span> </dt>
 <dd>
 <p>After the rerere mechanism reuses a recorded resolution on
 the current conflict to update the files in the working
 tree, allow it to also update the index with the result of
-resolution.  <code>--no-rerere-autoupdate</code> is a good way to
-double-check what <code>rerere</code> did and catch potential
+resolution.  <span class='synopsis'><code>--no-rerere-autoupdate</code></span> is a good way to
+double-check what <span class='synopsis'><code>rerere</code></span> did and catch potential
 mismerges, before committing the result to the index with a
-separate <code>git add</code>.</p>
+separate <span class='synopsis'><code>git</code> <code>add</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt--Sltkeyidgt"><a id="Documentation/git-rebase.txt--Skeyid" class="anchor" href="#Documentation/git-rebase.txt--Skeyid"></a>-S[&lt;keyid&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---gpg-signltkeyidgt"><a id="Documentation/git-rebase.txt---gpg-signkeyid" class="anchor" href="#Documentation/git-rebase.txt---gpg-signkeyid"></a>--gpg-sign[=&lt;keyid&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---no-gpg-sign"><a class="anchor" href="#Documentation/git-rebase.txt---no-gpg-sign"></a>--no-gpg-sign </dt>
 <dd>
-<p>GPG-sign commits. The <code>keyid</code> argument is optional and
+<p>GPG-sign commits. The <span class='synopsis'><code>keyid</code></span> argument is optional and
 defaults to the committer identity; if specified, it must be
-stuck to the option without a space. <code>--no-gpg-sign</code> is useful to
-countermand both <code>commit.gpgSign</code> configuration variable, and
-earlier <code>--gpg-sign</code>.</p>
+stuck to the option without a space. <span class='synopsis'><code>--no-gpg-sign</code></span> is useful to
+countermand both <span class='synopsis'><code>commit.gpgSign</code></span> configuration variable, and
+earlier <span class='synopsis'><code>--gpg-sign</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt--q"><a class="anchor" href="#Documentation/git-rebase.txt--q"></a>-q </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---quiet"><a class="anchor" href="#Documentation/git-rebase.txt---quiet"></a>--quiet </dt>
 <dd>
-<p>Be quiet. Implies <code>--no-stat</code>.</p>
+<p>Be quiet. Implies <span class='synopsis'><code>--no-stat</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt--v"><a class="anchor" href="#Documentation/git-rebase.txt--v"></a>-v </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---verbose"><a class="anchor" href="#Documentation/git-rebase.txt---verbose"></a>--verbose </dt>
 <dd>
-<p>Be verbose. Implies <code>--stat</code>.</p>
+<p>Be verbose. Implies <span class='synopsis'><code>--stat</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---stat"><a class="anchor" href="#Documentation/git-rebase.txt---stat"></a>--stat </dt>
 <dd>
@@ -3567,14 +3567,14 @@ diffstat is also controlled by the configuration option rebase.stat.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---verify"><a class="anchor" href="#Documentation/git-rebase.txt---verify"></a>--verify </dt>
 <dd>
 <p>Allows the pre-rebase hook to run, which is the default.  This option can
-be used to override <code>--no-verify</code>.  See also <a href='/docs/githooks'>githooks[5]</a>.</p>
+be used to override <span class='synopsis'><code>--no-verify</code></span>.  See also <a href='/docs/githooks'>githooks[5]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt--Cltngt"><a id="Documentation/git-rebase.txt--Cn" class="anchor" href="#Documentation/git-rebase.txt--Cn"></a>-C&lt;n&gt; </dt>
 <dd>
-<p>Ensure at least <code>&lt;n&gt;</code> lines of surrounding context match before
+<p>Ensure at least <span class='synopsis'><em>&lt;n&gt;</em></span> lines of surrounding context match before
 and after each change.  When fewer lines of surrounding
 context exist they all must match.  By default no context is
-ever ignored.  Implies <code>--apply</code>.</p>
+ever ignored.  Implies <span class='synopsis'><code>--apply</code></span>.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
 </div>
@@ -3597,25 +3597,26 @@ details).</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---fork-point"><a class="anchor" href="#Documentation/git-rebase.txt---fork-point"></a>--fork-point </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---no-fork-point"><a class="anchor" href="#Documentation/git-rebase.txt---no-fork-point"></a>--no-fork-point </dt>
 <dd>
-<p>Use reflog to find a better common ancestor between <code>&lt;upstream&gt;</code>
-and <code>&lt;branch&gt;</code> when calculating which commits have been
-introduced by <code>&lt;branch&gt;</code>.</p>
+<p>Use reflog to find a better common ancestor between <span class='synopsis'><em>&lt;upstream&gt;</em></span>
+and <span class='synopsis'><em>&lt;branch&gt;</em></span> when calculating which commits have been
+introduced by <span class='synopsis'><em>&lt;branch&gt;</em></span>.</p>
 <div class="paragraph">
-<p>When <code>--fork-point</code> is active, <em>fork_point</em> will be used instead of
-<code>&lt;upstream&gt;</code> to calculate the set of commits to rebase, where
-<em>fork_point</em> is the result of <code>git merge-base --fork-point &lt;upstream&gt;
-&lt;branch&gt;</code> command (see <a href='/docs/git-merge-base'>git-merge-base[1]</a>).  If <em>fork_point</em>
-ends up being empty, the <code>&lt;upstream&gt;</code> will be used as a fallback.</p>
+<p>When <span class='synopsis'><code>--fork-point</code></span> is active, <em>fork_point</em> will be used instead of
+<span class='synopsis'><em>&lt;upstream&gt;</em></span> to calculate the set of commits to rebase, where
+<em>fork_point</em> is the result of <span class='synopsis'><code>git</code> <code>merge-base</code> <code>--fork-point</code> <em>&lt;upstream&gt;</em>
+
+<em>&lt;branch&gt;</em></span> command (see <a href='/docs/git-merge-base'>git-merge-base[1]</a>).  If <em>fork_point</em>
+ends up being empty, the <span class='synopsis'><em>&lt;upstream&gt;</em></span> will be used as a fallback.</p>
 </div>
 <div class="paragraph">
-<p>If <code>&lt;upstream&gt;</code> or <code>--keep-base</code> is given on the command line, then
-the default is <code>--no-fork-point</code>, otherwise the default is
-<code>--fork-point</code>. See also <code>rebase.forkpoint</code> in <a href='/docs/git-config'>git-config[1]</a>.</p>
+<p>If <span class='synopsis'><em>&lt;upstream&gt;</em></span> or <span class='synopsis'><code>--keep-base</code></span> is given on the command line, then
+the default is <span class='synopsis'><code>--no-fork-point</code></span>, otherwise the default is
+<span class='synopsis'><code>--fork-point</code></span>. See also <span class='synopsis'><code>rebase.forkpoint</code></span> in <a href='/docs/git-config'>git-config[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>If your branch was based on <code>&lt;upstream&gt;</code> but <code>&lt;upstream&gt;</code> was rewound and
+<p>If your branch was based on <span class='synopsis'><em>&lt;upstream&gt;</em></span> but <span class='synopsis'><em>&lt;upstream&gt;</em></span> was rewound and
 your branch contains commits which were dropped, this option can be used
-with <code>--keep-base</code> in order to drop those commits from your branch.</p>
+with <span class='synopsis'><code>--keep-base</code></span> in order to drop those commits from your branch.</p>
 </div>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
@@ -3648,9 +3649,9 @@ other side had no changes that conflicted.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---whitespaceltoptiongt"><a id="Documentation/git-rebase.txt---whitespaceoption" class="anchor" href="#Documentation/git-rebase.txt---whitespaceoption"></a>--whitespace=&lt;option&gt; </dt>
 <dd>
-<p>This flag is passed to the <code>git apply</code> program
+<p>This flag is passed to the <span class='synopsis'><code>git</code> <code>apply</code></span> program
 (see <a href='/docs/git-apply'>git-apply[1]</a>) that applies the patch.
-Implies <code>--apply</code>.</p>
+Implies <span class='synopsis'><code>--apply</code></span>.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
 </div>
@@ -3659,22 +3660,22 @@ Implies <code>--apply</code>.</p>
 <dd>
 <p>Instead of using the current time as the committer date, use
 the author date of the commit being rebased as the committer
-date. This option implies <code>--force-rebase</code>.</p>
+date. This option implies <span class='synopsis'><code>--force-rebase</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---ignore-date"><a class="anchor" href="#Documentation/git-rebase.txt---ignore-date"></a>--ignore-date </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---reset-author-date"><a class="anchor" href="#Documentation/git-rebase.txt---reset-author-date"></a>--reset-author-date </dt>
 <dd>
 <p>Instead of using the author date of the original commit, use
 the current time as the	author date of the rebased commit.  This
-option implies <code>--force-rebase</code>.</p>
+option implies <span class='synopsis'><code>--force-rebase</code></span>.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---signoff"><a class="anchor" href="#Documentation/git-rebase.txt---signoff"></a>--signoff </dt>
 <dd>
-<p>Add a <code>Signed-off-by</code> trailer to all the rebased commits. Note
-that if <code>--interactive</code> is given then only commits marked to be
+<p>Add a <span class='synopsis'><code>Signed-off-by</code></span> trailer to all the rebased commits. Note
+that if <span class='synopsis'><code>--interactive</code></span> is given then only commits marked to be
 picked, edited or reworded will have the trailer added.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
@@ -3701,27 +3702,27 @@ have the commit hash prepended to the format.</p>
 <dd>
 <p>By default, a rebase will simply drop merge commits from the todo
 list, and put the rebased commits into a single, linear branch.
-With <code>--rebase-merges</code>, the rebase will instead try to preserve
+With <span class='synopsis'><code>--rebase-merges</code></span>, the rebase will instead try to preserve
 the branching structure within the commits that are to be rebased,
 by recreating the merge commits. Any resolved merge conflicts or
 manual amendments in these merge commits will have to be
-resolved/re-applied manually. <code>--no-rebase-merges</code> can be used to
-countermand both the <code>rebase.rebaseMerges</code> config option and a previous
-<code>--rebase-merges</code>.</p>
+resolved/re-applied manually. <span class='synopsis'><code>--no-rebase-merges</code></span> can be used to
+countermand both the <span class='synopsis'><code>rebase.rebaseMerges</code></span> config option and a previous
+<span class='synopsis'><code>--rebase-merges</code></span>.</p>
 <div class="paragraph">
-<p>When rebasing merges, there are two modes: <code>rebase-cousins</code> and
-<code>no-rebase-cousins</code>. If the mode is not specified, it defaults to
-<code>no-rebase-cousins</code>. In <code>no-rebase-cousins</code> mode, commits which do not have
-<code>&lt;upstream&gt;</code> as direct ancestor will keep their original branch point, i.e.
-commits that would be excluded by <a href='/docs/git-log'>git-log[1]</a>'s <code>--ancestry-path</code>
-option will keep their original ancestry by default. In <code>rebase-cousins</code> mode,
-such commits are instead rebased onto <code>&lt;upstream&gt;</code> (or <code>&lt;onto&gt;</code>, if
+<p>When rebasing merges, there are two modes: <span class='synopsis'><code>rebase-cousins</code></span> and
+<span class='synopsis'><code>no-rebase-cousins</code></span>. If the mode is not specified, it defaults to
+<span class='synopsis'><code>no-rebase-cousins</code></span>. In <span class='synopsis'><code>no-rebase-cousins</code></span> mode, commits which do not have
+<span class='synopsis'><em>&lt;upstream&gt;</em></span> as direct ancestor will keep their original branch point, i.e.
+commits that would be excluded by <a href='/docs/git-log'>git-log[1]</a>'s <span class='synopsis'><code>--ancestry-path</code></span>
+option will keep their original ancestry by default. In <span class='synopsis'><code>rebase-cousins</code></span> mode,
+such commits are instead rebased onto <span class='synopsis'><em>&lt;upstream&gt;</em></span> (or <span class='synopsis'><em>&lt;onto&gt;</em></span>, if
 specified).</p>
 </div>
 <div class="paragraph">
 <p>It is currently only possible to recreate the merge commits using the
-<code>ort</code> merge strategy; different merge strategies can be used only via
-explicit <code>exec git merge -s &lt;strategy&gt; [...]</code> commands.</p>
+<span class='synopsis'><code>ort</code></span> merge strategy; different merge strategies can be used only via
+explicit <span class='synopsis'><code>exec</code> <code>git</code> <code>merge</code> <code>-s</code> <em>&lt;strategy&gt;</em> [...]</span> commands.</p>
 </div>
 <div class="paragraph">
 <p>See also REBASING MERGES and INCOMPATIBLE OPTIONS below.</p>
@@ -3731,11 +3732,11 @@ explicit <code>exec git merge -s &lt;strategy&gt; [...]</code> commands.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---execltcmdgt"><a id="Documentation/git-rebase.txt---execcmd" class="anchor" href="#Documentation/git-rebase.txt---execcmd"></a>--exec &lt;cmd&gt; </dt>
 <dd>
 <p>Append "exec &lt;cmd&gt;" after each line creating a commit in the
-final history. <code>&lt;cmd&gt;</code> will be interpreted as one or more shell
+final history. <span class='synopsis'><em>&lt;cmd&gt;</em></span> will be interpreted as one or more shell
 commands. Any command that fails will interrupt the rebase,
 with exit code 1.</p>
 <div class="paragraph">
-<p>You may execute several commands by either using one instance of <code>--exec</code>
+<p>You may execute several commands by either using one instance of <span class='synopsis'><code>--exec</code></span>
 with several commands:</p>
 </div>
 <div class="literalblock">
@@ -3744,7 +3745,7 @@ with several commands:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>or by giving more than one <code>--exec</code>:</p>
+<p>or by giving more than one <span class='synopsis'><code>--exec</code></span>:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -3752,13 +3753,13 @@ with several commands:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If <code>--autosquash</code> is used, <code>exec</code> lines will not be appended for
+<p>If <span class='synopsis'><code>--autosquash</code></span> is used, <span class='synopsis'><code>exec</code></span> lines will not be appended for
 the intermediate commits, and will only appear at the end of each
 squash/fixup series.</p>
 </div>
 <div class="paragraph">
-<p>This uses the <code>--interactive</code> machinery internally, but it can be run
-without an explicit <code>--interactive</code>.</p>
+<p>This uses the <span class='synopsis'><code>--interactive</code></span> machinery internally, but it can be run
+without an explicit <span class='synopsis'><code>--interactive</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
@@ -3766,8 +3767,8 @@ without an explicit <code>--interactive</code>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---root"><a class="anchor" href="#Documentation/git-rebase.txt---root"></a>--root </dt>
 <dd>
-<p>Rebase all commits reachable from <code>&lt;branch&gt;</code>, instead of
-limiting them with an <code>&lt;upstream&gt;</code>.  This allows you to rebase
+<p>Rebase all commits reachable from <span class='synopsis'><em>&lt;branch&gt;</em></span>, instead of
+limiting them with an <span class='synopsis'><em>&lt;upstream&gt;</em></span>.  This allows you to rebase
 the root commit(s) on a branch.</p>
 <div class="paragraph">
 <p>See also INCOMPATIBLE OPTIONS below.</p>
@@ -3785,19 +3786,19 @@ matches fully, matches of the specifier with the start of commit
 titles are considered.</p>
 <div class="paragraph">
 <p>In the rebase todo list, the actions of squash, fixup and amend commits are
-changed from <code>pick</code> to <code>squash</code>, <code>fixup</code> or <code>fixup -C</code>, respectively, and they
-are moved right after the commit they modify.  The <code>--interactive</code> option can
+changed from <span class='synopsis'><code>pick</code></span> to <span class='synopsis'><code>squash</code></span>, <span class='synopsis'><code>fixup</code></span> or <span class='synopsis'><code>fixup</code> <code>-C</code></span>, respectively, and they
+are moved right after the commit they modify.  The <span class='synopsis'><code>--interactive</code></span> option can
 be used to review and edit the todo list before proceeding.</p>
 </div>
 <div class="paragraph">
 <p>The recommended way to create commits with squash markers is by using the
-<code>--squash</code>, <code>--fixup</code>, <code>--fixup=amend:</code> or <code>--fixup=reword:</code> options of
+<span class='synopsis'><code>--squash</code></span>, <span class='synopsis'><code>--fixup</code></span>, <span class='synopsis'><code>--fixup=amend:</code></span> or <span class='synopsis'><code>--fixup=reword:</code></span> options of
 <a href='/docs/git-commit'>git-commit[1]</a>, which take the target commit as an argument and
 automatically fill in the title of the new commit from that.</p>
 </div>
 <div class="paragraph">
-<p>Setting configuration variable <code>rebase.autoSquash</code> to true enables
-auto-squashing by default for interactive rebase.  The <code>--no-autosquash</code>
+<p>Setting configuration variable <span class='synopsis'><code>rebase.autoSquash</code></span> to true enables
+auto-squashing by default for interactive rebase.  The <span class='synopsis'><code>--no-autosquash</code></span>
 option can be used to override that setting.</p>
 </div>
 <div class="paragraph">
@@ -3816,20 +3817,22 @@ rebase might result in non-trivial conflicts.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---reschedule-failed-exec"><a class="anchor" href="#Documentation/git-rebase.txt---reschedule-failed-exec"></a>--reschedule-failed-exec </dt>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---no-reschedule-failed-exec"><a class="anchor" href="#Documentation/git-rebase.txt---no-reschedule-failed-exec"></a>--no-reschedule-failed-exec </dt>
 <dd>
-<p>Automatically reschedule <code>exec</code> commands that failed. This only makes
-sense in interactive mode (or when an <code>--exec</code> option was provided).</p>
+<p>Automatically reschedule <span class='synopsis'><code>exec</code></span> commands that failed. This only makes
+sense in interactive mode (or when an <span class='synopsis'><code>--exec</code></span> option was provided).</p>
 <div class="paragraph">
 <p>This option applies once a rebase is started. It is preserved for the whole
-rebase based on, in order, the command line option provided to the initial <code>git
-rebase</code>, the <code>rebase.rescheduleFailedExec</code> configuration (see
+rebase based on, in order, the command line option provided to the initial <span class='synopsis'><code>git</code>
+
+<code>rebase</code></span>, the <span class='synopsis'><code>rebase.rescheduleFailedExec</code></span> configuration (see
 <a href='/docs/git-config'>git-config[1]</a> or "CONFIGURATION" below), or it defaults to false.</p>
 </div>
 <div class="paragraph">
 <p>Recording this option for the whole rebase is a convenience feature. Otherwise
-an explicit <code>--no-reschedule-failed-exec</code> at the start would be overridden by
-the presence of a <code>rebase.rescheduleFailedExec=true</code> configuration when <code>git
-rebase --continue</code> is invoked. Currently, you cannot pass
-<code>--[no-]reschedule-failed-exec</code> to <code>git rebase --continue</code>.</p>
+an explicit <span class='synopsis'><code>--no-reschedule-failed-exec</code></span> at the start would be overridden by
+the presence of a <span class='synopsis'><code>rebase.rescheduleFailedExec=true</code></span> configuration when <span class='synopsis'><code>git</code>
+
+<code>rebase</code> <code>--continue</code></span> is invoked. Currently, you cannot pass
+<span class='synopsis'><code>--</code>[<code>no-</code>]<code>reschedule-failed-exec</code></span> to <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---update-refs"><a class="anchor" href="#Documentation/git-rebase.txt---update-refs"></a>--update-refs </dt>
@@ -3839,7 +3842,7 @@ rebase --continue</code> is invoked. Currently, you cannot pass
 are being rebased. Any branches that are checked out in a worktree
 are not updated in this way.</p>
 <div class="paragraph">
-<p>If the configuration variable <code>rebase.updateRefs</code> is set, then this option
+<p>If the configuration variable <span class='synopsis'><code>rebase.updateRefs</code></span> is set, then this option
 can be used to override and disable this setting.</p>
 </div>
 <div class="paragraph">
@@ -3934,7 +3937,7 @@ can be used to override and disable this setting.</p>
 <h2 id="_behavioral_differences"><a class="anchor" href="#_behavioral_differences"></a>BEHAVIORAL DIFFERENCES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>git rebase</code> has two primary backends: <em>apply</em> and <em>merge</em>.  (The <em>apply</em>
+<p><span class='synopsis'><code>git</code> <code>rebase</code></span> has two primary backends: <em>apply</em> and <em>merge</em>.  (The <em>apply</em>
 backend used to be known as the <em>am</em> backend, but the name led to
 confusion as it looks like a verb instead of a noun.  Also, the <em>merge</em>
 backend used to be known as the interactive backend, but it is now
@@ -3952,14 +3955,14 @@ this behavior.</p>
 </div>
 <div class="paragraph">
 <p>The <em>merge</em> backend keeps intentionally empty commits by default (though
-with <code>-i</code> they are marked as empty in the todo list editor, or they can
-be dropped automatically with <code>--no-keep-empty</code>).</p>
+with <span class='synopsis'><code>-i</code></span> they are marked as empty in the todo list editor, or they can
+be dropped automatically with <span class='synopsis'><code>--no-keep-empty</code></span>).</p>
 </div>
 <div class="paragraph">
 <p>Similar to the apply backend, by default the merge backend drops
-commits that become empty unless <code>-i</code>/<code>--interactive</code> is specified (in
+commits that become empty unless <span class='synopsis'><code>-i</code></span>/<span class='synopsis'><code>--interactive</code></span> is specified (in
 which case it stops and asks the user what to do).  The merge backend
-also has an <code>--empty=(drop|keep|stop)</code> option for changing the behavior
+also has an <span class='synopsis'><code>--empty=</code>(<code>drop</code>|<code>keep</code>|<code>stop</code>)</span> option for changing the behavior
 of handling commits that become empty.</p>
 </div>
 </div>
@@ -3984,8 +3987,8 @@ warnings in such cases.</p>
 <h3 id="_context"><a class="anchor" href="#_context"></a>Context</h3>
 <div class="paragraph">
 <p>The <em>apply</em> backend works by creating a sequence of patches (by calling
-<code>format-patch</code> internally), and then applying the patches in sequence
-(calling <code>am</code> internally).  Patches are composed of multiple hunks,
+<span class='synopsis'><code>format-patch</code></span> internally), and then applying the patches in sequence
+(calling <span class='synopsis'><code>am</code></span> internally).  Patches are composed of multiple hunks,
 each with line numbers, a context region, and the actual changes.  The
 line numbers have to be taken with some offset, since the other side
 will likely have inserted or deleted lines earlier in the file.  The
@@ -3994,7 +3997,7 @@ order to apply the changes to the right lines.  However, if multiple
 areas of the code have the same surrounding lines of context, the
 wrong one can be picked.  There are real-world cases where this has
 caused commits to be reapplied incorrectly with no conflicts reported.
-Setting <code>diff.context</code> to a larger value may prevent such types of
+Setting <span class='synopsis'><code>diff.context</code></span> to a larger value may prevent such types of
 problems, but increases the chance of spurious conflicts (since it
 will require more lines of matching context to apply).</p>
 </div>
@@ -4012,8 +4015,8 @@ content came from.  Since the <em>apply</em> backend drops the original
 information about the rebased commits and their parents (and instead
 generates new fake commits based off limited information in the
 generated patches), those commits cannot be identified; instead it has
-to fall back to a commit summary.  Also, when <code>merge.conflictStyle</code> is
-set to <code>diff3</code> or <code>zdiff3</code>, the <em>apply</em> backend will use "constructed merge
+to fall back to a commit summary.  Also, when <span class='synopsis'><code>merge.conflictStyle</code></span> is
+set to <span class='synopsis'><code>diff3</code></span> or <span class='synopsis'><code>zdiff3</code></span>, the <em>apply</em> backend will use "constructed merge
 base" to label the content from the merge base, and thus provide no
 information about the merge base commit whatsoever.</p>
 </div>
@@ -4033,7 +4036,7 @@ commit of the rebase, not the intermediate commits nor the final
 commit.  In each case, the calling of these hooks was by accident of
 implementation rather than by design (both backends were originally
 implemented as shell scripts and happened to invoke other commands
-like <code>git checkout</code> or <code>git commit</code> that would call the hooks).  Both
+like <span class='synopsis'><code>git</code> <code>checkout</code></span> or <span class='synopsis'><code>git</code> <code>commit</code></span> that would call the hooks).  Both
 backends should have the same behavior, though it is not entirely
 clear which, if any, is correct.  We will likely make rebase stop
 calling either of these hooks in the future.</p>
@@ -4045,7 +4048,7 @@ calling either of these hooks in the future.</p>
 <p>The <em>apply</em> backend has safety problems with an ill-timed interrupt; if
 the user presses Ctrl-C at the wrong time to try to abort the rebase,
 the rebase can enter a state where it cannot be aborted with a
-subsequent <code>git rebase --abort</code>.  The <em>merge</em> backend does not appear to
+subsequent <span class='synopsis'><code>git</code> <code>rebase</code> <code>--abort</code></span>.  The <em>merge</em> backend does not appear to
 suffer from the same shortcoming.  (See
 <a href="https://lore.kernel.org/git/20200207132152.GC2868@szeder.dev/" class="bare">https://lore.kernel.org/git/20200207132152.GC2868@szeder.dev/</a> for
 details.)</p>
@@ -4057,7 +4060,7 @@ details.)</p>
 <p>When a conflict occurs while rebasing, rebase stops and asks the user
 to resolve.  Since the user may need to make notable changes while
 resolving conflicts, after conflicts are resolved and the user has run
-<code>git rebase --continue</code>, the rebase should open an editor and ask the
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>, the rebase should open an editor and ask the
 user to update the commit message.  The <em>merge</em> backend does this, while
 the <em>apply</em> backend blindly applies the original commit message.</p>
 </div>
@@ -4085,7 +4088,7 @@ them to stderr.</p>
 </li>
 <li>
 <p>State directories: The two backends keep their state in different
-directories under <code>.git/</code></p>
+directories under <span class='synopsis'><code>.git/</code></span></p>
 </li>
 </ul>
 </div>
@@ -4096,14 +4099,14 @@ directories under <code>.git/</code></p>
 <h2 id="_merge_strategies"><a class="anchor" href="#_merge_strategies"></a>MERGE STRATEGIES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The merge mechanism (<code>git merge</code> and <code>git pull</code> commands) allows the
-backend <em>merge strategies</em> to be chosen with <code>-s</code> option.  Some strategies
-can also take their own options, which can be passed by giving <code>-X&lt;option&gt;</code>
-arguments to <code>git merge</code> and/or <code>git pull</code>.</p>
+<p>The merge mechanism (<span class='synopsis'><code>git</code> <code>merge</code></span> and <span class='synopsis'><code>git</code> <code>pull</code></span> commands) allows the
+backend <em>merge strategies</em> to be chosen with <span class='synopsis'><code>-s</code></span> option.  Some strategies
+can also take their own options, which can be passed by giving <span class='synopsis'><code>-X</code><em>&lt;option&gt;</em></span>
+arguments to <span class='synopsis'><code>git</code> <code>merge</code></span> and/or <span class='synopsis'><code>git</code> <code>pull</code></span>.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeortcode"><a id="Documentation/git-rebase.txt-ort" class="anchor" href="#Documentation/git-rebase.txt-ort"></a><code>ort</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeortcodespan"><a id="Documentation/git-rebase.txt-ort" class="anchor" href="#Documentation/git-rebase.txt-ort"></a><span class='synopsis'><code>ort</code></span> </dt>
 <dd>
 <p>This is the default merge strategy when pulling or merging one
 branch.  This strategy can only resolve two heads using a
@@ -4118,7 +4121,7 @@ and handle merges involving renames.  It does not make use of
 detected copies.  The name for this algorithm is an acronym
 ("Ostensibly Recursive&#8217;s Twin") and came from the fact that it
 was written as a replacement for the previous default
-algorithm, <code>recursive</code>.</p>
+algorithm, <span class='synopsis'><code>recursive</code></span>.</p>
 <div class="paragraph">
 <p>In the case where the path is a submodule, if the submodule commit used on
 one side of the merge is a descendant of the submodule commit used on the
@@ -4128,37 +4131,37 @@ as a resolution a submodule commit that is descendant of the conflicting
 ones, if one exists.</p>
 </div>
 <div class="paragraph">
-<p>The <code>ort</code> strategy can take the following options:</p>
+<p>The <span class='synopsis'><code>ort</code></span> strategy can take the following options:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeourscode"><a id="Documentation/git-rebase.txt-ours" class="anchor" href="#Documentation/git-rebase.txt-ours"></a><code>ours</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeourscodespan"><a id="Documentation/git-rebase.txt-ours" class="anchor" href="#Documentation/git-rebase.txt-ours"></a><span class='synopsis'><code>ours</code></span> </dt>
 <dd>
 <p>This option forces conflicting hunks to be auto-resolved cleanly by
 favoring <em>our</em> version.  Changes from the other tree that do not
 conflict with our side are reflected in the merge result.
 For a binary file, the entire contents are taken from our side.</p>
 <div class="paragraph">
-<p>This should not be confused with the <code>ours</code> merge strategy, which does not
+<p>This should not be confused with the <span class='synopsis'><code>ours</code></span> merge strategy, which does not
 even look at what the other tree contains at all.  It discards everything
 the other tree did, declaring <em>our</em> history contains all that happened in it.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codetheirscode"><a id="Documentation/git-rebase.txt-theirs" class="anchor" href="#Documentation/git-rebase.txt-theirs"></a><code>theirs</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodetheirscodespan"><a id="Documentation/git-rebase.txt-theirs" class="anchor" href="#Documentation/git-rebase.txt-theirs"></a><span class='synopsis'><code>theirs</code></span> </dt>
 <dd>
-<p>This is the opposite of <code>ours</code>; note that, unlike <code>ours</code>, there is
-no <code>theirs</code> merge strategy to confuse this merge option with.</p>
+<p>This is the opposite of <span class='synopsis'><code>ours</code></span>; note that, unlike <span class='synopsis'><code>ours</code></span>, there is
+no <span class='synopsis'><code>theirs</code></span> merge strategy to confuse this merge option with.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeignore-space-changecode"><a id="Documentation/git-rebase.txt-ignore-space-change" class="anchor" href="#Documentation/git-rebase.txt-ignore-space-change"></a><code>ignore-space-change</code> </dt>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeignore-all-spacecode"><a id="Documentation/git-rebase.txt-ignore-all-space" class="anchor" href="#Documentation/git-rebase.txt-ignore-all-space"></a><code>ignore-all-space</code> </dt>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeignore-space-at-eolcode"><a id="Documentation/git-rebase.txt-ignore-space-at-eol" class="anchor" href="#Documentation/git-rebase.txt-ignore-space-at-eol"></a><code>ignore-space-at-eol</code> </dt>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeignore-cr-at-eolcode"><a id="Documentation/git-rebase.txt-ignore-cr-at-eol" class="anchor" href="#Documentation/git-rebase.txt-ignore-cr-at-eol"></a><code>ignore-cr-at-eol</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeignore-space-changecodespan"><a id="Documentation/git-rebase.txt-ignore-space-change" class="anchor" href="#Documentation/git-rebase.txt-ignore-space-change"></a><span class='synopsis'><code>ignore-space-change</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeignore-all-spacecodespan"><a id="Documentation/git-rebase.txt-ignore-all-space" class="anchor" href="#Documentation/git-rebase.txt-ignore-all-space"></a><span class='synopsis'><code>ignore-all-space</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeignore-space-at-eolcodespan"><a id="Documentation/git-rebase.txt-ignore-space-at-eol" class="anchor" href="#Documentation/git-rebase.txt-ignore-space-at-eol"></a><span class='synopsis'><code>ignore-space-at-eol</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeignore-cr-at-eolcodespan"><a id="Documentation/git-rebase.txt-ignore-cr-at-eol" class="anchor" href="#Documentation/git-rebase.txt-ignore-cr-at-eol"></a><span class='synopsis'><code>ignore-cr-at-eol</code></span> </dt>
 <dd>
 <p>Treats lines with the indicated type of whitespace change as
 unchanged for the sake of a three-way merge.  Whitespace
 changes mixed with other changes to a line are not ignored.
-See also <a href='/docs/git-diff'>git-diff[1]</a> <code>-b</code>, <code>-w</code>,
-<code>--ignore-space-at-eol</code>, and <code>--ignore-cr-at-eol</code>.</p>
+See also <a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>-b</code></span>, <span class='synopsis'><code>-w</code></span>,
+<span class='synopsis'><code>--ignore-space-at-eol</code></span>, and <span class='synopsis'><code>--ignore-cr-at-eol</code></span>.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -4175,7 +4178,7 @@ version includes a substantial change, <em>their</em> version is used;</p>
 </ul>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-coderenormalizecode"><a id="Documentation/git-rebase.txt-renormalize" class="anchor" href="#Documentation/git-rebase.txt-renormalize"></a><code>renormalize</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscoderenormalizecodespan"><a id="Documentation/git-rebase.txt-renormalize" class="anchor" href="#Documentation/git-rebase.txt-renormalize"></a><span class='synopsis'><code>renormalize</code></span> </dt>
 <dd>
 <p>This runs a virtual check-out and check-in of all three stages
 of any file which needs a three-way merge.  This option is
@@ -4184,46 +4187,46 @@ filters or end-of-line normalization rules.  See "Merging
 branches with differing checkin/checkout attributes" in
 <a href='/docs/gitattributes'>gitattributes[5]</a> for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeno-renormalizecode"><a id="Documentation/git-rebase.txt-no-renormalize" class="anchor" href="#Documentation/git-rebase.txt-no-renormalize"></a><code>no-renormalize</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeno-renormalizecodespan"><a id="Documentation/git-rebase.txt-no-renormalize" class="anchor" href="#Documentation/git-rebase.txt-no-renormalize"></a><span class='synopsis'><code>no-renormalize</code></span> </dt>
 <dd>
-<p>Disables the <code>renormalize</code> option.  This overrides the
-<code>merge.renormalize</code> configuration variable.</p>
+<p>Disables the <span class='synopsis'><code>renormalize</code></span> option.  This overrides the
+<span class='synopsis'><code>merge.renormalize</code></span> configuration variable.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codefind-renamesltngtcode"><a id="Documentation/git-rebase.txt-find-renamesn" class="anchor" href="#Documentation/git-rebase.txt-find-renamesn"></a><code>find-renames[=&lt;n&gt;]</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodefind-renamescodecodecodeemltngtemspan"><a id="Documentation/git-rebase.txt-find-renamesn" class="anchor" href="#Documentation/git-rebase.txt-find-renamesn"></a><span class='synopsis'><code>find-renames</code>[<code>=</code><em>&lt;n&gt;</em>]</span> </dt>
 <dd>
 <p>Turn on rename detection, optionally setting the similarity
 threshold.  This is the default. This overrides the
-<code>merge.renames</code> configuration variable.
-See also <a href='/docs/git-diff'>git-diff[1]</a> <code>--find-renames</code>.</p>
+<span class='synopsis'><code>merge.renames</code></span> configuration variable.
+See also <a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>--find-renames</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-coderename-thresholdltngtcode"><a id="Documentation/git-rebase.txt-rename-thresholdn" class="anchor" href="#Documentation/git-rebase.txt-rename-thresholdn"></a><code>rename-threshold=&lt;n&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscoderename-thresholdcodeemltngtemspan"><a id="Documentation/git-rebase.txt-rename-thresholdn" class="anchor" href="#Documentation/git-rebase.txt-rename-thresholdn"></a><span class='synopsis'><code>rename-threshold=</code><em>&lt;n&gt;</em></span> </dt>
 <dd>
-<p>Deprecated synonym for <code>find-renames=&lt;n&gt;</code>.</p>
+<p>Deprecated synonym for <span class='synopsis'><code>find-renames=</code><em>&lt;n&gt;</em></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeno-renamescode"><a id="Documentation/git-rebase.txt-no-renames" class="anchor" href="#Documentation/git-rebase.txt-no-renames"></a><code>no-renames</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeno-renamescodespan"><a id="Documentation/git-rebase.txt-no-renames" class="anchor" href="#Documentation/git-rebase.txt-no-renames"></a><span class='synopsis'><code>no-renames</code></span> </dt>
 <dd>
-<p>Turn off rename detection. This overrides the <code>merge.renames</code>
+<p>Turn off rename detection. This overrides the <span class='synopsis'><code>merge.renames</code></span>
 configuration variable.
-See also <a href='/docs/git-diff'>git-diff[1]</a> <code>--no-renames</code>.</p>
+See also <a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>--no-renames</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codehistogramcode"><a id="Documentation/git-rebase.txt-histogram" class="anchor" href="#Documentation/git-rebase.txt-histogram"></a><code>histogram</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodehistogramcodespan"><a id="Documentation/git-rebase.txt-histogram" class="anchor" href="#Documentation/git-rebase.txt-histogram"></a><span class='synopsis'><code>histogram</code></span> </dt>
 <dd>
-<p>Deprecated synonym for <code>diff-algorithm=histogram</code>.</p>
+<p>Deprecated synonym for <span class='synopsis'><code>diff-algorithm=histogram</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codepatiencecode"><a id="Documentation/git-rebase.txt-patience" class="anchor" href="#Documentation/git-rebase.txt-patience"></a><code>patience</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodepatiencecodespan"><a id="Documentation/git-rebase.txt-patience" class="anchor" href="#Documentation/git-rebase.txt-patience"></a><span class='synopsis'><code>patience</code></span> </dt>
 <dd>
-<p>Deprecated synonym for <code>diff-algorithm=patience</code>.</p>
+<p>Deprecated synonym for <span class='synopsis'><code>diff-algorithm=patience</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codediff-algorithmhistogramminimalmyerspatiencecode"><a id="Documentation/git-rebase.txt-diff-algorithmhistogramminimalmyerspatience" class="anchor" href="#Documentation/git-rebase.txt-diff-algorithmhistogramminimalmyerspatience"></a><code>diff-algorithm=(histogram|minimal|myers|patience)</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodediff-algorithmcodecodehistogramcodecodeminimalcodecodemyerscodecodepatiencecodespan"><a id="Documentation/git-rebase.txt-diff-algorithmhistogramminimalmyerspatience" class="anchor" href="#Documentation/git-rebase.txt-diff-algorithmhistogramminimalmyerspatience"></a><span class='synopsis'><code>diff-algorithm=</code>(<code>histogram</code>|<code>minimal</code>|<code>myers</code>|<code>patience</code>)</span> </dt>
 <dd>
 <p>Use a different diff algorithm while merging, which can help
 avoid mismerges that occur due to unimportant matching lines
 (such as braces from distinct functions).  See also
-<a href='/docs/git-diff'>git-diff[1]</a> <code>--diff-algorithm</code>.  Note that <code>ort</code>
-defaults to <code>diff-algorithm=histogram</code>, while regular diffs
-currently default to the <code>diff.algorithm</code> config setting.</p>
+<a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>--diff-algorithm</code></span>.  Note that <span class='synopsis'><code>ort</code></span>
+defaults to <span class='synopsis'><code>diff-algorithm=histogram</code></span>, while regular diffs
+currently default to the <span class='synopsis'><code>diff.algorithm</code></span> config setting.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codesubtreeltpathgtcode"><a id="Documentation/git-rebase.txt-subtreepath" class="anchor" href="#Documentation/git-rebase.txt-subtreepath"></a><code>subtree[=&lt;path&gt;]</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodesubtreecodecodecodeemltpathgtemspan"><a id="Documentation/git-rebase.txt-subtreepath" class="anchor" href="#Documentation/git-rebase.txt-subtreepath"></a><span class='synopsis'><code>subtree</code>[<code>=</code><em>&lt;path&gt;</em>]</span> </dt>
 <dd>
 <p>This option is a more advanced form of <em>subtree</em> strategy, where
 the strategy makes a guess on how two trees must be shifted to
@@ -4234,22 +4237,22 @@ two trees to match.</p>
 </dl>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-coderecursivecode"><a id="Documentation/git-rebase.txt-recursive" class="anchor" href="#Documentation/git-rebase.txt-recursive"></a><code>recursive</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscoderecursivecodespan"><a id="Documentation/git-rebase.txt-recursive" class="anchor" href="#Documentation/git-rebase.txt-recursive"></a><span class='synopsis'><code>recursive</code></span> </dt>
 <dd>
-<p>This is now a synonym for <code>ort</code>.  It was an alternative
-implementation until v2.49.0, but was redirected to mean <code>ort</code>
+<p>This is now a synonym for <span class='synopsis'><code>ort</code></span>.  It was an alternative
+implementation until v2.49.0, but was redirected to mean <span class='synopsis'><code>ort</code></span>
 in v2.50.0.  The previous recursive strategy was the default
 strategy for resolving two heads from Git v0.99.9k until
 v2.33.0.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-coderesolvecode"><a id="Documentation/git-rebase.txt-resolve" class="anchor" href="#Documentation/git-rebase.txt-resolve"></a><code>resolve</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscoderesolvecodespan"><a id="Documentation/git-rebase.txt-resolve" class="anchor" href="#Documentation/git-rebase.txt-resolve"></a><span class='synopsis'><code>resolve</code></span> </dt>
 <dd>
 <p>This can only resolve two heads (i.e. the current branch
 and another branch you pulled from) using a 3-way merge
 algorithm.  It tries to carefully detect criss-cross
 merge ambiguities.  It does not handle renames.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeoctopuscode"><a id="Documentation/git-rebase.txt-octopus" class="anchor" href="#Documentation/git-rebase.txt-octopus"></a><code>octopus</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeoctopuscodespan"><a id="Documentation/git-rebase.txt-octopus" class="anchor" href="#Documentation/git-rebase.txt-octopus"></a><span class='synopsis'><code>octopus</code></span> </dt>
 <dd>
 <p>This resolves cases with more than two heads, but refuses to do
 a complex merge that needs manual resolution.  It is
@@ -4257,18 +4260,18 @@ primarily meant to be used for bundling topic branch
 heads together.  This is the default merge strategy when
 pulling or merging more than one branch.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codeourscode-1"><a id="Documentation/git-rebase.txt-ours-1" class="anchor" href="#Documentation/git-rebase.txt-ours-1"></a><code>ours</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodeourscodespan-1"><a id="Documentation/git-rebase.txt-ours-1" class="anchor" href="#Documentation/git-rebase.txt-ours-1"></a><span class='synopsis'><code>ours</code></span> </dt>
 <dd>
 <p>This resolves any number of heads, but the resulting tree of the
 merge is always that of the current branch head, effectively
 ignoring all changes from all other branches.  It is meant to
 be used to supersede old development history of side
-branches.  Note that this is different from the <code>-Xours</code> option to
-the <code>ort</code> merge strategy.</p>
+branches.  Note that this is different from the <span class='synopsis'><code>-Xours</code></span> option to
+the <span class='synopsis'><code>ort</code></span> merge strategy.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-codesubtreecode"><a id="Documentation/git-rebase.txt-subtree" class="anchor" href="#Documentation/git-rebase.txt-subtree"></a><code>subtree</code> </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-spanclasssynopsiscodesubtreecodespan"><a id="Documentation/git-rebase.txt-subtree" class="anchor" href="#Documentation/git-rebase.txt-subtree"></a><span class='synopsis'><code>subtree</code></span> </dt>
 <dd>
-<p>This is a modified <code>ort</code> strategy. When merging trees A and
+<p>This is a modified <span class='synopsis'><code>ort</code></span> strategy. When merging trees A and
 B, if B corresponds to a subtree of A, B is first adjusted to
 match the tree structure of A, instead of reading the trees at
 the same level. This adjustment is also done to the common
@@ -4277,7 +4280,7 @@ ancestor tree.</p>
 </dl>
 </div>
 <div class="paragraph">
-<p>With the strategies that use 3-way merge (including the default, <code>ort</code>),
+<p>With the strategies that use 3-way merge (including the default, <span class='synopsis'><code>ort</code></span>),
 if a change is made on both branches, but later reverted on one of the
 branches, that change will be present in the merged result; some people find
 this behavior confusing.  It occurs because only the heads and the merge base
@@ -4291,18 +4294,18 @@ substitutes the changed version instead.</p>
 <h2 id="_notes"><a class="anchor" href="#_notes"></a>NOTES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You should understand the implications of using <code>git rebase</code> on a
+<p>You should understand the implications of using <span class='synopsis'><code>git</code> <code>rebase</code></span> on a
 repository that you share.  See also RECOVERING FROM UPSTREAM REBASE
 below.</p>
 </div>
 <div class="paragraph">
-<p>When the rebase is run, it will first execute a <code>pre-rebase</code> hook if one
+<p>When the rebase is run, it will first execute a <span class='synopsis'><code>pre-rebase</code></span> hook if one
 exists.  You can use this hook to do sanity checks and reject the rebase
-if it isn&#8217;t appropriate.  Please see the template <code>pre-rebase</code> hook script
+if it isn&#8217;t appropriate.  Please see the template <span class='synopsis'><code>pre-rebase</code></span> hook script
 for an example.</p>
 </div>
 <div class="paragraph">
-<p>Upon completion, <code>&lt;branch&gt;</code> will be the current branch.</p>
+<p>Upon completion, <span class='synopsis'><em>&lt;branch&gt;</em></span> will be the current branch.</p>
 </div>
 </div>
 </div>
@@ -4400,7 +4403,7 @@ example), so do not delete or edit the names.</p>
 </div>
 <div class="paragraph">
 <p>By replacing the command "pick" with the command "edit", you can tell
-<code>git rebase</code> to stop after applying that commit, so that you can edit
+<span class='synopsis'><code>git</code> <code>rebase</code></span> to stop after applying that commit, so that you can edit
 the files and/or the commit message, amend the commit, and continue
 rebasing.</p>
 </div>
@@ -4433,14 +4436,14 @@ commit, the message from the final one is used.  You can also use
 an editor.</p>
 </div>
 <div class="paragraph">
-<p><code>git rebase</code> will stop when "pick" has been replaced with "edit" or
+<p><span class='synopsis'><code>git</code> <code>rebase</code></span> will stop when "pick" has been replaced with "edit" or
 when a command fails due to merge errors. When you are done editing
-and/or resolving conflicts you can continue with <code>git rebase --continue</code>.</p>
+and/or resolving conflicts you can continue with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>For example, if you want to reorder the last 5 commits, such that what
-was <code>HEAD~4</code> becomes the new <code>HEAD</code>. To achieve that, you would call
-<code>git rebase</code> like this:</p>
+was <span class='synopsis'><code>HEAD~4</code></span> becomes the new <span class='synopsis'><code>HEAD</code></span>. To achieve that, you would call
+<span class='synopsis'><code>git</code> <code>rebase</code></span> like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4465,7 +4468,7 @@ like this:</p>
 </div>
 <div class="paragraph">
 <p>Suppose you want to rebase the side branch starting at "A" to "Q". Make
-sure that the current <code>HEAD</code> is "B", and call</p>
+sure that the current <span class='synopsis'><code>HEAD</code></span> is "B", and call</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4493,7 +4496,7 @@ exec cd subdir; make test
 <div class="paragraph">
 <p>The interactive rebase will stop when a command fails (i.e. exits with
 non-0 status) to give you an opportunity to fix the problem. You can
-continue with <code>git rebase --continue</code>.</p>
+continue with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>The "exec" command launches the command in a shell (the default one, usually
@@ -4528,29 +4531,29 @@ exec make test</pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In interactive mode, you can mark commits with the action "edit".  However,
-this does not necessarily mean that <code>git rebase</code> expects the result of this
+this does not necessarily mean that <span class='synopsis'><code>git</code> <code>rebase</code></span> expects the result of this
 edit to be exactly one commit.  Indeed, you can undo the commit, or you can
 add other commits.  This can be used to split a commit into two:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Start an interactive rebase with <code>git rebase -i &lt;commit&gt;^</code>, where
-<code>&lt;commit&gt;</code> is the commit you want to split.  In fact, any commit range
+<p>Start an interactive rebase with <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code> <em>&lt;commit&gt;</em><code>^</code></span>, where
+<span class='synopsis'><em>&lt;commit&gt;</em></span> is the commit you want to split.  In fact, any commit range
 will do, as long as it contains that commit.</p>
 </li>
 <li>
 <p>Mark the commit you want to split with the action "edit".</p>
 </li>
 <li>
-<p>When it comes to editing that commit, execute <code>git reset HEAD^</code>.  The
-effect is that the <code>HEAD</code> is rewound by one, and the index follows suit.
+<p>When it comes to editing that commit, execute <span class='synopsis'><code>git</code> <code>reset</code> <code>HEAD^</code></span>.  The
+effect is that the <span class='synopsis'><code>HEAD</code></span> is rewound by one, and the index follows suit.
 However, the working tree stays the same.</p>
 </li>
 <li>
 <p>Now add the changes to the index that you want to have in the first
-commit.  You can use <code>git add</code> (possibly interactively) or
-<code>git gui</code> (or both) to do that.</p>
+commit.  You can use <span class='synopsis'><code>git</code> <code>add</code></span> (possibly interactively) or
+<span class='synopsis'><code>git</code> <code>gui</code></span> (or both) to do that.</p>
 </li>
 <li>
 <p>Commit the now-current index with whatever commit message is appropriate
@@ -4560,14 +4563,14 @@ now.</p>
 <p>Repeat the last two steps until your working tree is clean.</p>
 </li>
 <li>
-<p>Continue the rebase with <code>git rebase --continue</code>.</p>
+<p>Continue the rebase with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>If you are not absolutely sure that the intermediate revisions are
 consistent (they compile, pass the testsuite, etc.) you should use
-<code>git stash</code> to stash away the not-yet-committed changes
+<span class='synopsis'><code>git</code> <code>stash</code></span> to stash away the not-yet-committed changes
 after each commit, test, and amend the commit if fixes are necessary.</p>
 </div>
 </div>
@@ -4642,10 +4645,10 @@ had no conflicts.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-HardcaseThechangesarenotthesame"><a class="anchor" href="#Documentation/git-rebase.txt-HardcaseThechangesarenotthesame"></a>Hard case: The changes are not the same. </dt>
 <dd>
 <p>This happens if the <em>subsystem</em> rebase had conflicts, or used
-<code>--interactive</code> to omit, edit, squash, or fixup commits; or
-if the upstream used one of <code>commit --amend</code>, <code>reset</code>, or
+<span class='synopsis'><code>--interactive</code></span> to omit, edit, squash, or fixup commits; or
+if the upstream used one of <span class='synopsis'><code>commit</code> <code>--amend</code></span>, <span class='synopsis'><code>reset</code></span>, or
 a full history rewriting command like
-<a href="https://github.com/newren/git-filter-repo"><code>filter-repo</code></a>.</p>
+<a href="https://github.com/newren/git-filter-repo"><span class='synopsis'><code>filter-repo</code></span></a>.</p>
 </dd>
 </dl>
 </div>
@@ -4659,7 +4662,7 @@ a full history rewriting command like
 <div class="paragraph">
 <p>In that case, the fix is easy because <em>git rebase</em> knows to skip
 changes that are already present in the new upstream (unless
-<code>--reapply-cherry-picks</code> is given). So if you say
+<span class='synopsis'><code>--reapply-cherry-picks</code></span> is given). So if you say
 (assuming you&#8217;re on <em>topic</em>)</p>
 </div>
 <div class="listingblock">
@@ -4695,14 +4698,15 @@ correspond to the ones before the rebase.</p>
 <td class="content">
 While an "easy case recovery" sometimes appears to be successful
       even in the hard case, it may have unintended consequences.  For
-      example, a commit that was removed via <code>git rebase
-      --interactive</code> will be <strong>resurrected</strong>!
+      example, a commit that was removed via <span class='synopsis'><code>git</code> <code>rebase</code>
+
+      <code>--interactive</code></span> will be <strong>resurrected</strong>!
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The idea is to manually tell <code>git rebase</code> "where the old <em>subsystem</em>
+<p>The idea is to manually tell <span class='synopsis'><code>git</code> <code>rebase</code></span> "where the old <em>subsystem</em>
 ended and your <em>topic</em> began", that is, what the old merge base
 between them was.  You will have to find a way to name the last commit
 of the old <em>subsystem</em>, for example:</p>
@@ -4710,18 +4714,18 @@ of the old <em>subsystem</em>, for example:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>With the <em>subsystem</em> reflog: after <code>git fetch</code>, the old tip of
-<em>subsystem</em> is at <code>subsystem@{1}</code>.  Subsequent fetches will
+<p>With the <em>subsystem</em> reflog: after <span class='synopsis'><code>git</code> <code>fetch</code></span>, the old tip of
+<em>subsystem</em> is at <span class='synopsis'><code>subsystem@{1}</code></span>.  Subsequent fetches will
 increase the number.  (See <a href='/docs/git-reflog'>git-reflog[1]</a>.)</p>
 </li>
 <li>
 <p>Relative to the tip of <em>topic</em>: knowing that your <em>topic</em> has three
-commits, the old tip of <em>subsystem</em> must be <code>topic~3</code>.</p>
+commits, the old tip of <em>subsystem</em> must be <span class='synopsis'><code>topic~3</code></span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You can then transplant the old <code>subsystem..topic</code> to the new tip by
+<p>You can then transplant the old <span class='synopsis'><code>subsystem..topic</code></span> to the new tip by
 saying (for the reflog case, and assuming you are on <em>topic</em> already):</p>
 </div>
 <div class="listingblock">
@@ -4744,8 +4748,8 @@ case" recovery too!</p>
 <p>The interactive rebase command was originally designed to handle
 individual patch series. As such, it makes sense to exclude merge
 commits from the todo list, as the developer may have merged the
-then-current <code>master</code> while working on the branch, only to rebase
-all the commits onto <code>master</code> eventually (skipping the merge
+then-current <span class='synopsis'><code>master</code></span> while working on the branch, only to rebase
+all the commits onto <span class='synopsis'><code>master</code></span> eventually (skipping the merge
 commits).</p>
 </div>
 <div class="paragraph">
@@ -4757,7 +4761,7 @@ topology") when working on multiple, inter-related branches.</p>
 <p>In the following example, the developer works on a topic branch that
 refactors the way buttons are defined, and on another topic branch
 that uses that refactoring to implement a "Report a bug" button. The
-output of <code>git log --graph --format=%s -5</code> may look like this:</p>
+output of <span class='synopsis'><code>git</code> <code>log</code> <code>--graph</code> <code>--format=%s</code> <code>-5</code></span> may look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4772,14 +4776,14 @@ output of <code>git log --graph --format=%s -5</code> may look like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The developer might want to rebase those commits to a newer <code>master</code>
+<p>The developer might want to rebase those commits to a newer <span class='synopsis'><code>master</code></span>
 while keeping the branch topology, for example when the first topic
-branch is expected to be integrated into <code>master</code> much earlier than the
+branch is expected to be integrated into <span class='synopsis'><code>master</code></span> much earlier than the
 second one, say, to resolve merge conflicts with changes to the
-DownloadButton class that made it into <code>master</code>.</p>
+DownloadButton class that made it into <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>This rebase can be performed using the <code>--rebase-merges</code> option.
+<p>This rebase can be performed using the <span class='synopsis'><code>--rebase-merges</code></span> option.
 It will generate a todo list looking like this:</p>
 </div>
 <div class="listingblock">
@@ -4803,57 +4807,58 @@ merge -C 6f5e4d report-a-bug # Merge 'report-a-bug'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In contrast to a regular interactive rebase, there are <code>label</code>, <code>reset</code>
-and <code>merge</code> commands in addition to <code>pick</code> ones.</p>
+<p>In contrast to a regular interactive rebase, there are <span class='synopsis'><code>label</code></span>, <span class='synopsis'><code>reset</code></span>
+and <span class='synopsis'><code>merge</code></span> commands in addition to <span class='synopsis'><code>pick</code></span> ones.</p>
 </div>
 <div class="paragraph">
-<p>The <code>label</code> command associates a label with the current HEAD when that
+<p>The <span class='synopsis'><code>label</code></span> command associates a label with the current HEAD when that
 command is executed. These labels are created as worktree-local refs
-(<code>refs/rewritten/&lt;label&gt;</code>) that will be deleted when the rebase
+(<span class='synopsis'><code>refs/rewritten/</code><em>&lt;label&gt;</em></span>) that will be deleted when the rebase
 finishes. That way, rebase operations in multiple worktrees linked to
-the same repository do not interfere with one another. If the <code>label</code>
+the same repository do not interfere with one another. If the <span class='synopsis'><code>label</code></span>
 command fails, it is rescheduled immediately, with a helpful message how
 to proceed.</p>
 </div>
 <div class="paragraph">
-<p>The <code>reset</code> command resets the HEAD, index and worktree to the specified
-revision. It is similar to an <code>exec git reset --hard &lt;label&gt;</code>, but
-refuses to overwrite untracked files. If the <code>reset</code> command fails, it is
+<p>The <span class='synopsis'><code>reset</code></span> command resets the HEAD, index and worktree to the specified
+revision. It is similar to an <span class='synopsis'><code>exec</code> <code>git</code> <code>reset</code> <code>--hard</code> <em>&lt;label&gt;</em></span>, but
+refuses to overwrite untracked files. If the <span class='synopsis'><code>reset</code></span> command fails, it is
 rescheduled immediately, with a helpful message how to edit the todo list
-(this typically happens when a <code>reset</code> command was inserted into the todo
+(this typically happens when a <span class='synopsis'><code>reset</code></span> command was inserted into the todo
 list manually and contains a typo).</p>
 </div>
 <div class="paragraph">
-<p>The <code>merge</code> command will merge the specified revision(s) into whatever
-is HEAD at that time. With <code>-C &lt;original-commit&gt;</code>, the commit message of
-the specified merge commit will be used. When the <code>-C</code> is changed to
-a lower-case <code>-c</code>, the message will be opened in an editor after a
+<p>The <span class='synopsis'><code>merge</code></span> command will merge the specified revision(s) into whatever
+is HEAD at that time. With <span class='synopsis'><code>-C</code> <em>&lt;original-commit&gt;</em></span>, the commit message of
+the specified merge commit will be used. When the <span class='synopsis'><code>-C</code></span> is changed to
+a lower-case <span class='synopsis'><code>-c</code></span>, the message will be opened in an editor after a
 successful merge so that the user can edit the message.</p>
 </div>
 <div class="paragraph">
-<p>If a <code>merge</code> command fails for any reason other than merge conflicts (i.e.
+<p>If a <span class='synopsis'><code>merge</code></span> command fails for any reason other than merge conflicts (i.e.
 when the merge operation did not even start), it is rescheduled immediately.</p>
 </div>
 <div class="paragraph">
-<p>By default, the <code>merge</code> command will use the <code>ort</code> merge strategy for
-regular merges, and <code>octopus</code> for octopus merges.  One can specify a
-default strategy for all merges using the <code>--strategy</code> argument when
+<p>By default, the <span class='synopsis'><code>merge</code></span> command will use the <span class='synopsis'><code>ort</code></span> merge strategy for
+regular merges, and <span class='synopsis'><code>octopus</code></span> for octopus merges.  One can specify a
+default strategy for all merges using the <span class='synopsis'><code>--strategy</code></span> argument when
 invoking rebase, or can override specific merges in the interactive
-list of commands by using an <code>exec</code> command to call <code>git merge</code>
-explicitly with a <code>--strategy</code> argument.  Note that when calling <code>git
-merge</code> explicitly like this, you can make use of the fact that the
-labels are worktree-local refs (the ref <code>refs/rewritten/onto</code> would
-correspond to the label <code>onto</code>, for example) in order to refer to the
+list of commands by using an <span class='synopsis'><code>exec</code></span> command to call <span class='synopsis'><code>git</code> <code>merge</code></span>
+explicitly with a <span class='synopsis'><code>--strategy</code></span> argument.  Note that when calling <span class='synopsis'><code>git</code>
+
+<code>merge</code></span> explicitly like this, you can make use of the fact that the
+labels are worktree-local refs (the ref <span class='synopsis'><code>refs/rewritten/onto</code></span> would
+correspond to the label <span class='synopsis'><code>onto</code></span>, for example) in order to refer to the
 branches you want to merge.</p>
 </div>
 <div class="paragraph">
-<p>Note: the first command (<code>label onto</code>) labels the revision onto which
-the commits are rebased; The name <code>onto</code> is just a convention, as a nod
-to the <code>--onto</code> option.</p>
+<p>Note: the first command (<span class='synopsis'><code>label</code> <code>onto</code></span>) labels the revision onto which
+the commits are rebased; The name <span class='synopsis'><code>onto</code></span> is just a convention, as a nod
+to the <span class='synopsis'><code>--onto</code></span> option.</p>
 </div>
 <div class="paragraph">
 <p>It is also possible to introduce completely new merge commits from scratch
-by adding a command of the form <code>merge &lt;merge-head&gt;</code>. This form will
+by adding a command of the form <span class='synopsis'><code>merge</code> <em>&lt;merge-head&gt;</em></span>. This form will
 generate a tentative commit message and always open an editor to let the
 user edit it. This can be useful e.g. when a topic branch turns out to
 address more than a single concern and wants to be split into two or
@@ -4919,9 +4924,9 @@ rebase. False by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaseautoSquash"><a class="anchor" href="#Documentation/git-rebase.txt-rebaseautoSquash"></a>rebase.autoSquash </dt>
 <dd>
-<p>If set to true, enable the <code>--autosquash</code> option of
+<p>If set to true, enable the <span class='synopsis'><code>--autosquash</code></span> option of
 <a href='/docs/git-rebase'>git-rebase[1]</a> by default for interactive mode.
-This can be overridden with the <code>--no-autosquash</code> option.</p>
+This can be overridden with the <span class='synopsis'><code>--no-autosquash</code></span> option.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaseautoStash"><a class="anchor" href="#Documentation/git-rebase.txt-rebaseautoStash"></a>rebase.autoStash </dt>
 <dd>
@@ -4930,13 +4935,13 @@ before the operation begins, and apply it after the operation
 ends.  This means that you can run rebase on a dirty worktree.
 However, use with care: the final stash application after a
 successful rebase might result in non-trivial conflicts.
-This option can be overridden by the <code>--no-autostash</code> and
-<code>--autostash</code> options of <a href='/docs/git-rebase'>git-rebase[1]</a>.
+This option can be overridden by the <span class='synopsis'><code>--no-autostash</code></span> and
+<span class='synopsis'><code>--autostash</code></span> options of <a href='/docs/git-rebase'>git-rebase[1]</a>.
 Defaults to false.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaseupdateRefs"><a class="anchor" href="#Documentation/git-rebase.txt-rebaseupdateRefs"></a>rebase.updateRefs </dt>
 <dd>
-<p>If set to true enable <code>--update-refs</code> option by default.</p>
+<p>If set to true enable <span class='synopsis'><code>--update-refs</code></span> option by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebasemissingCommitsCheck"><a class="anchor" href="#Documentation/git-rebase.txt-rebasemissingCommitsCheck"></a>rebase.missingCommitsCheck </dt>
 <dd>
@@ -4946,7 +4951,7 @@ rebase will still proceed. If set to "error", it will print
 the previous warning and stop the rebase, <em>git rebase
 --edit-todo</em> can then be used to correct the error. If set to
 "ignore", no checking is done.
-To drop a commit without warning or error, use the <code>drop</code>
+To drop a commit without warning or error, use the <span class='synopsis'><code>drop</code></span>
 command in the todo list.
 Defaults to "ignore".</p>
 </dd>
@@ -4958,7 +4963,7 @@ automatically have the commit hash prepended to the format.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaseabbreviateCommands"><a class="anchor" href="#Documentation/git-rebase.txt-rebaseabbreviateCommands"></a>rebase.abbreviateCommands </dt>
 <dd>
-<p>If set to true, <code>git rebase</code> will use abbreviated command names in the
+<p>If set to true, <span class='synopsis'><code>git</code> <code>rebase</code></span> will use abbreviated command names in the
 todo list resulting in something like this:</p>
 <div class="listingblock">
 <div class="content">
@@ -4983,37 +4988,37 @@ todo list resulting in something like this:</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaserescheduleFailedExec"><a class="anchor" href="#Documentation/git-rebase.txt-rebaserescheduleFailedExec"></a>rebase.rescheduleFailedExec </dt>
 <dd>
-<p>Automatically reschedule <code>exec</code> commands that failed. This only makes
-sense in interactive mode (or when an <code>--exec</code> option was provided).
-This is the same as specifying the <code>--reschedule-failed-exec</code> option.</p>
+<p>Automatically reschedule <span class='synopsis'><code>exec</code></span> commands that failed. This only makes
+sense in interactive mode (or when an <span class='synopsis'><code>--exec</code></span> option was provided).
+This is the same as specifying the <span class='synopsis'><code>--reschedule-failed-exec</code></span> option.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaseforkPoint"><a class="anchor" href="#Documentation/git-rebase.txt-rebaseforkPoint"></a>rebase.forkPoint </dt>
 <dd>
-<p>If set to false set <code>--no-fork-point</code> option by default.</p>
+<p>If set to false set <span class='synopsis'><code>--no-fork-point</code></span> option by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebaserebaseMerges"><a class="anchor" href="#Documentation/git-rebase.txt-rebaserebaseMerges"></a>rebase.rebaseMerges </dt>
 <dd>
-<p>Whether and how to set the <code>--rebase-merges</code> option by default. Can
-be <code>rebase-cousins</code>, <code>no-rebase-cousins</code>, or a boolean. Setting to
-true or to <code>no-rebase-cousins</code> is equivalent to
-<code>--rebase-merges=no-rebase-cousins</code>, setting to <code>rebase-cousins</code> is
-equivalent to <code>--rebase-merges=rebase-cousins</code>, and setting to false is
-equivalent to <code>--no-rebase-merges</code>. Passing <code>--rebase-merges</code> on the
+<p>Whether and how to set the <span class='synopsis'><code>--rebase-merges</code></span> option by default. Can
+be <span class='synopsis'><code>rebase-cousins</code></span>, <span class='synopsis'><code>no-rebase-cousins</code></span>, or a boolean. Setting to
+true or to <span class='synopsis'><code>no-rebase-cousins</code></span> is equivalent to
+<span class='synopsis'><code>--rebase-merges=no-rebase-cousins</code></span>, setting to <span class='synopsis'><code>rebase-cousins</code></span> is
+equivalent to <span class='synopsis'><code>--rebase-merges=rebase-cousins</code></span>, and setting to false is
+equivalent to <span class='synopsis'><code>--no-rebase-merges</code></span>. Passing <span class='synopsis'><code>--rebase-merges</code></span> on the
 command line, with or without an argument, overrides any
-<code>rebase.rebaseMerges</code> configuration.</p>
+<span class='synopsis'><code>rebase.rebaseMerges</code></span> configuration.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-rebasemaxLabelLength"><a class="anchor" href="#Documentation/git-rebase.txt-rebasemaxLabelLength"></a>rebase.maxLabelLength </dt>
 <dd>
 <p>When generating label names from commit subjects, truncate the names to
 this length. By default, the names are truncated to a little less than
-<code>NAME_MAX</code> (to allow e.g. <code>.lock</code> files to be written for the
+<span class='synopsis'><code>NAME_MAX</code></span> (to allow e.g. <span class='synopsis'><code>.lock</code></span> files to be written for the
 corresponding loose refs).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt-sequenceeditor"><a class="anchor" href="#Documentation/git-rebase.txt-sequenceeditor"></a>sequence.editor </dt>
 <dd>
-<p>Text editor used by <code>git rebase -i</code> for editing the rebase instruction file.
+<p>Text editor used by <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code></span> for editing the rebase instruction file.
 The value is meant to be interpreted by the shell when it is used.
-It can be overridden by the <code>GIT_SEQUENCE_EDITOR</code> environment variable.
+It can be overridden by the <span class='synopsis'><code>GIT_SEQUENCE_EDITOR</code></span> environment variable.
 When not configured, the default commit message editor is used instead.</p>
 </dd>
 </dl>
@@ -5056,7 +5061,7 @@ When not configured, the default commit message editor is used instead.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1810,9 +1810,9 @@ from the HEAD commit).</p>
 <p>Note: <em>git revert</em> is used to record some new commits to reverse the
 effect of some earlier commits (often only a faulty one).  If you want to
 throw away all uncommitted changes in your working directory, you
-should see <a href='/docs/git-reset'>git-reset[1]</a>, particularly the <code>--hard</code> option.  If
+should see <a href='/docs/git-reset'>git-reset[1]</a>, particularly the <span class='synopsis'><code>--hard</code></span> option.  If
 you want to extract specific files as they were in another commit, you
-should see <a href='/docs/git-restore'>git-restore[1]</a>, specifically the <code>--source</code>
+should see <a href='/docs/git-restore'>git-restore[1]</a>, specifically the <span class='synopsis'><code>--source</code></span>
 option. Take care with these alternatives as
 both will discard uncommitted changes in your working directory.</p>
 </div>
@@ -1833,7 +1833,7 @@ between the three commands.</p>
 For a more complete list of ways to spell commit names, see
 <a href='/docs/gitrevisions'>gitrevisions[7]</a>.
 Sets of commits can also be given but no traversal is done by
-default, see <a href='/docs/git-rev-list'>git-rev-list[1]</a> and its <code>--no-walk</code>
+default, see <a href='/docs/git-rev-list'>git-rev-list[1]</a> and its <span class='synopsis'><code>--no-walk</code></span>
 option.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt--e"><a class="anchor" href="#Documentation/git-revert.txt--e"></a>-e </dt>
@@ -1871,8 +1871,8 @@ message editor.</p>
 <dd>
 <p>This option determines how the commit message will be cleaned up before
 being passed on to the commit machinery. See <a href='/docs/git-commit'>git-commit[1]</a> for more
-details. In particular, if the <em>&lt;mode&gt;</em> is given a value of <code>scissors</code>,
-scissors will be appended to <code>MERGE_MSG</code> before being passed on in the case
+details. In particular, if the <em>&lt;mode&gt;</em> is given a value of <span class='synopsis'><code>scissors</code></span>,
+scissors will be appended to <span class='synopsis'><code>MERGE_MSG</code></span> before being passed on in the case
 of a conflict.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt--n"><a class="anchor" href="#Documentation/git-revert.txt--n"></a>-n </dt>
@@ -1895,16 +1895,16 @@ effect to your index in a row.</p>
 <dt class="hdlist1" id="Documentation/git-revert.txt---gpg-signltkeyidgt"><a id="Documentation/git-revert.txt---gpg-signkeyid" class="anchor" href="#Documentation/git-revert.txt---gpg-signkeyid"></a>--gpg-sign[=&lt;keyid&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-revert.txt---no-gpg-sign"><a class="anchor" href="#Documentation/git-revert.txt---no-gpg-sign"></a>--no-gpg-sign </dt>
 <dd>
-<p>GPG-sign commits. The <code>keyid</code> argument is optional and
+<p>GPG-sign commits. The <span class='synopsis'><code>keyid</code></span> argument is optional and
 defaults to the committer identity; if specified, it must be
-stuck to the option without a space. <code>--no-gpg-sign</code> is useful to
-countermand both <code>commit.gpgSign</code> configuration variable, and
-earlier <code>--gpg-sign</code>.</p>
+stuck to the option without a space. <span class='synopsis'><code>--no-gpg-sign</code></span> is useful to
+countermand both <span class='synopsis'><code>commit.gpgSign</code></span> configuration variable, and
+earlier <span class='synopsis'><code>--gpg-sign</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt--s"><a class="anchor" href="#Documentation/git-revert.txt--s"></a>-s </dt>
 <dt class="hdlist1" id="Documentation/git-revert.txt---signoff"><a class="anchor" href="#Documentation/git-revert.txt---signoff"></a>--signoff </dt>
 <dd>
-<p>Add a <code>Signed-off-by</code> trailer at the end of the commit message.
+<p>Add a <span class='synopsis'><code>Signed-off-by</code></span> trailer at the end of the commit message.
 See the signoff option in <a href='/docs/git-commit'>git-commit[1]</a> for more information.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt---strategyltstrategygt"><a id="Documentation/git-revert.txt---strategystrategy" class="anchor" href="#Documentation/git-revert.txt---strategystrategy"></a>--strategy=&lt;strategy&gt; </dt>
@@ -1919,23 +1919,23 @@ for details.</p>
 <p>Pass the merge strategy-specific option through to the
 merge strategy.  See <a href='/docs/git-merge'>git-merge[1]</a> for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-revert.txt-code--rerere-autoupdatecode"><a id="Documentation/git-revert.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-revert.txt---rerere-autoupdate"></a><code>--rerere-autoupdate</code> </dt>
-<dt class="hdlist1" id="Documentation/git-revert.txt-code--no-rerere-autoupdatecode"><a id="Documentation/git-revert.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-revert.txt---no-rerere-autoupdate"></a><code>--no-rerere-autoupdate</code> </dt>
+<dt class="hdlist1" id="Documentation/git-revert.txt-spanclasssynopsiscode--rerere-autoupdatecodespan"><a id="Documentation/git-revert.txt---rerere-autoupdate" class="anchor" href="#Documentation/git-revert.txt---rerere-autoupdate"></a><span class='synopsis'><code>--rerere-autoupdate</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-revert.txt-spanclasssynopsiscode--no-rerere-autoupdatecodespan"><a id="Documentation/git-revert.txt---no-rerere-autoupdate" class="anchor" href="#Documentation/git-revert.txt---no-rerere-autoupdate"></a><span class='synopsis'><code>--no-rerere-autoupdate</code></span> </dt>
 <dd>
 <p>After the rerere mechanism reuses a recorded resolution on
 the current conflict to update the files in the working
 tree, allow it to also update the index with the result of
-resolution.  <code>--no-rerere-autoupdate</code> is a good way to
-double-check what <code>rerere</code> did and catch potential
+resolution.  <span class='synopsis'><code>--no-rerere-autoupdate</code></span> is a good way to
+double-check what <span class='synopsis'><code>rerere</code></span> did and catch potential
 mismerges, before committing the result to the index with a
-separate <code>git add</code>.</p>
+separate <span class='synopsis'><code>git</code> <code>add</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt---reference"><a class="anchor" href="#Documentation/git-revert.txt---reference"></a>--reference </dt>
 <dd>
 <p>Instead of starting the body of the log message with "This
 reverts &lt;full-object-name-of-the-commit-being-reverted&gt;.",
 refer to the commit using "--pretty=reference" format
-(cf. <a href='/docs/git-log'>git-log[1]</a>).  The <code>revert.reference</code>
+(cf. <a href='/docs/git-log'>git-log[1]</a>).  The <span class='synopsis'><code>revert.reference</code></span>
 configuration variable can be used to enable this option by
 default.</p>
 </dd>
@@ -1951,7 +1951,7 @@ default.</p>
 <dt class="hdlist1" id="Documentation/git-revert.txt---continue"><a class="anchor" href="#Documentation/git-revert.txt---continue"></a>--continue </dt>
 <dd>
 <p>Continue the operation in progress using the information in
-<code>.git/sequencer</code>.  Can be used to continue after resolving
+<span class='synopsis'><code>.git/sequencer</code></span>.  Can be used to continue after resolving
 conflicts in a failed cherry-pick or revert.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-revert.txt---skip"><a class="anchor" href="#Documentation/git-revert.txt---skip"></a>--skip </dt>
@@ -1978,12 +1978,12 @@ revert.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-revert.txt-codegitrevertHEAD3code"><a id="Documentation/git-revert.txt-gitrevertHEAD3" class="anchor" href="#Documentation/git-revert.txt-gitrevertHEAD3"></a><code>git revert HEAD~3</code> </dt>
+<dt class="hdlist1" id="Documentation/git-revert.txt-spanclasssynopsiscodegitcodecoderevertcodecodeHEAD3codespan"><a id="Documentation/git-revert.txt-gitrevertHEAD3" class="anchor" href="#Documentation/git-revert.txt-gitrevertHEAD3"></a><span class='synopsis'><code>git</code> <code>revert</code> <code>HEAD~3</code></span> </dt>
 <dd>
 <p>Revert the changes specified by the fourth last commit in HEAD
 and create a new commit with the reverted changes.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-revert.txt-codegitrevert-nmaster5master2code"><a id="Documentation/git-revert.txt-gitrevert-nmaster5master2" class="anchor" href="#Documentation/git-revert.txt-gitrevert-nmaster5master2"></a><code>git revert -n master~5..master~2</code> </dt>
+<dt class="hdlist1" id="Documentation/git-revert.txt-spanclasssynopsiscodegitcodecoderevertcodecode-ncodecodemaster5master2codespan"><a id="Documentation/git-revert.txt-gitrevert-nmaster5master2" class="anchor" href="#Documentation/git-revert.txt-gitrevert-nmaster5master2"></a><span class='synopsis'><code>git</code> <code>revert</code> <code>-n</code> <code>master~5..master~2</code></span> </dt>
 <dd>
 <p>Revert the changes done by commits from the fifth last commit
 in master (included) to the third last commit in master
@@ -2020,8 +2020,8 @@ as what&#8217;s found there:</p>
 <dl>
 <dt class="hdlist1" id="Documentation/git-revert.txt-revertreference"><a class="anchor" href="#Documentation/git-revert.txt-revertreference"></a>revert.reference </dt>
 <dd>
-<p>Setting this variable to true makes <code>git revert</code> behave
-as if the <code>--reference</code> option is given.</p>
+<p>Setting this variable to true makes <span class='synopsis'><code>git</code> <code>revert</code></span> behave
+as if the <span class='synopsis'><code>--reference</code></span> option is given.</p>
 </dd>
 </dl>
 </div>
@@ -2071,7 +2071,7 @@ as if the <code>--reference</code> option is given.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

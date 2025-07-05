@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1994,12 +1994,12 @@
 <div class="sect1">
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>git init [-q | --quiet] [--bare] [--template=&lt;template-directory&gt;]
-	 [--separate-git-dir &lt;git-dir&gt;] [--object-format=&lt;format&gt;]
-	 [--ref-format=&lt;format&gt;]
-	 [-b &lt;branch-name&gt; | --initial-branch=&lt;branch-name&gt;]
-	 [--shared[=&lt;permissions&gt;]] [&lt;directory&gt;]</p>
+<div class="verseblock">
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>init</code></span> [<span class='synopsis'><code>-q</code></span> | <span class='synopsis'><code>--quiet</code></span>] [<span class='synopsis'><code>--bare</code></span>] [<span class='synopsis'><code>--template=</code></span><em>&lt;template-directory&gt;</em>]
+	 [<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;git-dir&gt;</em>] [<span class='synopsis'><code>--object-format=</code></span><em>&lt;format&gt;</em>]
+	 [<span class='synopsis'><code>--ref-format=</code></span><em>&lt;format&gt;</em>]
+	 [<span class='synopsis'><code>-b</code></span> <em>&lt;branch-name&gt;</em> | <span class='synopsis'><code>--initial-branch=</code></span><em>&lt;branch-name&gt;</em>]
+	 [<span class='synopsis'><code>--shared</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;permissions&gt;</em>]] [<em>&lt;directory&gt;</em>]</pre>
 </div>
 </div>
 </div>
@@ -2007,27 +2007,27 @@
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This command creates an empty Git repository - basically a <code>.git</code>
-directory with subdirectories for <code>objects</code>, <code>refs/heads</code>,
-<code>refs/tags</code>, and template files.  An initial branch without any
-commits will be created (see the <code>--initial-branch</code> option below
+<p>This command creates an empty Git repository - basically a <span class='synopsis'><code>.git</code></span>
+directory with subdirectories for <span class='synopsis'><code>objects</code></span>, <span class='synopsis'><code>refs/heads</code></span>,
+<span class='synopsis'><code>refs/tags</code></span>, and template files.  An initial branch without any
+commits will be created (see the <span class='synopsis'><code>--initial-branch</code></span> option below
 for its name).</p>
 </div>
 <div class="paragraph">
-<p>If the <code>GIT_DIR</code> environment variable is set then it specifies a path
-to use instead of <code>./.git</code> for the base of the repository.</p>
+<p>If the <span class='synopsis'><code>GIT_DIR</code></span> environment variable is set then it specifies a path
+to use instead of <span class='synopsis'><code>./.git</code></span> for the base of the repository.</p>
 </div>
 <div class="paragraph">
 <p>If the object storage directory is specified via the
-<code>GIT_OBJECT_DIRECTORY</code> environment variable then the sha1 directories
-are created underneath; otherwise, the default <code>$GIT_DIR/objects</code>
+<span class='synopsis'><code>GIT_OBJECT_DIRECTORY</code></span> environment variable then the sha1 directories
+are created underneath; otherwise, the default <span class='synopsis'><code>$GIT_DIR/objects</code></span>
 directory is used.</p>
 </div>
 <div class="paragraph">
-<p>Running <code>git init</code> in an existing repository is safe. It will not
+<p>Running <span class='synopsis'><code>git</code> <code>init</code></span> in an existing repository is safe. It will not
 overwrite things that are already there. The primary reason for
-rerunning <code>git init</code> is to pick up newly added templates (or to move
-the repository to another place if <code>--separate-git-dir</code> is given).</p>
+rerunning <span class='synopsis'><code>git</code> <code>init</code></span> is to pick up newly added templates (or to move
+the repository to another place if <span class='synopsis'><code>--separate-git-dir</code></span> is given).</p>
 </div>
 </div>
 </div>
@@ -2036,20 +2036,20 @@ the repository to another place if <code>--separate-git-dir</code> is given).</p
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-init.txt-code-qcode"><a id="Documentation/git-init.txt--q" class="anchor" href="#Documentation/git-init.txt--q"></a><code>-q</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--quietcode"><a id="Documentation/git-init.txt---quiet" class="anchor" href="#Documentation/git-init.txt---quiet"></a><code>--quiet</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode-qcodespan"><a id="Documentation/git-init.txt--q" class="anchor" href="#Documentation/git-init.txt--q"></a><span class='synopsis'><code>-q</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--quietcodespan"><a id="Documentation/git-init.txt---quiet" class="anchor" href="#Documentation/git-init.txt---quiet"></a><span class='synopsis'><code>--quiet</code></span> </dt>
 <dd>
 <p>Only print error and warning messages; all other output will be suppressed.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--barecode"><a id="Documentation/git-init.txt---bare" class="anchor" href="#Documentation/git-init.txt---bare"></a><code>--bare</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--barecodespan"><a id="Documentation/git-init.txt---bare" class="anchor" href="#Documentation/git-init.txt---bare"></a><span class='synopsis'><code>--bare</code></span> </dt>
 <dd>
-<p>Create a bare repository. If <code>GIT_DIR</code> environment is not set, it is set to the
+<p>Create a bare repository. If <span class='synopsis'><code>GIT_DIR</code></span> environment is not set, it is set to the
 current working directory.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--object-formatltformatgtcode"><a id="Documentation/git-init.txt---object-formatformat" class="anchor" href="#Documentation/git-init.txt---object-formatformat"></a><code>--object-format=&lt;format&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--object-formatcodeemltformatgtemspan"><a id="Documentation/git-init.txt---object-formatformat" class="anchor" href="#Documentation/git-init.txt---object-formatformat"></a><span class='synopsis'><code>--object-format=</code><em>&lt;format&gt;</em></span> </dt>
 <dd>
 <p>Specify the given object <em>&lt;format&gt;</em> (hash algorithm) for the repository.  The valid
-values are <code>sha1</code> and (if enabled) <code>sha256</code>.  <code>sha1</code> is the default.</p>
+values are <span class='synopsis'><code>sha1</code></span> and (if enabled) <span class='synopsis'><code>sha256</code></span>.  <span class='synopsis'><code>sha1</code></span> is the default.</p>
 <div class="paragraph">
 <p>Note: At present, there is no interoperability between SHA-256
 repositories and SHA-1 repositories.</p>
@@ -2067,92 +2067,92 @@ without data loss.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--ref-formatltformatgtcode"><a id="Documentation/git-init.txt---ref-formatformat" class="anchor" href="#Documentation/git-init.txt---ref-formatformat"></a><code>--ref-format=&lt;format&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--ref-formatcodeemltformatgtemspan"><a id="Documentation/git-init.txt---ref-formatformat" class="anchor" href="#Documentation/git-init.txt---ref-formatformat"></a><span class='synopsis'><code>--ref-format=</code><em>&lt;format&gt;</em></span> </dt>
 <dd>
 <p>Specify the given ref storage <em>&lt;format&gt;</em> for the repository. The valid values are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>files</code> for loose files with packed-refs. This is the default.</p>
+<p><span class='synopsis'><code>files</code></span> for loose files with packed-refs. This is the default.</p>
 </li>
 <li>
-<p><code>reftable</code> for the reftable format. This format is experimental and its
+<p><span class='synopsis'><code>reftable</code></span> for the reftable format. This format is experimental and its
 internals are subject to change.</p>
 </li>
 </ul>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--templatelttemplate-directorygtcode"><a id="Documentation/git-init.txt---templatetemplate-directory" class="anchor" href="#Documentation/git-init.txt---templatetemplate-directory"></a><code>--template=&lt;template-directory&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--templatecodeemlttemplate-directorygtemspan"><a id="Documentation/git-init.txt---templatetemplate-directory" class="anchor" href="#Documentation/git-init.txt---templatetemplate-directory"></a><span class='synopsis'><code>--template=</code><em>&lt;template-directory&gt;</em></span> </dt>
 <dd>
 <p>Specify the directory from which templates will be used.  (See the "TEMPLATE
 DIRECTORY" section below.)</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--separate-git-dirltgit-dirgtcode"><a id="Documentation/git-init.txt---separate-git-dirgit-dir" class="anchor" href="#Documentation/git-init.txt---separate-git-dirgit-dir"></a><code>--separate-git-dir=&lt;git-dir&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--separate-git-dircodeemltgit-dirgtemspan"><a id="Documentation/git-init.txt---separate-git-dirgit-dir" class="anchor" href="#Documentation/git-init.txt---separate-git-dirgit-dir"></a><span class='synopsis'><code>--separate-git-dir=</code><em>&lt;git-dir&gt;</em></span> </dt>
 <dd>
-<p>Instead of initializing the repository as a directory to either <code>$GIT_DIR</code> or
-<code>./.git/</code>, create a text file there containing the path to the actual
+<p>Instead of initializing the repository as a directory to either <span class='synopsis'><code>$GIT_DIR</code></span> or
+<span class='synopsis'><code>./.git/</code></span>, create a text file there containing the path to the actual
 repository.  This file acts as a filesystem-agnostic Git symbolic link to the
 repository.</p>
 <div class="paragraph">
 <p>If this is a reinitialization, the repository will be moved to the specified path.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code-bltbranch-namegtcode"><a id="Documentation/git-init.txt--bbranch-name" class="anchor" href="#Documentation/git-init.txt--bbranch-name"></a><code>-b &lt;branch-name&gt;</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--initial-branchltbranch-namegtcode"><a id="Documentation/git-init.txt---initial-branchbranch-name" class="anchor" href="#Documentation/git-init.txt---initial-branchbranch-name"></a><code>--initial-branch=&lt;branch-name&gt;</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode-bcodeemltbranch-namegtemspan"><a id="Documentation/git-init.txt--bbranch-name" class="anchor" href="#Documentation/git-init.txt--bbranch-name"></a><span class='synopsis'><code>-b</code> <em>&lt;branch-name&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--initial-branchcodeemltbranch-namegtemspan"><a id="Documentation/git-init.txt---initial-branchbranch-name" class="anchor" href="#Documentation/git-init.txt---initial-branchbranch-name"></a><span class='synopsis'><code>--initial-branch=</code><em>&lt;branch-name&gt;</em></span> </dt>
 <dd>
 <p>Use <em>&lt;branch-name&gt;</em> for the initial branch in the newly created
 repository.  If not specified, fall back to the default name (currently
-<code>master</code>, but this is subject to change in the future; the name can be
-customized via the <code>init.defaultBranch</code> configuration variable).</p>
+<span class='synopsis'><code>master</code></span>, but this is subject to change in the future; the name can be
+customized via the <span class='synopsis'><code>init.defaultBranch</code></span> configuration variable).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-code--sharedfalsetrueumaskgroupallworldeverybodyltpermgtcode"><a id="Documentation/git-init.txt---sharedfalsetrueumaskgroupallworldeverybodyperm" class="anchor" href="#Documentation/git-init.txt---sharedfalsetrueumaskgroupallworldeverybodyperm"></a><code>--shared[=(false|true|umask|group|all|world|everybody|&lt;perm&gt;)]</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscode--sharedcodecodecodecodefalsecodecodetruecodecodeumaskcodecodegroupcodecodeallcodecodeworldcodecodeeverybodycodeemltpermgtemspan"><a id="Documentation/git-init.txt---sharedfalsetrueumaskgroupallworldeverybodyperm" class="anchor" href="#Documentation/git-init.txt---sharedfalsetrueumaskgroupallworldeverybodyperm"></a><span class='synopsis'><code>--shared</code>[<code>=</code>(<code>false</code>|<code>true</code>|<code>umask</code>|<code>group</code>|<code>all</code>|<code>world</code>|<code>everybody</code>|<em>&lt;perm&gt;</em>)]</span> </dt>
 <dd>
 <p>Specify that the Git repository is to be shared amongst several users.  This
 allows users belonging to the same group to push into that
-repository.  When specified, the config variable <code>core.sharedRepository</code> is
-set so that files and directories under <code>$GIT_DIR</code> are created with the
+repository.  When specified, the config variable <span class='synopsis'><code>core.sharedRepository</code></span> is
+set so that files and directories under <span class='synopsis'><code>$GIT_DIR</code></span> are created with the
 requested permissions.  When not specified, Git will use permissions reported
-by <code>umask</code>(2).</p>
+by <span class='synopsis'><code>umask</code></span>(2).</p>
 <div class="paragraph">
-<p>The option can have the following values, defaulting to <code>group</code> if no value
+<p>The option can have the following values, defaulting to <span class='synopsis'><code>group</code></span> if no value
 is given:</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeumaskcode"><a id="Documentation/git-init.txt-umask" class="anchor" href="#Documentation/git-init.txt-umask"></a><code>umask</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-codefalsecode"><a id="Documentation/git-init.txt-false" class="anchor" href="#Documentation/git-init.txt-false"></a><code>false</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeumaskcodespan"><a id="Documentation/git-init.txt-umask" class="anchor" href="#Documentation/git-init.txt-umask"></a><span class='synopsis'><code>umask</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodefalsecodespan"><a id="Documentation/git-init.txt-false" class="anchor" href="#Documentation/git-init.txt-false"></a><span class='synopsis'><code>false</code></span> </dt>
 <dd>
-<p>Use permissions reported by <code>umask</code>(2). The default, when <code>--shared</code> is not
+<p>Use permissions reported by <span class='synopsis'><code>umask</code></span>(2). The default, when <span class='synopsis'><code>--shared</code></span> is not
 specified.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-codegroupcode"><a id="Documentation/git-init.txt-group" class="anchor" href="#Documentation/git-init.txt-group"></a><code>group</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-codetruecode"><a id="Documentation/git-init.txt-true" class="anchor" href="#Documentation/git-init.txt-true"></a><code>true</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodegroupcodespan"><a id="Documentation/git-init.txt-group" class="anchor" href="#Documentation/git-init.txt-group"></a><span class='synopsis'><code>group</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodetruecodespan"><a id="Documentation/git-init.txt-true" class="anchor" href="#Documentation/git-init.txt-true"></a><span class='synopsis'><code>true</code></span> </dt>
 <dd>
-<p>Make the repository group-writable, (and <code>g+sx</code>, since the git group may not be
+<p>Make the repository group-writable, (and <span class='synopsis'><code>g+sx</code></span>, since the git group may not be
 the primary group of all users). This is used to loosen the permissions of an
-otherwise safe <code>umask</code>(2) value. Note that the umask still applies to the other
-permission bits (e.g. if umask is <code>0022</code>, using <code>group</code> will not remove read
-privileges from other (non-group) users). See <code>0xxx</code> for how to exactly specify
+otherwise safe <span class='synopsis'><code>umask</code></span>(2) value. Note that the umask still applies to the other
+permission bits (e.g. if umask is <span class='synopsis'><code>0022</code></span>, using <span class='synopsis'><code>group</code></span> will not remove read
+privileges from other (non-group) users). See <span class='synopsis'><code>0xxx</code></span> for how to exactly specify
 the repository permissions.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeallcode"><a id="Documentation/git-init.txt-all" class="anchor" href="#Documentation/git-init.txt-all"></a><code>all</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeworldcode"><a id="Documentation/git-init.txt-world" class="anchor" href="#Documentation/git-init.txt-world"></a><code>world</code> </dt>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeeverybodycode"><a id="Documentation/git-init.txt-everybody" class="anchor" href="#Documentation/git-init.txt-everybody"></a><code>everybody</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeallcodespan"><a id="Documentation/git-init.txt-all" class="anchor" href="#Documentation/git-init.txt-all"></a><span class='synopsis'><code>all</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeworldcodespan"><a id="Documentation/git-init.txt-world" class="anchor" href="#Documentation/git-init.txt-world"></a><span class='synopsis'><code>world</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeeverybodycodespan"><a id="Documentation/git-init.txt-everybody" class="anchor" href="#Documentation/git-init.txt-everybody"></a><span class='synopsis'><code>everybody</code></span> </dt>
 <dd>
-<p>Same as <code>group</code>, but make the repository readable by all users.</p>
+<p>Same as <span class='synopsis'><code>group</code></span>, but make the repository readable by all users.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-init.txt-emltpermgtem"><a id="Documentation/git-init.txt-perm" class="anchor" href="#Documentation/git-init.txt-perm"></a><em>&lt;perm&gt;</em> </dt>
 <dd>
-<p><em>&lt;perm&gt;</em> is a 3-digit octal number prefixed with <code>0</code> and each file
-will have mode <em>&lt;perm&gt;</em>. <em>&lt;perm&gt;</em> will override users' <code>umask</code>(2)
-value (and not only loosen permissions as <code>group</code> and <code>all</code>
-do). <code>0640</code> will create a repository which is group-readable, but
-not group-writable or accessible to others. <code>0660</code> will create a repo
+<p><em>&lt;perm&gt;</em> is a 3-digit octal number prefixed with <span class='synopsis'><code>0</code></span> and each file
+will have mode <em>&lt;perm&gt;</em>. <em>&lt;perm&gt;</em> will override users' <span class='synopsis'><code>umask</code></span>(2)
+value (and not only loosen permissions as <span class='synopsis'><code>group</code></span> and <span class='synopsis'><code>all</code></span>
+do). <span class='synopsis'><code>0640</code></span> will create a repository which is group-readable, but
+not group-writable or accessible to others. <span class='synopsis'><code>0660</code></span> will create a repo
 that is readable and writable to the current user and group, but
 inaccessible to others (directories and executable files get their
-<code>x</code> bit from the <code>r</code> bit for corresponding classes of users).</p>
+<span class='synopsis'><code>x</code></span> bit from the <span class='synopsis'><code>r</code></span> bit for corresponding classes of users).</p>
 </dd>
 </dl>
 </div>
@@ -2162,7 +2162,7 @@ inaccessible to others (directories and executable files get their
 </dl>
 </div>
 <div class="paragraph">
-<p>By default, the configuration flag <code>receive.denyNonFastForwards</code> is enabled
+<p>By default, the configuration flag <span class='synopsis'><code>receive.denyNonFastForwards</code></span> is enabled
 in shared repositories, so that you cannot force a non fast-forwarding push
 into it.</p>
 </div>
@@ -2177,7 +2177,7 @@ does not exist, it will be created.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Files and directories in the template directory whose name do not start with a
-dot will be copied to the <code>$GIT_DIR</code> after it is created.</p>
+dot will be copied to the <span class='synopsis'><code>$GIT_DIR</code></span> after it is created.</p>
 </div>
 <div class="paragraph">
 <p>The template directory will be one of the following (in order):</p>
@@ -2185,16 +2185,16 @@ dot will be copied to the <code>$GIT_DIR</code> after it is created.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>the argument given with the <code>--template</code> option;</p>
+<p>the argument given with the <span class='synopsis'><code>--template</code></span> option;</p>
 </li>
 <li>
-<p>the contents of the <code>$GIT_TEMPLATE_DIR</code> environment variable;</p>
+<p>the contents of the <span class='synopsis'><code>$GIT_TEMPLATE_DIR</code></span> environment variable;</p>
 </li>
 <li>
-<p>the <code>init.templateDir</code> configuration variable; or</p>
+<p>the <span class='synopsis'><code>init.templateDir</code></span> configuration variable; or</p>
 </li>
 <li>
-<p>the default template directory: <code>/usr/share/git-core/templates</code>.</p>
+<p>the default template directory: <span class='synopsis'><code>/usr/share/git-core/templates</code></span>.</p>
 </li>
 </ul>
 </div>
@@ -2204,7 +2204,7 @@ dot will be copied to the <code>$GIT_DIR</code> after it is created.</p>
 </div>
 <div class="paragraph">
 <p>The sample hooks are all disabled by default. To enable one of the
-sample hooks rename it by removing its <code>.sample</code> suffix.</p>
+sample hooks rename it by removing its <span class='synopsis'><code>.sample</code></span> suffix.</p>
 </div>
 <div class="paragraph">
 <p>See <a href='/docs/githooks'>githooks[5]</a> for more general info on hook execution.</p>
@@ -2229,7 +2229,7 @@ $ git commit    <b class="conum">(3)</b></pre>
 <div class="colist arabic">
 <ol>
 <li>
-<p>Create a <code>/path/to/my/codebase/.git</code> directory.</p>
+<p>Create a <span class='synopsis'><code>/path/to/my/codebase/.git</code></span> directory.</p>
 </li>
 <li>
 <p>Add all existing files to the index.</p>
@@ -2254,27 +2254,27 @@ as what&#8217;s found there:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeinittemplateDircode"><a id="Documentation/git-init.txt-inittemplateDir" class="anchor" href="#Documentation/git-init.txt-inittemplateDir"></a><code>init.templateDir</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeinittemplateDircodespan"><a id="Documentation/git-init.txt-inittemplateDir" class="anchor" href="#Documentation/git-init.txt-inittemplateDir"></a><span class='synopsis'><code>init.templateDir</code></span> </dt>
 <dd>
 <p>Specify the directory from which templates will be copied. </p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeinitdefaultBranchcode"><a id="Documentation/git-init.txt-initdefaultBranch" class="anchor" href="#Documentation/git-init.txt-initdefaultBranch"></a><code>init.defaultBranch</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeinitdefaultBranchcodespan"><a id="Documentation/git-init.txt-initdefaultBranch" class="anchor" href="#Documentation/git-init.txt-initdefaultBranch"></a><span class='synopsis'><code>init.defaultBranch</code></span> </dt>
 <dd>
 <p>Allows overriding the default branch name e.g. when initializing
 a new repository.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeinitdefaultObjectFormatcode"><a id="Documentation/git-init.txt-initdefaultObjectFormat" class="anchor" href="#Documentation/git-init.txt-initdefaultObjectFormat"></a><code>init.defaultObjectFormat</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeinitdefaultObjectFormatcodespan"><a id="Documentation/git-init.txt-initdefaultObjectFormat" class="anchor" href="#Documentation/git-init.txt-initdefaultObjectFormat"></a><span class='synopsis'><code>init.defaultObjectFormat</code></span> </dt>
 <dd>
 <p>Allows overriding the default object format for new repositories. See
-<code>--object-format=</code> in <a href='/docs/git-init'>git-init[1]</a>. Both the command line option
-and the <code>GIT_DEFAULT_HASH</code> environment variable take precedence over
+<span class='synopsis'><code>--object-format=</code></span> in <a href='/docs/git-init'>git-init[1]</a>. Both the command line option
+and the <span class='synopsis'><code>GIT_DEFAULT_HASH</code></span> environment variable take precedence over
 this config.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-init.txt-codeinitdefaultRefFormatcode"><a id="Documentation/git-init.txt-initdefaultRefFormat" class="anchor" href="#Documentation/git-init.txt-initdefaultRefFormat"></a><code>init.defaultRefFormat</code> </dt>
+<dt class="hdlist1" id="Documentation/git-init.txt-spanclasssynopsiscodeinitdefaultRefFormatcodespan"><a id="Documentation/git-init.txt-initdefaultRefFormat" class="anchor" href="#Documentation/git-init.txt-initdefaultRefFormat"></a><span class='synopsis'><code>init.defaultRefFormat</code></span> </dt>
 <dd>
 <p>Allows overriding the default ref storage format for new repositories.
-See <code>--ref-format=</code> in <a href='/docs/git-init'>git-init[1]</a>. Both the command line
-option and the <code>GIT_DEFAULT_REF_FORMAT</code> environment variable take
+See <span class='synopsis'><code>--ref-format=</code></span> in <a href='/docs/git-init'>git-init[1]</a>. Both the command line
+option and the <span class='synopsis'><code>GIT_DEFAULT_REF_FORMAT</code></span> environment variable take
 precedence over this config.</p>
 </dd>
 </dl>
@@ -2317,7 +2317,7 @@ precedence over this config.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

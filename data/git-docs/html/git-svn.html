@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2121,8 +2121,8 @@ section of this manpage before using this option.</p>
 <dd>
 <p>For transports that SVN handles authentication for (http,
 https, and plain svn), specify the username.  For other
-transports (e.g. <code>svn+ssh://</code>), you must include the username in
-the URL, e.g. <code>svn+ssh://foo@svn.bar.com/project</code></p>
+transports (e.g. <span class='synopsis'><code>svn+ssh://</code></span>), you must include the username in
+the URL, e.g. <span class='synopsis'><code>svn+ssh://foo@svn.bar.com/project</code></span></p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt---prefixltprefixgt"><a id="Documentation/git-svn.txt---prefixprefix" class="anchor" href="#Documentation/git-svn.txt---prefixprefix"></a>--prefix=&lt;prefix&gt; </dt>
 <dd>
@@ -2151,7 +2151,7 @@ Before Git v2.0, the default prefix was "" (no prefix). This
 meant that SVN-tracking refs were put at "refs/remotes/*", which is
 incompatible with how Git&#8217;s own remote-tracking refs are organized.
 If you still want the old default, you can get it by passing
-<code>--prefix ""</code> on the command line (<code>--prefix=""</code> may not work if
+<span class='synopsis'><code>--prefix</code> <code>""</code></span> on the command line (<span class='synopsis'><code>--prefix=""</code></span> may not work if
 your Perl&#8217;s Getopt::Long is &lt; v2.37).
 </td>
 </tr>
@@ -2162,19 +2162,19 @@ your Perl&#8217;s Getopt::Long is &lt; v2.37).
 <dd>
 <p>When passed to <em>init</em> or <em>clone</em> this regular expression will
 be preserved as a config key.  See <em>fetch</em> for a description
-of <code>--ignore-refs</code>.</p>
+of <span class='synopsis'><code>--ignore-refs</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt---ignore-pathsltregexgt"><a id="Documentation/git-svn.txt---ignore-pathsregex" class="anchor" href="#Documentation/git-svn.txt---ignore-pathsregex"></a>--ignore-paths=&lt;regex&gt; </dt>
 <dd>
 <p>When passed to <em>init</em> or <em>clone</em> this regular expression will
 be preserved as a config key.  See <em>fetch</em> for a description
-of <code>--ignore-paths</code>.</p>
+of <span class='synopsis'><code>--ignore-paths</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt---include-pathsltregexgt"><a id="Documentation/git-svn.txt---include-pathsregex" class="anchor" href="#Documentation/git-svn.txt---include-pathsregex"></a>--include-paths=&lt;regex&gt; </dt>
 <dd>
 <p>When passed to <em>init</em> or <em>clone</em> this regular expression will
 be preserved as a config key.  See <em>fetch</em> for a description
-of <code>--include-paths</code>.</p>
+of <span class='synopsis'><code>--include-paths</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt---no-minimize-url"><a class="anchor" href="#Documentation/git-svn.txt---no-minimize-url"></a>--no-minimize-url </dt>
 <dd>
@@ -2184,7 +2184,7 @@ to the root (or highest allowed level) of the Subversion
 repository.  This default allows better tracking of history if
 entire projects are moved within a repository, but may cause
 issues on repositories where read access restrictions are in
-place.  Passing <code>--no-minimize-url</code> will allow git svn to
+place.  Passing <span class='synopsis'><code>--no-minimize-url</code></span> will allow git svn to
 accept URLs as-is without attempting to connect to a higher
 level directory.  This option is off by default when only
 one URL/branch is tracked (it would do little good).</p>
@@ -2208,7 +2208,7 @@ command-line argument.</p>
 <dd>
 <p>Store Git commit times in the local time zone instead of UTC.  This
 makes <em>git log</em> (even without --date=local) show the same times
-that <code>svn log</code> would in the local time zone.</p>
+that <span class='synopsis'><code>svn</code> <code>log</code></span> would in the local time zone.</p>
 <div class="paragraph">
 <p>This doesn&#8217;t interfere with interoperating with the Subversion
 repository you cloned from, but if you wish for your local Git
@@ -2225,7 +2225,7 @@ the same local time zone.</p>
 <dd>
 <p>Ignore refs for branches or tags matching the Perl regular
 expression. A "negative look-ahead assertion" like
-<code>^refs/remotes/origin/(?!tags/wanted-tag|wanted-branch).*$</code>
+<span class='synopsis'><em>^refs/remotes/origin/(?!tags/wanted-tag|wanted-branch).*$</em></span>
 can be used to allow only certain refs.</p>
 <div class="verseblock">
 <pre class="content">config key: svn-remote.&lt;name&gt;.ignore-refs</pre>
@@ -2239,7 +2239,7 @@ option is also given, both regular expressions will be used.</p>
 <dd>
 <p>This allows one to specify a Perl regular expression that will
 cause skipping of all matching paths from checkout from SVN.
-The <code>--ignore-paths</code> option should match for every <em>fetch</em>
+The <span class='synopsis'><code>--ignore-paths</code></span> option should match for every <em>fetch</em>
 (including automatic fetches due to <em>clone</em>, <em>dcommit</em>,
 <em>rebase</em>, etc) on a given repository.</p>
 <div class="verseblock">
@@ -2281,10 +2281,10 @@ option is also given, both regular expressions will be used.</p>
 <dd>
 <p>This allows one to specify a Perl regular expression that will
 cause the inclusion of only matching paths from checkout from SVN.
-The <code>--include-paths</code> option should match for every <em>fetch</em>
+The <span class='synopsis'><code>--include-paths</code></span> option should match for every <em>fetch</em>
 (including automatic fetches due to <em>clone</em>, <em>dcommit</em>,
-<em>rebase</em>, etc) on a given repository. <code>--ignore-paths</code> takes
-precedence over <code>--include-paths</code>.</p>
+<em>rebase</em>, etc) on a given repository. <span class='synopsis'><code>--ignore-paths</code></span> takes
+precedence over <span class='synopsis'><code>--include-paths</code></span>.</p>
 <div class="verseblock">
 <pre class="content">config key: svn-remote.&lt;name&gt;.include-paths</pre>
 </div>
@@ -2307,7 +2307,7 @@ directory based on the basename of the URL passed to it;
 or if a second argument is passed; it will create a directory
 and work within that.  It accepts all arguments that the
 <em>init</em> and <em>fetch</em> commands accept; with the exception of
-<code>--fetch-all</code> and <code>--parent</code>.  After a repository is cloned,
+<span class='synopsis'><code>--fetch-all</code></span> and <span class='synopsis'><code>--parent</code></span>.  After a repository is cloned,
 the <em>fetch</em> command will be able to update revisions without
 affecting the working tree; and the <em>rebase</em> command will be
 able to update the working tree with the latest changes.</p>
@@ -2334,13 +2334,13 @@ Default: ".gitignore"</p>
 <p>This fetches revisions from the SVN parent of the current HEAD
 and rebases the current (uncommitted to SVN) work against it.</p>
 <div class="paragraph">
-<p>This works similarly to <code>svn update</code> or <em>git pull</em> except that
+<p>This works similarly to <span class='synopsis'><code>svn</code> <code>update</code></span> or <em>git pull</em> except that
 it preserves linear history with <em>git rebase</em> instead of
 <em>git merge</em> for ease of dcommitting with <em>git svn</em>.</p>
 </div>
 <div class="paragraph">
 <p>This accepts all options that <em>git svn fetch</em> and <em>git rebase</em>
-accept.  However, <code>--fetch-all</code> only fetches from the current
+accept.  However, <span class='synopsis'><code>--fetch-all</code></span> only fetches from the current
 [svn-remote], and not all [svn-remote] definitions.</p>
 </div>
 <div class="paragraph">
@@ -2386,9 +2386,9 @@ branch, not on the current branch.</p>
 <dd>
 <p>Commit to this SVN URL (the full path).  This is intended to
 allow existing <em>git svn</em> repositories created with one transport
-method (e.g. <code>svn://</code> or <code>http://</code> for anonymous read) to be
+method (e.g. <span class='synopsis'><code>svn://</code></span> or <span class='synopsis'><code>http://</code></span> for anonymous read) to be
 reused if a user is later given access to an alternate transport
-method (e.g. <code>svn+ssh://</code> or <code>https://</code>) for commit.</p>
+method (e.g. <span class='synopsis'><code>svn+ssh://</code></span> or <span class='synopsis'><code>https://</code></span>) for commit.</p>
 <div class="verseblock">
 <pre class="content">config key: svn-remote.&lt;name&gt;.commiturl
 config key: svn.commiturl (overwrites all svn-remote.&lt;name&gt;.commiturl options)</pre>
@@ -2406,11 +2406,11 @@ discouraged.</p>
 <dt class="hdlist1" id="Documentation/git-svn.txt---mergeinfoltmergeinfogt"><a id="Documentation/git-svn.txt---mergeinfomergeinfo" class="anchor" href="#Documentation/git-svn.txt---mergeinfomergeinfo"></a>--mergeinfo=&lt;mergeinfo&gt; </dt>
 <dd>
 <p>Add the given merge information during the dcommit
-(e.g. <code>--mergeinfo="/branches/foo:1-10"</code>). All svn server versions can
+(e.g. <span class='synopsis'><code>--mergeinfo="/branches/foo:1-10"</code></span>). All svn server versions can
 store this information (as a property), and svn clients starting from
 version 1.5 can make use of it. To specify merge information from multiple
 branches, use a single space character between the branches
-(<code>--mergeinfo="/branches/foo:1-10 /branches/bar:3,5-6,8"</code>)</p>
+(<span class='synopsis'><code>--mergeinfo="/branches/foo:1-10</code> <code>/branches/bar:3,5-6,8"</code></span>)</p>
 <div class="verseblock">
 <pre class="content">config key: svn.pushmergeinfo</pre>
 </div>
@@ -2655,32 +2655,33 @@ more information.)</p>
 <dt class="hdlist1" id="Documentation/git-svn.txt-emcommit-diffem"><a id="Documentation/git-svn.txt-commit-diff" class="anchor" href="#Documentation/git-svn.txt-commit-diff"></a><em>commit-diff</em> </dt>
 <dd>
 <p>Commits the diff of two tree-ish arguments from the
-command-line.  This command does not rely on being inside a <code>git svn
-init</code>-ed repository.  This command takes three arguments, (a) the
+command-line.  This command does not rely on being inside a <span class='synopsis'><code>git</code> <code>svn</code>
+
+<code>init</code></span>-ed repository.  This command takes three arguments, (a) the
 original tree to diff against, (b) the new tree result, (c) the
 URL of the target Subversion repository.  The final argument
 (URL) may be omitted if you are working from a <em>git svn</em>-aware
-repository (that has been <code>init</code>-ed with <em>git svn</em>).
+repository (that has been <span class='synopsis'><code>init</code></span>-ed with <em>git svn</em>).
 The -r&lt;revision&gt; option is required for this.</p>
 <div class="paragraph">
-<p>The commit message is supplied either directly with the <code>-m</code> or <code>-F</code>
+<p>The commit message is supplied either directly with the <span class='synopsis'><code>-m</code></span> or <span class='synopsis'><code>-F</code></span>
 option, or indirectly from the tag or commit when the second tree-ish
 denotes such an object, or it is requested by invoking an editor (see
-<code>--edit</code> option below).</p>
+<span class='synopsis'><code>--edit</code></span> option below).</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1" id="Documentation/git-svn.txt--mltmsggt"><a id="Documentation/git-svn.txt--mmsg" class="anchor" href="#Documentation/git-svn.txt--mmsg"></a>-m &lt;msg&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-svn.txt---messageltmsggt"><a id="Documentation/git-svn.txt---messagemsg" class="anchor" href="#Documentation/git-svn.txt---messagemsg"></a>--message=&lt;msg&gt; </dt>
 <dd>
-<p>Use the given <code>msg</code> as the commit message. This option
-disables the <code>--edit</code> option.</p>
+<p>Use the given <span class='synopsis'><code>msg</code></span> as the commit message. This option
+disables the <span class='synopsis'><code>--edit</code></span> option.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt--Fltfilenamegt"><a id="Documentation/git-svn.txt--Ffilename" class="anchor" href="#Documentation/git-svn.txt--Ffilename"></a>-F &lt;filename&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-svn.txt---fileltfilenamegt"><a id="Documentation/git-svn.txt---filefilename" class="anchor" href="#Documentation/git-svn.txt---filefilename"></a>--file=&lt;filename&gt; </dt>
 <dd>
 <p>Take the commit message from the given file. This option
-disables the <code>--edit</code> option.</p>
+disables the <span class='synopsis'><code>--edit</code></span> option.</p>
 </dd>
 </dl>
 </div>
@@ -2966,7 +2967,7 @@ creating the branch or tag.</p>
 <dt class="hdlist1" id="Documentation/git-svn.txt---use-log-author"><a class="anchor" href="#Documentation/git-svn.txt---use-log-author"></a>--use-log-author </dt>
 <dd>
 <p>When retrieving svn commits into Git (as part of <em>fetch</em>, <em>rebase</em>, or
-<em>dcommit</em> operations), look for the first <code>From:</code> line or <code>Signed-off-by</code> trailer
+<em>dcommit</em> operations), look for the first <span class='synopsis'><code>From:</code></span> line or <span class='synopsis'><code>Signed-off-by</code></span> trailer
 in the log message and use that as the author string.</p>
 <div class="verseblock">
 <pre class="content">config key: svn.useLogAuthor</pre>
@@ -2976,8 +2977,8 @@ in the log message and use that as the author string.</p>
 <dd>
 <p>When committing to svn from Git (as part of <em>set-tree</em> or <em>dcommit</em>
 operations), if the existing log message doesn&#8217;t already have a
-<code>From:</code> or <code>Signed-off-by</code> trailer, append a <code>From:</code> line based on the
-Git commit&#8217;s author string.  If you use this, then <code>--use-log-author</code>
+<span class='synopsis'><code>From:</code></span> or <span class='synopsis'><code>Signed-off-by</code></span> trailer, append a <span class='synopsis'><code>From:</code></span> line based on the
+Git commit&#8217;s author string.  If you use this, then <span class='synopsis'><code>--use-log-author</code></span>
 will retrieve a valid author string for all commits.</p>
 <div class="verseblock">
 <pre class="content">config key: svn.addAuthorFrom</pre>
@@ -3100,7 +3101,7 @@ or useSvnsyncProps.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-svn.txt-svn-remoteltnamegtpushurl"><a id="Documentation/git-svn.txt-svn-remotenamepushurl" class="anchor" href="#Documentation/git-svn.txt-svn-remotenamepushurl"></a>svn-remote.&lt;name&gt;.pushurl </dt>
 <dd>
-<p>Similar to Git&#8217;s <code>remote.&lt;name&gt;.pushurl</code>, this key is designed
+<p>Similar to Git&#8217;s <span class='synopsis'><code>remote.</code><em>&lt;name&gt;</em><code>.pushurl</code></span>, this key is designed
 to be used in cases where <em>url</em> points to an SVN repository
 via a read-only transport, to provide an alternate read/write
 transport. It is assumed that both keys point to the same
@@ -3243,9 +3244,9 @@ respect to the upstream SVN repository and allow the use of the preferred
 <div class="paragraph">
 <p>Originally, <em>git svn</em> recommended that developers pulled or merged from
 the <em>git svn</em> branch.  This was because the author favored
-<code>git svn set-tree B</code> to commit a single head rather than the
-<code>git svn set-tree A..B</code> notation to commit multiple commits. Use of
-<em>git pull</em> or <em>git merge</em> with <code>git svn set-tree A..B</code> will cause non-linear
+<span class='synopsis'><code>git</code> <code>svn</code> <code>set-tree</code> <code>B</code></span> to commit a single head rather than the
+<span class='synopsis'><code>git</code> <code>svn</code> <code>set-tree</code> <code>A..B</code></span> notation to commit multiple commits. Use of
+<em>git pull</em> or <em>git merge</em> with <span class='synopsis'><code>git</code> <code>svn</code> <code>set-tree</code> <code>A..B</code></span> will cause non-linear
 history to be flattened when committing into SVN and this can lead to merge
 commits unexpectedly reversing previous commits in SVN.</p>
 </div>
@@ -3285,7 +3286,7 @@ parent of the branch. However, it is possible that there is no suitable
 Git commit to serve as parent.  This will happen, among other reasons,
 if the SVN branch is a copy of a revision that was not fetched by <em>git
 svn</em> (e.g. because it is an old revision that was skipped with
-<code>--revision</code>), or if in SVN a directory was copied that is not tracked
+<span class='synopsis'><code>--revision</code></span>), or if in SVN a directory was copied that is not tracked
 by <em>git svn</em> (such as a branch that is not tracked at all, or a
 subdirectory of a tracked branch). In these cases, <em>git svn</em> will still
 create a Git branch, but instead of using an existing Git commit as the
@@ -3378,12 +3379,12 @@ directories in the working copy.  While this is the easiest way to get a
 copy of a complete repository, for projects with many branches it will
 lead to a working copy many times larger than just the trunk. Thus for
 projects using the standard directory structure (trunk/branches/tags),
-it is recommended to clone with option <code>--stdlayout</code>. If the project
+it is recommended to clone with option <span class='synopsis'><code>--stdlayout</code></span>. If the project
 uses a non-standard structure, and/or if branches and tags are not
 required, it is easiest to only clone one directory (typically trunk),
 without giving any repository layout options.  If the full history with
-branches and tags is required, the options <code>--trunk</code> / <code>--branches</code> /
-<code>--tags</code> must be used.</p>
+branches and tags is required, the options <span class='synopsis'><code>--trunk</code></span> / <span class='synopsis'><code>--branches</code></span> /
+<span class='synopsis'><code>--tags</code></span> must be used.</p>
 </div>
 <div class="paragraph">
 <p>When using multiple --branches or --tags, <em>git svn</em> does not automatically
@@ -3425,10 +3426,10 @@ listed below are allowed:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Keep in mind that the <code>*</code> (asterisk) wildcard of the local ref
-(right of the <code>:</code>) <strong>must</strong> be the farthest right path component;
+<p>Keep in mind that the <span class='synopsis'><code>*</code></span> (asterisk) wildcard of the local ref
+(right of the <span class='synopsis'><code>:</code></span>) <strong>must</strong> be the farthest right path component;
 however the remote wildcard may be anywhere as long as it&#8217;s an
-independent path component (surrounded by <code>/</code> or EOL).   This
+independent path component (surrounded by <span class='synopsis'><code>/</code></span> or EOL).   This
 type of configuration is not automatically created by <em>init</em> and
 should be manually entered with a text-editor or using <em>git config</em>.</p>
 </div>
@@ -3585,7 +3586,7 @@ and imports all SVN tags as branches, prefixing the tag name with <em>tags/</em>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

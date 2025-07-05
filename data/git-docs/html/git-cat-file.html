@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2000,7 +2000,7 @@ information of one or more objects.</p>
 </div>
 <div class="paragraph">
 <p>This command can operate in two modes, depending on whether an option
-from the <code>--batch</code> family is specified.</p>
+from the <span class='synopsis'><code>--batch</code></span> family is specified.</p>
 </div>
 <div class="paragraph">
 <p>In non-batch mode, the command provides information on an object
@@ -2025,32 +2025,32 @@ the "SPECIFYING REVISIONS" section in <a href='/docs/gitrevisions'>gitrevisions[
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--t"><a class="anchor" href="#Documentation/git-cat-file.txt--t"></a>-t </dt>
 <dd>
 <p>Instead of the content, show the object type identified by
-<code>&lt;object&gt;</code>.</p>
+<span class='synopsis'><em>&lt;object&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--s"><a class="anchor" href="#Documentation/git-cat-file.txt--s"></a>-s </dt>
 <dd>
 <p>Instead of the content, show the object size identified by
-<code>&lt;object&gt;</code>. If used with <code>--use-mailmap</code> option, will show
+<span class='synopsis'><em>&lt;object&gt;</em></span>. If used with <span class='synopsis'><code>--use-mailmap</code></span> option, will show
 the size of updated object after replacing idents using the
 mailmap mechanism.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--e"><a class="anchor" href="#Documentation/git-cat-file.txt--e"></a>-e </dt>
 <dd>
-<p>Exit with zero status if <code>&lt;object&gt;</code> exists and is a valid
-object. If <code>&lt;object&gt;</code> is of an invalid format, exit with non-zero
+<p>Exit with zero status if <span class='synopsis'><em>&lt;object&gt;</em></span> exists and is a valid
+object. If <span class='synopsis'><em>&lt;object&gt;</em></span> is of an invalid format, exit with non-zero
 status and emit an error on stderr.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--p"><a class="anchor" href="#Documentation/git-cat-file.txt--p"></a>-p </dt>
 <dd>
-<p>Pretty-print the contents of <code>&lt;object&gt;</code> based on its type.</p>
+<p>Pretty-print the contents of <span class='synopsis'><em>&lt;object&gt;</em></span> based on its type.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-lttypegt"><a id="Documentation/git-cat-file.txt-type" class="anchor" href="#Documentation/git-cat-file.txt-type"></a>&lt;type&gt; </dt>
 <dd>
-<p>Typically this matches the real type of <code>&lt;object&gt;</code> but asking
+<p>Typically this matches the real type of <span class='synopsis'><em>&lt;object&gt;</em></span> but asking
 for a type that can trivially be dereferenced from the given
-<code>&lt;object&gt;</code> is also permitted.  An example is to ask for a
-"tree" with <code>&lt;object&gt;</code> being a commit object that contains it,
-or to ask for a "blob" with <code>&lt;object&gt;</code> being a tag object that
+<span class='synopsis'><em>&lt;object&gt;</em></span> is also permitted.  An example is to ask for a
+"tree" with <span class='synopsis'><em>&lt;object&gt;</em></span> being a commit object that contains it,
+or to ask for a "blob" with <span class='synopsis'><em>&lt;object&gt;</em></span> being a tag object that
 points at it.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---no-mailmap"><a class="anchor" href="#Documentation/git-cat-file.txt---no-mailmap"></a>--[no-]mailmap </dt>
@@ -2063,16 +2063,16 @@ See <a href='/docs/git-shortlog'>git-shortlog[1]</a>.</p>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---textconv"><a class="anchor" href="#Documentation/git-cat-file.txt---textconv"></a>--textconv </dt>
 <dd>
 <p>Show the content as transformed by a textconv filter. In this case,
-<code>&lt;object&gt;</code> has to be of the form <code>&lt;tree-ish&gt;:&lt;path&gt;</code>, or <code>:&lt;path&gt;</code> in
+<span class='synopsis'><em>&lt;object&gt;</em></span> has to be of the form <span class='synopsis'><em>&lt;tree-ish&gt;</em><code>:</code><em>&lt;path&gt;</em></span>, or <span class='synopsis'><code>:</code><em>&lt;path&gt;</em></span> in
 order to apply the filter to the content recorded in the index at
-<code>&lt;path&gt;</code>.</p>
+<span class='synopsis'><em>&lt;path&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---filters"><a class="anchor" href="#Documentation/git-cat-file.txt---filters"></a>--filters </dt>
 <dd>
 <p>Show the content as converted by the filters configured in
-the current working tree for the given <code>&lt;path&gt;</code> (i.e. smudge filters,
-end-of-line conversion, etc). In this case, <code>&lt;object&gt;</code> has to be of
-the form <code>&lt;tree-ish&gt;:&lt;path&gt;</code>, or <code>:&lt;path&gt;</code>.</p>
+the current working tree for the given <span class='synopsis'><em>&lt;path&gt;</em></span> (i.e. smudge filters,
+end-of-line conversion, etc). In this case, <span class='synopsis'><em>&lt;object&gt;</em></span> has to be of
+the form <span class='synopsis'><em>&lt;tree-ish&gt;</em><code>:</code><em>&lt;path&gt;</em></span>, or <span class='synopsis'><code>:</code><em>&lt;path&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---filterltfilter-specgt"><a id="Documentation/git-cat-file.txt---filterfilter-spec" class="anchor" href="#Documentation/git-cat-file.txt---filterfilter-spec"></a>--filter=&lt;filter-spec&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---no-filter"><a class="anchor" href="#Documentation/git-cat-file.txt---no-filter"></a>--no-filter </dt>
@@ -2080,8 +2080,8 @@ the form <code>&lt;tree-ish&gt;:&lt;path&gt;</code>, or <code>:&lt;path&gt;</cod
 <p>Omit objects from the list of printed objects. This can only be used in
 combination with one of the batched modes. Excluded objects that have
 been explicitly requested via any of the batch modes that read objects
-via standard input (<code>--batch</code>, <code>--batch-check</code>) will be reported as
-"filtered". Excluded objects in <code>--batch-all-objects</code> mode will not be
+via standard input (<span class='synopsis'><code>--batch</code></span>, <span class='synopsis'><code>--batch-check</code></span>) will be reported as
+"filtered". Excluded objects in <span class='synopsis'><code>--batch-all-objects</code></span> mode will not be
 printed at all. The <em>&lt;filter-spec&gt;</em> may be one of the following:</p>
 <div class="paragraph">
 <p>The form <em>--filter=blob:none</em> omits all blobs.</p>
@@ -2099,7 +2099,7 @@ are not of the requested type.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---pathltpathgt"><a id="Documentation/git-cat-file.txt---pathpath" class="anchor" href="#Documentation/git-cat-file.txt---pathpath"></a>--path=&lt;path&gt; </dt>
 <dd>
-<p>For use with <code>--textconv</code> or <code>--filters</code>, to allow specifying an object
+<p>For use with <span class='synopsis'><code>--textconv</code></span> or <span class='synopsis'><code>--filters</code></span>, to allow specifying an object
 name and a path separately, e.g. when it is difficult to figure out
 the revision from which the blob came.</p>
 </dd>
@@ -2108,18 +2108,18 @@ the revision from which the blob came.</p>
 <dd>
 <p>Print object information and contents for each object provided
 on stdin. May not be combined with any other options or arguments
-except <code>--textconv</code>, <code>--filters</code>, or <code>--use-mailmap</code>.</p>
+except <span class='synopsis'><code>--textconv</code></span>, <span class='synopsis'><code>--filters</code></span>, or <span class='synopsis'><code>--use-mailmap</code></span>.</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>When used with <code>--textconv</code> or <code>--filters</code>, the input lines
+<p>When used with <span class='synopsis'><code>--textconv</code></span> or <span class='synopsis'><code>--filters</code></span>, the input lines
 must specify the path, separated by whitespace. See the section
-<code>BATCH OUTPUT</code> below for details.</p>
+<span class='synopsis'><code>BATCH</code> <code>OUTPUT</code></span> below for details.</p>
 </li>
 <li>
-<p>When used with <code>--use-mailmap</code>, for commit and tag objects, the
+<p>When used with <span class='synopsis'><code>--use-mailmap</code></span>, for commit and tag objects, the
 contents part of the output shows the identities replaced using the
 mailmap mechanism, while the information part of the output shows
 the size of the object as if it actually recorded the replacement
@@ -2134,19 +2134,19 @@ identities.</p>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---batch-checkltformatgt"><a id="Documentation/git-cat-file.txt---batch-checkformat" class="anchor" href="#Documentation/git-cat-file.txt---batch-checkformat"></a>--batch-check=&lt;format&gt; </dt>
 <dd>
 <p>Print object information for each object provided on stdin. May not be
-combined with any other options or arguments except <code>--textconv</code>, <code>--filters</code>
-or <code>--use-mailmap</code>.</p>
+combined with any other options or arguments except <span class='synopsis'><code>--textconv</code></span>, <span class='synopsis'><code>--filters</code></span>
+or <span class='synopsis'><code>--use-mailmap</code></span>.</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>When used with <code>--textconv</code> or <code>--filters</code>, the input lines must
+<p>When used with <span class='synopsis'><code>--textconv</code></span> or <span class='synopsis'><code>--filters</code></span>, the input lines must
 specify the path, separated by whitespace. See the section
-<code>BATCH OUTPUT</code> below for details.</p>
+<span class='synopsis'><code>BATCH</code> <code>OUTPUT</code></span> below for details.</p>
 </li>
 <li>
-<p>When used with <code>--use-mailmap</code>, for commit and tag objects, the
+<p>When used with <span class='synopsis'><code>--use-mailmap</code></span>, for commit and tag objects, the
 printed object information shows the size of the object as if the
 identities recorded in it were replaced by the mailmap mechanism.</p>
 </li>
@@ -2159,21 +2159,21 @@ identities recorded in it were replaced by the mailmap mechanism.</p>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---batch-commandltformatgt"><a id="Documentation/git-cat-file.txt---batch-commandformat" class="anchor" href="#Documentation/git-cat-file.txt---batch-commandformat"></a>--batch-command=&lt;format&gt; </dt>
 <dd>
 <p>Enter a command mode that reads commands and arguments from stdin. May
-only be combined with <code>--buffer</code>, <code>--textconv</code>, <code>--use-mailmap</code> or
-<code>--filters</code>.</p>
+only be combined with <span class='synopsis'><code>--buffer</code></span>, <span class='synopsis'><code>--textconv</code></span>, <span class='synopsis'><code>--use-mailmap</code></span> or
+<span class='synopsis'><code>--filters</code></span>.</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>When used with <code>--textconv</code> or <code>--filters</code>, the input lines must
+<p>When used with <span class='synopsis'><code>--textconv</code></span> or <span class='synopsis'><code>--filters</code></span>, the input lines must
 specify the path, separated by whitespace. See the section
-<code>BATCH OUTPUT</code> below for details.</p>
+<span class='synopsis'><code>BATCH</code> <code>OUTPUT</code></span> below for details.</p>
 </li>
 <li>
-<p>When used with <code>--use-mailmap</code>, for commit and tag objects, the
-<code>contents</code> command shows the identities replaced using the
-mailmap mechanism, while the <code>info</code> command shows the size
+<p>When used with <span class='synopsis'><code>--use-mailmap</code></span>, for commit and tag objects, the
+<span class='synopsis'><code>contents</code></span> command shows the identities replaced using the
+mailmap mechanism, while the <span class='synopsis'><code>info</code></span> command shows the size
 of the object as if it actually recorded the replacement
 identities.</p>
 </li>
@@ -2182,7 +2182,7 @@ identities.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><code>--batch-command</code> recognizes the following commands:</p>
+<p><span class='synopsis'><code>--batch-command</code></span> recognizes the following commands:</p>
 </div>
 <div class="openblock">
 <div class="content">
@@ -2190,20 +2190,20 @@ identities.</p>
 <dl>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-contentsltobjectgt"><a id="Documentation/git-cat-file.txt-contentsobject" class="anchor" href="#Documentation/git-cat-file.txt-contentsobject"></a>contents &lt;object&gt; </dt>
 <dd>
-<p>Print object contents for object reference <code>&lt;object&gt;</code>. This corresponds to
-the output of <code>--batch</code>.</p>
+<p>Print object contents for object reference <span class='synopsis'><em>&lt;object&gt;</em></span>. This corresponds to
+the output of <span class='synopsis'><code>--batch</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-infoltobjectgt"><a id="Documentation/git-cat-file.txt-infoobject" class="anchor" href="#Documentation/git-cat-file.txt-infoobject"></a>info &lt;object&gt; </dt>
 <dd>
-<p>Print object info for object reference <code>&lt;object&gt;</code>. This corresponds to the
-output of <code>--batch-check</code>.</p>
+<p>Print object info for object reference <span class='synopsis'><em>&lt;object&gt;</em></span>. This corresponds to the
+output of <span class='synopsis'><code>--batch-check</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-flush"><a class="anchor" href="#Documentation/git-cat-file.txt-flush"></a>flush </dt>
 <dd>
-<p>Used with <code>--buffer</code> to execute all preceding commands that were issued
-since the beginning or since the last flush was issued. When <code>--buffer</code>
-is used, no output will come until a <code>flush</code> is issued. When <code>--buffer</code>
-is not used, commands are flushed each time without issuing <code>flush</code>.</p>
+<p>Used with <span class='synopsis'><code>--buffer</code></span> to execute all preceding commands that were issued
+since the beginning or since the last flush was issued. When <span class='synopsis'><code>--buffer</code></span>
+is used, no output will come until a <span class='synopsis'><code>flush</code></span> is issued. When <span class='synopsis'><code>--buffer</code></span>
+is not used, commands are flushed each time without issuing <span class='synopsis'><code>flush</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -2215,48 +2215,48 @@ is not used, commands are flushed each time without issuing <code>flush</code>.<
 <p>Instead of reading a list of objects on stdin, perform the
 requested batch operation on all objects in the repository and
 any alternate object stores (not just reachable objects).
-Requires <code>--batch</code> or <code>--batch-check</code> be specified. By default,
+Requires <span class='synopsis'><code>--batch</code></span> or <span class='synopsis'><code>--batch-check</code></span> be specified. By default,
 the objects are visited in order sorted by their hashes; see
-also <code>--unordered</code> below. Objects are presented as-is, without
+also <span class='synopsis'><code>--unordered</code></span> below. Objects are presented as-is, without
 respecting the "replace" mechanism of <a href='/docs/git-replace'>git-replace[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---buffer"><a class="anchor" href="#Documentation/git-cat-file.txt---buffer"></a>--buffer </dt>
 <dd>
 <p>Normally batch output is flushed after each object is output, so
 that a process can interactively read and write from
-<code>cat-file</code>. With this option, the output uses normal stdio
+<span class='synopsis'><code>cat-file</code></span>. With this option, the output uses normal stdio
 buffering; this is much more efficient when invoking
-<code>--batch-check</code> or <code>--batch-command</code> on a large number of objects.</p>
+<span class='synopsis'><code>--batch-check</code></span> or <span class='synopsis'><code>--batch-command</code></span> on a large number of objects.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---unordered"><a class="anchor" href="#Documentation/git-cat-file.txt---unordered"></a>--unordered </dt>
 <dd>
-<p>When <code>--batch-all-objects</code> is in use, visit objects in an
+<p>When <span class='synopsis'><code>--batch-all-objects</code></span> is in use, visit objects in an
 order which may be more efficient for accessing the object
 contents than hash order. The exact details of the order are
 unspecified, but if you do not require a specific order, this
 should generally result in faster output, especially with
-<code>--batch</code>.  Note that <code>cat-file</code> will still show each object
+<span class='synopsis'><code>--batch</code></span>.  Note that <span class='synopsis'><code>cat-file</code></span> will still show each object
 only once, even if it is stored multiple times in the
 repository.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---follow-symlinks"><a class="anchor" href="#Documentation/git-cat-file.txt---follow-symlinks"></a>--follow-symlinks </dt>
 <dd>
-<p>With <code>--batch</code> or <code>--batch-check</code>, follow symlinks inside the
+<p>With <span class='synopsis'><code>--batch</code></span> or <span class='synopsis'><code>--batch-check</code></span>, follow symlinks inside the
 repository when requesting objects with extended SHA-1
 expressions of the form tree-ish:path-in-tree.  Instead of
 providing output about the link itself, provide output about
 the linked-to object.  If a symlink points outside the
-tree-ish (e.g. a link to <code>/foo</code> or a root-level link to <code>../foo</code>),
+tree-ish (e.g. a link to <span class='synopsis'><code>/foo</code></span> or a root-level link to <span class='synopsis'><code>../foo</code></span>),
 the portion of the link which is outside the tree will be
 printed.</p>
 <div class="paragraph">
 <p>This option does not (currently) work correctly when an object in the
-index is specified (e.g. <code>:link</code> instead of <code>HEAD:link</code>) rather than
+index is specified (e.g. <span class='synopsis'><code>:link</code></span> instead of <span class='synopsis'><code>HEAD:link</code></span>) rather than
 one in the tree.</p>
 </div>
 <div class="paragraph">
-<p>This option cannot (currently) be used unless <code>--batch</code> or
-<code>--batch-check</code> is used.</p>
+<p>This option cannot (currently) be used unless <span class='synopsis'><code>--batch</code></span> or
+<span class='synopsis'><code>--batch-check</code></span> is used.</p>
 </div>
 <div class="paragraph">
 <p>For example, consider a git repository containing:</p>
@@ -2275,7 +2275,7 @@ alink: a symlink to /etc/passwd</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For a regular file <code>f</code>, <code>echo HEAD:f | git cat-file --batch</code> would print</p>
+<p>For a regular file <span class='synopsis'><code>f</code></span>, <span class='synopsis'><code>echo</code> <code>HEAD:f</code> | <code>git</code> <code>cat-file</code> <code>--batch</code></span> would print</p>
 </div>
 <div class="openblock">
 <div class="content">
@@ -2287,13 +2287,13 @@ alink: a symlink to /etc/passwd</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And <code>echo HEAD:link | git cat-file --batch --follow-symlinks</code> would
-print the same thing, as would <code>HEAD:dir/link</code>, as they both point at
-<code>HEAD:f</code>.</p>
+<p>And <span class='synopsis'><code>echo</code> <code>HEAD:link</code> | <code>git</code> <code>cat-file</code> <code>--batch</code> <code>--follow-symlinks</code></span> would
+print the same thing, as would <span class='synopsis'><code>HEAD:dir/link</code></span>, as they both point at
+<span class='synopsis'><code>HEAD:f</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Without <code>--follow-symlinks</code>, these would print data about the symlink
-itself.  In the case of <code>HEAD:link</code>, you would see</p>
+<p>Without <span class='synopsis'><code>--follow-symlinks</code></span>, these would print data about the symlink
+itself.  In the case of <span class='synopsis'><code>HEAD:link</code></span>, you would see</p>
 </div>
 <div class="openblock">
 <div class="content">
@@ -2305,7 +2305,7 @@ itself.  In the case of <code>HEAD:link</code>, you would see</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Both <code>plink</code> and <code>alink</code> point outside the tree, so they would
+<p>Both <span class='synopsis'><code>plink</code></span> and <span class='synopsis'><code>alink</code></span> point outside the tree, so they would
 respectively print:</p>
 </div>
 <div class="openblock">
@@ -2327,16 +2327,16 @@ respectively print:</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--Z"><a class="anchor" href="#Documentation/git-cat-file.txt--Z"></a>-Z </dt>
 <dd>
-<p>Only meaningful with <code>--batch</code>, <code>--batch-check</code>, or
-<code>--batch-command</code>; input and output is NUL-delimited instead of
+<p>Only meaningful with <span class='synopsis'><code>--batch</code></span>, <span class='synopsis'><code>--batch-check</code></span>, or
+<span class='synopsis'><code>--batch-command</code></span>; input and output is NUL-delimited instead of
 newline-delimited.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--z"><a class="anchor" href="#Documentation/git-cat-file.txt--z"></a>-z </dt>
 <dd>
-<p>Only meaningful with <code>--batch</code>, <code>--batch-check</code>, or
-<code>--batch-command</code>; input is NUL-delimited instead of
+<p>Only meaningful with <span class='synopsis'><code>--batch</code></span>, <span class='synopsis'><code>--batch-check</code></span>, or
+<span class='synopsis'><code>--batch-command</code></span>; input is NUL-delimited instead of
 newline-delimited. This option is deprecated in favor of
-<code>-Z</code> as the output can otherwise be ambiguous.</p>
+<span class='synopsis'><code>-Z</code></span> as the output can otherwise be ambiguous.</p>
 </dd>
 </dl>
 </div>
@@ -2346,19 +2346,19 @@ newline-delimited. This option is deprecated in favor of
 <h2 id="_output"><a class="anchor" href="#_output"></a>OUTPUT</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If <code>-t</code> is specified, one of the <code>&lt;type&gt;</code>.</p>
+<p>If <span class='synopsis'><code>-t</code></span> is specified, one of the <span class='synopsis'><em>&lt;type&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
-<p>If <code>-s</code> is specified, the size of the <code>&lt;object&gt;</code> in bytes.</p>
+<p>If <span class='synopsis'><code>-s</code></span> is specified, the size of the <span class='synopsis'><em>&lt;object&gt;</em></span> in bytes.</p>
 </div>
 <div class="paragraph">
-<p>If <code>-e</code> is specified, no output, unless the <code>&lt;object&gt;</code> is malformed.</p>
+<p>If <span class='synopsis'><code>-e</code></span> is specified, no output, unless the <span class='synopsis'><em>&lt;object&gt;</em></span> is malformed.</p>
 </div>
 <div class="paragraph">
-<p>If <code>-p</code> is specified, the contents of <code>&lt;object&gt;</code> are pretty-printed.</p>
+<p>If <span class='synopsis'><code>-p</code></span> is specified, the contents of <span class='synopsis'><em>&lt;object&gt;</em></span> are pretty-printed.</p>
 </div>
 <div class="paragraph">
-<p>If <code>&lt;type&gt;</code> is specified, the raw (though uncompressed) contents of the <code>&lt;object&gt;</code>
+<p>If <span class='synopsis'><em>&lt;type&gt;</em></span> is specified, the raw (though uncompressed) contents of the <span class='synopsis'><em>&lt;object&gt;</em></span>
 will be returned.</p>
 </div>
 </div>
@@ -2367,73 +2367,74 @@ will be returned.</p>
 <h2 id="_batch_output"><a class="anchor" href="#_batch_output"></a>BATCH OUTPUT</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If <code>--batch</code> or <code>--batch-check</code> is given, <code>cat-file</code> will read objects
+<p>If <span class='synopsis'><code>--batch</code></span> or <span class='synopsis'><code>--batch-check</code></span> is given, <span class='synopsis'><code>cat-file</code></span> will read objects
 from stdin, one per line, and print information about them in the same
 order as they have been read. By default, the whole line is
 considered as an object, as if it were fed to <a href='/docs/git-rev-parse'>git-rev-parse[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>When <code>--batch-command</code> is given, <code>cat-file</code> will read commands from stdin,
+<p>When <span class='synopsis'><code>--batch-command</code></span> is given, <span class='synopsis'><code>cat-file</code></span> will read commands from stdin,
 one per line, and print information based on the command given. With
-<code>--batch-command</code>, the <code>info</code> command followed by an object will print
-information about the object the same way <code>--batch-check</code> would, and the
-<code>contents</code> command followed by an object prints contents in the same way
-<code>--batch</code> would.</p>
+<span class='synopsis'><code>--batch-command</code></span>, the <span class='synopsis'><code>info</code></span> command followed by an object will print
+information about the object the same way <span class='synopsis'><code>--batch-check</code></span> would, and the
+<span class='synopsis'><code>contents</code></span> command followed by an object prints contents in the same way
+<span class='synopsis'><code>--batch</code></span> would.</p>
 </div>
 <div class="paragraph">
 <p>You can specify the information shown for each object by using a custom
-<code>&lt;format&gt;</code>. The <code>&lt;format&gt;</code> is copied literally to stdout for each
-object, with placeholders of the form <code>%(atom)</code> expanded, followed by a
+<span class='synopsis'><em>&lt;format&gt;</em></span>. The <span class='synopsis'><em>&lt;format&gt;</em></span> is copied literally to stdout for each
+object, with placeholders of the form <span class='synopsis'><code>%</code>(<code>atom</code>)</span> expanded, followed by a
 newline. The available atoms are:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-codeobjectnamecode"><a id="Documentation/git-cat-file.txt-objectname" class="anchor" href="#Documentation/git-cat-file.txt-objectname"></a><code>objectname</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscodeobjectnamecodespan"><a id="Documentation/git-cat-file.txt-objectname" class="anchor" href="#Documentation/git-cat-file.txt-objectname"></a><span class='synopsis'><code>objectname</code></span> </dt>
 <dd>
 <p>The full hex representation of the object name.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-codeobjecttypecode"><a id="Documentation/git-cat-file.txt-objecttype" class="anchor" href="#Documentation/git-cat-file.txt-objecttype"></a><code>objecttype</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscodeobjecttypecodespan"><a id="Documentation/git-cat-file.txt-objecttype" class="anchor" href="#Documentation/git-cat-file.txt-objecttype"></a><span class='synopsis'><code>objecttype</code></span> </dt>
 <dd>
-<p>The type of the object (the same as <code>cat-file -t</code> reports).</p>
+<p>The type of the object (the same as <span class='synopsis'><code>cat-file</code> <code>-t</code></span> reports).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-codeobjectsizecode"><a id="Documentation/git-cat-file.txt-objectsize" class="anchor" href="#Documentation/git-cat-file.txt-objectsize"></a><code>objectsize</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscodeobjectsizecodespan"><a id="Documentation/git-cat-file.txt-objectsize" class="anchor" href="#Documentation/git-cat-file.txt-objectsize"></a><span class='synopsis'><code>objectsize</code></span> </dt>
 <dd>
-<p>The size, in bytes, of the object (the same as <code>cat-file -s</code>
+<p>The size, in bytes, of the object (the same as <span class='synopsis'><code>cat-file</code> <code>-s</code></span>
 reports).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-codeobjectsizediskcode"><a id="Documentation/git-cat-file.txt-objectsizedisk" class="anchor" href="#Documentation/git-cat-file.txt-objectsizedisk"></a><code>objectsize:disk</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscodeobjectsizediskcodespan"><a id="Documentation/git-cat-file.txt-objectsizedisk" class="anchor" href="#Documentation/git-cat-file.txt-objectsizedisk"></a><span class='synopsis'><code>objectsize:disk</code></span> </dt>
 <dd>
 <p>The size, in bytes, that the object takes up on disk. See the
-note about on-disk sizes in the <code>CAVEATS</code> section below.</p>
+note about on-disk sizes in the <span class='synopsis'><code>CAVEATS</code></span> section below.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-codedeltabasecode"><a id="Documentation/git-cat-file.txt-deltabase" class="anchor" href="#Documentation/git-cat-file.txt-deltabase"></a><code>deltabase</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscodedeltabasecodespan"><a id="Documentation/git-cat-file.txt-deltabase" class="anchor" href="#Documentation/git-cat-file.txt-deltabase"></a><span class='synopsis'><code>deltabase</code></span> </dt>
 <dd>
 <p>If the object is stored as a delta on-disk, this expands to the
 full hex representation of the delta base object name.
-Otherwise, expands to the null OID (all zeroes). See <code>CAVEATS</code>
+Otherwise, expands to the null OID (all zeroes). See <span class='synopsis'><code>CAVEATS</code></span>
 below.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-coderestcode"><a id="Documentation/git-cat-file.txt-rest" class="anchor" href="#Documentation/git-cat-file.txt-rest"></a><code>rest</code> </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-spanclasssynopsiscoderestcodespan"><a id="Documentation/git-cat-file.txt-rest" class="anchor" href="#Documentation/git-cat-file.txt-rest"></a><span class='synopsis'><code>rest</code></span> </dt>
 <dd>
 <p>If this atom is used in the output string, input lines are split
 at the first whitespace boundary. All characters before that
 whitespace are considered to be the object name; characters
 after that first run of whitespace (i.e., the "rest" of the
-line) are output in place of the <code>%(rest)</code> atom.</p>
+line) are output in place of the <span class='synopsis'><code>%</code>(<code>rest</code>)</span> atom.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>If no format is specified, the default format is <code>%(objectname)
-%(objecttype) %(objectsize)</code>.</p>
+<p>If no format is specified, the default format is <span class='synopsis'><code>%</code>(<code>objectname</code>)
+
+<code>%</code>(<code>objecttype</code>) <code>%</code>(<code>objectsize</code>)</span>.</p>
 </div>
 <div class="paragraph">
-<p>If <code>--batch</code> is specified, or if <code>--batch-command</code> is used with the <code>contents</code>
+<p>If <span class='synopsis'><code>--batch</code></span> is specified, or if <span class='synopsis'><code>--batch-command</code></span> is used with the <span class='synopsis'><code>contents</code></span>
 command, the object information is followed by the object contents (consisting
-of <code>%(objectsize)</code> bytes), followed by a newline.</p>
+of <span class='synopsis'><code>%</code>(<code>objectsize</code>)</span> bytes), followed by a newline.</p>
 </div>
 <div class="paragraph">
-<p>For example, <code>--batch</code> without a custom format would produce:</p>
+<p>For example, <span class='synopsis'><code>--batch</code></span> without a custom format would produce:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2442,7 +2443,7 @@ of <code>%(objectsize)</code> bytes), followed by a newline.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Whereas <code>--batch-check='%(objectname) %(objecttype)'</code> would produce:</p>
+<p>Whereas <span class='synopsis'><code>--batch-check='%</code>(<code>objectname</code>) <code>%</code>(<code>objecttype</code>)</span> would produce:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2451,7 +2452,7 @@ of <code>%(objectsize)</code> bytes), followed by a newline.</p>
 </div>
 <div class="paragraph">
 <p>If a name is specified on stdin that cannot be resolved to an object in
-the repository, then <code>cat-file</code> will ignore any custom format and print:</p>
+the repository, then <span class='synopsis'><code>cat-file</code></span> will ignore any custom format and print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2459,8 +2460,8 @@ the repository, then <code>cat-file</code> will ignore any custom format and pri
 </div>
 </div>
 <div class="paragraph">
-<p>If a name is specified on stdin that is filtered out via <code>--filter=</code>,
-then <code>cat-file</code> will ignore any custom format and print:</p>
+<p>If a name is specified on stdin that is filtered out via <span class='synopsis'><code>--filter=</code></span>,
+then <span class='synopsis'><code>cat-file</code></span> will ignore any custom format and print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2468,7 +2469,7 @@ then <code>cat-file</code> will ignore any custom format and print:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If a name is specified that might refer to more than one object (an ambiguous short sha), then <code>cat-file</code> will ignore any custom format and print:</p>
+<p>If a name is specified that might refer to more than one object (an ambiguous short sha), then <span class='synopsis'><code>cat-file</code></span> will ignore any custom format and print:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2476,8 +2477,8 @@ then <code>cat-file</code> will ignore any custom format and print:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>If <code>--follow-symlinks</code> is used, and a symlink in the repository points
-outside the repository, then <code>cat-file</code> will ignore any custom format
+<p>If <span class='synopsis'><code>--follow-symlinks</code></span> is used, and a symlink in the repository points
+outside the repository, then <span class='synopsis'><code>cat-file</code></span> will ignore any custom format
 and print:</p>
 </div>
 <div class="listingblock">
@@ -2487,12 +2488,12 @@ and print:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The symlink will either be absolute (beginning with a <code>/</code>), or relative
-to the tree root.  For instance, if dir/link points to <code>../../foo</code>, then
-<code>&lt;symlink&gt;</code> will be <code>../foo</code>.  <code>&lt;size&gt;</code> is the size of the symlink in bytes.</p>
+<p>The symlink will either be absolute (beginning with a <span class='synopsis'><code>/</code></span>), or relative
+to the tree root.  For instance, if dir/link points to <span class='synopsis'><code>../../foo</code></span>, then
+<span class='synopsis'><em>&lt;symlink&gt;</em></span> will be <span class='synopsis'><code>../foo</code></span>.  <span class='synopsis'><em>&lt;size&gt;</em></span> is the size of the symlink in bytes.</p>
 </div>
 <div class="paragraph">
-<p>If <code>--follow-symlinks</code> is used, the following error messages will be
+<p>If <span class='synopsis'><code>--follow-symlinks</code></span> is used, the following error messages will be
 displayed:</p>
 </div>
 <div class="listingblock">
@@ -2534,7 +2535,7 @@ require more than 40 link resolutions to resolve).</p>
 directory name.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, when <code>-Z</code> is passed, the line feeds in any of the above examples
+<p>Alternatively, when <span class='synopsis'><code>-Z</code></span> is passed, the line feeds in any of the above examples
 are replaced with NUL terminators. This ensures that output will be parsable if
 the output itself would contain a linefeed and is thus recommended for
 scripting purposes.</p>
@@ -2595,7 +2596,7 @@ will be reported.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

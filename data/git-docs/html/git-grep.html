@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2122,25 +2122,25 @@ tree, search also in untracked files.</p>
 <dd>
 <p>Search files in the current directory that is not managed by Git,
 or by ignoring that the current directory is managed by Git.  This
-is rather similar to running the regular <code>grep(1)</code> utility with its
-<code>-r</code> option specified, but with some additional benefits, such as
+is rather similar to running the regular <span class='synopsis'><code>grep</code>(<code>1</code>)</span> utility with its
+<span class='synopsis'><code>-r</code></span> option specified, but with some additional benefits, such as
 using pathspec patterns to limit paths;  see the <em>pathspec</em> entry
 in <a href='/docs/gitglossary'>gitglossary[7]</a> for more information.</p>
 <div class="paragraph">
-<p>This option cannot be used together with <code>--cached</code> or <code>--untracked</code>.
-See also <code>grep.fallbackToNoIndex</code> in <em>CONFIGURATION</em> below.</p>
+<p>This option cannot be used together with <span class='synopsis'><code>--cached</code></span> or <span class='synopsis'><code>--untracked</code></span>.
+See also <span class='synopsis'><code>grep.fallbackToNoIndex</code></span> in <em>CONFIGURATION</em> below.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---no-exclude-standard"><a class="anchor" href="#Documentation/git-grep.txt---no-exclude-standard"></a>--no-exclude-standard </dt>
 <dd>
-<p>Also search in ignored files by not honoring the <code>.gitignore</code>
-mechanism. Only useful with <code>--untracked</code>.</p>
+<p>Also search in ignored files by not honoring the <span class='synopsis'><code>.gitignore</code></span>
+mechanism. Only useful with <span class='synopsis'><code>--untracked</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---exclude-standard"><a class="anchor" href="#Documentation/git-grep.txt---exclude-standard"></a>--exclude-standard </dt>
 <dd>
-<p>Do not pay attention to ignored files specified via the <code>.gitignore</code>
+<p>Do not pay attention to ignored files specified via the <span class='synopsis'><code>.gitignore</code></span>
 mechanism.  Only useful when searching files in the current directory
-with <code>--no-index</code>.</p>
+with <span class='synopsis'><code>--no-index</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---recurse-submodules"><a class="anchor" href="#Documentation/git-grep.txt---recurse-submodules"></a>--recurse-submodules </dt>
 <dd>
@@ -2148,7 +2148,7 @@ with <code>--no-index</code>.</p>
 checked out in the repository.  When used in combination with the
 <em>&lt;tree&gt;</em> option the prefix of all submodule output will be the name of
 the parent project&#8217;s <em>&lt;tree&gt;</em> object.  This option cannot be used together
-with <code>--untracked</code>, and it has no effect if <code>--no-index</code> is specified.</p>
+with <span class='synopsis'><code>--untracked</code></span>, and it has no effect if <span class='synopsis'><code>--no-index</code></span> is specified.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--a"><a class="anchor" href="#Documentation/git-grep.txt--a"></a>-a </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---text"><a class="anchor" href="#Documentation/git-grep.txt---text"></a>--text </dt>
@@ -2185,11 +2185,11 @@ In other words if "a*" matches a directory named "a*",
 <dt class="hdlist1" id="Documentation/git-grep.txt--r"><a class="anchor" href="#Documentation/git-grep.txt--r"></a>-r </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---recursive"><a class="anchor" href="#Documentation/git-grep.txt---recursive"></a>--recursive </dt>
 <dd>
-<p>Same as <code>--max-depth=-1</code>; this is the default.</p>
+<p>Same as <span class='synopsis'><code>--max-depth=-1</code></span>; this is the default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---no-recursive"><a class="anchor" href="#Documentation/git-grep.txt---no-recursive"></a>--no-recursive </dt>
 <dd>
-<p>Same as <code>--max-depth=0</code>.</p>
+<p>Same as <span class='synopsis'><code>--max-depth=0</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--w"><a class="anchor" href="#Documentation/git-grep.txt--w"></a>-w </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---word-regexp"><a class="anchor" href="#Documentation/git-grep.txt---word-regexp"></a>--word-regexp </dt>
@@ -2207,9 +2207,9 @@ the end of a line or followed by a non-word character).</p>
 <dt class="hdlist1" id="Documentation/git-grep.txt--H"><a class="anchor" href="#Documentation/git-grep.txt--H"></a>-H </dt>
 <dd>
 <p>By default, the command shows the filename for each
-match.  <code>-h</code> option is used to suppress this output.
-<code>-H</code> is there for completeness and does not do anything
-except it overrides <code>-h</code> given earlier on the command
+match.  <span class='synopsis'><code>-h</code></span> option is used to suppress this output.
+<span class='synopsis'><code>-H</code></span> is there for completeness and does not do anything
+except it overrides <span class='synopsis'><code>-h</code></span> given earlier on the command
 line.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---full-name"><a class="anchor" href="#Documentation/git-grep.txt---full-name"></a>--full-name </dt>
@@ -2261,8 +2261,8 @@ matching line.</p>
 <dd>
 <p>Instead of showing every matched line, show only the
 names of files that contain (or do not contain) matches.
-For better compatibility with <em>git diff</em>, <code>--name-only</code> is a
-synonym for <code>--files-with-matches</code>.</p>
+For better compatibility with <em>git diff</em>, <span class='synopsis'><code>--name-only</code></span> is a
+synonym for <span class='synopsis'><code>--files-with-matches</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--Oltpagergt"><a id="Documentation/git-grep.txt--Opager" class="anchor" href="#Documentation/git-grep.txt--Opager"></a>-O[&lt;pager&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---open-files-in-pagerltpagergt"><a id="Documentation/git-grep.txt---open-files-in-pagerpager" class="anchor" href="#Documentation/git-grep.txt---open-files-in-pagerpager"></a>--open-files-in-pager[=&lt;pager&gt;] </dt>
@@ -2270,10 +2270,10 @@ synonym for <code>--files-with-matches</code>.</p>
 <p>Open the matching files in the pager (not the output of <em>grep</em>).
 If the pager happens to be "less" or "vi", and the user
 specified only one pattern, the first file is positioned at
-the first match automatically. The <code>pager</code> argument is
+the first match automatically. The <span class='synopsis'><code>pager</code></span> argument is
 optional; if specified, it must be stuck to the option
-without a space. If <code>pager</code> is unspecified, the default pager
-will be used (see <code>core.pager</code> in <a href='/docs/git-config'>git-config[1]</a>).</p>
+without a space. If <span class='synopsis'><code>pager</code></span> is unspecified, the default pager
+will be used (see <span class='synopsis'><code>core.pager</code></span> in <a href='/docs/git-config'>git-config[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--z"><a class="anchor" href="#Documentation/git-grep.txt--z"></a>-z </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---null"><a class="anchor" href="#Documentation/git-grep.txt---null"></a>--null </dt>
@@ -2281,7 +2281,7 @@ will be used (see <code>core.pager</code> in <a href='/docs/git-config'>git-conf
 <p>Use \0 as the delimiter for pathnames in the output, and print
 them verbatim. Without this option, pathnames with "unusual"
 characters are quoted as explained for the configuration
-variable <code>core.quotePath</code> (see <a href='/docs/git-config'>git-config[1]</a>).</p>
+variable <span class='synopsis'><code>core.quotePath</code></span> (see <a href='/docs/git-config'>git-config[1]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--o"><a class="anchor" href="#Documentation/git-grep.txt--o"></a>-o </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---only-matching"><a class="anchor" href="#Documentation/git-grep.txt---only-matching"></a>--only-matching </dt>
@@ -2304,7 +2304,7 @@ The value must be always (the default), never, or auto.</p>
 <dd>
 <p>Turn off match highlighting, even when the configuration file
 gives the default to color output.
-Same as <code>--color=never</code>.</p>
+Same as <span class='synopsis'><code>--color=never</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---break"><a class="anchor" href="#Documentation/git-grep.txt---break"></a>--break </dt>
 <dd>
@@ -2320,7 +2320,7 @@ at the start of each shown line.</p>
 <dd>
 <p>Show the preceding line that contains the function name of
 the match, unless the matching line is a function name itself.
-The name is determined in the same way as <code>git diff</code> works out
+The name is determined in the same way as <span class='synopsis'><code>git</code> <code>diff</code></span> works out
 patch hunk headers (see <em>Defining a custom hunk-header</em> in
 <a href='/docs/gitattributes'>gitattributes[5]</a>).</p>
 </dd>
@@ -2329,19 +2329,19 @@ patch hunk headers (see <em>Defining a custom hunk-header</em> in
 <dt class="hdlist1" id="Documentation/git-grep.txt---contextltnumgt"><a id="Documentation/git-grep.txt---contextnum" class="anchor" href="#Documentation/git-grep.txt---contextnum"></a>--context &lt;num&gt; </dt>
 <dd>
 <p>Show &lt;num&gt; leading and trailing lines, and place a line
-containing <code>--</code> between contiguous groups of matches.</p>
+containing <span class='synopsis'><code>--</code></span> between contiguous groups of matches.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--Altnumgt"><a id="Documentation/git-grep.txt--Anum" class="anchor" href="#Documentation/git-grep.txt--Anum"></a>-A &lt;num&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---after-contextltnumgt"><a id="Documentation/git-grep.txt---after-contextnum" class="anchor" href="#Documentation/git-grep.txt---after-contextnum"></a>--after-context &lt;num&gt; </dt>
 <dd>
 <p>Show &lt;num&gt; trailing lines, and place a line containing
-<code>--</code> between contiguous groups of matches.</p>
+<span class='synopsis'><code>--</code></span> between contiguous groups of matches.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--Bltnumgt"><a id="Documentation/git-grep.txt--Bnum" class="anchor" href="#Documentation/git-grep.txt--Bnum"></a>-B &lt;num&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---before-contextltnumgt"><a id="Documentation/git-grep.txt---before-contextnum" class="anchor" href="#Documentation/git-grep.txt---before-contextnum"></a>--before-context &lt;num&gt; </dt>
 <dd>
 <p>Show &lt;num&gt; leading lines, and place a line containing
-<code>--</code> between contiguous groups of matches.</p>
+<span class='synopsis'><code>--</code></span> between contiguous groups of matches.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--W"><a class="anchor" href="#Documentation/git-grep.txt--W"></a>-W </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---function-context"><a class="anchor" href="#Documentation/git-grep.txt---function-context"></a>--function-context </dt>
@@ -2350,22 +2350,22 @@ containing <code>--</code> between contiguous groups of matches.</p>
 function name up to the one before the next function name,
 effectively showing the whole function in which the match was
 found. The function names are determined in the same way as
-<code>git diff</code> works out patch hunk headers (see <em>Defining a
+<span class='synopsis'><code>git</code> <code>diff</code></span> works out patch hunk headers (see <em>Defining a
 custom hunk-header</em> in <a href='/docs/gitattributes'>gitattributes[5]</a>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--mltnumgt"><a id="Documentation/git-grep.txt--mnum" class="anchor" href="#Documentation/git-grep.txt--mnum"></a>-m &lt;num&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-grep.txt---max-countltnumgt"><a id="Documentation/git-grep.txt---max-countnum" class="anchor" href="#Documentation/git-grep.txt---max-countnum"></a>--max-count &lt;num&gt; </dt>
 <dd>
-<p>Limit the amount of matches per file. When using the <code>-v</code> or
-<code>--invert-match</code> option, the search stops after the specified
+<p>Limit the amount of matches per file. When using the <span class='synopsis'><code>-v</code></span> or
+<span class='synopsis'><code>--invert-match</code></span> option, the search stops after the specified
 number of non-matches. A value of -1 will return unlimited
 results (the default). A value of 0 will exit immediately with
 a non-zero status.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---threadsltnumgt"><a id="Documentation/git-grep.txt---threadsnum" class="anchor" href="#Documentation/git-grep.txt---threadsnum"></a>--threads &lt;num&gt; </dt>
 <dd>
-<p>Number of <code>grep</code> worker threads to use.  See <em>NOTES ON THREADS</em>
-and <code>grep.threads</code> in <em>CONFIGURATION</em> for more information.</p>
+<p>Number of <span class='synopsis'><code>grep</code></span> worker threads to use.  See <em>NOTES ON THREADS</em>
+and <span class='synopsis'><code>grep.threads</code></span> in <em>CONFIGURATION</em> for more information.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt--fltfilegt"><a id="Documentation/git-grep.txt--ffile" class="anchor" href="#Documentation/git-grep.txt--ffile"></a>-f &lt;file&gt; </dt>
 <dd>
@@ -2377,14 +2377,14 @@ containing a \0.</p>
 <div class="paragraph">
 <p>Not all pattern types support patterns containing \0. Git will error
 out if a given pattern type can&#8217;t support such a pattern. The
-<code>--perl-regexp</code> pattern type when compiled against the PCRE v2 backend
+<span class='synopsis'><code>--perl-regexp</code></span> pattern type when compiled against the PCRE v2 backend
 has the widest support for these types of patterns.</p>
 </div>
 <div class="paragraph">
 <p>In versions of Git before 2.23.0 patterns containing \0 would be
 silently considered fixed. This was never documented, there were also
 odd and undocumented interactions between e.g. non-ASCII patterns
-containing \0 and <code>--ignore-case</code>.</p>
+containing \0 and <span class='synopsis'><code>--ignore-case</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>In future versions we may learn to support patterns containing \0 for
@@ -2395,7 +2395,7 @@ question doesn&#8217;t support them.</p>
 <dt class="hdlist1" id="Documentation/git-grep.txt--e"><a class="anchor" href="#Documentation/git-grep.txt--e"></a>-e </dt>
 <dd>
 <p>The next parameter is the pattern. This option has to be
-used for patterns starting with <code>-</code> and should be used in
+used for patterns starting with <span class='synopsis'><code>-</code></span> and should be used in
 scripts passing user input to grep.  Multiple patterns are
 combined by <em>or</em>.</p>
 </dd>
@@ -2405,13 +2405,13 @@ combined by <em>or</em>.</p>
 <dt class="hdlist1" id="Documentation/git-grep.txt-82308203"><a id="Documentation/git-grep.txt-" class="anchor" href="#Documentation/git-grep.txt-"></a>( &#8230;&#8203; ) </dt>
 <dd>
 <p>Specify how multiple patterns are combined using Boolean
-expressions.  <code>--or</code> is the default operator.  <code>--and</code> has
-higher precedence than <code>--or</code>.  <code>-e</code> has to be used for all
+expressions.  <span class='synopsis'><code>--or</code></span> is the default operator.  <span class='synopsis'><code>--and</code></span> has
+higher precedence than <span class='synopsis'><code>--or</code></span>.  <span class='synopsis'><code>-e</code></span> has to be used for all
 patterns.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt---all-match"><a class="anchor" href="#Documentation/git-grep.txt---all-match"></a>--all-match </dt>
 <dd>
-<p>When giving multiple pattern expressions combined with <code>--or</code>,
+<p>When giving multiple pattern expressions combined with <span class='synopsis'><code>--or</code></span>,
 this flag is specified to limit the match to files that
 have lines to match all of them.</p>
 </dd>
@@ -2449,24 +2449,24 @@ in <a href='/docs/gitglossary'>gitglossary[7]</a>.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-grep.txt-codegitgreptimet--chcode"><a id="Documentation/git-grep.txt-gitgreptimet--ch" class="anchor" href="#Documentation/git-grep.txt-gitgreptimet--ch"></a><code>git grep 'time_t' -- '*.[ch]'</code> </dt>
+<dt class="hdlist1" id="Documentation/git-grep.txt-spanclasssynopsiscodegitcodecodegrepcodecodetimetcodecode--codecodecodecodechcodespan"><a id="Documentation/git-grep.txt-gitgreptimet--ch" class="anchor" href="#Documentation/git-grep.txt-gitgreptimet--ch"></a><span class='synopsis'><code>git</code> <code>grep</code> <code>time_t'</code> <code>--</code> <code>*.</code>[<code>ch</code>]</span> </dt>
 <dd>
-<p>Looks for <code>time_t</code> in all tracked .c and .h files in the working
+<p>Looks for <span class='synopsis'><code>time_t</code></span> in all tracked .c and .h files in the working
 directory and its subdirectories.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-grep.txt-codegitgrep-edefine--and-eMAXPATH-ePATHMAXcode"><a id="Documentation/git-grep.txt-gitgrep-edefine--and-eMAXPATH-ePATHMAX" class="anchor" href="#Documentation/git-grep.txt-gitgrep-edefine--and-eMAXPATH-ePATHMAX"></a><code>git grep -e '#define' --and \( -e MAX_PATH -e PATH_MAX \)</code> </dt>
+<dt class="hdlist1" id="Documentation/git-grep.txt-spanclasssynopsisemgitgrep-edefine--and-eMAXPATH-ePATHMAXemspan"><a id="Documentation/git-grep.txt-gitgrep-edefine--and-eMAXPATH-ePATHMAX" class="anchor" href="#Documentation/git-grep.txt-gitgrep-edefine--and-eMAXPATH-ePATHMAX"></a><span class='synopsis'><em>git grep -e '#define' --and \( -e MAX_PATH -e PATH_MAX \)</em></span> </dt>
 <dd>
-<p>Looks for a line that has <code>#define</code> and either <code>MAX_PATH</code> or
-<code>PATH_MAX</code>.</p>
+<p>Looks for a line that has <span class='synopsis'><code>#define</code></span> and either <span class='synopsis'><code>MAX_PATH</code></span> or
+<span class='synopsis'><code>PATH_MAX</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-grep.txt-codegitgrep--all-match-eNODE-eUnexpectedcode"><a id="Documentation/git-grep.txt-gitgrep--all-match-eNODE-eUnexpected" class="anchor" href="#Documentation/git-grep.txt-gitgrep--all-match-eNODE-eUnexpected"></a><code>git grep --all-match -e NODE -e Unexpected</code> </dt>
+<dt class="hdlist1" id="Documentation/git-grep.txt-spanclasssynopsiscodegitcodecodegrepcodecode--all-matchcodecode-ecodecodeNODEcodecode-ecodecodeUnexpectedcodespan"><a id="Documentation/git-grep.txt-gitgrep--all-match-eNODE-eUnexpected" class="anchor" href="#Documentation/git-grep.txt-gitgrep--all-match-eNODE-eUnexpected"></a><span class='synopsis'><code>git</code> <code>grep</code> <code>--all-match</code> <code>-e</code> <code>NODE</code> <code>-e</code> <code>Unexpected</code></span> </dt>
 <dd>
-<p>Looks for a line that has <code>NODE</code> or <code>Unexpected</code> in
+<p>Looks for a line that has <span class='synopsis'><code>NODE</code></span> or <span class='synopsis'><code>Unexpected</code></span> in
 files that have lines that match both.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-grep.txt-codegitgrepsolution--Documentationcode"><a id="Documentation/git-grep.txt-gitgrepsolution--Documentation" class="anchor" href="#Documentation/git-grep.txt-gitgrepsolution--Documentation"></a><code>git grep solution -- :^Documentation</code> </dt>
+<dt class="hdlist1" id="Documentation/git-grep.txt-spanclasssynopsiscodegitcodecodegrepcodecodesolutioncodecode--codecodeDocumentationcodespan"><a id="Documentation/git-grep.txt-gitgrepsolution--Documentation" class="anchor" href="#Documentation/git-grep.txt-gitgrepsolution--Documentation"></a><span class='synopsis'><code>git</code> <code>grep</code> <code>solution</code> <code>--</code> <code>:^Documentation</code></span> </dt>
 <dd>
-<p>Looks for <code>solution</code>, excluding files in <code>Documentation</code>.</p>
+<p>Looks for <span class='synopsis'><code>solution</code></span>, excluding files in <span class='synopsis'><code>Documentation</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -2476,14 +2476,14 @@ files that have lines that match both.</p>
 <h2 id="_notes_on_threads"><a class="anchor" href="#_notes_on_threads"></a>NOTES ON THREADS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>--threads</code> option (and the <code>grep.threads</code> configuration) will be ignored when
-<code>--open-files-in-pager</code> is used, forcing a single-threaded execution.</p>
+<p>The <span class='synopsis'><code>--threads</code></span> option (and the <span class='synopsis'><code>grep.threads</code></span> configuration) will be ignored when
+<span class='synopsis'><code>--open-files-in-pager</code></span> is used, forcing a single-threaded execution.</p>
 </div>
 <div class="paragraph">
-<p>When grepping the object store (with <code>--cached</code> or giving tree objects), running
-with multiple threads might perform slower than single-threaded if <code>--textconv</code>
+<p>When grepping the object store (with <span class='synopsis'><code>--cached</code></span> or giving tree objects), running
+with multiple threads might perform slower than single-threaded if <span class='synopsis'><code>--textconv</code></span>
 is given and there are too many text conversions.  Thus, if low performance is
-experienced in this case, it might be desirable to use <code>--threads=1</code>.</p>
+experienced in this case, it might be desirable to use <span class='synopsis'><code>--threads=1</code></span>.</p>
 </div>
 </div>
 </div>
@@ -2499,24 +2499,24 @@ as what&#8217;s found there:</p>
 <dl>
 <dt class="hdlist1" id="Documentation/git-grep.txt-greplineNumber"><a class="anchor" href="#Documentation/git-grep.txt-greplineNumber"></a>grep.lineNumber </dt>
 <dd>
-<p>If set to true, enable <code>-n</code> option by default.</p>
+<p>If set to true, enable <span class='synopsis'><code>-n</code></span> option by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-grepcolumn"><a class="anchor" href="#Documentation/git-grep.txt-grepcolumn"></a>grep.column </dt>
 <dd>
-<p>If set to true, enable the <code>--column</code> option by default.</p>
+<p>If set to true, enable the <span class='synopsis'><code>--column</code></span> option by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-greppatternType"><a class="anchor" href="#Documentation/git-grep.txt-greppatternType"></a>grep.patternType </dt>
 <dd>
 <p>Set the default matching behavior. Using a value of <em>basic</em>, <em>extended</em>,
-<em>fixed</em>, or <em>perl</em> will enable the <code>--basic-regexp</code>, <code>--extended-regexp</code>,
-<code>--fixed-strings</code>, or <code>--perl-regexp</code> option accordingly, while the
-value <em>default</em> will use the <code>grep.extendedRegexp</code> option to choose
+<em>fixed</em>, or <em>perl</em> will enable the <span class='synopsis'><code>--basic-regexp</code></span>, <span class='synopsis'><code>--extended-regexp</code></span>,
+<span class='synopsis'><code>--fixed-strings</code></span>, or <span class='synopsis'><code>--perl-regexp</code></span> option accordingly, while the
+value <em>default</em> will use the <span class='synopsis'><code>grep.extendedRegexp</code></span> option to choose
 between <em>basic</em> and <em>extended</em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-grepextendedRegexp"><a class="anchor" href="#Documentation/git-grep.txt-grepextendedRegexp"></a>grep.extendedRegexp </dt>
 <dd>
-<p>If set to true, enable <code>--extended-regexp</code> option by default. This
-option is ignored when the <code>grep.patternType</code> option is set to a value
+<p>If set to true, enable <span class='synopsis'><code>--extended-regexp</code></span> option by default. This
+option is ignored when the <span class='synopsis'><code>grep.patternType</code></span> option is set to a value
 other than <em>default</em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-grepthreads"><a class="anchor" href="#Documentation/git-grep.txt-grepthreads"></a>grep.threads </dt>
@@ -2526,11 +2526,11 @@ use as many threads as the number of logical cores available.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-grepfullName"><a class="anchor" href="#Documentation/git-grep.txt-grepfullName"></a>grep.fullName </dt>
 <dd>
-<p>If set to true, enable <code>--full-name</code> option by default.</p>
+<p>If set to true, enable <span class='synopsis'><code>--full-name</code></span> option by default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-grep.txt-grepfallbackToNoIndex"><a class="anchor" href="#Documentation/git-grep.txt-grepfallbackToNoIndex"></a>grep.fallbackToNoIndex </dt>
 <dd>
-<p>If set to true, fall back to <code>git grep --no-index</code> if <code>git grep</code>
+<p>If set to true, fall back to <span class='synopsis'><code>git</code> <code>grep</code> <code>--no-index</code></span> if <span class='synopsis'><code>git</code> <code>grep</code></span>
 is executed outside of a git repository.  Defaults to false.</p>
 </dd>
 </dl>
@@ -2573,7 +2573,7 @@ is executed outside of a git repository.  Defaults to false.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1629,13 +1629,13 @@ get-tar-commit-id</em>. In ZIP files it is stored as a file comment.</p>
 <dl>
 <dt class="hdlist1" id="Documentation/git-archive.txt---formatltfmtgt"><a id="Documentation/git-archive.txt---formatfmt" class="anchor" href="#Documentation/git-archive.txt---formatfmt"></a>--format=&lt;fmt&gt; </dt>
 <dd>
-<p>Format of the resulting archive. Possible values are <code>tar</code>,
-<code>zip</code>, <code>tar.gz</code>, <code>tgz</code>, and any format defined using the
-configuration option <code>tar.&lt;format&gt;.command</code>. If <code>--format</code>
+<p>Format of the resulting archive. Possible values are <span class='synopsis'><code>tar</code></span>,
+<span class='synopsis'><code>zip</code></span>, <span class='synopsis'><code>tar.gz</code></span>, <span class='synopsis'><code>tgz</code></span>, and any format defined using the
+configuration option <span class='synopsis'><code>tar.</code><em>&lt;format&gt;</em><code>.command</code></span>. If <span class='synopsis'><code>--format</code></span>
 is not given, and the output file is specified, the format is
-inferred from the filename if possible (e.g. writing to <code>foo.zip</code>
-makes the output to be in the <code>zip</code> format). Otherwise the output
-format is <code>tar</code>.</p>
+inferred from the filename if possible (e.g. writing to <span class='synopsis'><code>foo.zip</code></span>
+makes the output to be in the <span class='synopsis'><code>zip</code></span> format). Otherwise the output
+format is <span class='synopsis'><code>tar</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt--l"><a class="anchor" href="#Documentation/git-archive.txt--l"></a>-l </dt>
 <dt class="hdlist1" id="Documentation/git-archive.txt---list"><a class="anchor" href="#Documentation/git-archive.txt---list"></a>--list </dt>
@@ -1651,7 +1651,7 @@ format is <code>tar</code>.</p>
 <dd>
 <p>Prepend &lt;prefix&gt;/ to paths in the archive.  Can be repeated; its
 rightmost value is used for all tracked files.  See below which
-value gets used by <code>--add-file</code>.</p>
+value gets used by <span class='synopsis'><code>--add-file</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt--oltfilegt"><a id="Documentation/git-archive.txt--ofile" class="anchor" href="#Documentation/git-archive.txt--ofile"></a>-o &lt;file&gt; </dt>
 <dt class="hdlist1" id="Documentation/git-archive.txt---outputltfilegt"><a id="Documentation/git-archive.txt---outputfile" class="anchor" href="#Documentation/git-archive.txt---outputfile"></a>--output=&lt;file&gt; </dt>
@@ -1662,15 +1662,15 @@ value gets used by <code>--add-file</code>.</p>
 <dd>
 <p>Add a non-tracked file to the archive.  Can be repeated to add
 multiple files.  The path of the file in the archive is built by
-concatenating the value of the last <code>--prefix</code> option (if any)
-before this <code>--add-file</code> and the basename of &lt;file&gt;.</p>
+concatenating the value of the last <span class='synopsis'><code>--prefix</code></span> option (if any)
+before this <span class='synopsis'><code>--add-file</code></span> and the basename of &lt;file&gt;.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt---add-virtual-fileltpathgtltcontentgt"><a id="Documentation/git-archive.txt---add-virtual-filepathcontent" class="anchor" href="#Documentation/git-archive.txt---add-virtual-filepathcontent"></a>--add-virtual-file=&lt;path&gt;:&lt;content&gt; </dt>
 <dd>
 <p>Add the specified contents to the archive.  Can be repeated to add
 multiple files.</p>
 <div class="paragraph">
-<p>The <code>&lt;path&gt;</code> argument can start and end with a literal double-quote
+<p>The <span class='synopsis'><em>&lt;path&gt;</em></span> argument can start and end with a literal double-quote
 character; the contained file name is interpreted as a C-style string,
 i.e. the backslash is interpreted as escape character. The path must
 be quoted if it contains a colon, to avoid the colon from being
@@ -1680,11 +1680,11 @@ if the path begins or ends with a double-quote character.</p>
 <div class="paragraph">
 <p>The file mode is limited to a regular file, and the option may be
 subject to platform-dependent command-line limits. For non-trivial
-cases, write an untracked file and use <code>--add-file</code> instead.</p>
+cases, write an untracked file and use <span class='synopsis'><code>--add-file</code></span> instead.</p>
 </div>
 <div class="paragraph">
-<p>Note that unlike <code>--add-file</code> the path created in the archive is not
-affected by the <code>--prefix</code> option, as a full <code>&lt;path&gt;</code> can be given as
+<p>Note that unlike <span class='synopsis'><code>--add-file</code></span> the path created in the archive is not
+affected by the <span class='synopsis'><code>--prefix</code></span> option, as a full <span class='synopsis'><em>&lt;path&gt;</em></span> can be given as
 the value of the option.</p>
 </div>
 </dd>
@@ -1696,7 +1696,7 @@ as well (see <a href="#ATTRIBUTES">ATTRIBUTES</a>).</p>
 <dt class="hdlist1" id="Documentation/git-archive.txt---mtimelttimegt"><a id="Documentation/git-archive.txt---mtimetime" class="anchor" href="#Documentation/git-archive.txt---mtimetime"></a>--mtime=&lt;time&gt; </dt>
 <dd>
 <p>Set modification time of archive entries.  Without this option
-the committer time is used if <code>&lt;tree-ish&gt;</code> is a commit or tag,
+the committer time is used if <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> is a commit or tag,
 and the current time if it is a tree.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt-ltextragt"><a id="Documentation/git-archive.txt-extra" class="anchor" href="#Documentation/git-archive.txt-extra"></a>&lt;extra&gt; </dt>
@@ -1709,7 +1709,7 @@ See next section.</p>
 <p>Instead of making a tar archive from the local repository,
 retrieve a tar archive from a remote repository. Note that the
 remote repository may place restrictions on which sha1
-expressions may be allowed in <code>&lt;tree-ish&gt;</code>. See
+expressions may be allowed in <span class='synopsis'><em>&lt;tree-ish&gt;</em></span>. See
 <a href='/docs/git-upload-archive'>git-upload-archive[1]</a> for details.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt---execltgit-upload-archivegt"><a id="Documentation/git-archive.txt---execgit-upload-archive" class="anchor" href="#Documentation/git-archive.txt---execgit-upload-archive"></a>--exec=&lt;git-upload-archive&gt; </dt>
@@ -1742,8 +1742,8 @@ If one or more paths are specified, only these are included.</p>
 <dd>
 <p>Specify compression level.  Larger values allow the command
 to spend more time to compress to smaller size.  Supported
-values are from <code>-0</code> (store-only) to <code>-9</code> (best ratio).
-Default is <code>-6</code> if not given.</p>
+values are from <span class='synopsis'><code>-0</code></span> (store-only) to <span class='synopsis'><code>-9</code></span> (best ratio).
+Default is <span class='synopsis'><code>-6</code></span> if not given.</p>
 </dd>
 </dl>
 </div>
@@ -1755,7 +1755,7 @@ Default is <code>-6</code> if not given.</p>
 <dt class="hdlist1" id="Documentation/git-archive.txt--ltnumbergt"><a id="Documentation/git-archive.txt--number" class="anchor" href="#Documentation/git-archive.txt--number"></a>-&lt;number&gt; </dt>
 <dd>
 <p>Specify compression level. The value will be passed to the
-compression command configured in <code>tar.&lt;format&gt;.command</code>. See
+compression command configured in <span class='synopsis'><code>tar.</code><em>&lt;format&gt;</em><code>.command</code></span>. See
 manual page of the configured command for the list of supported
 levels and the default level if this option isn&#8217;t specified.</p>
 </dd>
@@ -1775,20 +1775,20 @@ levels and the default level if this option isn&#8217;t specified.</p>
 tar archive entries.  The default is 0002, which turns off the
 world write bit.  The special value "user" indicates that the
 archiving user&#8217;s umask will be used instead.  See umask(2) for
-details.  If <code>--remote</code> is used then only the configuration of
+details.  If <span class='synopsis'><code>--remote</code></span> is used then only the configuration of
 the remote repository takes effect.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-archive.txt-tarltformatgtcommand"><a id="Documentation/git-archive.txt-tarformatcommand" class="anchor" href="#Documentation/git-archive.txt-tarformatcommand"></a>tar.&lt;format&gt;.command </dt>
 <dd>
 <p>This variable specifies a shell command through which the tar
-output generated by <code>git archive</code> should be piped. The command
+output generated by <span class='synopsis'><code>git</code> <code>archive</code></span> should be piped. The command
 is executed using the shell with the generated tar file on its
 standard input, and should produce the final output on its
 standard output. Any compression-level options will be passed
-to the command (e.g., <code>-9</code>).</p>
+to the command (e.g., <span class='synopsis'><code>-9</code></span>).</p>
 <div class="paragraph">
-<p>The <code>tar.gz</code> and <code>tgz</code> formats are defined automatically and use the
-magic command <code>git archive gzip</code> by default, which invokes an internal
+<p>The <span class='synopsis'><code>tar.gz</code></span> and <span class='synopsis'><code>tgz</code></span> formats are defined automatically and use the
+magic command <span class='synopsis'><code>git</code> <code>archive</code> <code>gzip</code></span> by default, which invokes an internal
 implementation of gzip.</p>
 </div>
 </dd>
@@ -1796,7 +1796,7 @@ implementation of gzip.</p>
 <dd>
 <p>If true, enable the format for use by remote clients via
 <a href='/docs/git-upload-archive'>git-upload-archive[1]</a>. Defaults to false for
-user-defined formats, but true for the <code>tar.gz</code> and <code>tgz</code>
+user-defined formats, but true for the <span class='synopsis'><code>tar.gz</code></span> and <span class='synopsis'><code>tgz</code></span>
 formats.</p>
 </dd>
 </dl>
@@ -1822,13 +1822,13 @@ See <a href='/docs/gitattributes'>gitattributes[5]</a> for details.</p>
 </dl>
 </div>
 <div class="paragraph">
-<p>Note that attributes are by default taken from the <code>.gitattributes</code> files
+<p>Note that attributes are by default taken from the <span class='synopsis'><code>.gitattributes</code></span> files
 in the tree that is being archived.  If you want to tweak the way the
 output is generated after the fact (e.g. you committed without adding an
-appropriate export-ignore in its <code>.gitattributes</code>), adjust the checked out
-<code>.gitattributes</code> file as necessary and use <code>--worktree-attributes</code>
+appropriate export-ignore in its <span class='synopsis'><code>.gitattributes</code></span>), adjust the checked out
+<span class='synopsis'><code>.gitattributes</code></span> file as necessary and use <span class='synopsis'><code>--worktree-attributes</code></span>
 option.  Alternatively you can keep necessary attributes that should apply
-while archiving any tree in your <code>$GIT_DIR/info/attributes</code> file.</p>
+while archiving any tree in your <span class='synopsis'><code>$GIT_DIR/info/attributes</code></span> file.</p>
 </div>
 </div>
 </div>
@@ -1837,51 +1837,51 @@ while archiving any tree in your <code>$GIT_DIR/info/attributes</code> file.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--formattar--prefixjunkHEADcdvartmpampamptarxf-code"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixjunkHEADcdvartmptarxf-" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixjunkHEADcdvartmptarxf-"></a><code>git archive --format=tar --prefix=junk/ HEAD | (cd /var/tmp/ &amp;&amp; tar xf -)</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsisemgitarchive--formattar--prefixjunkHEADcdvartmpampamptarxf-emspan"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixjunkHEADcdvartmptarxf-" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixjunkHEADcdvartmptarxf-"></a><span class='synopsis'><em>git archive --format=tar --prefix=junk/ HEAD | (cd /var/tmp/ &amp;&amp; tar xf -)</em></span> </dt>
 <dd>
 <p>Create a tar archive that contains the contents of the
 latest commit on the current branch, and extract it in the
-<code>/var/tmp/junk</code> directory.</p>
+<span class='synopsis'><code>/var/tmp/junk</code></span> directory.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--formattar--prefixgit-140v140gzipgtgit-140targzcode"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140gzipgit-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140gzipgit-140targz"></a><code>git archive --format=tar --prefix=git-1.4.0/ v1.4.0 | gzip &gt;git-1.4.0.tar.gz</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsisemgitarchive--formattar--prefixgit-140v140gzipgtgit-140targzemspan"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140gzipgit-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140gzipgit-140targz"></a><span class='synopsis'><em>git archive --format=tar --prefix=git-1.4.0/ v1.4.0 | gzip &gt;git-1.4.0.tar.gz</em></span> </dt>
 <dd>
 <p>Create a compressed tarball for v1.4.0 release.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--formattargz--prefixgit-140v140gtgit-140targzcode"><a id="Documentation/git-archive.txt-gitarchive--formattargz--prefixgit-140v140git-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattargz--prefixgit-140v140git-140targz"></a><code>git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 &gt;git-1.4.0.tar.gz</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsisemgitarchive--formattargz--prefixgit-140v140gtgit-140targzemspan"><a id="Documentation/git-archive.txt-gitarchive--formattargz--prefixgit-140v140git-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattargz--prefixgit-140v140git-140targz"></a><span class='synopsis'><em>git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 &gt;git-1.4.0.tar.gz</em></span> </dt>
 <dd>
 <p>Same as above, but using the builtin tar.gz handling.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--prefixgit-140-ogit-140targzv140code"><a id="Documentation/git-archive.txt-gitarchive--prefixgit-140-ogit-140targzv140" class="anchor" href="#Documentation/git-archive.txt-gitarchive--prefixgit-140-ogit-140targzv140"></a><code>git archive --prefix=git-1.4.0/ -o git-1.4.0.tar.gz v1.4.0</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsiscodegitcodecodearchivecodecode--prefixgit-140codecode-ocodecodegit-140targzcodecodev140codespan"><a id="Documentation/git-archive.txt-gitarchive--prefixgit-140-ogit-140targzv140" class="anchor" href="#Documentation/git-archive.txt-gitarchive--prefixgit-140-ogit-140targzv140"></a><span class='synopsis'><code>git</code> <code>archive</code> <code>--prefix=git-1.4.0/</code> <code>-o</code> <code>git-1.4.0.tar.gz</code> <code>v1.4.0</code></span> </dt>
 <dd>
 <p>Same as above, but the format is inferred from the output file.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--formattar--prefixgit-140v140treegzipgtgit-140targzcode"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140treegzipgit-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140treegzipgit-140targz"></a><code>git archive --format=tar --prefix=git-1.4.0/ v1.4.0^{tree} | gzip &gt;git-1.4.0.tar.gz</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsisemgitarchive--formattar--prefixgit-140v140treegzipgtgit-140targzemspan"><a id="Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140treegzipgit-140targz" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formattar--prefixgit-140v140treegzipgit-140targz"></a><span class='synopsis'><em>git archive --format=tar --prefix=git-1.4.0/ v1.4.0^{tree} | gzip &gt;git-1.4.0.tar.gz</em></span> </dt>
 <dd>
 <p>Create a compressed tarball for v1.4.0 release, but without a
 global extended pax header.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive--formatzip--prefixgit-docsHEADDocumentationgtgit-140-docszipcode"><a id="Documentation/git-archive.txt-gitarchive--formatzip--prefixgit-docsHEADDocumentationgit-140-docszip" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formatzip--prefixgit-docsHEADDocumentationgit-140-docszip"></a><code>git archive --format=zip --prefix=git-docs/ HEAD:Documentation/ &gt; git-1.4.0-docs.zip</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsisemgitarchive--formatzip--prefixgit-docsHEADDocumentationgtgit-140-docszipemspan"><a id="Documentation/git-archive.txt-gitarchive--formatzip--prefixgit-docsHEADDocumentationgit-140-docszip" class="anchor" href="#Documentation/git-archive.txt-gitarchive--formatzip--prefixgit-docsHEADDocumentationgit-140-docszip"></a><span class='synopsis'><em>git archive --format=zip --prefix=git-docs/ HEAD:Documentation/ &gt; git-1.4.0-docs.zip</em></span> </dt>
 <dd>
 <p>Put everything in the current head&#8217;s Documentation/ directory
 into <em>git-1.4.0-docs.zip</em>, with the prefix <em>git-docs/</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive-olatestzipHEADcode"><a id="Documentation/git-archive.txt-gitarchive-olatestzipHEAD" class="anchor" href="#Documentation/git-archive.txt-gitarchive-olatestzipHEAD"></a><code>git archive -o latest.zip HEAD</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsiscodegitcodecodearchivecodecode-ocodecodelatestzipcodecodeHEADcodespan"><a id="Documentation/git-archive.txt-gitarchive-olatestzipHEAD" class="anchor" href="#Documentation/git-archive.txt-gitarchive-olatestzipHEAD"></a><span class='synopsis'><code>git</code> <code>archive</code> <code>-o</code> <code>latest.zip</code> <code>HEAD</code></span> </dt>
 <dd>
 <p>Create a Zip archive that contains the contents of the latest
 commit on the current branch. Note that the output format is
 inferred by the extension of the output file.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitarchive-olatesttar--prefixbuild--add-fileconfigure--prefixHEADcode"><a id="Documentation/git-archive.txt-gitarchive-olatesttar--prefixbuild--add-fileconfigure--prefixHEAD" class="anchor" href="#Documentation/git-archive.txt-gitarchive-olatesttar--prefixbuild--add-fileconfigure--prefixHEAD"></a><code>git archive -o latest.tar --prefix=build/ --add-file=configure --prefix= HEAD</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsiscodegitcodecodearchivecodecode-ocodecodelatesttarcodecode--prefixbuildcodecode--add-fileconfigurecodecode--prefixcodecodeHEADcodespan"><a id="Documentation/git-archive.txt-gitarchive-olatesttar--prefixbuild--add-fileconfigure--prefixHEAD" class="anchor" href="#Documentation/git-archive.txt-gitarchive-olatesttar--prefixbuild--add-fileconfigure--prefixHEAD"></a><span class='synopsis'><code>git</code> <code>archive</code> <code>-o</code> <code>latest.tar</code> <code>--prefix=build/</code> <code>--add-file=configure</code> <code>--prefix=</code> <code>HEAD</code></span> </dt>
 <dd>
 <p>Creates a tar archive that contains the contents of the latest
 commit on the current branch with no prefix and the untracked
 file <em>configure</em> with the prefix <em>build/</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-archive.txt-codegitconfigtartarxzcommandxz-ccode"><a id="Documentation/git-archive.txt-gitconfigtartarxzcommandxz-c" class="anchor" href="#Documentation/git-archive.txt-gitconfigtartarxzcommandxz-c"></a><code>git config tar.tar.xz.command "xz -c"</code> </dt>
+<dt class="hdlist1" id="Documentation/git-archive.txt-spanclasssynopsiscodegitcodecodeconfigcodecodetartarxzcommandcodecodexzcodecode-ccodespan"><a id="Documentation/git-archive.txt-gitconfigtartarxzcommandxz-c" class="anchor" href="#Documentation/git-archive.txt-gitconfigtartarxzcommandxz-c"></a><span class='synopsis'><code>git</code> <code>config</code> <code>tar.tar.xz.command</code> <code>"xz</code> <code>-c"</code></span> </dt>
 <dd>
 <p>Configure a "tar.xz" format for making LZMA-compressed tarfiles.
-You can use it specifying <code>--format=tar.xz</code>, or by creating an
-output file like <code>-o foo.tar.xz</code>.</p>
+You can use it specifying <span class='synopsis'><code>--format=tar.xz</code></span>, or by creating an
+output file like <span class='synopsis'><code>-o</code> <code>foo.tar.xz</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -1931,7 +1931,7 @@ output file like <code>-o foo.tar.xz</code>.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

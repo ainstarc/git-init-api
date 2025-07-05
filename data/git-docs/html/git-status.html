@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2162,9 +2162,9 @@
 current HEAD commit, paths that have differences between the working
 tree and the index file, and paths in the working tree that are not
 tracked by Git (and are not ignored by <a href='/docs/gitignore'>gitignore[5]</a>). The first
-are what you <em>would</em> commit by running <code>git commit</code>; the second and
+are what you <em>would</em> commit by running <span class='synopsis'><code>git</code> <code>commit</code></span>; the second and
 third are what you <em>could</em> commit by running <em>git add</em> before running
-<code>git commit</code>.</p>
+<span class='synopsis'><code>git</code> <code>commit</code></span>.</p>
 </div>
 </div>
 </div>
@@ -2207,9 +2207,9 @@ This is optional and defaults to the original version <em>v1</em> format.</p>
 <dd>
 <p>In addition to the names of files that have been changed, also
 show the textual changes that are staged to be committed
-(i.e., like the output of <code>git diff --cached</code>). If <code>-v</code> is specified
+(i.e., like the output of <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code></span>). If <span class='synopsis'><code>-v</code></span> is specified
 twice, then also show the changes in the working tree that
-have not yet been staged (i.e., like the output of <code>git diff</code>).</p>
+have not yet been staged (i.e., like the output of <span class='synopsis'><code>git</code> <code>diff</code></span>).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-status.txt--ultmodegt"><a id="Documentation/git-status.txt--umode" class="anchor" href="#Documentation/git-status.txt--umode"></a>-u[&lt;mode&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-status.txt---untracked-filesltmodegt"><a id="Documentation/git-status.txt---untracked-filesmode" class="anchor" href="#Documentation/git-status.txt---untracked-filesmode"></a>--untracked-files[=&lt;mode&gt;] </dt>
@@ -2220,7 +2220,7 @@ have not yet been staged (i.e., like the output of <code>git diff</code>).</p>
 <div class="paragraph">
 <p>The mode parameter is used to specify the handling of untracked files.
 It is optional: it defaults to <em>all</em>, and if specified, it must be
-stuck to the option (e.g. <code>-uno</code>, but not <code>-u no</code>).</p>
+stuck to the option (e.g. <span class='synopsis'><code>-uno</code></span>, but not <span class='synopsis'><code>-u</code> <code>no</code></span>).</p>
 </div>
 <div class="paragraph">
 <p>The possible options are:</p>
@@ -2239,17 +2239,18 @@ stuck to the option (e.g. <code>-uno</code>, but not <code>-u no</code>).</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>When <code>-u</code> option is not used, untracked files and directories are
-shown (i.e. the same as specifying <code>normal</code>), to help you avoid
+<p>When <span class='synopsis'><code>-u</code></span> option is not used, untracked files and directories are
+shown (i.e. the same as specifying <span class='synopsis'><code>normal</code></span>), to help you avoid
 forgetting to add newly created files.  Because it takes extra work
 to find untracked files in the filesystem, this mode may take some
 time in a large working tree.
 Consider enabling untracked cache and split index if supported (see
-<code>git update-index --untracked-cache</code> and <code>git update-index
---split-index</code>), Otherwise you can use <code>no</code> to have <code>git status</code>
+<span class='synopsis'><code>git</code> <code>update-index</code> <code>--untracked-cache</code></span> and <span class='synopsis'><code>git</code> <code>update-index</code>
+
+<code>--split-index</code></span>), Otherwise you can use <span class='synopsis'><code>no</code></span> to have <span class='synopsis'><code>git</code> <code>status</code></span>
 return more quickly without showing untracked files.
-All usual spellings for Boolean value <code>true</code> are taken as <code>normal</code>
-and <code>false</code> as <code>no</code>.</p>
+All usual spellings for Boolean value <span class='synopsis'><code>true</code></span> are taken as <span class='synopsis'><code>normal</code></span>
+and <span class='synopsis'><code>false</code></span> as <span class='synopsis'><code>no</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>The default can be changed using the status.showUntrackedFiles
@@ -2272,7 +2273,7 @@ content). Using "dirty" ignores all changes to the work tree of submodules,
 only changes to the commits stored in the superproject are shown (this was
 the behavior before 1.7.0). Using "all" hides all changes to submodules
 (and suppresses the output of submodule summaries when the config option
-<code>status.submoduleSummary</code> is set).</p>
+<span class='synopsis'><code>status.submoduleSummary</code></span> is set).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-status.txt---ignoredltmodegt"><a id="Documentation/git-status.txt---ignoredmode" class="anchor" href="#Documentation/git-status.txt---ignoredmode"></a>--ignored[=&lt;mode&gt;] </dt>
 <dd>
@@ -2316,13 +2317,13 @@ ignored, then the directory is not shown, but all contents are shown.</p>
 <dt class="hdlist1" id="Documentation/git-status.txt--z"><a class="anchor" href="#Documentation/git-status.txt--z"></a>-z </dt>
 <dd>
 <p>Terminate entries with NUL, instead of LF.  This implies
-the <code>--porcelain=v1</code> output format if no other format is given.</p>
+the <span class='synopsis'><code>--porcelain=v1</code></span> output format if no other format is given.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-status.txt---columnltoptionsgt"><a id="Documentation/git-status.txt---columnoptions" class="anchor" href="#Documentation/git-status.txt---columnoptions"></a>--column[=&lt;options&gt;] </dt>
 <dt class="hdlist1" id="Documentation/git-status.txt---no-column"><a class="anchor" href="#Documentation/git-status.txt---no-column"></a>--no-column </dt>
 <dd>
 <p>Display untracked files in columns. See configuration variable
-<code>column.status</code> for option syntax. <code>--column</code> and <code>--no-column</code>
+<span class='synopsis'><code>column.status</code></span> for option syntax. <span class='synopsis'><code>--column</code></span> and <span class='synopsis'><code>--no-column</code></span>
 without options are equivalent to <em>always</em> and <em>never</em>
 respectively.</p>
 </dd>
@@ -2336,13 +2337,13 @@ branch relative to its upstream branch.  Defaults to true.</p>
 <dt class="hdlist1" id="Documentation/git-status.txt---no-renames"><a class="anchor" href="#Documentation/git-status.txt---no-renames"></a>--no-renames </dt>
 <dd>
 <p>Turn on/off rename detection regardless of user configuration.
-See also <a href='/docs/git-diff'>git-diff[1]</a> <code>--no-renames</code>.</p>
+See also <a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>--no-renames</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-status.txt---find-renamesltngt"><a id="Documentation/git-status.txt---find-renamesn" class="anchor" href="#Documentation/git-status.txt---find-renamesn"></a>--find-renames[=&lt;n&gt;] </dt>
 <dd>
 <p>Turn on rename detection, optionally setting the similarity
 threshold.
-See also <a href='/docs/git-diff'>git-diff[1]</a> <code>--find-renames</code>.</p>
+See also <a href='/docs/git-diff'>git-diff[1]</a> <span class='synopsis'><code>--find-renames</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-status.txt-ltpathspecgt82308203"><a id="Documentation/git-status.txt-pathspec" class="anchor" href="#Documentation/git-status.txt-pathspec"></a>&lt;pathspec&gt;&#8230;&#8203; </dt>
 <dd>
@@ -2381,12 +2382,12 @@ XY ORIG_PATH -&gt; PATH</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>where <code>ORIG_PATH</code> is where the renamed/copied contents came
-from. <code>ORIG_PATH</code> is only shown when the entry is renamed or
-copied. The <code>XY</code> is a two-letter status code.</p>
+<p>where <span class='synopsis'><code>ORIG_PATH</code></span> is where the renamed/copied contents came
+from. <span class='synopsis'><code>ORIG_PATH</code></span> is only shown when the entry is renamed or
+copied. The <span class='synopsis'><code>XY</code></span> is a two-letter status code.</p>
 </div>
 <div class="paragraph">
-<p>The fields (including the <code>-&gt;</code>) are separated from each other by a
+<p>The fields (including the <span class='synopsis'><em>-&gt;</em></span>) are separated from each other by a
 single space. If a filename contains whitespace or other nonprintable
 characters, that field will be quoted in the manner of a C string
 literal: surrounded by ASCII double quote (34) characters, and with
@@ -2394,35 +2395,35 @@ interior special characters backslash-escaped.</p>
 </div>
 <div class="paragraph">
 <p>There are three different types of states that are shown using this format, and
-each one uses the <code>XY</code> syntax differently:</p>
+each one uses the <span class='synopsis'><code>XY</code></span> syntax differently:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>When a merge is occurring and the merge was successful, or outside of a merge
-situation, <code>X</code> shows the status of the index and <code>Y</code> shows the status of the
+situation, <span class='synopsis'><code>X</code></span> shows the status of the index and <span class='synopsis'><code>Y</code></span> shows the status of the
 working tree.</p>
 </li>
 <li>
-<p>When a merge conflict has occurred and has not yet been resolved, <code>X</code> and <code>Y</code>
+<p>When a merge conflict has occurred and has not yet been resolved, <span class='synopsis'><code>X</code></span> and <span class='synopsis'><code>Y</code></span>
 show the state introduced by each head of the merge, relative to the common
 ancestor. These paths are said to be <em>unmerged</em>.</p>
 </li>
 <li>
-<p>When a path is untracked, <code>X</code> and <code>Y</code> are always the same, since they are
-unknown to the index. <code>??</code> is used for untracked paths. Ignored files are
-not listed unless <code>--ignored</code> is used; if it is, ignored files are indicated
-by <code>!!</code>.</p>
+<p>When a path is untracked, <span class='synopsis'><code>X</code></span> and <span class='synopsis'><code>Y</code></span> are always the same, since they are
+unknown to the index. <span class='synopsis'><em>??</em></span> is used for untracked paths. Ignored files are
+not listed unless <span class='synopsis'><code>--ignored</code></span> is used; if it is, ignored files are indicated
+by <span class='synopsis'><code>!!</code></span>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Note that the term <em>merge</em> here also includes rebases using the default
-<code>--merge</code> strategy, cherry-picks, and anything else using the merge machinery.</p>
+<span class='synopsis'><code>--merge</code></span> strategy, cherry-picks, and anything else using the merge machinery.</p>
 </div>
 <div class="paragraph">
 <p>In the following table, these three classes are shown in separate sections, and
-these characters are used for <code>X</code> and <code>Y</code> fields for the first two sections that
+these characters are used for <span class='synopsis'><code>X</code></span> and <span class='synopsis'><code>Y</code></span> fields for the first two sections that
 show tracked paths:</p>
 </div>
 <div class="ulist">
@@ -2502,7 +2503,7 @@ U           U    unmerged, both modified
 </div>
 <div class="paragraph">
 <p>This is since modified content or untracked files in a submodule cannot be added
-via <code>git add</code> in the superproject to prepare a commit.</p>
+via <span class='synopsis'><code>git</code> <code>add</code></span> in the superproject to prepare a commit.</p>
 </div>
 <div class="paragraph">
 <p><em>m</em> and <em>?</em> are applied recursively. For example if a nested submodule
@@ -2550,7 +2551,7 @@ characters are not specially formatted; no quoting or
 backslash-escaping is performed.</p>
 </div>
 <div class="paragraph">
-<p>Any submodule changes are reported as modified <code>M</code> instead of <code>m</code> or single <code>?</code>.</p>
+<p>Any submodule changes are reported as modified <span class='synopsis'><code>M</code></span> instead of <span class='synopsis'><code>m</code></span> or single <span class='synopsis'><em>?</em></span>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2568,7 +2569,7 @@ don&#8217;t recognize.</p>
 <div class="sect3">
 <h4 id="_branch_headers"><a class="anchor" href="#_branch_headers"></a>Branch Headers</h4>
 <div class="paragraph">
-<p>If <code>--branch</code> is given, a series of header lines are printed with
+<p>If <span class='synopsis'><code>--branch</code></span> is given, a series of header lines are printed with
 information about the current branch.</p>
 </div>
 <div class="literalblock">
@@ -2587,7 +2588,7 @@ information about the current branch.</p>
 <div class="sect3">
 <h4 id="_stash_information"><a class="anchor" href="#_stash_information"></a>Stash Information</h4>
 <div class="paragraph">
-<p>If <code>--show-stash</code> is given, one line is printed showing the number of stash
+<p>If <span class='synopsis'><code>--show-stash</code></span> is given, one line is printed showing the number of stash
 entries if non-zero:</p>
 </div>
 <div class="literalblock">
@@ -2710,13 +2711,13 @@ found in the worktree.</p>
 <div class="sect3">
 <h4 id="_pathname_format_notes_and_z"><a class="anchor" href="#_pathname_format_notes_and_z"></a>Pathname Format Notes and -z</h4>
 <div class="paragraph">
-<p>When the <code>-z</code> option is given, pathnames are printed as is and
+<p>When the <span class='synopsis'><code>-z</code></span> option is given, pathnames are printed as is and
 without any quoting and lines are terminated with a NUL (ASCII 0x00)
 byte.</p>
 </div>
 <div class="paragraph">
-<p>Without the <code>-z</code> option, pathnames with "unusual" characters are
-quoted as explained for the configuration variable <code>core.quotePath</code>
+<p>Without the <span class='synopsis'><code>-z</code></span> option, pathnames with "unusual" characters are
+quoted as explained for the configuration variable <span class='synopsis'><code>core.quotePath</code></span>
 (see <a href='/docs/git-config'>git-config[1]</a>).</p>
 </div>
 </div>
@@ -2727,24 +2728,24 @@ quoted as explained for the configuration variable <code>core.quotePath</code>
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The command honors <code>color.status</code> (or <code>status.color</code>&#8201;&#8212;&#8201;they
+<p>The command honors <span class='synopsis'><code>color.status</code></span> (or <span class='synopsis'><code>status.color</code></span>&#8201;&#8212;&#8201;they
 mean the same thing and the latter is kept for backward
-compatibility) and <code>color.status.&lt;slot&gt;</code> configuration variables
+compatibility) and <span class='synopsis'><code>color.status.</code><em>&lt;slot&gt;</em></span> configuration variables
 to colorize its output.</p>
 </div>
 <div class="paragraph">
-<p>If the config variable <code>status.relativePaths</code> is set to false, then all
+<p>If the config variable <span class='synopsis'><code>status.relativePaths</code></span> is set to false, then all
 paths shown are relative to the repository root, not to the current
 directory.</p>
 </div>
 <div class="paragraph">
-<p>If <code>status.submoduleSummary</code> is set to a non zero number or true (identical
+<p>If <span class='synopsis'><code>status.submoduleSummary</code></span> is set to a non zero number or true (identical
 to -1 or an unlimited number), the submodule summary will be enabled for
 the long format and a summary of commits for modified submodules will be
 shown (see --summary-limit option of <a href='/docs/git-submodule'>git-submodule[1]</a>). Please note
 that the summary output from the status command will be suppressed for all
-submodules when <code>diff.ignoreSubmodules</code> is set to <em>all</em> or only for those
-submodules where <code>submodule.&lt;name&gt;.ignore=all</code>. To also view the summary for
+submodules when <span class='synopsis'><code>diff.ignoreSubmodules</code></span> is set to <em>all</em> or only for those
+submodules where <span class='synopsis'><code>submodule.</code><em>&lt;name&gt;</em><code>.ignore=all</code></span>. To also view the summary for
 ignored submodules you can either use the --ignore-submodules=dirty command
 line option or the <em>git submodule summary</em> command, which shows a similar
 output but does not honor these settings.</p>
@@ -2755,15 +2756,15 @@ output but does not honor these settings.</p>
 <h2 id="_background_refresh"><a class="anchor" href="#_background_refresh"></a>BACKGROUND REFRESH</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, <code>git status</code> will automatically refresh the index, updating
+<p>By default, <span class='synopsis'><code>git</code> <code>status</code></span> will automatically refresh the index, updating
 the cached stat information from the working tree and writing out the
 result. Writing out the updated index is an optimization that isn&#8217;t
-strictly necessary (<code>status</code> computes the values for itself, but writing
+strictly necessary (<span class='synopsis'><code>status</code></span> computes the values for itself, but writing
 them out is just to save subsequent programs from repeating our
-computation). When <code>status</code> is run in the background, the lock held
+computation). When <span class='synopsis'><code>status</code></span> is run in the background, the lock held
 during the write may conflict with other simultaneous processes, causing
-them to fail. Scripts running <code>status</code> in the background should consider
-using <code>git --no-optional-locks status</code> (see <a href='/docs/git'>git[1]</a> for details).</p>
+them to fail. Scripts running <span class='synopsis'><code>status</code></span> in the background should consider
+using <span class='synopsis'><code>git</code> <code>--no-optional-locks</code> <code>status</code></span> (see <a href='/docs/git'>git[1]</a> for details).</p>
 </div>
 </div>
 </div>
@@ -2771,29 +2772,29 @@ using <code>git --no-optional-locks status</code> (see <a href='/docs/git'>git[1
 <h2 id="_untracked_files_and_performance"><a class="anchor" href="#_untracked_files_and_performance"></a>UNTRACKED FILES AND PERFORMANCE</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>git status</code> can be very slow in large worktrees if/when it
+<p><span class='synopsis'><code>git</code> <code>status</code></span> can be very slow in large worktrees if/when it
 needs to search for untracked files and directories. There are
 many configuration options available to speed this up by either
 avoiding the work or making use of cached results from previous
 Git commands. There is no single optimum set of settings right
 for everyone. We&#8217;ll list a summary of the relevant options to help
-you, but before going into the list, you may want to run <code>git status</code>
-again, because your configuration may already be caching <code>git status</code>
+you, but before going into the list, you may want to run <span class='synopsis'><code>git</code> <code>status</code></span>
+again, because your configuration may already be caching <span class='synopsis'><code>git</code> <code>status</code></span>
 results, so it could be faster on subsequent runs.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>--untracked-files=no</code> flag or the
-<code>status.showUntrackedFiles=no</code> config (see above for both):
-indicate that <code>git status</code> should not report untracked
-files. This is the fastest option. <code>git status</code> will not list
+<p>The <span class='synopsis'><code>--untracked-files=no</code></span> flag or the
+<span class='synopsis'><code>status.showUntrackedFiles=no</code></span> config (see above for both):
+indicate that <span class='synopsis'><code>git</code> <code>status</code></span> should not report untracked
+files. This is the fastest option. <span class='synopsis'><code>git</code> <code>status</code></span> will not list
 the untracked files, so you need to be careful to remember if
-you create any new files and manually <code>git add</code> them.</p>
+you create any new files and manually <span class='synopsis'><code>git</code> <code>add</code></span> them.</p>
 </li>
 <li>
-<p><code>advice.statusUoption=false</code> (see <a href='/docs/git-config'>git-config[1]</a>):
-setting this variable to <code>false</code> disables the warning message
+<p><span class='synopsis'><code>advice.statusUoption=false</code></span> (see <a href='/docs/git-config'>git-config[1]</a>):
+setting this variable to <span class='synopsis'><code>false</code></span> disables the warning message
 given when enumerating untracked files takes more than 2
 seconds.  In a large project, it may take longer and the user
 may have already accepted the trade off (e.g. using "-uno" may
@@ -2802,26 +2803,26 @@ is no point issuing the warning message, and in such a case,
 disabling the warning may be the best.</p>
 </li>
 <li>
-<p><code>core.untrackedCache=true</code> (see <a href='/docs/git-update-index'>git-update-index[1]</a>):
+<p><span class='synopsis'><code>core.untrackedCache=true</code></span> (see <a href='/docs/git-update-index'>git-update-index[1]</a>):
 enable the untracked cache feature and only search directories
-that have been modified since the previous <code>git status</code> command.
+that have been modified since the previous <span class='synopsis'><code>git</code> <code>status</code></span> command.
 Git remembers the set of untracked files within each directory
 and assumes that if a directory has not been modified, then
 the set of untracked files within has not changed.  This is much
 faster than enumerating the contents of every directory, but still
 not without cost, because Git still has to search for the set of
 modified directories. The untracked cache is stored in the
-<code>.git/index</code> file. The reduced cost of searching for untracked
+<span class='synopsis'><code>.git/index</code></span> file. The reduced cost of searching for untracked
 files is offset slightly by the increased size of the index and
 the cost of keeping it up-to-date. That reduced search time is
 usually worth the additional size.</p>
 </li>
 <li>
-<p><code>core.untrackedCache=true</code> and <code>core.fsmonitor=true</code> or
-<code>core.fsmonitor=&lt;hook-command-pathname&gt;</code> (see
+<p><span class='synopsis'><code>core.untrackedCache=true</code></span> and <span class='synopsis'><code>core.fsmonitor=true</code></span> or
+<span class='synopsis'><code>core.fsmonitor=</code><em>&lt;hook-command-pathname&gt;</em></span> (see
 <a href='/docs/git-update-index'>git-update-index[1]</a>): enable both the untracked cache
 and FSMonitor features and only search directories that have
-been modified since the previous <code>git status</code> command.  This
+been modified since the previous <span class='synopsis'><code>git</code> <code>status</code></span> command.  This
 is faster than using just the untracked cache alone because
 Git can also avoid searching for modified directories.  Git
 only has to enumerate the exact set of directories that have
@@ -2833,7 +2834,7 @@ in that case.</p>
 </div>
 <div class="paragraph">
 <p>Note that after you turn on the untracked cache and/or FSMonitor
-features it may take a few <code>git status</code> commands for the various
+features it may take a few <span class='synopsis'><code>git</code> <code>status</code></span> commands for the various
 caches to warm up before you see improved command times.  This is
 normal.</p>
 </div>
@@ -2883,7 +2884,7 @@ normal.</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1814,11 +1814,11 @@ command and a list of the most commonly used Git commands are printed
 on the standard output.</p>
 </div>
 <div class="paragraph">
-<p>If the option <code>--all</code> or <code>-a</code> is given, all available commands are
+<p>If the option <span class='synopsis'><code>--all</code></span> or <span class='synopsis'><code>-a</code></span> is given, all available commands are
 printed on the standard output.</p>
 </div>
 <div class="paragraph">
-<p>If the option <code>--guides</code> or <code>-g</code> is given, a list of the
+<p>If the option <span class='synopsis'><code>--guides</code></span> or <span class='synopsis'><code>-g</code></span> is given, a list of the
 Git concept guides is also printed on the standard output.</p>
 </div>
 <div class="paragraph">
@@ -1830,17 +1830,17 @@ variables.</p>
 <div class="paragraph">
 <p>If an alias is given, git shows the definition of the alias on
 standard output. To get the manual page for the aliased command, use
-<code>git &lt;command&gt; --help</code>.</p>
+<span class='synopsis'><code>git</code> <em>&lt;command&gt;</em> <code>--help</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Note that <code>git --help ...</code> is identical to <code>git help ...</code> because the
+<p>Note that <span class='synopsis'><code>git</code> <code>--help</code> ...</span> is identical to <span class='synopsis'><code>git</code> <code>help</code> ...</span> because the
 former is internally converted into the latter.</p>
 </div>
 <div class="paragraph">
-<p>To display the <a href='/docs/git'>git[1]</a> man page, use <code>git help git</code>.</p>
+<p>To display the <a href='/docs/git'>git[1]</a> man page, use <span class='synopsis'><code>git</code> <code>help</code> <code>git</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>This page can be displayed with <em>git help help</em> or <code>git help --help</code>.</p>
+<p>This page can be displayed with <em>git help help</em> or <span class='synopsis'><code>git</code> <code>help</code> <code>--help</code></span>.</p>
 </div>
 </div>
 </div>
@@ -1856,17 +1856,17 @@ former is internally converted into the latter.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-help.txt---no-external-commands"><a class="anchor" href="#Documentation/git-help.txt---no-external-commands"></a>--no-external-commands </dt>
 <dd>
-<p>When used with <code>--all</code>, exclude the listing of external "git-*"
-commands found in the <code>$PATH</code>.</p>
+<p>When used with <span class='synopsis'><code>--all</code></span>, exclude the listing of external "git-*"
+commands found in the <span class='synopsis'><code>$PATH</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-help.txt---no-aliases"><a class="anchor" href="#Documentation/git-help.txt---no-aliases"></a>--no-aliases </dt>
 <dd>
-<p>When used with <code>--all</code>, exclude the listing of configured
+<p>When used with <span class='synopsis'><code>--all</code></span>, exclude the listing of configured
 aliases.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-help.txt---verbose"><a class="anchor" href="#Documentation/git-help.txt---verbose"></a>--verbose </dt>
 <dd>
-<p>When used with <code>--all</code>, print description for all recognized
+<p>When used with <span class='synopsis'><code>--all</code></span>, print description for all recognized
 commands. This is the default.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-help.txt--c"><a class="anchor" href="#Documentation/git-help.txt--c"></a>-c </dt>
@@ -1885,14 +1885,14 @@ summary of the list in <a href='/docs/git-config'>git-config[1]</a>.</p>
 <p>Print a list of the repository, command and file interfaces
 documentation on the standard output.</p>
 <div class="paragraph">
-<p>In-repository file interfaces such as <code>.git/info/exclude</code> are
+<p>In-repository file interfaces such as <span class='synopsis'><code>.git/info/exclude</code></span> are
 documented here (see <a href='/docs/gitrepository-layout'>gitrepository-layout[5]</a>), as well as
-in-tree configuration such as <code>.mailmap</code> (see <a href='/docs/gitmailmap'>gitmailmap[5]</a>).</p>
+in-tree configuration such as <span class='synopsis'><code>.mailmap</code></span> (see <a href='/docs/gitmailmap'>gitmailmap[5]</a>).</p>
 </div>
 <div class="paragraph">
 <p>This section of the documentation also covers general or widespread
 user-interface conventions (e.g. <a href='/docs/gitcli'>gitcli[7]</a>), and
-pseudo-configuration such as the file-based <code>.git/hooks/*</code> interface
+pseudo-configuration such as the file-based <span class='synopsis'><code>.git/hooks/*</code></span> interface
 described in <a href='/docs/githooks'>githooks[5]</a>.</p>
 </div>
 </dd>
@@ -1912,10 +1912,10 @@ interfaces documentation on the standard output.</p>
 <dd>
 <p>Display manual page for the command in the <em>man</em> format. This
 option may be used to override a value set in the
-<code>help.format</code> configuration variable.</p>
+<span class='synopsis'><code>help.format</code></span> configuration variable.</p>
 <div class="paragraph">
 <p>By default the <em>man</em> program will be used to display the manual page,
-but the <code>man.viewer</code> configuration variable may be used to choose
+but the <span class='synopsis'><code>man.viewer</code></span> configuration variable may be used to choose
 other display programs (see below).</p>
 </div>
 </dd>
@@ -1926,7 +1926,7 @@ other display programs (see below).</p>
 format. A web browser will be used for that purpose.</p>
 <div class="paragraph">
 <p>The web browser can be specified using the configuration variable
-<code>help.browser</code>, or <code>web.browser</code> if the former is not set. If neither of
+<span class='synopsis'><code>help.browser</code></span>, or <span class='synopsis'><code>web.browser</code></span> if the former is not set. If neither of
 these config variables is set, the <em>git web&#x2d;&#x2d;browse</em> helper script
 (called by <em>git help</em>) will pick a suitable default. See
 <a href='/docs/git-web--browse'>git-web&#x2d;&#x2d;browse[1]</a> for more information about this.</p>
@@ -1942,7 +1942,7 @@ these config variables is set, the <em>git web&#x2d;&#x2d;browse</em> helper scr
 <div class="sect2">
 <h3 id="_help_format"><a class="anchor" href="#_help_format"></a>help.format</h3>
 <div class="paragraph">
-<p>If no command-line option is passed, the <code>help.format</code> configuration
+<p>If no command-line option is passed, the <span class='synopsis'><code>help.format</code></span> configuration
 variable will be checked. The following values are supported for this
 variable; they make <em>git help</em> behave as their corresponding command-
 line option:</p>
@@ -1964,7 +1964,7 @@ line option:</p>
 <div class="sect2">
 <h3 id="_help_browser_web_browser_and_browser_tool_path"><a class="anchor" href="#_help_browser_web_browser_and_browser_tool_path"></a>help.browser, web.browser, and browser.&lt;tool&gt;.path</h3>
 <div class="paragraph">
-<p>The <code>help.browser</code>, <code>web.browser</code> and <code>browser.&lt;tool&gt;.path</code> will also
+<p>The <span class='synopsis'><code>help.browser</code></span>, <span class='synopsis'><code>web.browser</code></span> and <span class='synopsis'><code>browser.</code><em>&lt;tool&gt;</em><code>.path</code></span> will also
 be checked if the <em>web</em> format is chosen (either by command-line
 option or configuration variable). See <em>-w|--web</em> in the OPTIONS
 section above and <a href='/docs/git-web--browse'>git-web&#x2d;&#x2d;browse[1]</a>.</p>
@@ -1973,7 +1973,7 @@ section above and <a href='/docs/git-web--browse'>git-web&#x2d;&#x2d;browse[1]</
 <div class="sect2">
 <h3 id="_man_viewer"><a class="anchor" href="#_man_viewer"></a>man.viewer</h3>
 <div class="paragraph">
-<p>The <code>man.viewer</code> configuration variable will be checked if the <em>man</em>
+<p>The <span class='synopsis'><code>man.viewer</code></span> configuration variable will be checked if the <em>man</em>
 format is chosen. The following values are currently supported:</p>
 </div>
 <div class="ulist">
@@ -1993,10 +1993,10 @@ tab (see <em>Note about konqueror</em> below).</p>
 </div>
 <div class="paragraph">
 <p>Values for other tools can be used if there is a corresponding
-<code>man.&lt;tool&gt;.cmd</code> configuration entry (see below).</p>
+<span class='synopsis'><code>man.</code><em>&lt;tool&gt;</em><code>.cmd</code></span> configuration entry (see below).</p>
 </div>
 <div class="paragraph">
-<p>Multiple values may be given to the <code>man.viewer</code> configuration
+<p>Multiple values may be given to the <span class='synopsis'><code>man.viewer</code></span> configuration
 variable. Their corresponding programs will be tried in the order
 listed in the configuration file.</p>
 </div>
@@ -2016,7 +2016,7 @@ DISPLAY is not set) and in that case emacs' woman mode will be tried.</p>
 </div>
 <div class="paragraph">
 <p>If everything fails, or if no viewer is configured, the viewer specified
-in the <code>GIT_MAN_VIEWER</code> environment variable will be tried.  If that
+in the <span class='synopsis'><code>GIT_MAN_VIEWER</code></span> environment variable will be tried.  If that
 fails too, the <em>man</em> program will be tried anyway.</p>
 </div>
 </div>
@@ -2024,7 +2024,7 @@ fails too, the <em>man</em> program will be tried anyway.</p>
 <h3 id="_man_tool_path"><a class="anchor" href="#_man_tool_path"></a>man.&lt;tool&gt;.path</h3>
 <div class="paragraph">
 <p>You can explicitly provide a full path to your preferred man viewer by
-setting the configuration variable <code>man.&lt;tool&gt;.path</code>. For example, you
+setting the configuration variable <span class='synopsis'><code>man.</code><em>&lt;tool&gt;</em><code>.path</code></span>. For example, you
 can configure the absolute path to konqueror by setting
 <em>man.konqueror.path</em>. Otherwise, <em>git help</em> assumes the tool is
 available in PATH.</p>
@@ -2033,9 +2033,9 @@ available in PATH.</p>
 <div class="sect2">
 <h3 id="_man_tool_cmd"><a class="anchor" href="#_man_tool_cmd"></a>man.&lt;tool&gt;.cmd</h3>
 <div class="paragraph">
-<p>When the man viewer, specified by the <code>man.viewer</code> configuration
+<p>When the man viewer, specified by the <span class='synopsis'><code>man.viewer</code></span> configuration
 variables, is not among the supported ones, then the corresponding
-<code>man.&lt;tool&gt;.cmd</code> configuration variable will be looked up. If this
+<span class='synopsis'><code>man.</code><em>&lt;tool&gt;</em><code>.cmd</code></span> configuration variable will be looked up. If this
 variable exists then the specified tool will be treated as a custom
 command and a shell eval will be used to run the command with the man
 page passed as arguments.</p>
@@ -2044,14 +2044,14 @@ page passed as arguments.</p>
 <div class="sect2">
 <h3 id="_note_about_konqueror"><a class="anchor" href="#_note_about_konqueror"></a>Note about konqueror</h3>
 <div class="paragraph">
-<p>When <em>konqueror</em> is specified in the <code>man.viewer</code> configuration
+<p>When <em>konqueror</em> is specified in the <span class='synopsis'><code>man.viewer</code></span> configuration
 variable, we launch <em>kfmclient</em> to try to open the man page on an
 already opened konqueror in a new tab if possible.</p>
 </div>
 <div class="paragraph">
 <p>For consistency, we also try such a trick if <em>man.konqueror.path</em> is
-set to something like <code>A_PATH_TO/konqueror</code>. That means we will try to
-launch <code>A_PATH_TO/kfmclient</code> instead.</p>
+set to something like <span class='synopsis'><code>A_PATH_TO/konqueror</code></span>. That means we will try to
+launch <span class='synopsis'><code>A_PATH_TO/kfmclient</code></span> instead.</p>
 </div>
 <div class="paragraph">
 <p>If you really want to use <em>konqueror</em>, then you can use something like
@@ -2071,7 +2071,7 @@ the following:</p>
 <h3 id="_note_about_git_config_global"><a class="anchor" href="#_note_about_git_config_global"></a>Note about git config --global</h3>
 <div class="paragraph">
 <p>Note that all these configuration variables should probably be set
-using the <code>--global</code> flag, for example like this:</p>
+using the <span class='synopsis'><code>--global</code></span> flag, for example like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2122,7 +2122,7 @@ See <a href='/docs/git-config'>git-config[1]</a> for more information about this
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   

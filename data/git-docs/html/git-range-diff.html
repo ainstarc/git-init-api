@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.a28f853dde5acb367389ec95cbd30b9560cc0bfdea904dcc36e956d4177745a2.css" integrity="sha256-oo&#43;FPd5ayzZzieyVy9MLlWDMC/3qkE3MNulW1Bd3RaI=">
+  <link rel="stylesheet" href="/application.min.873bd2adbd61107dd47ae1fbbfd6925004d297bb502dfed2fd57c769da3aec46.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1582,7 +1582,7 @@
 series, or more generally, two commit ranges (ignoring merge commits).</p>
 </div>
 <div class="paragraph">
-<p>In the presence of <code>&lt;path&gt;</code> arguments, these commit ranges are limited
+<p>In the presence of <span class='synopsis'><em>&lt;path&gt;</em></span> arguments, these commit ranges are limited
 accordingly.</p>
 </div>
 <div class="paragraph">
@@ -1603,17 +1603,18 @@ all of their ancestors have been shown.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;range1&gt; &lt;range2&gt;</code>: Either commit range can be of the form
-<code>&lt;base&gt;..&lt;rev&gt;</code>, <code>&lt;rev&gt;^!</code> or <code>&lt;rev&gt;^-&lt;n&gt;</code>. See <code>SPECIFYING RANGES</code>
+<p><span class='synopsis'><em>&lt;range1&gt;</em> <em>&lt;range2&gt;</em></span>: Either commit range can be of the form
+<span class='synopsis'><em>&lt;base&gt;</em><code>..</code><em>&lt;rev&gt;</em></span>, <span class='synopsis'><em>&lt;rev&gt;</em><code>^!</code></span> or <span class='synopsis'><em>&lt;rev&gt;</em><code>^-</code><em>&lt;n&gt;</em></span>. See <span class='synopsis'><code>SPECIFYING</code> <code>RANGES</code></span>
 in <a href='/docs/gitrevisions'>gitrevisions[7]</a> for more details.</p>
 </li>
 <li>
-<p><code>&lt;rev1&gt;...&lt;rev2&gt;</code>. This is equivalent to
-<code>&lt;rev2&gt;..&lt;rev1&gt; &lt;rev1&gt;..&lt;rev2&gt;</code>.</p>
+<p><span class='synopsis'><em>&lt;rev1&gt;</em><code>...</code><em>&lt;rev2&gt;</em></span>. This is equivalent to
+<span class='synopsis'><em>&lt;rev2&gt;</em><code>..</code><em>&lt;rev1&gt;</em> <em>&lt;rev1&gt;</em><code>..</code><em>&lt;rev2&gt;</em></span>.</p>
 </li>
 <li>
-<p><code>&lt;base&gt; &lt;rev1&gt; &lt;rev2&gt;</code>: This is equivalent to <code>&lt;base&gt;..&lt;rev1&gt;
-&lt;base&gt;..&lt;rev2&gt;</code>.</p>
+<p><span class='synopsis'><em>&lt;base&gt;</em> <em>&lt;rev1&gt;</em> <em>&lt;rev2&gt;</em></span>: This is equivalent to <span class='synopsis'><em>&lt;base&gt;</em><code>..</code><em>&lt;rev1&gt;</em>
+
+<em>&lt;base&gt;</em><code>..</code><em>&lt;rev2&gt;</em></span>.</p>
 </li>
 </ul>
 </div>
@@ -1626,29 +1627,29 @@ in <a href='/docs/gitrevisions'>gitrevisions[7]</a> for more details.</p>
 <dl>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---no-dual-color"><a class="anchor" href="#Documentation/git-range-diff.txt---no-dual-color"></a>--no-dual-color </dt>
 <dd>
-<p>When the commit diffs differ, <code>git range-diff</code> recreates the
+<p>When the commit diffs differ, <span class='synopsis'><code>git</code> <code>range-diff</code></span> recreates the
 original diffs' coloring, and adds outer -/+ diff markers with
 the <strong>background</strong> being red/green to make it easier to see e.g.
 when there was a change in what exact lines were added.</p>
 <div class="paragraph">
 <p>Additionally, the commit diff lines that are only present in the first commit
-range are shown "dimmed" (this can be overridden using the <code>color.diff.&lt;slot&gt;</code>
-config setting where <code>&lt;slot&gt;</code> is one of <code>contextDimmed</code>, <code>oldDimmed</code> and
-<code>newDimmed</code>), and the commit diff lines that are only present in the second
+range are shown "dimmed" (this can be overridden using the <span class='synopsis'><code>color.diff.</code><em>&lt;slot&gt;</em></span>
+config setting where <span class='synopsis'><em>&lt;slot&gt;</em></span> is one of <span class='synopsis'><code>contextDimmed</code></span>, <span class='synopsis'><code>oldDimmed</code></span> and
+<span class='synopsis'><code>newDimmed</code></span>), and the commit diff lines that are only present in the second
 commit range are shown in bold (which can be overridden using the config
-settings <code>color.diff.&lt;slot&gt;</code> with <code>&lt;slot&gt;</code> being one of <code>contextBold</code>,
-<code>oldBold</code> or <code>newBold</code>).</p>
+settings <span class='synopsis'><code>color.diff.</code><em>&lt;slot&gt;</em></span> with <span class='synopsis'><em>&lt;slot&gt;</em></span> being one of <span class='synopsis'><code>contextBold</code></span>,
+<span class='synopsis'><code>oldBold</code></span> or <span class='synopsis'><code>newBold</code></span>).</p>
 </div>
 <div class="paragraph">
-<p>This is known to <code>range-diff</code> as "dual coloring". Use <code>--no-dual-color</code>
+<p>This is known to <span class='synopsis'><code>range-diff</code></span> as "dual coloring". Use <span class='synopsis'><code>--no-dual-color</code></span>
 to revert to color all lines according to the outer diff markers
 (and completely ignore the inner diff when it comes to color).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---creation-factorltpercentgt"><a id="Documentation/git-range-diff.txt---creation-factorpercent" class="anchor" href="#Documentation/git-range-diff.txt---creation-factorpercent"></a>--creation-factor=&lt;percent&gt; </dt>
 <dd>
-<p>Set the creation/deletion cost fudge factor to <code>&lt;percent&gt;</code>.
-Defaults to 60. Try a larger value if <code>git range-diff</code> erroneously
+<p>Set the creation/deletion cost fudge factor to <span class='synopsis'><em>&lt;percent&gt;</em></span>.
+Defaults to 60. Try a larger value if <span class='synopsis'><code>git</code> <code>range-diff</code></span> erroneously
 considers a large change a total rewrite (deletion of one commit
 and addition of another), and a smaller one in the reverse case.
 See the ``Algorithm`` section below for an explanation of why this is
@@ -1657,61 +1658,61 @@ needed.</p>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---left-only"><a class="anchor" href="#Documentation/git-range-diff.txt---left-only"></a>--left-only </dt>
 <dd>
 <p>Suppress commits that are missing from the first specified range
-(or the "left range" when using the <code>&lt;rev1&gt;...&lt;rev2&gt;</code> format).</p>
+(or the "left range" when using the <span class='synopsis'><em>&lt;rev1&gt;</em><code>...</code><em>&lt;rev2&gt;</em></span> format).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---right-only"><a class="anchor" href="#Documentation/git-range-diff.txt---right-only"></a>--right-only </dt>
 <dd>
 <p>Suppress commits that are missing from the second specified range
-(or the "right range" when using the <code>&lt;rev1&gt;...&lt;rev2&gt;</code> format).</p>
+(or the "right range" when using the <span class='synopsis'><em>&lt;rev1&gt;</em><code>...</code><em>&lt;rev2&gt;</em></span> format).</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---diff-mergesltformatgt"><a id="Documentation/git-range-diff.txt---diff-mergesformat" class="anchor" href="#Documentation/git-range-diff.txt---diff-mergesformat"></a>--diff-merges=&lt;format&gt; </dt>
 <dd>
 <p>Instead of ignoring merge commits, generate diffs for them using the
-corresponding <code>--diff-merges=&lt;format&gt;</code> option of <a href='/docs/git-log'>git-log[1]</a>,
+corresponding <span class='synopsis'><code>--diff-merges=</code><em>&lt;format&gt;</em></span> option of <a href='/docs/git-log'>git-log[1]</a>,
 and include them in the comparison.</p>
 <div class="paragraph">
-<p>Note: In the common case, the <code>remerge</code> mode will be the most natural one
+<p>Note: In the common case, the <span class='synopsis'><code>remerge</code></span> mode will be the most natural one
 to use, as it shows only the diff on top of what Git&#8217;s merge machinery would
 have produced. In other words, if a merge commit is the result of a
-non-conflicting <code>git merge</code>, the <code>remerge</code> mode will represent it with an empty
+non-conflicting <span class='synopsis'><code>git</code> <code>merge</code></span>, the <span class='synopsis'><code>remerge</code></span> mode will represent it with an empty
 diff.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---remerge-diff"><a class="anchor" href="#Documentation/git-range-diff.txt---remerge-diff"></a>--remerge-diff </dt>
 <dd>
-<p>Convenience option, equivalent to <code>--diff-merges=remerge</code>.</p>
+<p>Convenience option, equivalent to <span class='synopsis'><code>--diff-merges=remerge</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt---no-notesltrefgt"><a id="Documentation/git-range-diff.txt---no-notesref" class="anchor" href="#Documentation/git-range-diff.txt---no-notesref"></a>--[no-]notes[=&lt;ref&gt;] </dt>
 <dd>
-<p>This flag is passed to the <code>git log</code> program
+<p>This flag is passed to the <span class='synopsis'><code>git</code> <code>log</code></span> program
 (see <a href='/docs/git-log'>git-log[1]</a>) that generates the patches.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt-ltrange1gtltrange2gt"><a id="Documentation/git-range-diff.txt-range1range2" class="anchor" href="#Documentation/git-range-diff.txt-range1range2"></a>&lt;range1&gt; &lt;range2&gt; </dt>
 <dd>
 <p>Compare the commits specified by the two ranges, where
-<code>&lt;range1&gt;</code> is considered an older version of <code>&lt;range2&gt;</code>.</p>
+<span class='synopsis'><em>&lt;range1&gt;</em></span> is considered an older version of <span class='synopsis'><em>&lt;range2&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt-ltrev1gt82308203ltrev2gt"><a id="Documentation/git-range-diff.txt-rev1rev2" class="anchor" href="#Documentation/git-range-diff.txt-rev1rev2"></a>&lt;rev1&gt;&#8230;&#8203;&lt;rev2&gt; </dt>
 <dd>
-<p>Equivalent to passing <code>&lt;rev2&gt;..&lt;rev1&gt;</code> and <code>&lt;rev1&gt;..&lt;rev2&gt;</code>.</p>
+<p>Equivalent to passing <span class='synopsis'><em>&lt;rev2&gt;</em><code>..</code><em>&lt;rev1&gt;</em></span> and <span class='synopsis'><em>&lt;rev1&gt;</em><code>..</code><em>&lt;rev2&gt;</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-range-diff.txt-ltbasegtltrev1gtltrev2gt"><a id="Documentation/git-range-diff.txt-baserev1rev2" class="anchor" href="#Documentation/git-range-diff.txt-baserev1rev2"></a>&lt;base&gt; &lt;rev1&gt; &lt;rev2&gt; </dt>
 <dd>
-<p>Equivalent to passing <code>&lt;base&gt;..&lt;rev1&gt;</code> and <code>&lt;base&gt;..&lt;rev2&gt;</code>.
-Note that <code>&lt;base&gt;</code> does not need to be the exact branch point
-of the branches. Example: after rebasing a branch <code>my-topic</code>,
-<code>git range-diff my-topic@{u} my-topic@{1} my-topic</code> would
+<p>Equivalent to passing <span class='synopsis'><em>&lt;base&gt;</em><code>..</code><em>&lt;rev1&gt;</em></span> and <span class='synopsis'><em>&lt;base&gt;</em><code>..</code><em>&lt;rev2&gt;</em></span>.
+Note that <span class='synopsis'><em>&lt;base&gt;</em></span> does not need to be the exact branch point
+of the branches. Example: after rebasing a branch <span class='synopsis'><code>my-topic</code></span>,
+<span class='synopsis'><code>git</code> <code>range-diff</code> <code>my-topic@{u}</code> <code>my-topic@{1}</code> <code>my-topic</code></span> would
 show the differences introduced by the rebase.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p><code>git range-diff</code> also accepts the regular diff options (see
-<a href='/docs/git-diff'>git-diff[1]</a>), most notably the <code>--color=[&lt;when&gt;]</code> and
-<code>--no-color</code> options. These options are used when generating the "diff
+<p><span class='synopsis'><code>git</code> <code>range-diff</code></span> also accepts the regular diff options (see
+<a href='/docs/git-diff'>git-diff[1]</a>), most notably the <span class='synopsis'><code>--color=</code>[<em>&lt;when&gt;</em>]</span> and
+<span class='synopsis'><code>--no-color</code></span> options. These options are used when generating the "diff
 between patches", i.e. to compare the author, commit message and diff of
 corresponding old/new commits. There is currently no means to tweak most of the
-diff options passed to <code>git log</code> when generating those patches.</p>
+diff options passed to <span class='synopsis'><code>git</code> <code>log</code></span> when generating those patches.</p>
 </div>
 </div>
 </div>
@@ -1719,20 +1720,20 @@ diff options passed to <code>git log</code> when generating those patches.</p>
 <h2 id="_output_stability"><a class="anchor" href="#_output_stability"></a>OUTPUT STABILITY</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The output of the <code>range-diff</code> command is subject to change. It is
+<p>The output of the <span class='synopsis'><code>range-diff</code></span> command is subject to change. It is
 intended to be human-readable porcelain output, not something that can
-be used across versions of Git to get a textually stable <code>range-diff</code>
-(as opposed to something like the <code>--stable</code> option to
+be used across versions of Git to get a textually stable <span class='synopsis'><code>range-diff</code></span>
+(as opposed to something like the <span class='synopsis'><code>--stable</code></span> option to
 <a href='/docs/git-patch-id'>git-patch-id[1]</a>). There&#8217;s also no equivalent of
-<a href='/docs/git-apply'>git-apply[1]</a> for <code>range-diff</code>, the output is not intended to
+<a href='/docs/git-apply'>git-apply[1]</a> for <span class='synopsis'><code>range-diff</code></span>, the output is not intended to
 be machine-readable.</p>
 </div>
 <div class="paragraph">
 <p>This is particularly true when passing in diff options. Currently some
-options like <code>--stat</code> can, as an emergent effect, produce output
-that&#8217;s quite useless in the context of <code>range-diff</code>. Future versions
-of <code>range-diff</code> may learn to interpret such options in a manner
-specific to <code>range-diff</code> (e.g. for <code>--stat</code> producing human-readable
+options like <span class='synopsis'><code>--stat</code></span> can, as an emergent effect, produce output
+that&#8217;s quite useless in the context of <span class='synopsis'><code>range-diff</code></span>. Future versions
+of <span class='synopsis'><code>range-diff</code></span> may learn to interpret such options in a manner
+specific to <span class='synopsis'><code>range-diff</code></span> (e.g. for <span class='synopsis'><code>--stat</code></span> producing human-readable
 output which summarizes how the diffstat changed).</p>
 </div>
 </div>
@@ -1741,7 +1742,7 @@ output which summarizes how the diffstat changed).</p>
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>CONFIGURATION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This command uses the <code>diff.color.*</code> and <code>pager.range-diff</code> settings
+<p>This command uses the <span class='synopsis'><code>diff.color.*</code></span> and <span class='synopsis'><code>pager.range-diff</code></span> settings
 (the latter is on by default).
 See <a href='/docs/git-config'>git-config[1]</a>.</p>
 </div>
@@ -1760,7 +1761,7 @@ introduced by the rebase directly afterwards using:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>A typical output of <code>git range-diff</code> would look like this:</p>
+<p>A typical output of <span class='synopsis'><code>git</code> <code>range-diff</code></span> would look like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1790,11 +1791,12 @@ commit message of the 2nd commit as well as its diff.</p>
 </div>
 <div class="paragraph">
 <p>When the output goes to a terminal, it is color-coded by default, just
-like regular <code>git diff</code>'s output. In addition, the first line (adding a
+like regular <span class='synopsis'><code>git</code> <code>diff</code></span>'s output. In addition, the first line (adding a
 commit) is green, the last line (deleting a commit) is red, the second
-line (with a perfect match) is yellow like the commit header of <code>git
-show</code>'s output, and the third line colors the old commit red, the new
-one green and the rest like <code>git show</code>'s commit header.</p>
+line (with a perfect match) is yellow like the commit header of <span class='synopsis'><code>git</code>
+
+<code>show</code></span>'s output, and the third line colors the old commit red, the new
+one green and the rest like <span class='synopsis'><code>git</code> <code>show</code></span>'s commit header.</p>
 </div>
 <div class="paragraph">
 <p>A naive color-coded diff of diffs is actually a bit hard to read,
@@ -1803,7 +1805,7 @@ though, as it colors the entire lines red or green. The line that added
 even if the intent of the old commit was to add something.</p>
 </div>
 <div class="paragraph">
-<p>To help with that, <code>range</code> uses the <code>--dual-color</code> mode by default. In
+<p>To help with that, <span class='synopsis'><code>range</code></span> uses the <span class='synopsis'><code>--dual-color</code></span> mode by default. In
 this mode, the diff of diffs will retain the original diff colors, and
 prefix the lines with -/+ markers that have their <strong>background</strong> red or
 green, to make it more obvious that they describe how the diff itself
@@ -1830,9 +1832,9 @@ series), the cost matrix is extended to allow for that, by adding
 fixed-cost entries for wholesale deletes/adds.</p>
 </div>
 <div class="paragraph">
-<p>Example: Let commits <code>1--2</code> be the first iteration of a patch series and
-<code>A--C</code> the second iteration. Let&#8217;s assume that <code>A</code> is a cherry-pick of
-<code>2,</code> and <code>C</code> is a cherry-pick of <code>1</code> but with a small modification (say,
+<p>Example: Let commits <span class='synopsis'><code>1--2</code></span> be the first iteration of a patch series and
+<span class='synopsis'><code>A--C</code></span> the second iteration. Let&#8217;s assume that <span class='synopsis'><code>A</code></span> is a cherry-pick of
+<span class='synopsis'><code>2,</code></span> and <span class='synopsis'><code>C</code></span> is a cherry-pick of <span class='synopsis'><code>1</code></span> but with a small modification (say,
 a fixed typo). Visualize the commits as a bipartite graph:</p>
 </div>
 <div class="listingblock">
@@ -1859,7 +1861,7 @@ the old one. We can represent an "explanation" as an edge in the graph:</p>
 </div>
 <div class="paragraph">
 <p>This explanation comes for "free" because there was no change. Similarly
-<code>C</code> could be explained using <code>1</code>, but that comes at some cost c&gt;0
+<span class='synopsis'><code>C</code></span> could be explained using <span class='synopsis'><code>1</code></span>, but that comes at some cost c&gt;0
 because of the modification:</p>
 </div>
 <div class="listingblock">
@@ -1874,7 +1876,7 @@ because of the modification:</p>
 </div>
 <div class="paragraph">
 <p>In mathematical terms, what we are looking for is some sort of a minimum
-cost bipartite matching; <code>1</code> is matched to <code>C</code> at some cost, etc. The
+cost bipartite matching; <span class='synopsis'><code>1</code></span> is matched to <span class='synopsis'><code>C</code></span> at some cost, etc. The
 underlying graph is in fact a complete bipartite graph; the cost we
 associate with every edge is the size of the diff between the two
 commits' patches. To explain also new commits, we introduce dummy nodes
@@ -1894,12 +1896,12 @@ on both sides:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The cost of an edge <code>o--C</code> is the size of <code>C</code>'s diff, modified by a
+<p>The cost of an edge <span class='synopsis'><code>o--C</code></span> is the size of <span class='synopsis'><code>C</code></span>'s diff, modified by a
 fudge factor that should be smaller than 100%. The cost of an edge
-<code>o--o</code> is free. The fudge factor is necessary because even if <code>1</code> and
-<code>C</code> have nothing in common, they may still share a few empty lines and
-such, possibly making the assignment <code>1--C</code>, <code>o--o</code> slightly cheaper
-than <code>1--o</code>, <code>o--C</code> even if <code>1</code> and <code>C</code> have nothing in common. With the
+<span class='synopsis'><code>o--o</code></span> is free. The fudge factor is necessary because even if <span class='synopsis'><code>1</code></span> and
+<span class='synopsis'><code>C</code></span> have nothing in common, they may still share a few empty lines and
+such, possibly making the assignment <span class='synopsis'><code>1--C</code></span>, <span class='synopsis'><code>o--o</code></span> slightly cheaper
+than <span class='synopsis'><code>1--o</code></span>, <span class='synopsis'><code>o--C</code></span> even if <span class='synopsis'><code>1</code></span> and <span class='synopsis'><code>C</code></span> have nothing in common. With the
 fudge factor we require a much larger common part to consider patches as
 corresponding.</p>
 </div>
@@ -1970,7 +1972,7 @@ found in this case will look like this:</p>
 <script src="/js/jquery.defaultvalue.js"></script>
 <script src="/js/session.min.js"></script>
 
-<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js" integrity="sha256-6hn5nuNWdyE&#43;DMPjikr0ZrzOsGSStP3iB7j8rw&#43;Okow="></script>
+<script src="/js/application.min.ea19f99ee35677213e0cc3e38a4af466bcceb06492b4fde207b8fcaf0f8e928c.js"></script>
 
     </div>
   
