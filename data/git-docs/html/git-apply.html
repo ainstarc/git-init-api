@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1295,10 +1295,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-apply last updated in 2.47.0</span>
+<span class="light d-flex">git-apply last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-apply</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-apply/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.47.1 &rarr; 2.50.1 no changes</span></li>
@@ -1945,14 +1978,15 @@ cleanly to both the index and the working tree in isolation.</p>
 tree. If <span class='synopsis'><code>--check</code></span> is in effect, merely check that it would
 apply cleanly to the index entry.</p>
 </dd>
+<dt class="hdlist1" id="Documentation/git-apply.txt--N"><a class="anchor" href="#Documentation/git-apply.txt--N"></a>-N </dt>
 <dt class="hdlist1" id="Documentation/git-apply.txt---intent-to-add"><a class="anchor" href="#Documentation/git-apply.txt---intent-to-add"></a>--intent-to-add </dt>
 <dd>
 <p>When applying the patch only to the working tree, mark new
 files to be added to the index later (see <span class='synopsis'><code>--intent-to-add</code></span>
-option in <a href='/docs/git-add'>git-add[1]</a>). This option is ignored unless
-running in a Git repository and <span class='synopsis'><code>--index</code></span> is not specified.
-Note that <span class='synopsis'><code>--index</code></span> could be implied by other options such
-as <span class='synopsis'><code>--cached</code></span> or <span class='synopsis'><code>--3way</code></span>.</p>
+option in <a href='/docs/git-add'>git-add[1]</a>). This option is ignored if
+<span class='synopsis'><code>--index</code></span> or <span class='synopsis'><code>--cached</code></span> are used, and has no effect outside a Git
+repository. Note that <span class='synopsis'><code>--index</code></span> could be implied by other options
+such as <span class='synopsis'><code>--3way</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-apply.txt--3"><a class="anchor" href="#Documentation/git-apply.txt--3"></a>-3 </dt>
 <dt class="hdlist1" id="Documentation/git-apply.txt---3way"><a class="anchor" href="#Documentation/git-apply.txt---3way"></a>--3way </dt>

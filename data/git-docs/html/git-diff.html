@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1315,10 +1315,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-diff last updated in 2.49.0</span>
+<span class="light d-flex">git-diff last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-diff</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-diff/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.49.1 &rarr; 2.50.1 no changes</span></li>
@@ -3010,7 +3043,7 @@
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--merge-base</code></span>] <em>&lt;commit&gt;</em> [<em>&lt;commit&gt;</em>&#8230;&#8203;] <em>&lt;commit&gt;</em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <em>&lt;commit&gt;</em><span class='synopsis'>...</span><em>&lt;commit&gt;</em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <em>&lt;blob&gt;</em> <em>&lt;blob&gt;</em>
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--no-index</code></span> [<span class='synopsis'><code>--</code></span>] <em>&lt;path&gt;</em> <em>&lt;path&gt;</em></pre>
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--no-index</code></span> [<span class='synopsis'><code>--</code></span>] <em>&lt;path&gt;</em> <em>&lt;path&gt;</em> [<em>&lt;pathspec&gt;</em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -3033,14 +3066,18 @@ words, the differences are what you <em>could</em> tell Git to
 further add to the index but you still haven&#8217;t.  You can
 stage these changes by using <a href='/docs/git-add'>git-add[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--no-indexcodecode--codeemltpathgtememltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--no-index--pathpath" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--no-index--pathpath"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <code>--no-index</code> [<code>--</code>] <em>&lt;path&gt;</em> <em>&lt;path&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--no-indexcodecode--codeemltpathgtememltpathgtememltpathspecgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--no-index--pathpathpathspec" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--no-index--pathpathpathspec"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <code>--no-index</code> [<code>--</code>] <em>&lt;path&gt;</em> <em>&lt;path&gt;</em> [<em>&lt;pathspec&gt;</em>...]</span> </dt>
 <dd>
 <p>This form is to compare the given two paths on the
 filesystem.  You can omit the <span class='synopsis'><code>--no-index</code></span> option when
 running the command in a working tree controlled by Git and
 at least one of the paths points outside the working tree,
 or when running the command outside a working tree
-controlled by Git. This form implies <span class='synopsis'><code>--exit-code</code></span>.</p>
+controlled by Git. This form implies <span class='synopsis'><code>--exit-code</code></span>. If both
+paths point to directories, additional pathspecs may be
+provided. These will limit the files included in the
+difference. All such pathspecs must be relative as they
+apply to both sides of the diff.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--cachedcodecode--merge-basecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <code>--cached</code> [<code>--merge-base</code>] [<em>&lt;commit&gt;</em>] [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1293,10 +1293,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-restore last updated in 2.50.0</span>
+<span class="light d-flex">git-restore last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-restore</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-restore/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.50.1 no changes</span></li>
@@ -1619,9 +1652,6 @@ otherwise from the index. Use <span class='synopsis'><code>--source</code></span
 <p>See "Reset, restore and revert" in <a href='/docs/git'>git[1]</a> for the differences
 between the three commands.</p>
 </div>
-<div class="paragraph">
-<p>THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1652,6 +1682,19 @@ leave out at most one of <em>&lt;rev-A&gt;_</em> and <em>&lt;rev-B&gt;</em>, in 
 restore source and the restore location. See the "Interactive
 Mode" section of <a href='/docs/git-add'>git-add[1]</a> to learn how to operate
 the <span class='synopsis'><code>--patch</code></span> mode.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-restore.txt-spanclasssynopsiscode-Ucodeemltngtemspan"><a id="Documentation/git-restore.txt--Un" class="anchor" href="#Documentation/git-restore.txt--Un"></a><span class='synopsis'><code>-U</code><em>&lt;n&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-restore.txt-spanclasssynopsiscode--unifiedcodeemltngtemspan"><a id="Documentation/git-restore.txt---unifiedn" class="anchor" href="#Documentation/git-restore.txt---unifiedn"></a><span class='synopsis'><code>--unified=</code><em>&lt;n&gt;</em></span> </dt>
+<dd>
+<p>Generate diffs with <em>&lt;n&gt;</em> lines of context. Defaults to <span class='synopsis'><code>diff.context</code></span>
+or 3 if the config option is unset.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-restore.txt-spanclasssynopsiscode--inter-hunk-contextcodeemltngtemspan"><a id="Documentation/git-restore.txt---inter-hunk-contextn" class="anchor" href="#Documentation/git-restore.txt---inter-hunk-contextn"></a><span class='synopsis'><code>--inter-hunk-context=</code><em>&lt;n&gt;</em></span> </dt>
+<dd>
+<p>Show the context between diff hunks, up to the specified <em>&lt;number&gt;</em>
+of lines, thereby fusing hunks that are close to each other.
+Defaults to <span class='synopsis'><code>diff.interHunkContext</code></span> or 0 if the config option
+is unset.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-restore.txt-spanclasssynopsiscode-Wcodespan"><a id="Documentation/git-restore.txt--W" class="anchor" href="#Documentation/git-restore.txt--W"></a><span class='synopsis'><code>-W</code></span> </dt>
 <dt class="hdlist1" id="Documentation/git-restore.txt-spanclasssynopsiscode--worktreecodespan"><a id="Documentation/git-restore.txt---worktree" class="anchor" href="#Documentation/git-restore.txt---worktree"></a><span class='synopsis'><code>--worktree</code></span> </dt>

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1290,10 +1290,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-submodule last updated in 2.47.0</span>
+<span class="light d-flex">git-submodule last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-submodule</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-submodule/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.47.1 &rarr; 2.50.1 no changes</span></li>
@@ -2506,6 +2539,13 @@ option is not specified, it defaults to the remote <em>HEAD</em>.</p>
 <dd>
 <p>This option is only valid for add, deinit and update commands.
 When running add, allow adding an otherwise ignored submodule path.
+This option is also used to bypass a check that the submodule&#8217;s name
+is not already in use. By default, <em>git submodule add</em> will fail if
+the proposed name (which is derived from the path) is already registered
+for another submodule in the repository. Using <em>--force</em> allows the command
+to proceed by automatically generating a unique name by appending a number
+to the conflicting name (e.g., if a submodule named <em>child</em> exists, it will
+try <em>child1</em>, and so on).
 When running deinit the submodule working trees will be removed even
 if they contain local changes.
 When running update (only effective with the checkout procedure),

@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1303,10 +1303,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-blame last updated in 2.50.0</span>
+<span class="light d-flex">git-blame last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-blame</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-blame/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.50.1 no changes</span></li>
@@ -2047,25 +2080,25 @@ May be specified multiple times. Overlapping ranges are allowed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>number</p>
+<p><em>&lt;number&gt;</em></p>
 <div class="paragraph">
 <p>If <em>&lt;start&gt;</em> or <em>&lt;end&gt;</em> is a number, it specifies an
 absolute line number (lines count from 1).</p>
 </div>
 </li>
 <li>
-<p><span class='synopsis'><code>/regex/</code></span></p>
+<p><span class='synopsis'><code>/</code><em>&lt;regex&gt;</em><code>/</code></span></p>
 <div class="paragraph">
 <p>This form will use the first line matching the given
-POSIX regex. If <em>&lt;start&gt;</em> is a regex, it will search from the end of
+POSIX <em>&lt;regex&gt;</em>. If <em>&lt;start&gt;</em> is a regex, it will search from the end of
 the previous <span class='synopsis'><code>-L</code></span> range, if any, otherwise from the start of file.
-If <em>&lt;start&gt;</em> is <span class='synopsis'><code>^/regex/</code></span>, it will search from the start of file.
-If <em>&lt;end&gt;</em> is a regex, it will search
-starting at the line given by <em>&lt;start&gt;</em>.</p>
+If <em>&lt;start&gt;</em> is <span class='synopsis'><code>^/</code><em>&lt;regex&gt;</em><code>/</code></span>, it will search from the start of file.
+If <em>&lt;end&gt;</em> is a regex, it will search starting at the line given by
+<em>&lt;start&gt;</em>.</p>
 </div>
 </li>
 <li>
-<p>+offset or -offset</p>
+<p><span class='synopsis'><code>+</code><em>&lt;offset&gt;</em></span> or <span class='synopsis'><code>-</code><em>&lt;offset&gt;</em></span></p>
 <div class="paragraph">
 <p>This is only valid for <em>&lt;end&gt;</em> and will specify a number
 of lines before or after the line given by <em>&lt;start&gt;</em>.</p>

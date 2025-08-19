@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.77b1aacba1353188409efad5c1e2a811aa316ad278b7e1b69114811306c1c17b.css">
+  <link rel="stylesheet" href="/application.min.22b34b7a5e6304e707455f117a4a3adf6f46f12ea6c348e650f58a5c20d2bdd9.css">
   <script src="/js/modernizr.js"></script>
   
 
@@ -1310,10 +1310,43 @@
   
     Latest version
    ▾ </a>
-<span class="light d-flex">git-fast-import last updated in 2.50.0</span>
+<span class="light d-flex">git-fast-import last updated in 2.51.0</span>
 <div class='dropdown-panel left' id='previous-versions-dropdown'>
   <header>Changes in the <strong>git-fast-import</strong> manual</header>
   <ol class='reference-previous-versions'>
+    
+      
+        <li>
+        <a href="/docs/git-fast-import/2.51.0"><span class="version">2.51.0</span>
+          <span class="diff">
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+              <img src="/images/icons/green-dot.png" />
+            
+            
+              <img src="/images/icons/red-dot.png" />
+            
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+              <img src="/images/icons/grey-dot.png" />
+            
+          </span>
+          <em class="date">2025-08-18</em>
+        </a>
+        </li>
+      
     
       
         <li class="no-change"><span>2.50.1 no changes</span></li>
@@ -2683,7 +2716,7 @@ amount of memory usage and processing time.  Assuming the frontend
 is able to keep up with fast-import and feed it a constant stream of data,
 import times for projects holding 10+ years of history and containing
 100,000+ individual commits are generally completed in just 1-2
-hours on quite modest (~$2,000 USD) hardware.</p>
+hours on quite modest hardware (~$2,000 USD in 2007).</p>
 </div>
 <div class="paragraph">
 <p>Most bottlenecks appear to be in foreign source data access (the
@@ -3001,7 +3034,7 @@ change to the project.</p>
 	original-oid?
 	('author' (SP &lt;name&gt;)? SP LT &lt;email&gt; GT SP &lt;when&gt; LF)?
 	'committer' (SP &lt;name&gt;)? SP LT &lt;email&gt; GT SP &lt;when&gt; LF
-	('gpgsig' SP &lt;alg&gt; LF data)?
+	('gpgsig' SP &lt;algo&gt; SP &lt;format&gt; LF data)?
 	('encoding' SP &lt;encoding&gt; LF)?
 	data
 	('from' SP &lt;commit-ish&gt; LF)?
@@ -3085,11 +3118,47 @@ their syntax.</p>
 <h4 id="_gpgsig"><a class="anchor" href="#_gpgsig"></a><span class='synopsis'><code>gpgsig</code></span></h4>
 <div class="paragraph">
 <p>The optional <span class='synopsis'><code>gpgsig</code></span> command is used to include a PGP/GPG signature
-that signs the commit data.</p>
+or other cryptographic signature that signs the commit data.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>	'gpgsig' SP &lt;git-hash-algo&gt; SP &lt;signature-format&gt; LF data</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Here &lt;alg&gt; specifies which hashing algorithm is used for this
-signature, either <span class='synopsis'><code>sha1</code></span> or <span class='synopsis'><code>sha256</code></span>.</p>
+<p>The <span class='synopsis'><code>gpgsig</code></span> command takes two arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class='synopsis'><em>&lt;git-hash-algo&gt;</em></span> specifies which Git object format this signature
+applies to, either <span class='synopsis'><code>sha1</code></span> or <span class='synopsis'><code>sha256</code></span>. This allows to know which
+representation of the commit was signed (the SHA-1 or the SHA-256
+version) which helps with both signature verification and
+interoperability between repos with different hash functions.</p>
+</li>
+<li>
+<p><span class='synopsis'><em>&lt;signature-format&gt;</em></span> specifies the type of signature, such as
+<span class='synopsis'><code>openpgp</code></span>, <span class='synopsis'><code>x509</code></span>, <span class='synopsis'><code>ssh</code></span>, or <span class='synopsis'><code>unknown</code></span>. This is a convenience for
+tools that process the stream, so they don&#8217;t have to parse the ASCII
+armor to identify the signature type.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A commit may have at most one signature for the SHA-1 object format
+(stored in the "gpgsig" header) and one for the SHA-256 object format
+(stored in the "gpgsig-sha256" header).</p>
+</div>
+<div class="paragraph">
+<p>See below for a detailed description of the <span class='synopsis'><code>data</code></span> command which
+contains the raw signature data.</p>
+</div>
+<div class="paragraph">
+<p>Signatures are not yet checked in the current implementation
+though. (Already setting the <span class='synopsis'><code>extensions.compatObjectFormat</code></span>
+configuration option might help with verifying both SHA-1 and SHA-256
+object format signatures when it will be implemented.)</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3098,8 +3167,8 @@ signature, either <span class='synopsis'><code>sha1</code></span> or <span class
 <div class="title">Note</div>
 </td>
 <td class="content">
-This is highly experimental and the format of the data stream may
-change in the future without compatibility guarantees.
+This is highly experimental and the format of the <span class='synopsis'><code>gpgsig</code></span>
+command may change in the future without compatibility guarantees.
 </td>
 </tr>
 </table>
