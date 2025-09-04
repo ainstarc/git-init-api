@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.21ed294b4e34814787a974162b4963b69c6a09efdd449ff8fe24b14cd5a37328.css" integrity="sha256-Ie0pS040gUeHqXQWK0ljtpxqCe/dRJ/4/iSxTNWjcyg=">
+  <link rel="stylesheet" href="/application.min.e5a59fc4ef574d641bbae13eabec2938f14e3c9bc0b47921f6947023e01283d6.css" integrity="sha256-5aWfxO9XTWQbuuE&#43;q&#43;wpOPFOPJvAtHkh9pRwI&#43;ASg9Y=">
   <script src="/js/modernizr.js"></script>
   
 
@@ -3042,7 +3042,7 @@ pair (e.g. <em>{yesterday}</em>, <em>{1 month 2 weeks 3 days 1 hour 1
 second ago}</em> or <em>{1979-02-26 18:30:00}</em>) specifies the value
 of the ref at a prior point in time.  This suffix may only be
 used immediately following a ref name and the ref must have an
-existing log (<em>$GIT_DIR/logs/&lt;ref&gt;</em>). Note that this looks up the state
+existing log (<em>$GIT_DIR/logs/<span class="hover-term" data-term="ref">&lt;ref&gt;</span></em>). Note that this looks up the state
 of your <strong>local</strong> ref at a given time; e.g., what was in your local
 <em>master</em> branch last week. If you want to look at commits made during
 certain times, see <span class='synopsis'><code>--since</code></span> and <span class='synopsis'><code>--until</code></span>.</p>
@@ -3352,8 +3352,8 @@ By itself, this notation denotes the single commit <em>r1</em>.</p>
 <p>The <em>&lt;rev&gt;^-[&lt;n&gt;]</em> notation includes <em>&lt;rev&gt;</em> but excludes the &lt;n&gt;th
 parent (i.e. a shorthand for <em>&lt;rev&gt;^&lt;n&gt;..&lt;rev&gt;</em>), with <em>&lt;n&gt;</em> = 1 if
 not given. This is typically useful for merge commits where you
-can just pass <em>&lt;commit&gt;^-</em> to get all the commits in the branch
-that was merged in merge commit <em>&lt;commit&gt;</em> (including <em>&lt;commit&gt;</em>
+can just pass <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span>^-</em> to get all the commits in the branch
+that was merged in merge commit <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> (including <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 itself).</p>
 </div>
 <div class="paragraph">
@@ -3686,6 +3686,8 @@ $ sh your-git-script.sh "a b'c"</pre>
 
 <script src="/js/application.min.55a8a5a9bc0e83742067a5ad37657a29fca7dda05d94005f74d203d6a2bde08a.js" integrity="sha256-VailqbwOg3QgZ6WtN2V6Kfyn3aBdlABfdNID1qK94Io="></script>
 
+      <script src="/js/nanopop.umd.js"></script>
+      <script src="/js/glossary.js"></script>
     </div>
   
 

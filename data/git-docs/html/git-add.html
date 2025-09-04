@@ -33,7 +33,7 @@
   <link href="/favicon.ico" rel='shortcut icon' type='image/x-icon'>
 
   
-  <link rel="stylesheet" href="/application.min.21ed294b4e34814787a974162b4963b69c6a09efdd449ff8fe24b14cd5a37328.css" integrity="sha256-Ie0pS040gUeHqXQWK0ljtpxqCe/dRJ/4/iSxTNWjcyg=">
+  <link rel="stylesheet" href="/application.min.e5a59fc4ef574d641bbae13eabec2938f14e3c9bc0b47921f6947023e01283d6.css" integrity="sha256-5aWfxO9XTWQbuuE&#43;q&#43;wpOPFOPJvAtHkh9pRwI&#43;ASg9Y=">
   <script src="/js/modernizr.js"></script>
   
 
@@ -2026,7 +2026,7 @@
 	[<span class='synopsis'><code>--edit</code></span> | <span class='synopsis'><code>-e</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>all</code></span> | <span class='synopsis'><code>-A</code></span> | <span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>ignore-removal</code></span> | [<span class='synopsis'><code>--update</code></span> | <span class='synopsis'><code>-u</code></span>]] [<span class='synopsis'><code>--sparse</code></span>]
 	[<span class='synopsis'><code>--intent-to-add</code></span> | <span class='synopsis'><code>-N</code></span>] [<span class='synopsis'><code>--refresh</code></span>] [<span class='synopsis'><code>--ignore-errors</code></span>] [<span class='synopsis'><code>--ignore-missing</code></span>] [<span class='synopsis'><code>--renormalize</code></span>]
 	[<span class='synopsis'><code>--chmod=</code></span>(<span class='synopsis'><code>+</code></span>|<span class='synopsis'><code>-</code></span>)<span class='synopsis'><code>x</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;file&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]]
-	[<span class='synopsis'><code>--</code></span>] [<em>&lt;pathspec&gt;</em>&#8230;&#8203;]</pre>
+	[<span class='synopsis'><code>--</code></span>] [<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -2077,7 +2077,7 @@ commit.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-add.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-add.txt-pathspec" class="anchor" href="#Documentation/git-add.txt-pathspec"></a><span class='synopsis'><em>&lt;pathspec&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="Documentation/git-add.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-add.txt-pathspec" class="anchor" href="#Documentation/git-add.txt-pathspec"></a><span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span> </dt>
 <dd>
 <p>Files to add content from.  Fileglobs (e.g. <span class='synopsis'><code>*.c</code></span>) can
 be given to add all matching files.  Also a
@@ -2091,7 +2091,7 @@ the working tree). Note that older versions of Git used
 to ignore removed files; use <span class='synopsis'><code>--no-all</code></span> option if you want
 to add modified or new files but ignore removed ones.</p>
 <div class="paragraph">
-<p>For more details about the <em>&lt;pathspec&gt;</em> syntax, see the <em>pathspec</em> entry
+<p>For more details about the <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> syntax, see the <em>pathspec</em> entry
 in <a href='/docs/gitglossary'>gitglossary[7]</a>.</p>
 </div>
 </dd>
@@ -2171,10 +2171,10 @@ apply to the index. See EDITING PATCHES below.</p>
 <dt class="hdlist1" id="Documentation/git-add.txt-spanclasssynopsiscode--updatecodespan"><a id="Documentation/git-add.txt---update" class="anchor" href="#Documentation/git-add.txt---update"></a><span class='synopsis'><code>--update</code></span> </dt>
 <dd>
 <p>Update the index just where it already has an entry matching
-<em>&lt;pathspec&gt;</em>.  This removes as well as modifies index entries to
+<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>.  This removes as well as modifies index entries to
 match the working tree, but adds no new files.</p>
 <div class="paragraph">
-<p>If no <em>&lt;pathspec&gt;</em> is given when <span class='synopsis'><code>-u</code></span> option is used, all
+<p>If no <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> is given when <span class='synopsis'><code>-u</code></span> option is used, all
 tracked files in the entire working tree are updated (old versions
 of Git used to limit the update to the current directory and its
 subdirectories).</p>
@@ -2185,11 +2185,11 @@ subdirectories).</p>
 <dt class="hdlist1" id="Documentation/git-add.txt-spanclasssynopsiscode--no-ignore-removalcodespan"><a id="Documentation/git-add.txt---no-ignore-removal" class="anchor" href="#Documentation/git-add.txt---no-ignore-removal"></a><span class='synopsis'><code>--no-ignore-removal</code></span> </dt>
 <dd>
 <p>Update the index not only where the working tree has a file
-matching <em>&lt;pathspec&gt;</em> but also where the index already has an
+matching <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> but also where the index already has an
 entry. This adds, modifies, and removes index entries to
 match the working tree.</p>
 <div class="paragraph">
-<p>If no <em>&lt;pathspec&gt;</em> is given when <span class='synopsis'><code>-A</code></span> option is used, all
+<p>If no <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> is given when <span class='synopsis'><code>-A</code></span> option is used, all
 files in the entire working tree are updated (old versions
 of Git used to limit the update to the current directory and its
 subdirectories).</p>
@@ -2201,11 +2201,11 @@ subdirectories).</p>
 <p>Update the index by adding new files that are unknown to the
 index and files modified in the working tree, but ignore
 files that have been removed from the working tree.  This
-option is a no-op when no <em>&lt;pathspec&gt;</em> is used.</p>
+option is a no-op when no <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> is used.</p>
 <div class="paragraph">
 <p>This option is primarily to help users who are used to older
-versions of Git, whose <span class='synopsis'><code>git</code> <code>add</code> <em>&lt;pathspec&gt;</em>...</span> was a synonym
-for <span class='synopsis'><code>git</code> <code>add</code> <code>--no-all</code> <em>&lt;pathspec&gt;</em>...</span>, i.e. ignored removed files.</p>
+versions of Git, whose <span class='synopsis'><code>git</code> <code>add</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span> was a synonym
+for <span class='synopsis'><code>git</code> <code>add</code> <code>--no-all</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span>, i.e. ignored removed files.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-add.txt-spanclasssynopsiscode-Ncodespan"><a id="Documentation/git-add.txt--N" class="anchor" href="#Documentation/git-add.txt--N"></a><span class='synopsis'><code>-N</code></span> </dt>
@@ -2641,6 +2641,8 @@ naming convention for configuration variables.</p>
 
 <script src="/js/application.min.55a8a5a9bc0e83742067a5ad37657a29fca7dda05d94005f74d203d6a2bde08a.js" integrity="sha256-VailqbwOg3QgZ6WtN2V6Kfyn3aBdlABfdNID1qK94Io="></script>
 
+      <script src="/js/nanopop.umd.js"></script>
+      <script src="/js/glossary.js"></script>
     </div>
   
 
